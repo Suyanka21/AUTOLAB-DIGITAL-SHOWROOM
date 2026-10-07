@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #090a0f;
-  --foreground: #f8fafc;
-  --surface: #12141d;
+  --background: #0B0B0B;
+  --foreground: #FFFFFF;
+  --surface: #141416;
   --surface-border: rgba(255, 255, 255, 0.08);
+  --cyan: #38B6FF;
 }
 
 body {
@@ -16,18 +17,40 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom subtle scrollbar */
+/* Luxury subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #090a0f;
+  background: #0B0B0B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222638;
+  background: #1F2024;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
+  background: #38B6FF;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(56, 182, 255, 0.35);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 12px -2px rgba(56, 182, 255, 0.25);
+}
+
+.glow-cyan-border {
+  border-color: #38B6FF;
+  box-shadow: inset 0 0 12px rgba(56, 182, 255, 0.15), 0 0 12px rgba(56, 182, 255, 0.2);
+}
+
+.luxury-card {
+  background-color: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.luxury-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
 }

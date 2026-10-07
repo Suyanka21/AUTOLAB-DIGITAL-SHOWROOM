@@ -3,9 +3,9 @@ import { AuthProvider } from "@/lib/auth/auth-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Suyanka App Template | Full-Stack Agent-Powered Starter",
+  title: "AutoLab Digital Showroom | Mercedes-Benz S-Class (V223 LWB) Atelier",
   description:
-    "Production-ready Next.js 14 application template governed by 27 modular agent skills, defensive engineering standards, and anti-AI design protocols.",
+    "Interactive 2D Bespoke Interior Configurator for the Mercedes-Benz S-Class V223. Curate handcrafted hides, contrast tailoring, and bespoke compositions at the AutoLab Atelier.",
 };
 
 export default function RootLayout({
