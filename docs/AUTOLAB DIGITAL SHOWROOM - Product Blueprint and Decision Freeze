@@ -1,0 +1,938 @@
+# AUTOLAB DIGITAL SHOWROOM
+
+### Product Blueprint & Decision Freeze
+
+**Version 0.1 — October 2026**
+
+---
+
+## 1. PURPOSE OF THIS DOCUMENT
+
+This document defines the first version of the **AutoLab Digital Showroom**.
+
+It is intended to establish a shared understanding between AutoLab and the project creator before design and development begin.
+
+The purpose is not to define every future capability of the platform.
+
+It is to establish:
+
+- what we are building;
+- why we are building it;
+- who it is for;
+- what the first version must accomplish;
+- what it will not attempt to do;
+- how the experience will support AutoLab's existing sales process;
+- what the project includes commercially;
+- and where future expansion can occur.
+
+The product will be developed as a **bespoke digital showroom experience for AutoLab**, rather than as a generic automotive application.
+
+---
+
+# 2. THE BUSINESS PROBLEM
+
+AutoLab's customers often know that they want to transform their vehicle interior, but they struggle to visualise the finished result before the physical work begins.
+
+This is particularly important because AutoLab's work is highly personalised.
+
+The customer may need to make decisions around:
+
+- material;
+- colour;
+- accent thread;
+- extent of personalisation;
+- and the overall visual composition of the interior.
+
+At present, much of this decision-making ultimately requires the customer to visit the showroom.
+
+The Digital Showroom is intended to improve this experience by allowing the customer to **see and participate in the proposed transformation before committing to the physical work.**
+
+This aligns directly with AutoLab's stated philosophy:
+
+> **AutoLab should offer an experience rather than feeling like a transaction.**
+
+---
+
+# 3. PRODUCT MISSION
+
+### Mission
+
+**Give AutoLab customers a way to experience, configure and visualise their proposed interior transformation before the physical work begins.**
+
+The product should make the customer feel involved in creating their interior rather than simply purchasing an upholstery service.
+
+---
+
+# 4. PRODUCT VISION
+
+The AutoLab Digital Showroom should feel less like an ordinary website and more like entering a digital version of AutoLab's design process.
+
+The customer should be able to:
+
+**Select → Configure → Visualise → Review → Engage AutoLab**
+
+The experience should communicate the same qualities AutoLab wants its physical work to communicate:
+
+- precision;
+- luxury;
+- craftsmanship;
+- personalisation;
+- transformation;
+- confidence.
+
+The technology exists to enhance AutoLab's craftsmanship, not to replace the showroom.
+
+---
+
+# 5. CUSTOMER
+
+### Primary customer
+
+Existing and prospective AutoLab customers considering premium vehicle interior customisation and reupholstery.
+
+### Initial customer profile
+
+Customers with premium/luxury vehicles who are interested in substantial interior transformation rather than minor repairs.
+
+AutoLab has indicated that premium luxury vehicles provide the strongest platform for demonstrating its capabilities because they allow the greatest degree of personalisation.
+
+---
+
+# 6. PRODUCT CATEGORY
+
+The AutoLab Digital Showroom is:
+
+**A premium interactive automotive interior visualisation and configuration experience.**
+
+It is not:
+
+- an automotive marketplace;
+- an e-commerce platform;
+- a vehicle marketplace;
+- a CRM;
+- a workshop management system;
+- an ERP;
+- a booking platform;
+- a payment platform;
+- a vehicle inventory database;
+- or a generic AI car-design application.
+
+The distinction is important.
+
+**The product exists to sell the AutoLab transformation experience.**
+
+---
+
+# 7. DECISION FREEZE
+
+The following decisions define the initial product boundary.
+
+## 7.1 Mission
+
+Allow AutoLab customers to visualise and participate in the design of their vehicle's interior transformation before physical work begins.
+
+## 7.2 Primary experience
+
+The customer configures a premium vehicle interior and immediately sees the visual result.
+
+## 7.3 Initial vehicle
+
+The first experience will be built around a **Mercedes-Benz S-Class** as the leading vehicle platform.
+
+The exact S-Class generation/model and physical reference vehicle must be confirmed by AutoLab before final 3D asset production begins.
+
+The system should be architected so that additional vehicles can be added later without rebuilding the entire product.
+
+## 7.4 Initial configuration model
+
+The first configuration experience will centre around:
+
+1. Material
+2. Colour
+3. Accent thread
+4. Interior composition/visual configuration
+
+Additional configuration options may be introduced where AutoLab confirms that they are genuinely offered and can be represented accurately.
+
+## 7.5 Primary material
+
+Leather is the primary material category.
+
+Fabric may be supported where appropriate based on AutoLab's actual catalogue.
+
+## 7.6 Primary commercial purpose
+
+The experience should generate stronger customer engagement and encourage the customer toward AutoLab's existing showroom/sales process.
+
+The Digital Showroom is **not intended to replace the physical showroom.**
+
+---
+
+# 8. CORE CUSTOMER JOURNEY
+
+## STEP 1 — ENTER THE SHOWROOM
+
+The customer enters an AutoLab digital environment designed around premium automotive interior transformation.
+
+The experience immediately communicates that this is about creating an interior rather than simply browsing a service list.
+
+---
+
+## STEP 2 — SELECT THE VEHICLE
+
+The first release presents the agreed S-Class model.
+
+Future vehicles can be introduced through the same underlying architecture.
+
+---
+
+## STEP 3 — CONFIGURE THE INTERIOR
+
+The customer begins making design choices.
+
+The first release focuses on:
+
+**Material → Colour → Accent Thread**
+
+The interface should make these decisions visual rather than text-heavy.
+
+---
+
+## STEP 4 — VISUALISE
+
+The selected configuration is represented directly on the 3D vehicle interior.
+
+The customer can interact with the interior and inspect the proposed transformation.
+
+The visual result is the core value of the product.
+
+---
+
+## STEP 5 — REVIEW
+
+The customer can review the selected configuration as a coherent design rather than a collection of individual choices.
+
+The system should provide a configuration summary containing the relevant selections.
+
+---
+
+## STEP 6 — ENGAGE AUTOLAB
+
+The customer is encouraged toward the next real-world step:
+
+**Visit AutoLab / Contact AutoLab / Request a consultation**
+
+The configuration information can accompany the enquiry so that AutoLab has context before continuing the conversation.
+
+---
+
+# 9. THE "WOW" PRINCIPLE
+
+AutoLab has identified the strongest visual reaction as the transformation of basic interiors into more vibrant compositions.
+
+Therefore, the Digital Showroom should not behave like a technical configurator where the customer simply changes dropdown values.
+
+The experience should communicate:
+
+**"This is what your interior could become."**
+
+The transformation itself is part of the product.
+
+Where technically and commercially justified, before/after presentation can be incorporated into the experience.
+
+However, photorealistic before/after animation is not considered a mandatory requirement until the actual implementation cost and asset requirements are established.
+
+---
+
+# 10. 3D EXPERIENCE
+
+The 3D interior is the central production asset of the Digital Showroom.
+
+This is also the largest technical and commercial risk in the project.
+
+The research phase identified three broad asset scopes:
+
+- individual component;
+- complete interior/cockpit;
+- complete vehicle.
+
+A complete vehicle is unnecessary for the initial product.
+
+### Decision
+
+The first release will focus on the **vehicle interior**, not the complete exterior vehicle.
+
+The objective is to achieve enough visual fidelity to convincingly communicate AutoLab's interior transformation capabilities without paying the complexity cost of building an entire digital vehicle.
+
+---
+
+# 11. MATERIAL SYSTEM
+
+The material system will be built around AutoLab's actual offerings.
+
+### Confirmed primary material
+
+**Leather**
+
+### Additional confirmed category
+
+**Fabric**, where applicable.
+
+The final launch catalogue will use AutoLab-approved material names, colours and available options.
+
+No material, stitching pattern, finish or colour will be presented as an AutoLab offering merely because it is technically possible.
+
+This is important because the research phase identified several possible material/finish combinations as assumptions rather than verified AutoLab offerings.
+
+---
+
+# 12. CONFIGURATION ENGINE
+
+The configuration engine controls the relationship between the customer's choices and the visual output.
+
+At minimum:
+
+**Vehicle**
+↓
+**Material**
+↓
+**Colour**
+↓
+**Accent Thread**
+↓
+**Visual Configuration**
+
+The architecture should allow additional configuration dimensions to be added later without redesigning the entire system.
+
+Examples of future dimensions may include additional interior components, material categories, stitching options or carbon-fibre elements.
+
+These are expansion possibilities, not V1 commitments.
+
+---
+
+# 13. CONFIGURATION OBJECT
+
+Every customer configuration should be treated as a structured object.
+
+Conceptually:
+
+**Configuration**
+
+- Vehicle
+- Material
+- Colour
+- Accent Thread
+- Selected Components
+- Visual State
+- Configuration Reference
+- Customer Information, where voluntarily provided
+- Enquiry/Contact State
+
+This allows AutoLab to move from:
+
+> "A customer saw something on the website"
+
+to:
+
+> "A customer created this particular interior configuration."
+
+---
+
+# 14. SALES HANDOFF
+
+The Digital Showroom does not replace AutoLab's existing sales process.
+
+The intended relationship is:
+
+**Digital experience → Customer interest → Configuration → AutoLab showroom/contact → Physical quotation → Physical work**
+
+This reflects AutoLab's current preference for bringing customers into the showroom rather than attempting to complete the entire sales process through messaging.
+
+Pricing is therefore **not automatically required in V1.**
+
+AutoLab has confirmed that quotations vary according to factors including:
+
+- the current condition of the vehicle;
+- the extent of personalisation;
+- and the customer's desired scope.
+
+Therefore the Digital Showroom should not create false pricing certainty.
+
+---
+
+# 15. PRICING PRINCIPLE
+
+### V1 will not be positioned as an e-commerce checkout system.
+
+The Digital Showroom is a visualisation and sales-enablement tool.
+
+Where a customer requires a quotation, AutoLab will assess the vehicle and proposed work through its normal process.
+
+This preserves AutoLab's ability to price bespoke work appropriately.
+
+---
+
+# 16. DATA & BACKEND PRINCIPLE
+
+The product does not require a large automotive database.
+
+The system should store only the information required to support:
+
+- configurations;
+- enquiries;
+- configuration references;
+- relevant customer/contact information;
+- and operational analytics where justified.
+
+The research phase similarly found no strong justification for a large account ecosystem, e-commerce payment system or heavy backend for the first release.
+
+### Principle
+
+**Store configurations and leads, not the entire automotive industry.**
+
+---
+
+# 17. ADMINISTRATION
+
+A lightweight administrative capability may be included where it provides genuine operational value.
+
+Potential functions include:
+
+- viewing enquiries;
+- viewing saved configurations;
+- managing available configuration options;
+- updating material information;
+- viewing basic usage information.
+
+A complex CMS or enterprise administration system is outside V1.
+
+---
+
+# 18. PRODUCT ARCHITECTURE
+
+The product will be divided into clear modules.
+
+### Module 01 — Experience Shell
+
+The main digital showroom interface.
+
+### Module 02 — Vehicle / Interior Viewer
+
+The interactive 3D environment.
+
+### Module 03 — Configuration Engine
+
+Controls customer selections and configuration state.
+
+### Module 04 — Material System
+
+Controls material and colour presentation.
+
+### Module 05 — Configuration Summary
+
+Converts the customer's design into a structured summary.
+
+### Module 06 — Lead / Enquiry
+
+Transfers customer interest into AutoLab's sales process.
+
+### Module 07 — Asset Layer
+
+Contains the 3D models, textures and supporting visual assets.
+
+### Module 08 — Lightweight Administration
+
+Only where operationally justified.
+
+### Module 09 — QA / Performance
+
+Ensures the experience works reliably across supported devices and browsers.
+
+---
+
+# 19. TECHNOLOGY PRINCIPLES
+
+The product will use established web technologies rather than attempting to create a proprietary 3D engine.
+
+The expected architecture may include:
+
+- modern web application framework;
+- WebGL-based 3D rendering;
+- Three.js / React Three Fiber or equivalent;
+- optimised 3D assets;
+- responsive frontend;
+- lightweight backend/database where required;
+- WhatsApp/contact integration where appropriate;
+- cloud deployment.
+
+The exact implementation stack is an engineering decision to be made after the product specification is frozen.
+
+---
+
+# 20. AI DEVELOPMENT PRINCIPLE
+
+AI will be used extensively during production.
+
+However:
+
+**AI is an implementation accelerator, not the product itself.**
+
+AI may assist with:
+
+- 3D asset generation and refinement;
+- software development;
+- interface generation;
+- testing;
+- documentation;
+- optimisation;
+- code review;
+- research;
+- asset workflows.
+
+The customer should experience **AutoLab**, not a collection of AI tools.
+
+---
+
+# 21. TOOL OWNERSHIP
+
+The project will follow a controlled AI-production workflow.
+
+### Venture Foundery / ChatGPT
+
+Responsible for:
+
+- product strategy;
+- Product Constitution;
+- Decision Freeze;
+- architecture;
+- scope control;
+- acceptance criteria;
+- governance.
+
+### NotebookLM
+
+Responsible for:
+
+- evidence;
+- source material;
+- AutoLab research;
+- competitor/reference analysis;
+- extraction of factual information.
+
+### Stitch
+
+Responsible for:
+
+- visual direction;
+- interface concepts;
+- visual system;
+- interaction concepts;
+- component direction.
+
+### Astra / 3D production workflow
+
+Responsible for:
+
+- 3D production;
+- asset workflows;
+- technical experimentation;
+- complex implementation where appropriate.
+
+### Lovable
+
+Responsible for:
+
+- application shell;
+- standard frontend components;
+- forms;
+- dashboards;
+- conventional application UI.
+
+It does not own the core 3D/configuration architecture.
+
+### Code review system
+
+Responsible for:
+
+- code quality;
+- security observations;
+- performance observations;
+- defects.
+
+It does not change the Product Constitution.
+
+---
+
+# 22. WHAT IS INCLUDED IN V1
+
+The KES 750,000 project includes:
+
+### Product & strategy
+
+- product definition;
+- architecture;
+- scope management;
+- project planning;
+- acceptance criteria.
+
+### Visual design
+
+- Digital Showroom visual direction;
+- responsive interface;
+- configuration interface;
+- customer journey design.
+
+### 3D production
+
+- agreed S-Class interior asset;
+- optimisation for web delivery;
+- required material/texture representation;
+- configuration-ready asset structure.
+
+### Configuration
+
+- material selection;
+- colour selection;
+- accent thread selection;
+- visual state management;
+- configuration summary.
+
+### Application
+
+- responsive web experience;
+- 3D viewer;
+- configuration interface;
+- customer journey;
+- enquiry/contact flow.
+
+### Data
+
+- configuration data;
+- enquiry information;
+- lightweight persistence where required.
+
+### Integration
+
+- agreed contact/lead handoff;
+- configuration reference/summary.
+
+### Quality assurance
+
+- functional testing;
+- responsive testing;
+- 3D interaction testing;
+- performance optimisation;
+- deployment testing.
+
+### Delivery
+
+- production deployment;
+- launch configuration;
+- documentation sufficient for handover;
+- post-delivery correction period for defects within agreed scope.
+
+---
+
+# 23. WHAT IS NOT INCLUDED IN V1
+
+The following are explicitly outside the initial project unless separately agreed:
+
+- multiple vehicle models;
+- complete exterior vehicle modelling;
+- full vehicle marketplace;
+- e-commerce checkout;
+- online payments;
+- automated quotations;
+- workshop management;
+- inventory management;
+- CRM;
+- ERP;
+- native iOS/Android application;
+- customer account ecosystem;
+- automated manufacturing;
+- live CAD;
+- vehicle engineering simulation;
+- unlimited material combinations;
+- unlimited configuration options;
+- professional photography production;
+- physical 3D scanning equipment/services;
+- major third-party software licensing outside the agreed tooling allowance;
+- ongoing marketing;
+- ongoing content production;
+- ongoing hosting/maintenance beyond the agreed period.
+
+---
+
+# 24. EXPANSION BOUNDARY
+
+The architecture should make future expansion possible.
+
+Potential future phases include:
+
+### Phase 2
+
+Additional premium vehicle interiors.
+
+### Phase 3
+
+Additional interior components and deeper personalisation.
+
+### Phase 4
+
+Before/after transformation experiences.
+
+### Phase 5
+
+Configuration history and customer accounts.
+
+### Phase 6
+
+Advanced pricing/quotation logic where AutoLab's pricing rules justify it.
+
+### Phase 7
+
+Broader AutoLab digital showroom ecosystem.
+
+These are **future possibilities, not commitments contained in the KES 750,000 V1.**
+
+---
+
+# 25. COMMERCIAL PROPOSAL
+
+## Total Project Fee
+
+# KES 750,000
+
+This is the complete project fee for the agreed V1 scope.
+
+The fee includes the creator's professional labour and the production effort required to deliver the Digital Showroom.
+
+It is not a software subscription price.
+
+It is not a monthly SaaS fee.
+
+It is a **bespoke project development fee.**
+
+---
+
+# 26. PROJECT COST BREAKDOWN
+
+| Component                                                        |      Allocation |
+| ---------------------------------------------------------------- | --------------: |
+| Product strategy, architecture & project planning                |      KES 55,000 |
+| UX/UI and Digital Showroom visual design                         |      KES 75,000 |
+| 3D S-Class interior asset production                             |     KES 180,000 |
+| Material, texture & configuration system                         |      KES 70,000 |
+| Interactive 3D viewer & configuration experience                 |     KES 100,000 |
+| Web application/frontend development                             |      KES 75,000 |
+| Configuration summary & AutoLab enquiry flow                     |      KES 35,000 |
+| Testing, optimisation & deployment                               |      KES 55,000 |
+| AI/software/tooling, infrastructure & production allowance       |      KES 35,000 |
+| Project management, integration, revisions & professional labour |      KES 70,000 |
+| **TOTAL**                                                        | **KES 750,000** |
+
+### Important commercial principle
+
+This breakdown is an allocation of the project fee, not a menu from which individual components can be removed without changing the scope.
+
+The 3D asset, for example, is not simply a "graphic".
+
+It is one of the principal production assets on which the entire experience depends.
+
+---
+
+# 27. WHY THE PROJECT IS PRICED AT KES 750,000
+
+The project is substantially different from a conventional business website.
+
+The fee reflects the combination of:
+
+- bespoke product strategy;
+- custom UX/UI;
+- interactive 3D;
+- vehicle interior asset production;
+- material visualisation;
+- configuration logic;
+- application development;
+- integration;
+- optimisation;
+- testing;
+- deployment;
+- and professional development labour.
+
+The current Kenyan economic environment also supports maintaining a realistic professional-development cost base. KNBS reports annual inflation of **6.8% in September 2026**, with transport prices up **15.6% year-on-year**.
+
+However, the price is **not being justified simply by inflation**.
+
+The principal reason for the fee is the actual complexity and bespoke nature of the Digital Showroom.
+
+---
+
+# 28. 3D ASSET SCOPE — COMMERCIAL PROTECTION
+
+The 3D asset is the largest variable in the project.
+
+The KES 750,000 price assumes:
+
+**One agreed S-Class interior configuration environment.**
+
+If AutoLab requests:
+
+- additional vehicle models;
+- substantially different vehicle generations;
+- complete exterior modelling;
+- additional highly detailed interior environments;
+- professional physical scanning;
+- extensive photorealistic material scanning;
+- or substantially more configuration complexity,
+
+those requirements may require a separate quotation.
+
+This protects both AutoLab and the project from uncontrolled scope expansion.
+
+---
+
+# 29. CLIENT RESPONSIBILITIES
+
+AutoLab will provide or approve:
+
+- final V1 vehicle/model;
+- reference vehicle/asset access where required;
+- approved materials;
+- approved colours;
+- approved accent-thread options;
+- approved configuration options;
+- relevant AutoLab branding;
+- portfolio imagery where required;
+- final contact/lead destination;
+- feedback and approvals within agreed review periods.
+
+The project cannot accurately represent AutoLab's offerings without AutoLab approving the underlying catalogue.
+
+---
+
+# 30. DECISIONS REQUIRED BEFORE PRODUCTION
+
+Only a small number of decisions remain before production begins.
+
+### Required
+
+**1. Exact S-Class**
+Which S-Class generation/model should become the V1 reference?
+
+**2. Physical/reference asset**
+What vehicle, photographs, measurements, CAD or other reference material can AutoLab provide?
+
+**3. Material catalogue**
+Which leather colours/materials should appear in V1?
+
+**4. Accent thread**
+Which thread colours/options should appear?
+
+**5. Configuration depth**
+Which interior areas should the customer be able to change in V1?
+
+**6. AutoLab brand direction**
+Which existing AutoLab branding/assets should be incorporated?
+
+Once these decisions are made, the product can enter production.
+
+---
+
+# 31. SUCCESS DEFINITION
+
+The Digital Showroom is successful if a prospective AutoLab customer can:
+
+1. Enter the experience.
+2. Understand what AutoLab can create.
+3. Configure a premium interior.
+4. See the proposed transformation.
+5. Understand their selected configuration.
+6. Become more confident/excited about the proposed work.
+7. Continue naturally into AutoLab's showroom/consultation process.
+
+The primary success metric is therefore not:
+
+**number of website visitors.**
+
+The more meaningful early measure is:
+
+**How effectively does the Digital Showroom turn visual interest into qualified AutoLab conversations and showroom visits?**
+
+---
+
+# 32. NORTH STAR
+
+### **Visualise the transformation before you commit to it.**
+
+That is the fundamental promise of the Digital Showroom.
+
+---
+
+# 33. PRODUCT CONSTITUTION
+
+### We will:
+
+- prioritise the customer's ability to visualise transformation;
+- represent AutoLab's real capabilities;
+- make personalisation central to the experience;
+- prioritise premium interior work;
+- preserve the showroom as part of the sales journey;
+- build the architecture for future vehicle expansion;
+- keep the initial product focused;
+- use technology to amplify AutoLab's craftsmanship.
+
+### We will not:
+
+- build a generic automotive platform;
+- create a giant vehicle database for V1;
+- turn AutoLab into an e-commerce business;
+- replace the physical showroom;
+- promise configurations AutoLab does not actually provide;
+- allow AI-generated capabilities to redefine the business;
+- add features merely because they are technically possible;
+- expand the scope without an explicit commercial decision.
+
+---
+
+# 34. FINAL DECISION
+
+The AutoLab Digital Showroom will be developed as a **premium interactive digital experience centred initially on a Mercedes-Benz S-Class interior.**
+
+Its purpose is to allow customers to experience and configure a proposed interior transformation before engaging AutoLab for the physical work.
+
+The first release will prioritise:
+
+**Luxury vehicle → Material → Colour → Accent Thread → Visualisation → Configuration → AutoLab**
+
+The project will be delivered as a bespoke product for:
+
+# **KES 750,000**
+
+with the fee inclusive of the creator's professional labour and the agreed production costs required for the V1 scope.
+
+Additional vehicles, major new configuration systems, substantially expanded 3D asset requirements and other future capabilities will be treated as subsequent phases rather than silently added to V1.
+
+---
+
+## APPROVAL POINT
+
+Before production begins, AutoLab and the project creator should confirm:
+
+**[ ] Product direction approved**
+
+**[ ] S-Class V1 approved**
+
+**[ ] Initial material catalogue approved**
+
+**[ ] Initial colour catalogue approved**
+
+**[ ] Accent-thread options approved**
+
+**[ ] V1 configuration scope approved**
+
+**[ ] KES 750,000 project fee approved**
+
+**[ ] Future expansion understood as separate scope**
+
+Once these points are confirmed, the project moves from **Blueprint → Design → 3D Asset Production → Development → QA → Launch.**

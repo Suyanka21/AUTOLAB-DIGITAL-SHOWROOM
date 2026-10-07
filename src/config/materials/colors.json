@@ -1,0 +1,132 @@
+[
+  {
+    "id": "black-nappa-501a",
+    "name": "Exclusive Black (Code 501A)",
+    "hexCode": "#151618",
+    "factoryCode": "501A",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["nappa-exclusive"],
+    "status": "approved"
+  },
+  {
+    "id": "sienna-brown-502a",
+    "name": "Sienna Brown (Code 502A)",
+    "hexCode": "#75452B",
+    "factoryCode": "502A",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["nappa-exclusive"],
+    "status": "approved"
+  },
+  {
+    "id": "macchiato-beige-505a",
+    "name": "Macchiato Beige / Magma Grey (Code 505A)",
+    "hexCode": "#D8CAB8",
+    "factoryCode": "505A",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["nappa-exclusive"],
+    "status": "approved"
+  },
+  {
+    "id": "carmine-red-oem",
+    "name": "Carmine Red Sport",
+    "hexCode": "#8A1822",
+    "factoryCode": "CARMINE",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["nappa-exclusive"],
+    "status": "approved"
+  },
+  {
+    "id": "autolab-cognac-tan",
+    "name": "AutoLab Heritage Cognac Tan",
+    "hexCode": "#9A5B2D",
+    "isFactoryOEM": false,
+    "isAutoLabBespoke": true,
+    "compatibleMaterialIds": ["nappa-exclusive", "autolab-heritage-hide"],
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "autolab-royal-oxblood",
+    "name": "AutoLab Royal Oxblood",
+    "hexCode": "#5C1D24",
+    "isFactoryOEM": false,
+    "isAutoLabBespoke": true,
+    "compatibleMaterialIds": ["nappa-exclusive", "autolab-heritage-hide"],
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "autolab-nairobi-emerald",
+    "name": "AutoLab Nairobi Forest Emerald",
+    "hexCode": "#1A382B",
+    "isFactoryOEM": false,
+    "isAutoLabBespoke": true,
+    "compatibleMaterialIds": ["nappa-exclusive", "autolab-heritage-hide"],
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "anthracite-poplar",
+    "name": "Anthracite Poplar Timber",
+    "hexCode": "#2E2F32",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["open-pore-poplar"],
+    "status": "approved"
+  },
+  {
+    "id": "warm-walnut",
+    "name": "Warm Walnut Grain",
+    "hexCode": "#543825",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["open-pore-walnut"],
+    "status": "approved"
+  },
+  {
+    "id": "pitch-black-lacquer",
+    "name": "Pitch Black Lacquer with White Lines",
+    "hexCode": "#080808",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["piano-lacquer-flowing-lines"],
+    "status": "approved"
+  },
+  {
+    "id": "forged-carbon-weave",
+    "name": "Marbled Forged Carbon Matrix",
+    "hexCode": "#1C1D20",
+    "isFactoryOEM": false,
+    "isAutoLabBespoke": true,
+    "compatibleMaterialIds": ["autolab-forged-carbon"],
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "sunset-orange",
+    "name": "Sunset Orange Ambient",
+    "hexCode": "#FF5722",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["active-ambient-led"],
+    "status": "approved"
+  },
+  {
+    "id": "miami-rose",
+    "name": "Miami Rose Ambient",
+    "hexCode": "#E91E63",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["active-ambient-led"],
+    "status": "approved"
+  },
+  {
+    "id": "ocean-blue",
+    "name": "Ocean Blue Ambient",
+    "hexCode": "#00BCD4",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "compatibleMaterialIds": ["active-ambient-led"],
+    "status": "approved"
+  }
+]

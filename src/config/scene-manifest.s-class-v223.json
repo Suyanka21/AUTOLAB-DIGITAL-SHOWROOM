@@ -1,0 +1,206 @@
+{
+  "assetId": "s-class-v223-interior",
+  "vehicleModel": "Mercedes-Benz S-Class (V223 Long Wheelbase)",
+  "format": "glb",
+  "units": "meters",
+  "coordinateSystem": "Y-Up",
+  "nodes": [
+    {
+      "identifier": "GEO_Dashboard_Screen_Central_OLED",
+      "module": "Dashboard",
+      "priorityTier": "HIGH",
+      "tolerance": "EXACT",
+      "materialSlot": "MAT_Screen_Central_OLED",
+      "kinematic": false,
+      "notes": "12.8 in diagonal, 1.5mm corner radius, 0.8mm stepped bezel, 60 deg angle"
+    },
+    {
+      "identifier": "GEO_Dashboard_Screen_Driver_Cluster",
+      "module": "Dashboard",
+      "priorityTier": "HIGH",
+      "tolerance": "EXACT",
+      "materialSlot": "MAT_Screen_Driver_Cluster",
+      "kinematic": false,
+      "notes": "12.3 in floating landscape pedestal display directly behind steering column"
+    },
+    {
+      "identifier": "GEO_Interior_AmbientLight_FiberStrip",
+      "module": "Lighting",
+      "priorityTier": "HIGH",
+      "tolerance": "EXACT",
+      "materialSlot": "EMISSIVE_Ambient_Lighting",
+      "kinematic": false,
+      "notes": "Continuous spline curve representing 253 micro-LEDs sweeping across cowl and door waistlines"
+    },
+    {
+      "identifier": "GEO_Trim_Dashboard_WoodDeck",
+      "module": "Dashboard",
+      "priorityTier": "HIGH",
+      "tolerance": "EXACT",
+      "materialSlot": "MAT_Trim_Deck_Main",
+      "kinematic": false,
+      "notes": "Large wing-shaped veneer sweep from A-pillar to A-pillar with central vent cutouts"
+    },
+    {
+      "identifier": "GEO_SteeringWheel_AMG_DoubleSpoke",
+      "module": "Steering",
+      "priorityTier": "HIGH",
+      "tolerance": "EXACT",
+      "materialSlot": "MAT_Steering_Leather",
+      "kinematic": false,
+      "notes": "AMG-Line twin dual-spoke with capacitive pads, flat-bottom rim, perforated side grips"
+    },
+    {
+      "identifier": "GEO_Console_Center_Front",
+      "module": "Console",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Console_Veneer_And_Leather",
+      "kinematic": true,
+      "notes": "Sliding front tambour door and butterfly split-opening armrest"
+    },
+    {
+      "identifier": "GEO_Seat_Front_Driver_Flutes",
+      "module": "Seating",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Upholstery_Primary",
+      "kinematic": false,
+      "notes": "Front driver seat center flutes with diamond quilting normal map"
+    },
+    {
+      "identifier": "GEO_Seat_Front_Passenger_Flutes",
+      "module": "Seating",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Upholstery_Primary",
+      "kinematic": false,
+      "notes": "Front passenger seat center flutes"
+    },
+    {
+      "identifier": "GEO_Seat_Rear_Executive_RH",
+      "module": "Seating",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Upholstery_Primary",
+      "kinematic": true,
+      "notes": "Multi-axis kinematic joint: up to 43.5 deg recline, deployable calf rest and footrest"
+    },
+    {
+      "identifier": "GEO_Seat_Front_Passenger_Chauffeur",
+      "module": "Seating",
+      "priorityTier": "MEDIUM",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Upholstery_Secondary",
+      "kinematic": true,
+      "notes": "Chauffeur package: forward-tilt up to 23 deg beyond 90 deg upright"
+    },
+    {
+      "identifier": "GEO_Console_Center_Rear_FirstClass",
+      "module": "Console",
+      "priorityTier": "MEDIUM",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Trim_Deck_Main",
+      "kinematic": true,
+      "notes": "Continuous business console with dual folding aircraft tables"
+    },
+    {
+      "identifier": "GEO_Door_Speaker_Burmester_4D",
+      "module": "DoorCards",
+      "priorityTier": "MEDIUM",
+      "tolerance": "EXACT",
+      "materialSlot": "MAT_Metal_Acoustic_Burmester",
+      "kinematic": true,
+      "notes": "A-pillar sail panel: 10mm outward rotational deployment"
+    },
+    {
+      "identifier": "GEO_Door_Panels_FL_FR_RL_RR",
+      "module": "DoorCards",
+      "priorityTier": "MEDIUM",
+      "tolerance": "EXACT",
+      "materialSlot": "MAT_Door_Card_Substrate",
+      "kinematic": false,
+      "notes": "Seam alignment 3.5mm-4.5mm shut gaps with dashboard wings"
+    },
+    {
+      "identifier": "GEO_Footwell_And_Carpeting",
+      "module": "Peripheral",
+      "priorityTier": "LOW",
+      "tolerance": "APPROXIMATION",
+      "materialSlot": "MAT_Carpet_Floor",
+      "kinematic": false,
+      "notes": "Simplified low-poly floor bounds with dark ambient occlusion"
+    }
+  ],
+  "materialSlots": [
+    {
+      "slotIdentifier": "MAT_Upholstery_Primary",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.48,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": true,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "2048"
+    },
+    {
+      "slotIdentifier": "MAT_Upholstery_Secondary",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.48,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": true,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Trim_Deck_Main",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.68,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": false,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "2048"
+    },
+    {
+      "slotIdentifier": "MAT_Steering_Leather",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.45,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": false,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "EMISSIVE_Ambient_Lighting",
+      "shaderType": "emissive",
+      "defaultRoughness": 0.15,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": false,
+      "hasNormalMap": false,
+      "textureResolutionBudget": "512"
+    },
+    {
+      "slotIdentifier": "MAT_Screen_Central_OLED",
+      "shaderType": "glass",
+      "defaultRoughness": 0.02,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": true,
+      "hasNormalMap": false,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Metal_Acoustic_Burmester",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.25,
+      "defaultMetallic": 1.0,
+      "hasClearcoat": false,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    }
+  ],
+  "budgets": {
+    "maxTriangles": 350000,
+    "maxDrawCalls": 65,
+    "maxFileSizeBytes": 15728640,
+    "maxGpuMemoryMb": 128
+  }
+}

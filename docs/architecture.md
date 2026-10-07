@@ -1,6 +1,6 @@
 # Technical Architecture Specification
-## Project: Suyanka App Template
-### Version: 1.0.0
+## Project: AutoLab Digital Showroom
+### Version: 1.0.0 (Astra Production Baseline)
 
 ---
 
@@ -8,97 +8,85 @@
 
 | Layer | Technology | Rationale |
 | :--- | :--- | :--- |
-| **Framework** | Next.js 14 (App Router) | React Server Components, server actions, route handlers, modern SEO. |
-| **Language** | TypeScript (Strict) | End-to-end type safety, reliable refactoring, IDE autocompletion. |
-| **Styling** | Tailwind CSS + PostCSS | Token-based utility styling governed by `docs/design-system.md`. |
-| **Icons** | Lucide React | Clean, consistent, tree-shakeable iconography. |
-| **State Management** | React Context (`AuthContext`) | Clean client state for auth session, pluggable backend providers. |
-| **Backend Option A** | Supabase + Drizzle ORM | Serverless PostgreSQL with type-safe schema queries and row-level security. |
-| **Backend Option B** | Firebase + Drizzle | Google Firebase Auth/Firestore with type-safe document schemas. |
-| **Agent Foundation** | `.agents/` Architecture | 27 modular agent skills operating under permanent reasoning protocols. |
+| **Frontend Framework** | Next.js 14 (App Router) | React Server Components, client boundary isolation, fast hydration, SEO. |
+| **Language** | TypeScript (Strict) | End-to-end type safety across schemas, configuration state, and 3D manifests. |
+| **Styling** | Tailwind CSS + PostCSS | Token-based luxury dark mode governed by `docs/design-system.md`. |
+| **3D Engine** | Three.js / React Three Fiber | Industry standard WebGL rendering with PBR shader networks and Draco support. |
+| **Icons** | Lucide React | Clean, minimalist, tree-shakeable iconography. |
+| **State Management** | React Context / Zustand | Zero-lag client state dispatching material uniform updates in < 16ms. |
+| **Backend Option A** | Supabase + Drizzle ORM | Serverless PostgreSQL with type-safe schema and Row-Level Security (RLS). |
+| **Backend Option B** | Firebase Firestore + Drizzle | Google Firestore document database with typed collection helpers. |
+| **Agent Foundation** | `.agents/` Architecture | Permanent reasoning foundations (`global-reasoning-layer`, `coderabbit-dna`). |
 
 ---
 
-## 2. Directory Layout
+## 2. Directory Layout & Repository Structure
 
 ```text
-├── docs/                             # Authoritative design & architecture contracts
-│   ├── PRD.md                        # Product requirements
-│   ├── architecture.md               # This document
-│   └── design-system.md              # Design tokens and visual rules
+├── docs/                             # Authoritative truth layer & production contracts
+│   ├── ASTRA_HANDOFF.md              # Master production directive for Astra
+│   ├── PRD.md                        # Master Product Requirements Document
+│   ├── architecture.md               # This technical topology document
+│   ├── design-system.md              # Luxury design tokens & visual standards
+│   ├── human-approval-gates.md       # 8 explicit human sign-off gates
+│   ├── production-plan.md            # Machine-readable implementation roadmap
+│   ├── product/                      # Product Constitution, Scope, Journey, Success
+│   ├── 3d-assets/                    # S-Class 3D spec, Component map, PBR, Blender guide
+│   ├── configuration/                # Config model, Options catalog, Future vehicle pipeline
+│   ├── application/                  # Frontend, Backend, Lead flow, Admin requirements
+│   ├── quality/                      # Acceptance criteria, Performance, QA strategy
+│   └── schemas/                      # JSON Schemas: vehicle, config, enquiry, manifest
+├── public/
+│   └── assets/
+│       ├── 3d/s-class-v223/          # Dropzone for Draco GLB assets from Astra
+│       └── textures/                 # PBR textures (ORM, normal, albedo)
 ├── src/
 │   ├── app/                          # Next.js 14 App Router routes
-│   │   ├── layout.tsx                # Root layout & theme wrapper
+│   │   ├── layout.tsx                # Luxury theme wrapper & fonts
 │   │   ├── globals.css               # Design tokens, variables, base styles
-│   │   ├── page.tsx                  # Public landing page
-│   │   ├── splash/page.tsx           # Splash screen & loader
-│   │   ├── auth/page.tsx             # Sign in / Sign up page
-│   │   └── dashboard/page.tsx        # Authenticated app shell
-│   ├── components/                   # Reusable UI component library
-│   │   ├── ui/                       # Primitives: Button, Input, Card, Badge, Tabs
-│   │   └── layout/                   # Navbar, Footer, Sidebar, Shell
-│   └── lib/                          # Services & Database
-│       ├── utils.ts                  # Classname merging and formatting
-│       ├── auth/                     # Authentication context and provider
-│       └── db/                       # Database clients & schemas
-│           ├── drizzle.config.ts     # Drizzle CLI migration configuration
-│           ├── supabase/             # Supabase client & PostgreSQL Drizzle schema
-│           └── firebase/             # Firebase SDK client & typed collections
+│   │   ├── page.tsx                  # Public 3D Digital Showroom experience
+│   │   ├── admin/                    # Lightweight enquiry & configuration lookup
+│   │   └── api/                      # Route handlers: /api/configurations, /api/enquiries
+│   ├── components/                   # UI component library
+│   │   ├── showroom/                 # 3D Canvas, OrbitControls, CameraPresets, Lighting
+│   │   ├── configurator/             # ConfigDock, SwatchPicker, SummaryModal
+│   │   ├── enquiry/                  # WhatsAppLink, ShowroomBookingForm
+│   │   └── ui/                       # Primitives: Button, Card, Badge, Modal, Tabs
+│   ├── config/                       # Machine-readable seed data
+│   │   ├── vehicles/                 # mercedes-s-class-v223.json
+│   │   ├── materials/                # catalogue.json, colors.json, accent-threads.json
+│   │   └── scene-manifest.s-class-v223.json
+│   ├── types/                        # TypeScript contracts
+│   │   ├── vehicle.ts                # Vehicle definition & zone slots
+│   │   ├── configuration.ts          # Selection state & summary interfaces
+│   │   ├── enquiry.ts                # Consultation payload interfaces
+│   │   └── asset3d.ts                # Scene nodes, tolerances, and budgets
+│   └── lib/                          # Services & Database clients
+│       ├── db/                       # Supabase / Firebase clients & Drizzle schemas
+│       └── utils.ts                  # Classname merging and helpers
 ├── package.json                      # Project dependencies & scripts
 └── tailwind.config.ts                # Token mappings & theme configuration
 ```
 
 ---
 
-## 3. Database Architecture & Switching Strategy
+## 3. Vehicle-Asset Abstraction & Expansion Pipeline
 
-The template includes out-of-the-box configurations for both **Supabase + Drizzle** and **Firebase + Drizzle**. You switch between them simply by setting `DATABASE_PROVIDER` in your `.env.local`:
-
-```bash
-# .env.local
-DATABASE_PROVIDER=supabase # or "firebase"
-
-# If using Supabase:
-NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
-DATABASE_URL="postgres://postgres:password@db.your-project.supabase.co:5432/postgres"
-
-# If using Firebase:
-NEXT_PUBLIC_FIREBASE_API_KEY="your-api-key"
-NEXT_PUBLIC_FIREBASE_PROJECT_ID="your-project-id"
+```
+[ Vehicle Definition JSON ] ──▶ [ 3D Interior GLB ] ──▶ [ Material Slots ] ──▶ [ Config Engine ] ──▶ [ Summary & Lead ]
 ```
 
-### 3.1 Supabase Schema (`src/lib/db/supabase/schema.ts`)
-- Defined via Drizzle ORM (`pgTable`):
-  - `users`: User identity, profile data, roles, timestamps.
-  - `profiles`: Application-specific preferences and metadata.
-  - `projects`: Example entity with title, status, timestamps, and ownership foreign key.
-
-### 3.2 Firebase Schema (`src/lib/db/firebase/firestore.ts`)
-- Type-safe collection references with Zod / TypeScript interfaces for `users` and `projects`.
+The system decouples vehicle identity from application UI. Adding a future vehicle (Range Rover, Toyota Hilux) requires only authoring the vehicle definition JSON and dropping the standardized GLB asset into `public/assets/3d/<vehicle-id>/`, without modifying viewer or configuration logic.
 
 ---
 
-## 4. Auth State Machine
+## 4. Database Topology & Switching
 
+Set `DATABASE_PROVIDER` in `.env.local`:
+```bash
+DATABASE_PROVIDER=supabase # or "firebase"
 ```
-         ┌──────────────────┐
-         │ /splash (Load)   │
-         └────────┬─────────┘
-                  │
-          Check Auth Token
-          ┌───────┴───────┐
-          ▼               ▼
-      [ Valid ]       [ None / Invalid ]
-          │               │
-          ▼               ▼
-     /dashboard         /auth (or /)
-```
-
-The `AuthContext` provides:
-- `user`: Authenticated user object or `null`.
-- `isLoading`: Boolean state for hydration.
-- `signIn(email, password)`: Authenticates user.
-- `signUp(name, email, password)`: Registers user.
-- `signInDemo()`: Instant pass-through bypass for rapid UI testing and prototyping.
-- `signOut()`: Terminates session and redirects to `/auth`.
+The database stores three primary entities:
+1. `configurations`: Client interior designs indexed by Reference Code (`AL-SC-2026-XXXX`).
+2. `enquiries`: Sales consultation leads carrying client contact info and preferred channel.
+3. `analytics_events`: Operational telemetry (showroom entered, material swapped, preset changed).

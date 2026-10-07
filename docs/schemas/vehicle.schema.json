@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VehicleDefinition",
+  "type": "object",
+  "required": [
+    "id",
+    "brand",
+    "model",
+    "generation",
+    "modelYears",
+    "chassisCode",
+    "status",
+    "dimensions",
+    "assetSource",
+    "materialZones",
+    "cameraPresets"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "brand": { "type": "string" },
+    "model": { "type": "string" },
+    "generation": { "type": "string" },
+    "modelYears": { "type": "string" },
+    "chassisCode": { "type": "string" },
+    "status": { "type": "string", "enum": ["active", "planned", "archived"] },
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "wheelbaseMm",
+        "overallLengthMm",
+        "overallWidthMm",
+        "overallHeightMm"
+      ],
+      "properties": {
+        "wheelbaseMm": { "type": "number" },
+        "overallLengthMm": { "type": "number" },
+        "overallWidthMm": { "type": "number" },
+        "overallHeightMm": { "type": "number" },
+        "frontHeadroomMm": { "type": "number" },
+        "rearHeadroomMm": { "type": "number" },
+        "frontLegroomMm": { "type": "number" },
+        "rearLegroomMm": { "type": "number" }
+      }
+    },
+    "assetSource": {
+      "type": "object",
+      "required": ["modelFile", "dracoCompressed", "ktx2Textures"],
+      "properties": {
+        "modelFile": { "type": "string" },
+        "lodLowFile": { "type": "string" },
+        "dracoCompressed": { "type": "boolean" },
+        "ktx2Textures": { "type": "boolean" }
+      }
+    },
+    "materialZones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "zoneId",
+          "name",
+          "targetMeshPrefixes",
+          "allowedMaterialTypes",
+          "defaultMaterialId",
+          "defaultColorId"
+        ],
+        "properties": {
+          "zoneId": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "targetMeshPrefixes": { "type": "array", "items": { "type": "string" } },
+          "allowedMaterialTypes": { "type": "array", "items": { "type": "string" } },
+          "defaultMaterialId": { "type": "string" },
+          "defaultColorId": { "type": "string" },
+          "defaultAccentThreadId": { "type": "string" }
+        }
+      }
+    },
+    "cameraPresets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "position", "target", "fov"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "position": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "target": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "fov": { "type": "number" }
+        }
+      }
+    }
+  }
+}

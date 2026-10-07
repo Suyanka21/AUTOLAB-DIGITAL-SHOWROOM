@@ -1,84 +1,100 @@
 # Product Requirements Document (PRD)
-## Project Name: Suyanka App Template
-### Version: 1.0.0
-### Status: Approved Base Template
+## Project Name: AutoLab Digital Showroom
+### Version: 1.0.0 (Astra Production Baseline)
+### Status: FROZEN & CODIFIED
+### Target Vehicle: Mercedes-Benz S-Class (Seventh Generation — V223 LWB)
 
 ---
 
-## 1. Executive Summary & Vision
-**Suyanka App Template** is a developer-first, full-stack application starter designed for rapid product creation. It couples an authoritative agent-skills cognitive layer (`.agents/skills/`) with an opinionated, modern Next.js 14 App Router frontend and flexible backend integrations (Supabase + Drizzle ORM or Firebase + Drizzle).
+## 1. Executive Summary & Product Vision
 
-Any AI agent (Claude Code, Cursor, Antigravity, Kilo Code, VS Code / Cline, Lovable, Bolt.new, v0.dev) or human engineer cloning this repository starts with an already functioning, non-generic application shell that can be progressively expanded by updating this PRD.
+**AutoLab Digital Showroom** is a bespoke, real-time 3D automotive interior visualization and configuration experience built for **AutoLab**, a premier luxury automotive customisation and interior reupholstery atelier in Nairobi, Kenya.
+
+AutoLab clients frequently desire to transform tired or factory interiors into personalized luxury sanctuaries, but struggle to imagine the finished composition before physical craftsmanship begins. The Digital Showroom enables clients to **participate in the design process and visualize their interior transformation in real-time 3D**, turning visual curiosity into qualified showroom visits and consultative sales conversations.
+
+> **North Star:** *"Visualise the transformation before you commit to it."*
 
 ---
 
-## 2. Core User Personas
-- **Developer / Creator**: Wants to bootstrap a SaaS, marketplace, or mobile-first web app without reinventing auth, design tokens, responsive layout, or ORM configurations.
-- **AI Coding Agent**: Requires an unambiguous, single-source-of-truth document (`/docs`) to determine what features exist, how navigation flows, and what conventions to adhere to.
-- **End User**: Experiences an ultra-fast, visually bespoke web app with zero generic AI tropes (no bloated gradients, no broken mobile viewports, full error state handling).
+## 2. Core Personas
+
+- **The Luxury Vehicle Owner (Primary Client):** Owns a premium luxury vehicle (Mercedes S-Class, Range Rover, Land Cruiser) in East Africa. Desires bespoke personalisation (Nappa leather, diamond quilting, exotic wood/carbon veneers) and wants visual certainty before committing vehicle to the workshop.
+- **AutoLab Sales Advisor (Internal User):** Consults with clients, inspects vehicles physically, and prepares leather hide swatches matching client reference codes (`AL-SC-2026-XXXX`).
+- **Production AI Agent (Astra):** Ingests this PRD and technical specs to produce the 3D assets in Blender and build the application shell.
 
 ---
 
 ## 3. Product User Journey & Navigation Flow
 
 ```
-[ Unauthenticated User ]
+[ Prospective Client ]
           │
           ▼
-   /splash (Optional entrance with animated loader & auto-redirect)
+   / (Digital Showroom Atelier Shell)
           │
-          ├──▶ / (Landing Page with Product Showcase & Features)
-          │         │
-          │         ▼
-          └──▶ /auth (Tabbed Sign In & Sign Up with Validation)
+          ├──▶ 3D Interior Viewport (Real-time WebGL, 360° Orbit, 6 Camera Presets)
+          │
+          ├──▶ Configuration Dock (Material ➔ Colour ➔ Bolster ➔ Veneer ➔ Thread ➔ Ambient)
+          │
+          ├──▶ Real-time Summary Sheet (Reference Code: AL-SC-2026-XXXX)
+          │
+          └──▶ Sales Handoff
                     │
-                    ▼
-          [ Authenticated User ]
+                    ├──▶ WhatsApp Direct Atelier Link (Pre-populated context)
                     │
-                    ▼
-          /dashboard (Application Core Shell)
-              ├── Overview & Metrics
-              ├── Interactive Data Table / List
-              ├── Empty State Demo with Action Modal
-              └── User Settings & Sign-out
+                    └──▶ Showroom Consultation Booking Form
 ```
 
 ---
 
-## 4. Key Functional Requirements
+## 4. Key Functional Modules
 
-### 4.1 Splash Screen (`/splash`)
-- Minimalist branded animation displaying project identity.
-- Auto-redirect or manual "Enter App" button.
-- Reads auth status from `useAuth` hook and routes appropriately.
+### 4.1 Module 01: Experience Shell
+- Full-screen luxury atelier environment designed under Anti-AI Design standards.
+- Deep obsidian dark mode (`#08090C`) with subtle warm champagne gold accents (`#D4AF37`).
+- Viewport toggle between 3D canvas, configuration dock, and preset controls.
 
-### 4.2 Authentication (`/auth`)
-- Accessible tabbed form supporting:
-  - **Sign In**: Email & Password with validation, "Forgot Password" mock, and error banners.
-  - **Sign Up**: Full Name, Email, Password, and Confirmation with strength meter.
-  - **Direct Pass-Through Mode**: A dedicated "Quick Demo Sign-In" button allowing developers and test agents to bypass credential entry during design & prototyping.
-- Integrated with `AuthContext` with pluggable Supabase or Firebase handlers.
+### 4.2 Module 02: Interactive 3D Interior Viewer
+- Three.js / React Three Fiber WebGL canvas loading Draco-compressed `interior.glb`.
+- Bounded orbit controls preventing disorientation or floor clipping.
+- Six calibrated viewpoint presets: Cockpit Master, Driver Cockpit, Center Console, Front Seating, Rear Executive Suite, and Night Ambient Mode.
 
-### 4.3 Landing Page (`/`)
-- Bespoke, non-generic typography and layout (anti-ai-design compliant).
-- Sticky navigation bar with mobile drawer and quick link to `/auth` and `/dashboard`.
-- Hero section explaining the value proposition.
-- "How it Works" and Feature Grid showcasing the 27 agent skills.
-- Call to Action linking directly to project initialization and documentation.
+### 4.3 Module 03: Configuration Engine
+- Zone selector updating `MAT_Upholstery_Primary`, `MAT_Upholstery_Secondary`, `MAT_Trim_Deck_Main`, `MAT_Steering_Leather`, and `EMISSIVE_Ambient_Lighting`.
+- Real-time material uniform updates in < 16ms without model reloads.
 
-### 4.4 Dashboard Shell (`/dashboard`)
-- Collapsible responsive sidebar navigation.
-- Key Metrics Cards (Users, Activity, Conversion, Performance).
-- Filterable and searchable table/list component.
-- Dedicated empty state card with action modal to demonstrate graceful fallback UX.
-- User profile menu with sign-out capability returning the user to `/auth`.
+### 4.4 Module 04: Material & Color Catalogue
+- Factory OEM options (Exclusive Nappa in Black 501A, Sienna Brown 502A, Macchiato Beige 505A, Carmine Red; Open-Pore Poplar/Walnut, Piano Lacquer).
+- AutoLab Bespoke Program (Cognac Tan, Royal Oxblood, Nairobi Emerald, Forged Aerospace Carbon Fiber, Champagne Gold diamond stitching).
+
+### 4.5 Module 05: Configuration Summary & Reference Code
+- Client-side summary generation with deterministic reference code `AL-SC-2026-[HASH4]`.
+- Exportable/shareable configuration card.
+
+### 4.6 Module 06: Sales Consultation Handoff
+- Direct WhatsApp launch pre-filled with configuration details.
+- Showroom consultation appointment request persisting voluntary contact info to database.
+
+### 4.7 Module 07: Lean Backend & Admin
+- Supabase PostgreSQL / Firebase Firestore storing `configurations`, `enquiries`, and `analytics_events`.
+- Internal advisor lookup tool (`/admin`) for retrieving saved configurations by reference code.
 
 ---
 
-## 5. Non-Functional & Quality Requirements
-1. **Anti-AI Design**: Must avoid generic purple/blue gradients, centered cartoon icons, and boring cards. Must enforce intentional 3+ hue palettes, editorial display typography, and smooth micro-animations.
-2. **Defensive Engineering (CodeRabbit DNA)**:
-   - Every async data call must render a Loading state, Empty state, and Error state.
-   - Form inputs must validate boundaries and sanitize input.
-3. **Accessibility**: High-contrast ratios, keyboard focus indicators (`focus-visible:ring-2`), and ARIA labels on all interactive controls.
-4. **Mobile Responsiveness**: Designed mobile-first, ensuring responsive touch targets on small screens.
+## 5. Non-Functional & Quality Standards
+
+1. **Defensive Engineering (CodeRabbit DNA):** Every async data call renders a Loading state, Empty state, and Error state with retry capabilities.
+2. **WebGL Performance:** Steady 60 FPS desktop, 30–60 FPS mobile; master asset < 15MB uncompressed (< 5MB Draco compressed); < 350,000 triangles.
+3. **Accessibility:** WCAG AA contrast standards, keyboard focus rings (`focus-visible:ring-2`), ARIA labels on all swatches and controls.
+4. **Mobile Responsiveness:** Touch-optimized orbit gestures, swipeable preset bar, zero horizontal scroll overflow.
+
+---
+
+## 6. Document Cross-References
+
+* **System Architecture:** [`docs/architecture.md`](architecture.md)
+* **Design System Tokens:** [`docs/design-system.md`](design-system.md)
+* **Astra Master Directive:** [`docs/ASTRA_HANDOFF.md`](ASTRA_HANDOFF.md)
+* **Decision Freeze & Scope:** [`docs/product/decision-freeze-and-scope.md`](product/decision-freeze-and-scope.md)
+* **3D Specification:** [`docs/3d-assets/s-class-3d-specification.md`](3d-assets/s-class-3d-specification.md)
+* **Human Approval Gates:** [`docs/human-approval-gates.md`](human-approval-gates.md)

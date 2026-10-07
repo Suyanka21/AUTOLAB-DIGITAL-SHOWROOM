@@ -1,0 +1,37 @@
+[
+  {
+    "id": "contrast-champagne-gold",
+    "name": "Champagne Gold Luxury Contrast",
+    "hexCode": "#D4AF37",
+    "stitchPattern": "diamond-quilted",
+    "status": "approved"
+  },
+  {
+    "id": "contrast-silver-shadow",
+    "name": "Silver Shadow Tech Stitch",
+    "hexCode": "#C0C4CC",
+    "stitchPattern": "french-seam",
+    "status": "approved"
+  },
+  {
+    "id": "contrast-burnt-amber",
+    "name": "Burnt Amber Heritage Stitch",
+    "hexCode": "#C26829",
+    "stitchPattern": "double-lap",
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "contrast-crimson-red",
+    "name": "Crimson Red Sport Stitch",
+    "hexCode": "#B3131F",
+    "stitchPattern": "perimeter-single",
+    "status": "approved"
+  },
+  {
+    "id": "tone-on-tone-black",
+    "name": "Tone-on-Tone Stealth Black Stitch",
+    "hexCode": "#1A1A1A",
+    "stitchPattern": "french-seam",
+    "status": "approved"
+  }
+]

@@ -1,141 +1,165 @@
-# Suyanka App Template
-> **The Autonomous Full-Stack Starter Template**: Powered by 27 modular agent skills, Next.js 14 App Router, defensive engineering standards, and anti-AI design systems.
+# AutoLab Digital Showroom
+> **Interactive 3D Automotive Interior Configurator & Sales Atelier**  
+> Prepared and codified for downstream production by **Astra**. Governed by 27 active agent skills, Next.js 14 App Router, Three.js WebGL, and Anti-AI Design standards.
 
 ---
 
 <!-- AI_AGENT_DIRECTIVE_START -->
-> ### 🤖 SYSTEM DIRECTIVE FOR ALL AI CODING AGENTS
-> **Applies to**: Claude Code, Cursor, Antigravity, Kilo Code, Windsurf, VS Code (Cline / Roo / Copilot), Lovable, Bolt.new, v0.dev, Google AI Studio, or any LLM-powered coding environment.
+> ### 🤖 SYSTEM DIRECTIVE FOR ALL AI CODING AGENTS (ASTRA & DOWNSTREAM AGENTS)
+> **Applies to**: Astra, Claude Code, Cursor, Antigravity, Kilo Code, Windsurf, VS Code (Cline / Roo / Copilot), Lovable, Bolt.new, v0.dev.
 >
-> 1. **Immediate Ingestion & Source of Truth**:
->    - You are operating inside the **Suyanka App Template**.
->    - All development decisions, feature additions, and schema extensions must derive from the **`/docs` directory**:
->      - [`docs/PRD.md`](docs/PRD.md) — Master product requirements document and user journeys.
->      - [`docs/architecture.md`](docs/architecture.md) — Technical topology and backend configuration.
->      - [`docs/design-system.md`](docs/design-system.md) — Anti-AI design tokens and typography rules.
+> 1. **Primary Operational Specification**:
+>    - Your master entry document is **[`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md)**.
+>    - You are building the **AutoLab Digital Showroom** for the Mercedes-Benz S-Class (V223 LWB).
+>    - All development decisions, 3D asset specifications, and configuration logic must derive strictly from the **`/docs` directory**:
+>      - [`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md) — Master implementation handoff directive.
+>      - [`docs/PRD.md`](docs/PRD.md) — Product requirements and customer journey.
+>      - [`docs/production-plan.md`](docs/production-plan.md) — 4-stage machine-readable implementation roadmap.
+>      - [`docs/3d-assets/`](docs/3d-assets/) — S-Class 3D specification, scene graph map, and Blender pipeline.
+>      - [`docs/configuration/`](docs/configuration/) — Configuration engine, options catalogue, and vehicle expansion.
+>      - [`docs/human-approval-gates.md`](docs/human-approval-gates.md) — 8 explicit human approval gates.
 >    - Your master orchestration contracts are [AGENTS.md](AGENTS.md) and [.agents/rules/skill-orchestration.md](.agents/rules/skill-orchestration.md).
 > 2. **Permanent Cognitive Foundations** (Always Active):
->    - `.agents/skills/global-reasoning-layer/SKILL.md`: You are a defensive reasoning engineer who writes code, not an unverified next-token generator.
->    - `.agents/skills/coderabbit-dna/SKILL.md`: Defensive engineering applied to every change, boundary, and edge condition.
+>    - `.agents/skills/global-reasoning-layer/SKILL.md`: Defensive reasoning engineer, not an unverified generator.
+>    - `.agents/skills/coderabbit-dna/SKILL.md`: Defensive engineering applied to every boundary, edge case, and render loop.
 > 3. **Mandatory UI Order**:
->    - For ANY UI screen, component, or layout work, you MUST execute `.agents/skills/anti-ai-design/SKILL.md` FIRST before `.agents/skills/frontend-ui-engineering/SKILL.md`.
-> 4. **Progressive Skill Loading**:
->    - Discover skills in `.agents/skills/<skill-name>/SKILL.md` via their frontmatter descriptions. Activate and execute on-demand.
-> 5. **Change Summary**:
+>    - For ANY UI screen or component, you MUST execute `.agents/skills/anti-ai-design/SKILL.md` FIRST before `.agents/skills/frontend-ui-engineering/SKILL.md`.
+> 4. **Change Summary**:
 >    - Conclude every completed task with the formal `CHANGE SUMMARY` required by `AGENTS.md`.
 <!-- AI_AGENT_DIRECTIVE_END -->
 
 ---
 
-## 📱 What's Included in the Frontend
+## 🏛️ Project Architecture & Truth Layer Index
 
-- **Splash Screen (`/splash`)**: Minimalist branded entrance with progress indicator and auto/manual transition.
-- **Authentication (`/auth`)**: Tabbed Sign In and Sign Up with validation, password strength meters, error states, and an **Instant Demo Pass-Through** mode for rapid prototyping.
-- **Landing Page (`/`)**: Editorial, non-generic landing page showcasing the 27 agent skills, quickstart commands, and feature pillars.
-- **Dashboard Shell (`/dashboard`)**: Production-ready app shell with sidebar navigation, metric cards, searchable data table, and resilient empty state UX.
-- **UI Primitives (`src/components/ui/`)**: Accessible Button, Input, Card, Badge, and Tabs components.
+The `/docs` directory is the immutable source of truth for the AutoLab Digital Showroom:
+
+```
+docs/
+├── ASTRA_HANDOFF.md                       # ★ Master production directive for Astra
+├── PRD.md                                 # Master Product Requirements Document
+├── architecture.md                        # Full-stack technical topology & data model
+├── design-system.md                       # Luxury Anti-AI design tokens & palette
+├── human-approval-gates.md                # 8 explicit human sign-off gates
+├── production-plan.md                     # Machine-readable 4-stage implementation plan
+│
+├── product/                               # PRODUCT DEFINITION
+│   ├── product-constitution.md            # Foundational principles & non-negotiable boundaries
+│   ├── decision-freeze-and-scope.md       # Frozen V1 scope (included vs excluded)
+│   ├── customer-journey.md                # 6-step customer journey & "WOW" transformation
+│   └── success-definition.md              # Commercial KPIs & conversion definition
+│
+├── 3d-assets/                             # 3D ASSET SPECIFICATION
+│   ├── s-class-reference-specification.md # Confirmed V223 metric cabin dimensions
+│   ├── s-class-3d-specification.md        # 3D interior scope, priority map, tolerances
+│   ├── interior-component-map.md          # Scene graph naming hierarchy (GEO_*, MAT_*)
+│   ├── material-and-texture-specification.md # PBR metallic-roughness shader parameters
+│   ├── blender-production-pipeline.md     # Step-by-step Blender authoring guide
+│   ├── viewer-and-integration-requirements.md # Three.js WebGL rendering & camera presets
+│   ├── zero-purchase-feasibility-gate.md  # Feasibility rubric & commercial purchase rules
+│   └── licensing-and-evidence.md          # IP protection, trademarks & evidence matrix
+│
+├── configuration/                         # CONFIGURATION ENGINE
+│   ├── configuration-model-and-state.md   # State machine & reference code algorithm
+│   ├── configuration-options-catalogue.md # Leather hides, trim veneers, accent threads
+│   └── future-vehicle-expansion-model.md  # Vehicle-asset abstraction (Range Rover, Hilux)
+│
+├── application/                           # APPLICATION MODULES
+│   ├── frontend-architecture.md           # Next.js 14 component tree & 4 UX pillars
+│   ├── backend-and-data-architecture.md   # Lean persistence (Supabase / Firebase)
+│   ├── lead-and-enquiry-flow.md           # WhatsApp launch & showroom booking workflow
+│   └── lightweight-admin-requirements.md  # Advisor lookup & inventory status
+│
+├── quality/                               # VERIFICATION & PERFORMANCE
+│   ├── acceptance-criteria.md             # Functional & 3D verifiable assertions
+│   ├── performance-requirements.md        # 60 FPS, < 15MB asset, < 350k triangle budget
+│   ├── qa-strategy.md                     # 5-tier testing pyramid & device matrix
+│   └── production-readiness-checklist.md  # Pre-launch deployment checklist
+│
+└── schemas/                               # MACHINE-READABLE CONTRACTS
+    ├── vehicle.schema.json                # JSON Schema for vehicle definitions
+    ├── configuration.schema.json          # JSON Schema for configuration states
+    ├── enquiry.schema.json                # JSON Schema for enquiry payloads
+    └── scene-manifest.schema.json         # JSON Schema for 3D glTF scene graph validation
+```
 
 ---
 
-## 🗄️ Backend & ORM: Dual Choice
+## 🏎️ Lead Vehicle: Mercedes-Benz S-Class (V223 LWB)
 
-Switch between **Supabase + Drizzle** or **Firebase** by setting `DATABASE_PROVIDER` in your `.env.local`:
+* **Platform:** Seventh-Generation S-Class Sedan (Series 223)
+* **Chassis:** **V223 Long Wheelbase** in AMG-Line specification
+* **Model Horizon:** MY 2021–2025 portrait OLED baseline
+* **Key Dimensions:** Wheelbase: 3,216 mm | Length: 5,289 mm | Width: 1,954 mm | Height: 1,503 mm
+* **Displays:** 12.8" MBUX Central OLED Display + 12.3" Floating Instrument Cluster
 
+---
+
+## 🎨 Configuration Dimensions (V1 Frozen Flow)
+
+```
+[ Vehicle ] ──▶ [ Primary Leather ] ──▶ [ Secondary Bolster ] ──▶ [ Trim Veneer ] ──▶ [ Accent Thread ] ──▶ [ Ambient LED ] ──▶ [ Reference Code: AL-SC-2026-XXXX ]
+```
+
+1. **Primary Leather:** Exclusive Nappa in Black (501A), Sienna Brown (502A), Macchiato Beige (505A), Carmine Red, or AutoLab Bespoke Hides (Cognac Tan, Royal Oxblood, Nairobi Emerald).
+2. **Secondary Bolsters:** Monotone or contrasting leather split across outer bolsters, armrests, and knee pads.
+3. **Trim Decks:** Anthracite Open-Pore Poplar, Warm Walnut, Piano Lacquer Flowing Lines, or Forged Aerospace Carbon Fiber.
+4. **Accent Stitching:** Champagne Gold Contrast (Diamond Quilt), Silver Shadow (French Seam), Burnt Amber, or Crimson Red.
+5. **Active Ambient Lighting:** Continuous 253-LED optical fiber loop across 64 calibrated RGB tones.
+
+---
+
+## ⚡ Quickstart for Production
+
+### 1. Install Dependencies
 ```bash
-# Toggle between 'supabase' or 'firebase'
-DATABASE_PROVIDER=supabase
+npm install
+```
 
-# Supabase + Drizzle Config (src/lib/db/supabase/)
+### 2. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the application shell.
+
+### 3. Database Setup (Supabase / Firebase)
+Configure `.env.local`:
+```bash
+DATABASE_PROVIDER=supabase # or "firebase"
+
+# Supabase
 NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
 NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
 DATABASE_URL="postgres://postgres:password@db.your-project.supabase.co:5432/postgres"
 
-# Firebase Config (src/lib/db/firebase/)
-NEXT_PUBLIC_FIREBASE_API_KEY="your-api-key"
-NEXT_PUBLIC_FIREBASE_PROJECT_ID="your-project-id"
+# AutoLab WhatsApp Destination
+NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER="254700000000"
 ```
 
 ---
 
-## 🚀 Quickstart for New Projects
+## 🛠️ Machine-Readable Contracts in `src/`
 
-### 1. Clone or Use as GitHub Template
-```bash
-git clone https://github.com/Suyanka21/agent-skills-starter-template.git my-app
-cd my-app
-```
-
-### 2. Install Dependencies & Run Locally
-```bash
-npm install
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) to view the landing page, splash screen, and dashboard.
-
-### 3. Build Features with Any AI Agent
-Whenever you want to build a new feature or pivot this template to a new idea:
-1. Update [`docs/PRD.md`](docs/PRD.md) with your target features.
-2. Prompt your AI coder (Claude Code, Cursor, Antigravity, Kilo Code):
-   ```text
-   Read docs/PRD.md and implement the next feature using the active .agents/skills.
-   ```
+- **TypeScript Types:**
+  - `src/types/vehicle.ts`: Vehicle abstraction and camera presets.
+  - `src/types/configuration.ts`: Selection states, material categories, and summaries.
+  - `src/types/enquiry.ts`: Sales consultation leads and customer contact payloads.
+  - `src/types/asset3d.ts`: Scene graph nodes, priority tiers, tolerances, and budgets.
+- **Seed Configuration Data:**
+  - `src/config/vehicles/mercedes-s-class-v223.json`: Authoritative S-Class V223 specification.
+  - `src/config/materials/`: Curated materials, colors, and accent-threads catalogs.
+  - `src/config/scene-manifest.s-class-v223.json`: 3D node manifest and material slot bindings.
+- **3D Asset Dropzone:**
+  - `public/assets/3d/s-class-v223/`: Destination for Astra's Draco-compressed `interior.glb`.
 
 ---
 
-## 🗂️ Project Directory Architecture
+## 📋 Commercial Governance & Human Approval
 
-```text
-├── .agents/
-│   ├── skills/                       # 27 modular agent skills
-│   │   ├── anti-ai-design/           # Mandatory UI engine + 19 design references
-│   │   ├── global-reasoning-layer/   # Foundation: How the agent thinks
-│   │   ├── coderabbit-dna/           # Foundation: Defensive coding standards
-│   │   ├── using-agent-skills/       # Master orchestrator & lifecycle decision tree
-│   │   └── ... (23 additional skills)
-│   └── rules/
-│       └── skill-orchestration.md    # Always-on execution rules
-├── docs/                             # Source of Truth
-│   ├── PRD.md                        # Product Requirements Document
-│   ├── architecture.md               # Technical Topology & Backend Guide
-│   └── design-system.md              # Design tokens and visual standards
-├── src/
-│   ├── app/                          # Next.js 14 App Router
-│   │   ├── layout.tsx                # Root layout & AuthProvider wrapper
-│   │   ├── globals.css               # Design system tokens and custom CSS
-│   │   ├── page.tsx                  # Public landing page
-│   │   ├── splash/page.tsx           # Splash screen & loader
-│   │   ├── auth/page.tsx             # Sign in / Sign up page
-│   │   └── dashboard/page.tsx        # Authenticated app shell
-│   ├── components/                   # UI Primitives & Layouts
-│   │   ├── ui/                       # Button, Input, Card, Badge, Tabs
-│   │   └── layout/                   # Navbar, Footer
-│   └── lib/                          # Services & Database
-│       ├── utils.ts                  # Classname merging and formatting
-│       ├── auth/                     # AuthContext & Session management
-│       └── db/                       # Supabase + Drizzle and Firebase clients
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-├── AGENTS.md                         # Universal agent contract
-├── GEMINI.md                         # Antigravity & Gemini engine contract
-├── CLAUDE.md                         # Claude Code CLI configuration
-└── setup-new-project.ps1             # Local 1-click project bootstrapper
-```
-
----
-
-## 📚 27 Active Agent Skills Registry
-
-| Category | Skills Included |
-| :--- | :--- |
-| **Foundations** | `global-reasoning-layer`, `coderabbit-dna`, `using-agent-skills` |
-| **Pre-Build** | `idea-refine`, `spec-driven-development`, `planning-and-task-breakdown`, `doubt-driven-development` |
-| **Build** | `context-engineering`, `source-driven-development`, `incremental-implementation`, `anti-ai-design`, `frontend-ui-engineering`, `api-and-interface-design`, `security-and-hardening`, `code-simplification` |
-| **Verify** | `test-driven-development`, `browser-testing-with-devtools`, `debugging-and-error-recovery`, `performance-optimization` |
-| **Review & Ship** | `code-review-and-quality`, `git-workflow-and-versioning`, `ci-cd-and-automation`, `documentation-and-adrs`, `deprecation-and-migration`, `trustless-system-auditor`, `shipping-and-launch` |
-| **Special** | `interview-me` |
+The project is governed by the **KES 750,000** fixed bespoke production fee. Before public launch, the eight human approval gates in [`docs/human-approval-gates.md`](docs/human-approval-gates.md) must be formally confirmed by AutoLab leadership.
 
 ---
 
 ## 📄 License
-MIT © Suyanka
+Commercial Proprietary © AutoLab Kenya / Suyanka
+All rights reserved.

@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SceneManifest",
+  "type": "object",
+  "required": [
+    "assetId",
+    "vehicleModel",
+    "format",
+    "units",
+    "coordinateSystem",
+    "nodes",
+    "materialSlots",
+    "budgets"
+  ],
+  "properties": {
+    "assetId": { "type": "string" },
+    "vehicleModel": { "type": "string" },
+    "format": { "type": "string", "enum": ["glb", "gltf", "blend"] },
+    "units": { "type": "string", "enum": ["meters", "millimeters"] },
+    "coordinateSystem": { "type": "string", "enum": ["Y-Up", "Z-Up"] },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["identifier", "module", "priorityTier", "tolerance", "materialSlot"],
+        "properties": {
+          "identifier": { "type": "string" },
+          "module": { "type": "string" },
+          "priorityTier": { "type": "string", "enum": ["HIGH", "MEDIUM", "LOW"] },
+          "tolerance": { "type": "string", "enum": ["EXACT", "CONTROLLED_APPROX", "APPROXIMATION"] },
+          "materialSlot": { "type": "string" },
+          "kinematic": { "type": "boolean" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "materialSlots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slotIdentifier", "shaderType", "defaultRoughness", "defaultMetallic"],
+        "properties": {
+          "slotIdentifier": { "type": "string" },
+          "shaderType": { "type": "string" },
+          "defaultRoughness": { "type": "number" },
+          "defaultMetallic": { "type": "number" },
+          "hasClearcoat": { "type": "boolean" },
+          "hasNormalMap": { "type": "boolean" },
+          "textureResolutionBudget": { "type": "string" }
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "required": ["maxTriangles", "maxDrawCalls", "maxFileSizeBytes"],
+      "properties": {
+        "maxTriangles": { "type": "number" },
+        "maxDrawCalls": { "type": "number" },
+        "maxFileSizeBytes": { "type": "number" },
+        "maxGpuMemoryMb": { "type": "number" }
+      }
+    }
+  }
+}

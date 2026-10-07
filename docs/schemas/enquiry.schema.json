@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AutoLabEnquiryPayload",
+  "type": "object",
+  "required": [
+    "configurationReferenceCode",
+    "vehicleId",
+    "configurationSummary",
+    "customer",
+    "consentToContact"
+  ],
+  "properties": {
+    "configurationReferenceCode": { "type": "string" },
+    "vehicleId": { "type": "string" },
+    "configurationSummary": {
+      "type": "object",
+      "required": [
+        "referenceCode",
+        "vehicleTitle",
+        "primaryMaterial",
+        "primaryColor",
+        "trimFinish",
+        "accentStitching"
+      ]
+    },
+    "customer": {
+      "type": "object",
+      "required": ["fullName", "phoneOrWhatsApp", "preferredChannel"],
+      "properties": {
+        "fullName": { "type": "string", "minLength": 2 },
+        "phoneOrWhatsApp": { "type": "string", "minLength": 8 },
+        "email": { "type": "string", "format": "email" },
+        "preferredChannel": {
+          "type": "string",
+          "enum": ["showroom_visit", "whatsapp", "phone", "email"]
+        },
+        "customerNotes": { "type": "string" },
+        "existingVehicleDetails": {
+          "type": "object",
+          "properties": {
+            "modelYear": { "type": "string" },
+            "currentInteriorColor": { "type": "string" },
+            "currentCondition": {
+              "type": "string",
+              "enum": ["excellent", "good", "worn", "damaged"]
+            }
+          }
+        }
+      }
+    },
+    "consentToContact": { "type": "boolean", "const": true }
+  }
+}

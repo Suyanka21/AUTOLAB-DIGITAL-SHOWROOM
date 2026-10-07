@@ -1,34 +1,49 @@
-import { collection, doc, getDoc, getDocs, setDoc, query, where } from "firebase/firestore";
+/**
+ * AutoLab Digital Showroom
+ * Firebase Firestore Schema and Client Helpers
+ *
+ * Provides type-safe collection definitions for Configurations and Enquiries.
+ */
+
+import { collection, doc, getDoc, getDocs, setDoc, query, where, orderBy, limit } from "firebase/firestore";
 import { firestore } from "./client";
+import { ConfigurationState, ConfigurationSummary } from "@/types/configuration";
+import { AutoLabEnquiryPayload, EnquiryStatus } from "@/types/enquiry";
 
-export interface FirebaseUser {
+export interface FirebaseConfigurationDoc extends ConfigurationState {
   id: string;
-  email: string;
-  name: string;
-  role: string;
-  createdAt: string;
+  summary: ConfigurationSummary;
 }
 
-export interface FirebaseProject {
+export interface FirebaseEnquiryDoc {
   id: string;
-  userId: string;
-  title: string;
-  description: string;
-  status: "active" | "archived" | "draft";
-  createdAt: string;
+  referenceCode: string;
+  customerName: string;
+  phoneOrWhatsApp: string;
+  email?: string;
+  preferredChannel: string;
+  customerNotes?: string;
+  status: EnquiryStatus;
+  receivedAt: string;
+  configurationSummary: ConfigurationSummary;
 }
 
-export const usersCollection = collection(firestore, "users");
-export const projectsCollection = collection(firestore, "projects");
+export const configurationsCollection = collection(firestore, "configurations");
+export const enquiriesCollection = collection(firestore, "enquiries");
 
-export async function getUserProfile(userId: string): Promise<FirebaseUser | null> {
-  const ref = doc(firestore, "users", userId);
-  const snap = await getDoc(ref);
-  return snap.exists() ? (snap.data() as FirebaseUser) : null;
-}
-
-export async function getProjectsForUser(userId: string): Promise<FirebaseProject[]> {
-  const q = query(projectsCollection, where("userId", "==", userId));
+export async function getConfigurationByRef(referenceCode: string): Promise<FirebaseConfigurationDoc | null> {
+  const q = query(configurationsCollection, where("referenceCode", "==", referenceCode), limit(1));
   const snap = await getDocs(q);
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() } as FirebaseProject));
+  if (snap.empty) return null;
+  const d = snap.docs[0];
+  return { id: d.id, ...d.data() } as FirebaseConfigurationDoc;
+}
+
+export async function saveConfiguration(config: ConfigurationState, summary: ConfigurationSummary): Promise<string> {
+  const ref = doc(configurationsCollection, config.referenceCode);
+  await setDoc(ref, {
+    ...config,
+    summary,
+  });
+  return config.referenceCode;
 }

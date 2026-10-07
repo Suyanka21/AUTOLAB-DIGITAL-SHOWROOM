@@ -1,8 +1,8 @@
 {
-  "name": "suyanka-app-template",
+  "name": "autolab-digital-showroom",
   "version": "1.0.0",
   "private": true,
-  "description": "Suyanka App Template with 27 active agent skills, Next.js 14, Tailwind CSS, and Supabase/Firebase Drizzle ORM",
+  "description": "AutoLab Digital Showroom — Interactive 3D Automotive Interior Configurator & Sales Atelier",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

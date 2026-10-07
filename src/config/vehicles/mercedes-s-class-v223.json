@@ -1,0 +1,148 @@
+{
+  "id": "mercedes-s-class-v223",
+  "brand": "Mercedes-Benz",
+  "model": "S-Class",
+  "generation": "Seventh Generation (V223 Long Wheelbase)",
+  "modelYears": "2021-2025 (Pre-Facelift Validated Baseline)",
+  "chassisCode": "V223",
+  "status": "active",
+  "dimensions": {
+    "wheelbaseMm": 3216,
+    "overallLengthMm": 5289,
+    "overallWidthMm": 1954,
+    "overallHeightMm": 1503,
+    "frontHeadroomMm": 1069,
+    "rearHeadroomMm": 974,
+    "frontLegroomMm": 1045,
+    "rearLegroomMm": 1115
+  },
+  "assetSource": {
+    "modelFile": "assets/3d/s-class-v223/interior.glb",
+    "lodLowFile": "assets/3d/s-class-v223/interior_low.glb",
+    "dracoCompressed": true,
+    "ktx2Textures": true
+  },
+  "materialZones": [
+    {
+      "zoneId": "zone_primary_upholstery",
+      "name": "Primary Seat Upholstery",
+      "description": "Front seat center flutes, rear executive cushions, headrest cushions",
+      "targetMeshPrefixes": [
+        "GEO_Seat_Front_Driver_Flutes",
+        "GEO_Seat_Front_Passenger_Flutes",
+        "GEO_Seat_Rear_Executive_RH_Flutes",
+        "GEO_Seat_Rear_LH_Flutes"
+      ],
+      "allowedMaterialTypes": ["leather", "fabric"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "sienna-brown-502a",
+      "defaultAccentThreadId": "contrast-champagne-gold"
+    },
+    {
+      "zoneId": "zone_secondary_accent",
+      "name": "Secondary Accent Upholstery",
+      "description": "Seat outer bolsters, headrest sides, console side knee pads, armrests",
+      "targetMeshPrefixes": [
+        "GEO_Seat_Front_Bolsters",
+        "GEO_Seat_Rear_Bolsters",
+        "GEO_Console_Center_KneePads",
+        "GEO_Door_Armrests"
+      ],
+      "allowedMaterialTypes": ["leather"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "black-nappa-501a",
+      "defaultAccentThreadId": "contrast-champagne-gold"
+    },
+    {
+      "zoneId": "zone_trim_deck",
+      "name": "Dashboard & Door Trim Deck",
+      "description": "Upper dashboard wing deck, front/rear door trim inserts, center console cover",
+      "targetMeshPrefixes": [
+        "GEO_Trim_Dashboard_WoodDeck",
+        "GEO_Trim_Door_Inserts",
+        "GEO_Console_Center_TrimCover"
+      ],
+      "allowedMaterialTypes": ["wood", "carbon"],
+      "defaultMaterialId": "open-pore-poplar",
+      "defaultColorId": "anthracite-poplar"
+    },
+    {
+      "zoneId": "zone_steering_wheel",
+      "name": "Steering Wheel Assembly",
+      "description": "Double-spoke AMG-Line steering wheel rim and airbag boss",
+      "targetMeshPrefixes": [
+        "GEO_SteeringWheel_AMG_Rim",
+        "GEO_SteeringWheel_AMG_Boss"
+      ],
+      "allowedMaterialTypes": ["leather"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "black-nappa-501a"
+    },
+    {
+      "zoneId": "zone_ambient_light",
+      "name": "Active Ambient Lighting Loop",
+      "description": "Continuous 253-LED optical fiber perimeter sweep",
+      "targetMeshPrefixes": [
+        "GEO_Interior_AmbientLight_FiberStrip"
+      ],
+      "allowedMaterialTypes": ["emissive"],
+      "defaultMaterialId": "active-ambient-led",
+      "defaultColorId": "sunset-orange"
+    }
+  ],
+  "cameraPresets": [
+    {
+      "id": "cam_cockpit_master",
+      "name": "Cockpit Master",
+      "description": "Full dashboard sweep, MBUX 12.8 OLED, steering wheel, and front doors",
+      "position": [0.0, 1.15, 0.25],
+      "target": [0.0, 0.95, -0.65],
+      "fov": 45
+    },
+    {
+      "id": "cam_steering_cluster",
+      "name": "Driver Cockpit & Instrument Cluster",
+      "description": "Driver focal point on 12.3 cluster, AMG-Line double-spoke wheel and controls",
+      "position": [-0.38, 1.12, 0.05],
+      "target": [-0.38, 1.02, -0.55],
+      "fov": 38
+    },
+    {
+      "id": "cam_center_console",
+      "name": "Center Console & MBUX Display",
+      "description": "Cascading waterfall console, 12.8 portrait screen, tambour door and armrest",
+      "position": [0.15, 1.18, -0.1],
+      "target": [0.0, 0.88, -0.45],
+      "fov": 40
+    },
+    {
+      "id": "cam_front_seats",
+      "name": "Front Multicontour Seating",
+      "description": "Side isometric view of front multicontour seats, diamond quilting, and stitching",
+      "position": [0.75, 1.1, 0.2],
+      "target": [0.0, 0.85, 0.0],
+      "fov": 42
+    },
+    {
+      "id": "cam_rear_executive",
+      "name": "Rear Executive Suite",
+      "description": "First-Class rear suite, 43.5 degree recline, powered calf rest, business console",
+      "position": [0.25, 1.15, 0.95],
+      "target": [0.42, 0.85, 1.35],
+      "fov": 46
+    },
+    {
+      "id": "cam_night_ambient",
+      "name": "Night Ambient Illumination",
+      "description": "Dramatic low-light view highlighting the 253-LED active optical fiber arc",
+      "position": [0.0, 1.08, 0.45],
+      "target": [0.0, 0.95, -0.65],
+      "fov": 52
+    }
+  ],
+  "metadata": {
+    "sourceBrief": "AUTOLAB_S_CLASS_3D_ASSET_BRIEF.md",
+    "evidenceConfidence": "CONFIRMED",
+    "notes": "Verified against Mercedes-Maybach Press Kit (Asset ID: 46931) and MY2023-2024 Dealer Order Guides."
+  }
+}

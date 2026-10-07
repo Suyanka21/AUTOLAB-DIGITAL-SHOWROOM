@@ -1,0 +1,85 @@
+[
+  {
+    "id": "nappa-exclusive",
+    "name": "Exclusive Nappa Leather",
+    "category": "leather",
+    "description": "Ultra-fine semi-matte grain with natural stretch and breathability.",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": true,
+    "roughness": 0.48,
+    "metallic": 0.0,
+    "clearcoat": 0.05,
+    "status": "approved"
+  },
+  {
+    "id": "autolab-heritage-hide",
+    "name": "AutoLab Heritage Semi-Aniline Leather",
+    "category": "leather",
+    "description": "Full-grain luxury hide treated with bespoke oils for deep luster and supple hand.",
+    "isFactoryOEM": false,
+    "isAutoLabBespoke": true,
+    "roughness": 0.42,
+    "metallic": 0.0,
+    "clearcoat": 0.08,
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "open-pore-poplar",
+    "name": "Anthracite Open-Pore Poplar Wood",
+    "category": "wood",
+    "description": "Natural open-grain timber veneer with tactile micro-valleys and anisotropic reflection.",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "roughness": 0.68,
+    "metallic": 0.0,
+    "clearcoat": 0.0,
+    "status": "approved"
+  },
+  {
+    "id": "open-pore-walnut",
+    "name": "Warm Brown Open-Pore Walnut Wood",
+    "category": "wood",
+    "description": "Rich architectural walnut with matte anisotropic pore highlights.",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "roughness": 0.65,
+    "metallic": 0.0,
+    "clearcoat": 0.0,
+    "status": "approved"
+  },
+  {
+    "id": "piano-lacquer-flowing-lines",
+    "name": "Piano Lacquer Flowing Lines",
+    "category": "wood",
+    "description": "Deep obsidian mirror lacquer with embedded fine horizontal pinstriping.",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "roughness": 0.06,
+    "metallic": 0.0,
+    "clearcoat": 1.0,
+    "status": "approved"
+  },
+  {
+    "id": "autolab-forged-carbon",
+    "name": "AutoLab Forged Aerospace Carbon Fiber",
+    "category": "carbon",
+    "description": "Bespoke marbling of forged carbon filaments sealed under optical clearcoat.",
+    "isFactoryOEM": false,
+    "isAutoLabBespoke": true,
+    "roughness": 0.12,
+    "metallic": 0.15,
+    "clearcoat": 0.95,
+    "status": "pending_autolab_approval"
+  },
+  {
+    "id": "active-ambient-led",
+    "name": "Active Ambient Optical Fiber Core",
+    "category": "emissive",
+    "description": "253-LED diffusion strip with adjustable 64-tone color calibration.",
+    "isFactoryOEM": true,
+    "isAutoLabBespoke": false,
+    "roughness": 0.15,
+    "metallic": 0.0,
+    "status": "approved"
+  }
+]
