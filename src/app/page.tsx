@@ -52,24 +52,30 @@ export default function AtelierShowroomPage() {
               <div className="lg:col-span-7 flex flex-col space-y-4">
                 <VisualizationStage />
 
-                {/* Technical Footnote / Production Context */}
-                <div className="rounded-xl bg-[#141416]/60 border border-white/[0.06] p-4 flex items-start space-x-3">
-                  <div className="p-2 rounded-lg bg-[#38B6FF]/10 text-[#38B6FF] shrink-0 mt-0.5">
-                    <SlidersHorizontal className="h-4 w-4" />
-                  </div>
-                  <div className="text-xs space-y-1">
-                    <p className="font-semibold text-slate-200">
-                      Confirmed V1 Configuration Dimensions
-                    </p>
-                    <p className="text-slate-400 leading-relaxed">
-                      This showcase preview reflects the frozen V1 sequence:{" "}
-                      <span className="text-white font-medium">
-                        Material → Colour → Accent Thread → Interior Composition
-                      </span>
-                      . Mesh nodes and 3D Draco GLB bindings are decoupled for Astra downstream integration.
-                    </p>
-                  </div>
+              {/* Technical Footnote / Production Context */}
+              <div className="rounded-xl bg-[#141416]/80 border border-amber-500/20 p-4 flex items-start space-x-3">
+                <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0 mt-0.5">
+                  <SlidersHorizontal className="h-4 w-4" />
                 </div>
+                <div className="text-xs space-y-1">
+                  <div className="flex items-center space-x-2">
+                    <p className="font-semibold text-white">
+                      Pre-Production Showcase Shell • Interaction Scaffold
+                    </p>
+                    <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
+                      UI Demonstration Only
+                    </span>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">
+                    This local interface demonstrates the frontend architecture for the confirmed V1 flow:{" "}
+                    <span className="text-[#38B6FF] font-medium">
+                      Material → Colour → Accent Thread → Interior Composition
+                    </span>
+                    . Visible options (leather hues, veneers, stitch patterns, ambient presets) are proposed candidates for interaction prototyping only and are{" "}
+                    <span className="text-amber-300 font-medium">not AutoLab-approved commercial catalogue items</span>.
+                  </p>
+                </div>
+              </div>
               </div>
 
               {/* Right Column: 4-Step Configuration Drawer (5 cols on lg) */}

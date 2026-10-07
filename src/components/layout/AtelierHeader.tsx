@@ -62,8 +62,10 @@ export function AtelierHeader() {
         <div className="flex items-center space-x-3">
           {/* Demonstration Mode Indicator Pill */}
           <div className="flex items-center space-x-2 rounded-full bg-[#141416] border border-emerald-500/20 px-3 py-1 text-xs text-emerald-400 shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-mono text-[11px] tracking-tight">Preview Mode — Local Build</span>
+            <span className="h-2 w-2 rounded-full bg-[#38B6FF] animate-pulse" />
+            <span className="font-mono text-[11px] tracking-tight text-slate-300">
+              Showcase Shell • Interaction Scaffold
+            </span>
           </div>
 
           {/* Reference Hash indicator */}

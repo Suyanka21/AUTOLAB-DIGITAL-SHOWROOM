@@ -62,9 +62,14 @@ export function SummaryBar() {
                 className="group relative flex items-center space-x-2 rounded-xl bg-[#16171B] border border-white/[0.08] hover:border-[#38B6FF]/50 px-3 py-2 transition-all shadow-inner"
               >
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
-                    Atelier Code
-                  </span>
+                  <div className="flex items-center space-x-1.5">
+                    <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
+                      Atelier Code
+                    </span>
+                    <span className="text-[9px] font-mono text-amber-400/80 bg-amber-500/10 px-1 rounded">
+                      Scaffold
+                    </span>
+                  </div>
                   <span className="font-mono text-xs sm:text-sm font-bold text-white group-hover:text-[#38B6FF] transition-colors">
                     {referenceCode}
                   </span>

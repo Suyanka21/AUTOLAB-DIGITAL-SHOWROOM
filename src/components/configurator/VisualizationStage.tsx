@@ -340,11 +340,11 @@ export function VisualizationStage() {
                 style={{ backgroundColor: ambientLightHex }}
               />
               <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300">
-                Live Specification
+                Live Spec (UI Scaffold)
               </span>
             </div>
-            <span className="text-[10px] font-mono text-[#38B6FF]">
-              {referenceCode.slice(-4)}
+            <span className="text-[9px] font-mono text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">
+              Proposed
             </span>
           </div>
 

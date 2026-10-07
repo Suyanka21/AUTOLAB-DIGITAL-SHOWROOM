@@ -95,17 +95,24 @@ docs/
 
 ---
 
-## 🎨 Configuration Dimensions (V1 Frozen Flow)
+## 🎨 Configuration Dimensions (Confirmed V1 Flow)
 
 ```
-[ Vehicle ] ──▶ [ Primary Leather ] ──▶ [ Secondary Bolster ] ──▶ [ Trim Veneer ] ──▶ [ Accent Thread ] ──▶ [ Ambient LED ] ──▶ [ Reference Code: AL-SC-2026-XXXX ]
+[ Vehicle ] ──▶ [ 1. Material ] ──▶ [ 2. Colour ] ──▶ [ 3. Accent Thread ] ──▶ [ 4. Interior Composition ] ──▶ [ Reference Code: AL-SC-2026-XXXX ]
 ```
 
-1. **Primary Leather:** Exclusive Nappa in Black (501A), Sienna Brown (502A), Macchiato Beige (505A), Carmine Red, or AutoLab Bespoke Hides (Cognac Tan, Royal Oxblood, Nairobi Emerald).
-2. **Secondary Bolsters:** Monotone or contrasting leather split across outer bolsters, armrests, and knee pads.
-3. **Trim Decks:** Anthracite Open-Pore Poplar, Warm Walnut, Piano Lacquer Flowing Lines, or Forged Aerospace Carbon Fiber.
-4. **Accent Stitching:** Champagne Gold Contrast (Diamond Quilt), Silver Shadow (French Seam), Burnt Amber, or Crimson Red.
-5. **Active Ambient Lighting:** Continuous 253-LED optical fiber loop across 64 calibrated RGB tones.
+The **only confirmed V1 configuration sequence** is strictly:
+**Material → Colour → Accent Thread → Interior Composition**
+
+1. **Material:** Primary luxury upholstery substrate (`nappa-exclusive`, `autolab-heritage-hide`).
+2. **Colour:** Selected leather hue (candidate hues such as Black 501A, Sienna Brown 502A, Macchiato Beige 505A, Carmine Red, Cognac Tan, Oxblood, and Emerald are *proposed OEM/bespoke candidates* pending Gate 3).
+3. **Accent Thread:** Contrast perimeter and quilted stitching thread (`contrast-champagne-gold`, `contrast-silver-shadow`, `contrast-burnt-amber`, etc. are *proposed candidates* pending Gate 4).
+4. **Interior Composition:** Tailored zoning tier (`bespoke_monotone`, `bespoke_duotone`, `executive_fluted`).
+
+> ⚠️ **Governance Notice on Proposed Options:**  
+> Trim deck veneers (wood/carbon), 64-tone active ambient lighting switching, and separate secondary zone segmentation are **proposed extended options** (Gate 2 & Gate 5) supported in the 3D scene graph and interactive UI scaffold, but are **NOT confirmed AutoLab commercial catalogue offerings** until human sign-off.
+>
+> **Local UI Status:** The local Next.js UI is a **pre-production showcase shell / interaction scaffold**. Its visible proposed options exist solely to demonstrate the UI architecture and state bindings and must not be presented as approved AutoLab commercial catalogue items.
 
 ---
 
