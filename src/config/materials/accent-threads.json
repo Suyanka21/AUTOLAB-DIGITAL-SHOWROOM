@@ -4,34 +4,44 @@
     "name": "Champagne Gold Luxury Contrast",
     "hexCode": "#D4AF37",
     "stitchPattern": "diamond-quilted",
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-04",
+    "notes": "Proposed accent thread. Requires AutoLab physical workshop thread and stitch machine signoff."
   },
   {
     "id": "contrast-silver-shadow",
     "name": "Silver Shadow Tech Stitch",
     "hexCode": "#C0C4CC",
     "stitchPattern": "french-seam",
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-04",
+    "notes": "Proposed accent thread. Requires AutoLab signoff."
   },
   {
     "id": "contrast-burnt-amber",
     "name": "Burnt Amber Heritage Stitch",
     "hexCode": "#C26829",
     "stitchPattern": "double-lap",
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-04",
+    "notes": "Proposed bespoke thread option. Requires AutoLab signoff."
   },
   {
     "id": "contrast-crimson-red",
     "name": "Crimson Red Sport Stitch",
     "hexCode": "#B3131F",
     "stitchPattern": "perimeter-single",
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-04",
+    "notes": "Proposed sport contrast stitch. Requires AutoLab signoff."
   },
   {
     "id": "tone-on-tone-black",
     "name": "Tone-on-Tone Stealth Black Stitch",
     "hexCode": "#1A1A1A",
     "stitchPattern": "french-seam",
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-04",
+    "notes": "Proposed stealth stitch option. Requires AutoLab signoff."
   }
 ]

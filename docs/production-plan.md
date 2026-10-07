@@ -27,7 +27,7 @@ No generic automotive marketplace, no exterior car body modeling, no e-commerce 
 * Target chassis: Mercedes-Benz S-Class Seventh Generation (V223 Long Wheelbase).
 * Exact metric cabin dimensions: Wheelbase (3,216 mm), Front Headroom (1,069 mm), Rear Legroom (1,115 mm), Screens (12.8" and 12.3").
 * Scene graph hierarchy: Standardized node identifiers (`GEO_Dashboard_Screen_Central_OLED`, etc.).
-* Configuration flow: Vehicle ➔ Material ➔ Colour ➔ Accent Thread ➔ Visual Composition ➔ Summary.
+* Configuration flow: **Material ➔ Colour ➔ Accent Thread ➔ Interior Composition** (Confirmed V1 sequence). Swatches and patterns are proposed candidates pending AutoLab signoff.
 
 ### 1.6 What is unknown?
 * Precise internal mechanical rail profiles and motor housings beneath seat cushions (simplified planar geometry permitted).
@@ -63,7 +63,7 @@ Stage 2: Viewer & Integration (React Three Fiber)
          │
 Stage 3: Configuration UI & Experience (Next.js 14)
          ├── Luxury design system (obsidian dark mode, gold accents)
-         ├── Zone selector, material & color swatches
+         ├── Confirmed 4-step selector: Material ➔ Colour ➔ Accent Thread ➔ Composition
          └── Deterministic Reference Code generator (AL-SC-2026-XXXX)
          │
 Stage 4: Lead Flow & Persistence (Supabase / WhatsApp)

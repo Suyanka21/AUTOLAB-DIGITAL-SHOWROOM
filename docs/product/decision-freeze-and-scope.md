@@ -14,8 +14,10 @@ The following decisions define the immutable operational boundaries of Version 1
 | **Product Purpose** | Interactive interior visualisation and configuration atelier. | Do not add e-commerce checkout, payment gateways, or cart logic. |
 | **Lead Vehicle Platform** | Mercedes-Benz S-Class (Seventh Generation — V223 Long Wheelbase). | Focus 100% of 3D asset budget on the V223 interior cabin. |
 | **Asset Domain** | Vehicle interior cabin (Cockpit + Seating + Console + Doors + Lighting). | Exclude exterior bodywork, engine bay, suspension, or underbody. |
-| **Configuration Flow** | Vehicle ➔ Material ➔ Colour ➔ Accent Thread ➔ Visual Composition. | Keep flow visual, intuitive, and focused on high-impact transformation. |
-| **Primary Material** | Leather (Exclusive Nappa & AutoLab Bespoke Hides). Fabric as secondary. | Factory OEM tones + approved AutoLab bespoke shades only. |
+| **Configuration Flow** | **Material ➔ Colour ➔ Accent Thread ➔ Interior Composition** | Confirmed 4-step flow. Keep visual, intuitive, and focused on high-impact transformation. |
+| **Primary Material** | Confirmed: **Leather** (Fabric secondary where supported). | Swatch colors & hides are PROPOSED candidates pending AutoLab Gate 3 signoff. |
+| **Accent Thread** | Confirmed dimension. | Thread colors & stitch patterns are PROPOSED candidates pending AutoLab Gate 4 signoff. |
+| **Interior Composition**| Confirmed dimension (monotone, duotone, fluted composition). | Extended zones (veneers, steering wheel, ambient light) are PROPOSED / UNCONFIRMED. |
 | **Commercial Purpose** | Lead generation and high-context sales consultation handoff. | Carry structured configuration reference code into AutoLab engagement. |
 | **Pricing Policy** | No automated or fixed pricing in V1. Bespoke physical quotes only. | Display consultation prompt: *"Custom quotations tailored upon inspection"*. |
 | **Backend Footprint** | Lean serverless persistence (Configurations + Leads + Events). | No complex ERP, no multi-tenant CRM, no vehicle specification DB. |

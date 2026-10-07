@@ -538,17 +538,10 @@ Responsible for:
 - technical experimentation;
 - complex implementation where appropriate.
 
-### Lovable
+### Lovable (REMOVED FROM PIPELINE)
 
-Responsible for:
+> **Governance Notice**: Lovable is NOT part of the current production pipeline. All application shell, standard frontend components, forms, dashboards, and conventional UI are owned directly by Astra and Human Engineers alongside 3D WebGL workflows.
 
-- application shell;
-- standard frontend components;
-- forms;
-- dashboards;
-- conventional application UI.
-
-It does not own the core 3D/configuration architecture.
 
 ### Code review system
 

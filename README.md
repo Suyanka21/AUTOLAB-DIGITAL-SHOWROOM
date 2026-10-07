@@ -6,7 +6,7 @@
 
 <!-- AI_AGENT_DIRECTIVE_START -->
 > ### 🤖 SYSTEM DIRECTIVE FOR ALL AI CODING AGENTS (ASTRA & DOWNSTREAM AGENTS)
-> **Applies to**: Astra, Claude Code, Cursor, Antigravity, Kilo Code, Windsurf, VS Code (Cline / Roo / Copilot), Lovable, Bolt.new, v0.dev.
+> **Applies to**: Astra, Claude Code, Cursor, Antigravity, Kilo Code, Windsurf, VS Code (Cline / Roo / Copilot), Bolt.new, v0.dev.
 >
 > 1. **Primary Operational Specification**:
 >    - Your master entry document is **[`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md)**.

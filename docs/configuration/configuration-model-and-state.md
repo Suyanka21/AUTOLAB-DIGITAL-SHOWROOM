@@ -5,30 +5,27 @@
 
 ---
 
-## 1. Frozen V1 Configuration Flow
+## 1. Confirmed V1 Configuration Flow
 
-The configuration flow is strictly sequenced to ensure intuitive progression:
+The configuration flow is strictly sequenced around the four confirmed dimensions from the Product Blueprint:
 
 ```
 [ 1. Select Vehicle Platform ] (Mercedes-Benz S-Class V223 Baseline)
                 │
                 ▼
-[ 2. Select Primary Upholstery ] (Exclusive Nappa / AutoLab Bespoke Hide + Base Color)
+[ 2. Select Material ] (Confirmed primary: Leather)
                 │
                 ▼
-[ 3. Select Secondary Bolster Accent ] (Monotone match or two-tone split)
+[ 3. Select Colour ] (Proposed candidates pending AutoLab Gate 3 approval)
                 │
                 ▼
-[ 4. Select Dashboard & Door Veneer ] (Poplar, Walnut, Piano Lacquer, or Forged Carbon)
+[ 4. Select Accent Thread ] (Proposed candidates pending AutoLab Gate 4 approval)
                 │
                 ▼
-[ 5. Select Accent Stitching & Thread ] (Stitch pattern + thread hue)
+[ 5. Select Interior Composition ] (Monotone Hide, Duotone Split, Executive Fluted)
                 │
                 ▼
-[ 6. Set Active Ambient Lighting Mood ] (253-LED continuous fiber optical hue)
-                │
-                ▼
-[ 7. Generate Configuration Summary ] ──▶ Reference Code: AL-SC-2026-XXXX
+[ 6. Generate Configuration Summary ] ──▶ Reference Code: AL-SC-2026-XXXX
 ```
 
 ---
@@ -44,31 +41,24 @@ export interface ConfigurationState {
   createdAt: string;              // ISO 8601 timestamp
   updatedAt: string;              // ISO 8601 timestamp
   selections: {
-    primaryUpholstery: {
-      zoneId: "zone_primary_upholstery";
-      materialId: string;         // e.g. "nappa-exclusive"
-      colorId: string;            // e.g. "sienna-brown-502a"
-      accentThreadId?: string;    // e.g. "contrast-champagne-gold"
+    // 1. CONFIRMED V1 CORE: Material -> Colour -> Accent Thread -> Interior Composition
+    primaryMaterialId: string;     // Confirmed: Leather (or fabric where supported)
+    primaryColorId: string;        // Proposed candidate, requires AutoLab approval
+    accentThreadId: string;        // Proposed candidate, requires AutoLab approval
+    interiorComposition: {
+      tier: "bespoke_monotone" | "bespoke_duotone" | "executive_fluted";
+      appliedZones: string[];      // Zones modified in this composition
     };
-    secondaryAccent?: {
-      zoneId: "zone_secondary_accent";
-      materialId: string;
-      colorId: string;
-      accentThreadId?: string;
+    // 2. PROPOSED / EXTENDED SELECTIONS (Pending AutoLab Gate 5 confirmation)
+    extendedZones?: {
+      secondaryAccentBolsters?: ZoneSelection;
+      trimDeckVeneer?: ZoneSelection;
+      steeringWheel?: ZoneSelection;
     };
-    trimDeck: {
-      zoneId: "zone_trim_deck";
-      materialId: string;         // e.g. "open-pore-poplar"
-      colorId: string;            // e.g. "anthracite-poplar"
-    };
-    steeringWheel: {
-      zoneId: "zone_steering_wheel";
-      materialId: string;
-      colorId: string;
-    };
-    ambientLighting?: {
+    // 3. 3D VISUAL SETTINGS (Asset feature, unconfirmed customer dimension in V1)
+    ambientLightingPreset?: {
       optionId: string;
-      colorHex: string;           // e.g. "#FF5722"
+      colorHex: string;
     };
   };
   notes?: string;

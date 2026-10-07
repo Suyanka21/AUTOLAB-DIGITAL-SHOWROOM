@@ -26,7 +26,8 @@
     {
       "zoneId": "zone_primary_upholstery",
       "name": "Primary Seat Upholstery",
-      "description": "Front seat center flutes, rear executive cushions, headrest cushions",
+      "governanceStatus": "CONFIRMED_V1_CORE",
+      "description": "Front seat center flutes, rear executive cushions, headrest cushions. Confirmed target for Material, Colour, Accent Thread, and Composition.",
       "targetMeshPrefixes": [
         "GEO_Seat_Front_Driver_Flutes",
         "GEO_Seat_Front_Passenger_Flutes",
@@ -41,7 +42,9 @@
     {
       "zoneId": "zone_secondary_accent",
       "name": "Secondary Accent Upholstery",
-      "description": "Seat outer bolsters, headrest sides, console side knee pads, armrests",
+      "governanceStatus": "PROPOSED_EXTENDED_ZONE",
+      "approvalGate": "GATE-05",
+      "description": "Seat outer bolsters, headrest sides, console side knee pads, armrests. Supported in 3D geometry; pending AutoLab configuration depth confirmation.",
       "targetMeshPrefixes": [
         "GEO_Seat_Front_Bolsters",
         "GEO_Seat_Rear_Bolsters",
@@ -56,7 +59,9 @@
     {
       "zoneId": "zone_trim_deck",
       "name": "Dashboard & Door Trim Deck",
-      "description": "Upper dashboard wing deck, front/rear door trim inserts, center console cover",
+      "governanceStatus": "PROPOSED_EXTENDED_ZONE",
+      "approvalGate": "GATE-05",
+      "description": "Upper dashboard wing deck, front/rear door trim inserts, center console cover. Supported in 3D geometry; customer veneer swappability pending AutoLab confirmation.",
       "targetMeshPrefixes": [
         "GEO_Trim_Dashboard_WoodDeck",
         "GEO_Trim_Door_Inserts",
@@ -69,7 +74,9 @@
     {
       "zoneId": "zone_steering_wheel",
       "name": "Steering Wheel Assembly",
-      "description": "Double-spoke AMG-Line steering wheel rim and airbag boss",
+      "governanceStatus": "PROPOSED_EXTENDED_ZONE",
+      "approvalGate": "GATE-05",
+      "description": "Double-spoke AMG-Line steering wheel rim and airbag boss. Supported in 3D geometry; pending AutoLab confirmation.",
       "targetMeshPrefixes": [
         "GEO_SteeringWheel_AMG_Rim",
         "GEO_SteeringWheel_AMG_Boss"
@@ -81,7 +88,9 @@
     {
       "zoneId": "zone_ambient_light",
       "name": "Active Ambient Lighting Loop",
-      "description": "Continuous 253-LED optical fiber perimeter sweep",
+      "governanceStatus": "3D_FEATURE_PROPOSED_CONFIG",
+      "approvalGate": "GATE-05",
+      "description": "Continuous 253-LED optical fiber perimeter sweep. Built into 3D asset as visual feature; customer color switching in V1 is unconfirmed.",
       "targetMeshPrefixes": [
         "GEO_Interior_AmbientLight_FiberStrip"
       ],

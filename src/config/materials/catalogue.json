@@ -3,13 +3,15 @@
     "id": "nappa-exclusive",
     "name": "Exclusive Nappa Leather",
     "category": "leather",
-    "description": "Ultra-fine semi-matte grain with natural stretch and breathability.",
+    "description": "Ultra-fine semi-matte grain with natural stretch. Primary luxury material baseline.",
     "isFactoryOEM": true,
-    "isAutoLabBespoke": true,
+    "isAutoLabBespoke": false,
     "roughness": 0.48,
     "metallic": 0.0,
     "clearcoat": 0.05,
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Research baseline from Mercedes-Benz order guides. Requires AutoLab physical catalog confirmation."
   },
   {
     "id": "autolab-heritage-hide",
@@ -21,7 +23,9 @@
     "roughness": 0.42,
     "metallic": 0.0,
     "clearcoat": 0.08,
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed bespoke custom hide. Requires AutoLab supplier and hide availability confirmation."
   },
   {
     "id": "open-pore-poplar",
@@ -33,7 +37,9 @@
     "roughness": 0.68,
     "metallic": 0.0,
     "clearcoat": 0.0,
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed trim deck material. Unconfirmed whether customer veneer customization is enabled in V1."
   },
   {
     "id": "open-pore-walnut",
@@ -45,7 +51,9 @@
     "roughness": 0.65,
     "metallic": 0.0,
     "clearcoat": 0.0,
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed trim deck material candidate."
   },
   {
     "id": "piano-lacquer-flowing-lines",
@@ -57,7 +65,9 @@
     "roughness": 0.06,
     "metallic": 0.0,
     "clearcoat": 1.0,
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed factory veneer candidate."
   },
   {
     "id": "autolab-forged-carbon",
@@ -69,7 +79,9 @@
     "roughness": 0.12,
     "metallic": 0.15,
     "clearcoat": 0.95,
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed bespoke aftermarket option. Requires AutoLab physical fabrication signoff."
   },
   {
     "id": "active-ambient-led",
@@ -80,6 +92,8 @@
     "isAutoLabBespoke": false,
     "roughness": 0.15,
     "metallic": 0.0,
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-05",
+    "notes": "Built into 3D asset. Unconfirmed whether ambient lighting is an exposed customer configuration dimension in V1."
   }
 ]

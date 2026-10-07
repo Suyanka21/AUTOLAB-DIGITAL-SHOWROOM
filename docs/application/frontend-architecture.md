@@ -1,7 +1,7 @@
 # Frontend Application Architecture
 **Document:** `docs/application/frontend-architecture.md`  
 **Authority:** Product Blueprint (Sections 18 & 19)  
-**Target Consumer:** Frontend Engineers (Lovable / Astra / Human Engineers)  
+**Target Consumer:** Frontend Engineers (Astra / Human Engineers)  
 
 ---
 

@@ -7,7 +7,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["nappa-exclusive"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-03",
+    "notes": "Research baseline from Mercedes-Benz order guides. Requires AutoLab physical catalog confirmation."
   },
   {
     "id": "sienna-brown-502a",
@@ -17,7 +19,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["nappa-exclusive"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-03",
+    "notes": "Research baseline from Mercedes-Benz order guides. Requires AutoLab physical catalog confirmation."
   },
   {
     "id": "macchiato-beige-505a",
@@ -27,7 +31,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["nappa-exclusive"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-03",
+    "notes": "Research baseline from Mercedes-Benz order guides. Requires AutoLab physical catalog confirmation."
   },
   {
     "id": "carmine-red-oem",
@@ -37,7 +43,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["nappa-exclusive"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-03",
+    "notes": "Sport interior reference. Requires AutoLab physical catalog confirmation."
   },
   {
     "id": "autolab-cognac-tan",
@@ -46,7 +54,9 @@
     "isFactoryOEM": false,
     "isAutoLabBespoke": true,
     "compatibleMaterialIds": ["nappa-exclusive", "autolab-heritage-hide"],
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-03",
+    "notes": "Proposed bespoke leather shade. Requires AutoLab physical swatch approval."
   },
   {
     "id": "autolab-royal-oxblood",
@@ -55,7 +65,9 @@
     "isFactoryOEM": false,
     "isAutoLabBespoke": true,
     "compatibleMaterialIds": ["nappa-exclusive", "autolab-heritage-hide"],
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-03",
+    "notes": "Proposed bespoke leather shade. Requires AutoLab physical swatch approval."
   },
   {
     "id": "autolab-nairobi-emerald",
@@ -64,7 +76,9 @@
     "isFactoryOEM": false,
     "isAutoLabBespoke": true,
     "compatibleMaterialIds": ["nappa-exclusive", "autolab-heritage-hide"],
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-03",
+    "notes": "Proposed bespoke leather shade. Requires AutoLab physical swatch approval."
   },
   {
     "id": "anthracite-poplar",
@@ -73,7 +87,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["open-pore-poplar"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed trim finish."
   },
   {
     "id": "warm-walnut",
@@ -82,7 +98,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["open-pore-walnut"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed trim finish."
   },
   {
     "id": "pitch-black-lacquer",
@@ -91,7 +109,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["piano-lacquer-flowing-lines"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed trim finish."
   },
   {
     "id": "forged-carbon-weave",
@@ -100,7 +120,9 @@
     "isFactoryOEM": false,
     "isAutoLabBespoke": true,
     "compatibleMaterialIds": ["autolab-forged-carbon"],
-    "status": "pending_autolab_approval"
+    "status": "proposed_autolab_bespoke",
+    "approvalGate": "GATE-02",
+    "notes": "Proposed bespoke trim finish. Requires AutoLab physical fabrication confirmation."
   },
   {
     "id": "sunset-orange",
@@ -109,7 +131,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["active-ambient-led"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-05",
+    "notes": "3D visual preset. Unconfirmed whether customer ambient switching is an exposed V1 dimension."
   },
   {
     "id": "miami-rose",
@@ -118,7 +142,9 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["active-ambient-led"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-05",
+    "notes": "3D visual preset."
   },
   {
     "id": "ocean-blue",
@@ -127,6 +153,8 @@
     "isFactoryOEM": true,
     "isAutoLabBespoke": false,
     "compatibleMaterialIds": ["active-ambient-led"],
-    "status": "approved"
+    "status": "proposed_oem_reference",
+    "approvalGate": "GATE-05",
+    "notes": "3D visual preset."
   }
 ]

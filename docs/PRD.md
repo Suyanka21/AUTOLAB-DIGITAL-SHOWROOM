@@ -34,7 +34,7 @@ AutoLab clients frequently desire to transform tired or factory interiors into p
           │
           ├──▶ 3D Interior Viewport (Real-time WebGL, 360° Orbit, 6 Camera Presets)
           │
-          ├──▶ Configuration Dock (Material ➔ Colour ➔ Bolster ➔ Veneer ➔ Thread ➔ Ambient)
+          ├──▶ Configuration Dock (Material ➔ Colour ➔ Accent Thread ➔ Interior Composition)
           │
           ├──▶ Real-time Summary Sheet (Reference Code: AL-SC-2026-XXXX)
           │
@@ -59,13 +59,15 @@ AutoLab clients frequently desire to transform tired or factory interiors into p
 - Bounded orbit controls preventing disorientation or floor clipping.
 - Six calibrated viewpoint presets: Cockpit Master, Driver Cockpit, Center Console, Front Seating, Rear Executive Suite, and Night Ambient Mode.
 
-### 4.3 Module 03: Configuration Engine
-- Zone selector updating `MAT_Upholstery_Primary`, `MAT_Upholstery_Secondary`, `MAT_Trim_Deck_Main`, `MAT_Steering_Leather`, and `EMISSIVE_Ambient_Lighting`.
-- Real-time material uniform updates in < 16ms without model reloads.
+### 4.3 Module 03: Configuration Engine (Confirmed V1 Flow)
+- Confirmed 4-step sequence: **Material ➔ Colour ➔ Accent Thread ➔ Interior Composition**.
+- Real-time material uniform updates in < 16ms without model reloads on tagged material slots (`MAT_Upholstery_Primary`, etc.).
+- Extended zones (veneers, steering wheel, secondary bolsters) and ambient color switching are supported by 3D asset architecture but remain conditionally disabled until Gate 5 confirmation.
 
-### 4.4 Module 04: Material & Color Catalogue
-- Factory OEM options (Exclusive Nappa in Black 501A, Sienna Brown 502A, Macchiato Beige 505A, Carmine Red; Open-Pore Poplar/Walnut, Piano Lacquer).
-- AutoLab Bespoke Program (Cognac Tan, Royal Oxblood, Nairobi Emerald, Forged Aerospace Carbon Fiber, Champagne Gold diamond stitching).
+### 4.4 Module 04: Material & Color Catalogue (Proposed Candidates)
+- Primary Category: Confirmed as **Leather** (Fabric secondary where supported).
+- Specific leather colors, wood veneers, and accent threads are **PROPOSED candidates** pending AutoLab signoff (Gates 2, 3, 4).
+- Zero unapproved AutoLab offerings are presented as available options.
 
 ### 4.5 Module 05: Configuration Summary & Reference Code
 - Client-side summary generation with deterministic reference code `AL-SC-2026-[HASH4]`.

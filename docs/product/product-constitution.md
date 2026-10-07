@@ -1,7 +1,7 @@
 # AutoLab Product Constitution & Foundational Principles
 **Document:** `docs/product/product-constitution.md`  
 **Authority:** Product Blueprint & Decision Freeze (Authority 1)  
-**Target Consumer:** Downstream Production Agents (Astra, Lovable, Antigravity) & Human Engineers  
+**Target Consumer:** Downstream Production Agents (Astra, Antigravity) & Human Engineers  
 
 ---
 

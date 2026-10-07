@@ -47,16 +47,16 @@ The AutoLab Digital Showroom replaces dry transactional forms with an immersive 
   * Visual indicators for future garage models (*"Range Rover & Hilux Atelier En Route"*).
 * **Core Action:** Enter the S-Class 3D Interior Atelier.
 
-### STEP 3 — CONFIGURE THE INTERIOR
+### STEP 3 — CONFIGURE THE INTERIOR (CONFIRMED V1 FLOW)
 * **Interaction Model:**
   * Clean, floating control palette docked smoothly to the viewport edge.
   * Visual swatches showing genuine material textures, specular sheen, and rich color tone rather than plain text dropdowns.
-* **Sequential Customization Zones:**
-  1. **Primary Upholstery:** Choose leather type (Exclusive Nappa, AutoLab Heritage Hide) and primary color (e.g., Sienna Brown, Black, Macchiato Beige, Cognac Tan, Royal Oxblood).
-  2. **Secondary Accent Upholstery:** Configure outer bolsters, armrests, and knee pads (monotone or bespoke two-tone split).
-  3. **Dashboard & Door Trim Deck:** Select luxury veneers (Anthracite Open-Pore Poplar, Warm Walnut, Piano Black Flowing Lines, or Forged Carbon).
-  4. **Accent Stitching & Quilting:** Choose thread color (Champagne Gold, Silver Shadow, Burnt Amber, Crimson Red) and stitch pattern (Diamond Quilt, French Seam).
-  5. **Active Ambient Lighting:** Toggle 253-LED ambient spectrum (Sunset Orange, Miami Rose, Ocean Blue, or custom warmth).
+* **Confirmed 4-Step Sequence:**
+  1. **Material:** Select leather grade (Confirmed primary: Leather. E.g., Exclusive Nappa / AutoLab Heritage Hide).
+  2. **Colour:** Select leather tone (Proposed candidates: Sienna Brown, Black, Macchiato Beige, Cognac Tan; pending Gate 3 approval).
+  3. **Accent Thread:** Select contrast stitching hue & pattern (Proposed candidates: Champagne Gold, Silver Shadow, Burnt Amber; pending Gate 4 approval).
+  4. **Interior Composition:** Select holistic visual configuration (Monotone Hide, Duotone Split, or Executive Fluted Composition).
+* *Note on Extended Zones & Lighting:* Swapping veneers, steering wheel trims, or toggling 253-LED ambient lighting channels are **proposed extended capabilities** supported by the 3D asset architecture, but require AutoLab Gate 5 confirmation before being exposed as active customer configuration dimensions.
 
 ### STEP 4 — VISUALISE IN REAL-TIME 3D
 * **Visual Payoff (The "WOW" Transformation):**

@@ -19,8 +19,8 @@
         "vehicleTitle",
         "primaryMaterial",
         "primaryColor",
-        "trimFinish",
-        "accentStitching"
+        "accentStitching",
+        "interiorComposition"
       ]
     },
     "customer": {
