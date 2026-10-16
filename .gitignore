@@ -43,5 +43,5 @@ desktop.ini
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea/
-*.swp
-*.swo
+# Local-only prompts & plans
+docs/MOTIONSITE_PLAN_AND_PROMPTS.md

@@ -71,3 +71,16 @@ Stage 4: Lead Flow & Persistence (Supabase / WhatsApp)
          ├── Consultation booking form & DB persistence
          └── QA audit against acceptance criteria and production readiness checklist
 ```
+
+## Stage 0: Foundations, Gates & Feasibility Spike (inserted before Stage 1)
+
+Purpose: prove the riskiest assumptions cheaply before the remaining budget is committed.
+
+- 0A Environment gate (tools, plan, region)
+- 0B Foundations (Next 16 / React 19, Firebase removed, tests and CI, config)
+- 0C Asset gate proven on a synthetic GLB
+- 0D Spike asset: one front seat and the central OLED
+- 0E Viewer spike with a material swap
+- 0F Human visual review, recording one decision: GO, HYBRID or NO-GO
+
+No Stage 1 full-asset work starts until 0F records a decision. Details: `docs/spike/plan.md`.

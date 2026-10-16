@@ -13,21 +13,15 @@ These are not optional tools. They are the operating system of this agent.
 All skills live in: `.agents/skills/` (relative to this file)
 The anti-AI design skill lives in: `.agents/skills/anti-ai-design/`
 
-The master orchestration file must be internalized first:
+Skills are loaded ON DEMAND, by name, never in bulk.
 
-```
-.agents/skills/using-agent-skills/SKILL.md
-```
+- Load ONLY the skills the current task prompt names (Codex: invoke with `$skill-name`) or the Decision Tree below selects. Never read all skills. Never read a skill "just in case".
+- `.agents/skills/using-agent-skills/SKILL.md` is the full master reference (~25 KB). Do NOT read it at session start. The STANDING RULES section below is the operative summary of its Sections 0 and 1. Open the master file only when a prompt says to, or to resolve a genuine ambiguity.
+- Reading a skill means reading its whole SKILL.md and following its steps and exit criteria. Reference sub-files load only when a step says so.
+- Cost awareness: the 27 original skills total about 330 KB (roughly 82k tokens). Every skill read spends the owner's limited plan allowance.
+- Known gap: `ui-composition-engine` is referenced in places but is not installed. Skip it; never invent it.
 
-This file contains:
-- The Global Reasoning Layer (Section 0) — how this agent thinks at all times
-- CodeRabbit DNA (Section 1) — how this agent codes at all times
-- The Skill Discovery Map (Section 2) — which skill to activate per task type
-- The UI Design Protocol (Section 5) — anti-ai-design + ui-composition-engine order
-- The Trustless Audit Gate (Section 6) — what must pass before anything ships
-- The Complete Lifecycle Sequence (Section 7) — full build-to-ship order
-
-**The agent does not wait to be told to use these. They apply from the first instruction.**
+The master file contains: the Global Reasoning Layer (Section 0), CodeRabbit DNA (Section 1), the Skill Discovery Map (Section 2), the UI Design Protocol (Section 5), the Trustless Audit Gate (Section 6) and the Lifecycle Sequence (Section 7).
 
 
 ---
@@ -90,6 +84,15 @@ This file contains:
 | trustless-system-auditor | `.agents/skills/trustless-system-auditor/SKILL.md` | Reality-gap audit — must pass before real users touch it |
 | shipping-and-launch | `.agents/skills/shipping-and-launch/SKILL.md` | Pre-launch checklist, monitoring, rollback |
 
+### 3D & VIEWER SKILLS (added)
+
+| Skill | Path | Role |
+| :--- | :--- | :--- |
+| blender-asset-pipeline | `.agents/skills/blender-asset-pipeline/SKILL.md` | Reproducible headless Blender authoring and GLB export |
+| gltf-asset-gate | `.agents/skills/gltf-asset-gate/SKILL.md` | Automated GLB validation against the manifest and budgets |
+| webgl-viewer-engineering | `.agents/skills/webgl-viewer-engineering/SKILL.md` | Three.js / R3F viewer, material swapping, performance, fallbacks |
+| visual-fidelity-review | `.agents/skills/visual-fidelity-review/SKILL.md` | Human visual acceptance; the agent never self-certifies |
+
 ### SPECIAL SKILLS
 
 | Skill | Path | When to Activate |
@@ -114,7 +117,7 @@ Every UI task follows this exact order. No exceptions.
                             Path: .agents/skills/frontend-ui-engineering/SKILL.md
 ```
 
-**anti-ai-design enforces 22 banned patterns and 14 required quality signals on every generation.**
+**anti-ai-design enforces 18 banned patterns and 12 required quality signals on every generation.**
 Violating any banned pattern requires immediate regeneration. No exceptions.
 
 ### anti-ai-design Reference Files (load only what is needed per phase)
@@ -191,6 +194,21 @@ SHIP
 ---
 
 
+## 3D WORK STREAM (added)
+
+Order for any 3D task:
+
+```
+1. spec-driven-development    -> confirm the slice and acceptance criteria exist (docs/spike/plan.md or the prompt)
+2. gltf-asset-gate            -> build or extend the validator FIRST (test-driven)
+3. blender-asset-pipeline     -> author and export through the single build script
+4. gltf-asset-gate            -> run it; paste the real output
+5. webgl-viewer-engineering   -> load in the viewer; material-swap test
+6. visual-fidelity-review     -> produce the review pack, then STOP for human scoring
+```
+
+Supporting skills: source-driven-development (verify Blender and three.js docs), debugging-and-error-recovery, performance-optimization. anti-ai-design is NOT used for 3D asset work.
+
 ## SKILL ACTIVATION DECISION TREE
 
 ```
@@ -256,6 +274,36 @@ Never invert this order:
 
 ---
 
+
+## STANDING RULES (operative summary of master-file Sections 0 and 1)
+
+1. Priority order: Correct, Safe, Clear, Efficient, Elegant.
+2. Surface assumptions before acting. If sources conflict, STOP, name the conflict, recommend a resolution, and wait.
+3. Make the smallest change that satisfies the task. No unrequested refactors or features.
+4. Evidence, not claims: "done" means exact commands and their real output, failures included. Label anything unverified as unverified.
+5. Async code has explicit error handling and timeouts. Validate edge cases (empty, null, boundaries). Never trust input. No secrets in code or logs. Never suppress lint or type errors.
+6. Performance: no per-frame allocations in render loops; measure before optimising.
+7. Self-review before completion, then the Change Summary below.
+8. Never write "photorealistic", "production-ready" or "verified" without matching evidence.
+
+## SESSION PROTOCOL (added)
+
+- One phase per session. At start, read `docs/STATE.md` if it exists. At the end, update it (max 20 lines: done, next, blockers, decisions, usage notes).
+- Iteration caps: at most 3 attempts on any failing step, and at most 3 render-review rounds per zone. Then stop and report.
+- Cost control: no repeated full builds; run targeted tests first; do not re-read unchanged files; prefer scripts to GUI control.
+- For 3D work, log wall-clock time, attempts and failures in `docs/spike/cost-log.md`.
+- Work on a branch named for the phase. Commit atomically. Never push, open PRs or deploy unless authorised in that message.
+
+## HARD PROHIBITIONS (added)
+
+Unless the owner authorises it explicitly in the same message, the agent must NOT: make purchases; accept any licence or terms; download third-party 3D models, textures, HDRIs or fonts; touch production services, credentials or customer data; install system software; mark any human gate (GATE-01 to GATE-11) as signed, or imply it is.
+
+## 3D EVIDENCE RULES (added)
+
+- A 3D claim requires `gltf-asset-gate` output (JSON report plus exit code 0) tied to the GLB's sha256.
+- A visual claim requires a human review record from `visual-fidelity-review`. The agent may list known defects but never awards a pass.
+- Use only owner-approved reference material and assets. Every node has a provenance entry.
+- Deviations from spec (for example WebP instead of KTX2 when `toktx` is missing) are reported, never silently applied.
 
 ## CHANGE SUMMARY — REQUIRED ON EVERY COMPLETED TASK
 

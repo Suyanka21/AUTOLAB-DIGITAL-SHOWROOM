@@ -7,7 +7,7 @@
 
 ## 1. PBR Shader Architecture
 
-All materials must be authored using the standardized **Physically Based Rendering (PBR) Metallic-Roughness** workflow compatible with `KHR_materials_pbrSpecularGlossiness` and `KHR_materials_clearcoat` extensions in glTF 2.0 / WebGL.
+All materials must be authored using the standardized **Physically Based Rendering (PBR) Metallic-Roughness** workflow. Specular-Glossiness is not used: `KHR_materials_pbrSpecularGlossiness` is deprecated and no longer loaded by current three.js. Use these glTF 2.0 extensions as needed (verify support in the pinned three.js version): `KHR_materials_clearcoat`, `KHR_materials_sheen`, `KHR_materials_specular`, `KHR_materials_ior`, `KHR_materials_anisotropy`, `KHR_materials_emissive_strength`.
 
 ### Required Channel Packing (ORM Texture Standard)
 To minimize draw calls and GPU memory overhead, textures must be packed into composite channel maps:
@@ -70,3 +70,10 @@ To balance maximum luxury fidelity against web loading speed:
 | **Central OLED & Driver Cluster Screens**| 1024 x 1024 px | KTX2 / Basis Universal | WebP / PNG | High-contrast interface graphics |
 | **Active Ambient Lighting Core** | 512 x 512 px | Emissive Vertex / KTX2 | Vertex Color | Diffuse optical bloom texture |
 | **Floor Carpeting & Shadow Occlusion** | 512 x 512 px | KTX2 / Basis Universal | WebP | Low-visibility footwell areas |
+
+## Export Reality & Thread Slot (added: PROPOSED, pending decision D1)
+
+1. Blender's built-in glTF exporter writes PNG, JPEG or WebP textures, not KTX2. KTX2 (Basis Universal) is produced by a post-export step (gltf-transform with KTX-Software `toktx`). If that tooling is unavailable the pipeline must STOP and report. Falling back to WebP is allowed only as a recorded, owner-approved deviation.
+2. Procedural Blender shader nodes do not export. Every material must be baked to images or reduced to Principled BSDF inputs.
+3. **Accent thread colour needs its own material slot.** A normal map encodes shape, not colour, so thread colour cannot be changed through the seat normal map. PROPOSED: slot `MAT_Stitching_Thread` (metal-rough, no normal map, roughness set during the spike) carried by dedicated thin stitch meshes on seats, bolsters and wheel. Stitch pattern (Diamond Quilt vs French Seam) is a separate choice: swap the seat's baked normal-map set, or toggle two stitch-mesh variants by visibility.
+4. Four slots used by nodes in the scene manifest are not defined in its `materialSlots` list: `MAT_Screen_Driver_Cluster`, `MAT_Console_Veneer_And_Leather`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`. Define them, or remap the nodes, before asset production.

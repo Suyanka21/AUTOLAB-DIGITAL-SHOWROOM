@@ -1,6 +1,6 @@
 # AutoLab Digital Showroom
 > **Interactive 3D Automotive Interior Configurator & Sales Atelier**  
-> Prepared and codified for downstream production by **Astra**. Governed by 27 active agent skills, Next.js 14 App Router, Three.js WebGL, and Anti-AI Design standards.
+> Prepared and codified for downstream production by **Astra**. Governed by 31 agent skills (27 original + 4 for 3D/viewer work), a Next.js App Router web app, and Anti-AI Design standards. **Current status: a 2D showcase scaffold only.** The Three.js / React Three Fiber viewer, the 3D asset and the persistence layer are planned, not built.
 
 ---
 
@@ -14,10 +14,10 @@
 >    - All development decisions, 3D asset specifications, and configuration logic must derive strictly from the **`/docs` directory**:
 >      - [`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md) — Master implementation handoff directive.
 >      - [`docs/PRD.md`](docs/PRD.md) — Product requirements and customer journey.
->      - [`docs/production-plan.md`](docs/production-plan.md) — 4-stage machine-readable implementation roadmap.
+>      - [`docs/production-plan.md`](docs/production-plan.md) — staged implementation roadmap (Stage 0 spike and gates, then four build stages).
 >      - [`docs/3d-assets/`](docs/3d-assets/) — S-Class 3D specification, scene graph map, and Blender pipeline.
 >      - [`docs/configuration/`](docs/configuration/) — Configuration engine, options catalogue, and vehicle expansion.
->      - [`docs/human-approval-gates.md`](docs/human-approval-gates.md) — 8 explicit human approval gates.
+>      - [`docs/human-approval-gates.md`](docs/human-approval-gates.md) — 11 explicit human approval gates.
 >    - Your master orchestration contracts are [AGENTS.md](AGENTS.md) and [.agents/rules/skill-orchestration.md](.agents/rules/skill-orchestration.md).
 > 2. **Permanent Cognitive Foundations** (Always Active):
 >    - `.agents/skills/global-reasoning-layer/SKILL.md`: Defensive reasoning engineer, not an unverified generator.
@@ -40,8 +40,8 @@ docs/
 ├── PRD.md                                 # Master Product Requirements Document
 ├── architecture.md                        # Full-stack technical topology & data model
 ├── design-system.md                       # Luxury Anti-AI design tokens & palette
-├── human-approval-gates.md                # 8 explicit human sign-off gates
-├── production-plan.md                     # Machine-readable 4-stage implementation plan
+├── human-approval-gates.md                # 11 explicit human sign-off gates
+├── production-plan.md                     # Staged implementation plan (Stage 0 spike + 4 stages)
 │
 ├── product/                               # PRODUCT DEFINITION
 │   ├── product-constitution.md            # Foundational principles & non-negotiable boundaries
@@ -132,7 +132,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application shel
 ### 3. Database Setup (Supabase / Firebase)
 Configure `.env.local`:
 ```bash
-DATABASE_PROVIDER=supabase # or "firebase"
+# Supabase is the single backend (decision D5). The code does not read a DATABASE_PROVIDER toggle.
 
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
@@ -140,7 +140,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
 DATABASE_URL="postgres://postgres:password@db.your-project.supabase.co:5432/postgres"
 
 # AutoLab WhatsApp Destination
-NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER="254700000000"
+NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER=""  # the real number comes from AutoLab (GATE-07); never ship a placeholder
 ```
 
 ---
@@ -163,7 +163,7 @@ NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER="254700000000"
 
 ## 📋 Commercial Governance & Human Approval
 
-The project is governed by the **KES 750,000** fixed bespoke production fee. Before public launch, the eight human approval gates in [`docs/human-approval-gates.md`](docs/human-approval-gates.md) must be formally confirmed by AutoLab leadership.
+The project carries a proposed **KES 750,000** bespoke production fee baseline (currently pending formal commercial sign-off by AutoLab leadership; development is not blocked on commercial execution). Before public launch, the eleven human approval gates in [`docs/human-approval-gates.md`](docs/human-approval-gates.md) must be formally confirmed.
 
 ---
 

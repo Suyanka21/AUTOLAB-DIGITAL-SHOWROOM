@@ -2,7 +2,7 @@
 name: using-agent-skills
 description: >
   The universal meta-skill that governs every session, every task, and
-  every output. Load this file at the start of every session. It contains
+  every output. Load this file only when a prompt names it (AGENTS.md carries the operative summary). It contains
   the complete reasoning protocol, skill discovery map, and audit
   requirements for all work. The AI does not need to be told to use this —
   it applies from the first instruction to the last output.
@@ -507,6 +507,11 @@ Task arrives
 │   ├── API work? ────────────────→ api-and-interface-design
 │   ├── Need better context? ─────→ context-engineering
 │   └── Need doc-verified code? ──→ source-driven-development
+├── 3D asset / viewer work? ───────→ see AGENTS.md '3D WORK STREAM'
+│   ├── Blender authoring/export? ─→ blender-asset-pipeline
+│   ├── GLB validation/budgets? ───→ gltf-asset-gate
+│   ├── Three.js/R3F viewer? ──────→ webgl-viewer-engineering
+│   └── Does it look right? ───────→ visual-fidelity-review (human scores; agent never self-certifies)
 ├── Writing/running tests? ────────→ test-driven-development
 │   └── Browser-based? ───────────→ browser-testing-with-devtools
 ├── Something broke? ──────────────→ debugging-and-error-recovery
@@ -638,6 +643,8 @@ Sub-references: .agents/skills/anti-ai-design/references/ (load only the file ne
 ---
 
 
+> REPO NOTE: `ui-composition-engine` is NOT installed in this repository. Skip 5.1 unless the skill is added. Never invent it.
+
 ### 5.1 — UI COMPOSITION ENGINE (Spatial Layer — Non-Generic UI)
 ui-composition-engine runs after anti-ai-design, before frontend-ui-engineering.
 Structure is decided before aesthetics. Never simultaneously.
@@ -693,7 +700,7 @@ BUILD VERIFICATION
 - [ ] If any UI work: anti-ai-design ran first, CJX bundle generated, foundation tokens frozen
 - [ ] If non-generic UI: ui-composition-engine ran after anti-ai-design,
       blueprint preserved through implementation
-- [ ] All 22 anti-AI banned patterns enforced — no violations present
+- [ ] All 18 anti-AI banned patterns enforced — no violations present
 - [ ] All 4 UX states (loading/empty/error/success) handled per screen
 - [ ] API contracts defined, no undefined failure states
 - [ ] All input sanitized, auth verified, sensitive data protected

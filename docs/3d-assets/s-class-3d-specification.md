@@ -90,3 +90,7 @@ To ensure commercial deployment safety prior to formal brand licensing agreement
 * **Brand Emblems:** The Mercedes-Benz three-pointed star on the steering wheel boss and the Maybach double-M insignia on the C-pillar/rear console must be isolated on dedicated detachable sub-nodes (`GEO_Logo_Steering_Boss`, `GEO_Logo_Rear_Console`).
 * **Anonymized Fallback:** The asset must include a clean, unbranded geometric boss cap and an optional **AutoLab Bespoke Atelier** metal badge placeholder that can be toggled via scene configuration.
 * **Audio Badging:** Burmester® acoustic grilles must feature geometric acoustic hole perforation arrays without embedded registered trademark wordmarks.
+
+## Scope Note: Kinematics (added)
+
+The rigged mechanisms in this specification (rear-seat recline, chauffeur tilt, tambour console door, 4D tweeters) are NOT listed in `docs/product/decision-freeze-and-scope.md`, which includes scene graph, PBR networks, WebGL optimisation (including LOD), the shareable summary card, vehicle abstraction and source traceability. Treat kinematics as STRETCH. Do not start rigging until decision D8 is recorded.

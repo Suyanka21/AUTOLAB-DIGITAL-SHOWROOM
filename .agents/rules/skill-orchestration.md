@@ -84,3 +84,9 @@ SHIP
 3. Clear
 4. Efficient
 5. Elegant
+
+## Loading Policy and 3D Stream (added)
+
+- Load skills on demand, by name. Never read all skills; never read a skill "just in case".
+- 3D stream order: spec-driven-development, gltf-asset-gate (validator first), blender-asset-pipeline, gltf-asset-gate (run), webgl-viewer-engineering, visual-fidelity-review. anti-ai-design is not used for 3D asset work.
+- `ui-composition-engine` is not installed; skip it.

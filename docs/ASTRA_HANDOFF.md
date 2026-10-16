@@ -1,10 +1,9 @@
 # ASTRA PRODUCTION HANDOFF DIRECTIVE
 **Master Production Specification for Downstream AI Implementation Agent**  
 **Designation:** `docs/ASTRA_HANDOFF.md`  
-**Author:** Antigravity (Preparation Agent)  
+**Author:** Antigravity (Integration & Preparation Agent)  
 **Target:** Astra (Production & 3D Engineering Agent)  
-**Date:** October 2026  
-**Status:** CODIFIED & GOVERNANCE-CLEANSED  
+**Status:** CODIFIED & CONFIRMED OWNER DECISIONS ALIGNED  
 
 ---
 
@@ -17,22 +16,32 @@
 
 ## GOVERNANCE MANDATE FOR ASTRA
 > **Astra builds only what has been approved.**
-> Astra must strictly separate:
-> 1. **CONFIRMED V1 REQUIREMENTS** (Derived from Product Blueprint & Decision Freeze);
-> 2. **PROPOSED / UNCONFIRMED OPTIONS** (Research options awaiting AutoLab sign-off);
-> 3. **3D PRODUCTION REQUIREMENTS** (Asset geometry, scene graph & shaders Astra must model);
-> 4. **FUTURE EXPANSION IDEAS** (Strictly excluded from V1).
+> Astra must strictly observe:
+> 1. **CONFIRMED OWNER DECISIONS & V1 REQUIREMENTS** (Derived from Product Blueprint, Decision Freeze & Owner Sign-offs);
+> 2. **PROVISIONAL BASELINE VS UNVERIFIED DETAILS** (S-Class V223 LWB approved as baseline; unverified sub-mesh details remain provisional);
+> 3. **PROPOSED / SHOWCASE CATALOGUE CHOICES** (Demonstration items awaiting AutoLab stock injection; never misrepresented as approved stock);
+> 4. **STRICT SCOPE LOCK** (No new product features, exterior modeling, e-commerce, or expansion beyond V1).
 
 ---
 
-## 1. PROJECT & MISSION (CONFIRMED)
-* **What it is:** The **AutoLab Digital Showroom** is a bespoke, real-time 3D interactive interior visualization and configuration experience created for **AutoLab**, a premier luxury automotive reupholstery and interior transformation atelier in Nairobi, Kenya.
-* **Why it exists:** To allow prospective clients to experience, configure, and visualize their vehicle interior transformation before physical work begins in the workshop, converting visual interest into qualified showroom visits and consultative sales conversations.
-* **North Star:** *"Visualise the transformation before you commit to it."*
+## 1. CONFIRMED OWNER DECISIONS (CANONICAL)
+
+The following decisions are confirmed by the project owner and govern all downstream engineering:
+
+* **Approved V1 Vehicle:** The **Mercedes-Benz S-Class** is formally approved as the single V1 vehicle.
+* **Working 3D Baseline:** The **Series 223 Long Wheelbase (V223 LWB)** in AMG-Line trim is the working 3D baseline. Unverified detailed internal geometry (sub-cushion motor rails, deep HVAC ducting) remains **provisional**.
+* **Deferred Catalogue Injection:** The exact AutoLab workshop materials, leather hide colors, and stitching catalogue are pending physical injection from AutoLab.
+* **Showcase Swatch Guard:** Proposed catalogue choices present in `src/config/materials/` may be used to operate a clearly labelled local showcase / interaction scaffold. They must **never** be misrepresented as AutoLab-approved physical stock.
+* **Confirmed V1 Configuration Journey:** The sequential flow remains strictly:  
+  **`Material → Colour → Accent Thread → Interior Composition`**
+* **Reference Vehicles Policy:** Any other vehicles (e.g. Range Rover, Land Cruiser) or interior photographs mentioned in research documents are **showcase references only**, not additional configurable vehicles for V1.
+* **Commercial Fee Status:** The KES 750,000 project fee is a proposed commercial baseline and is **not yet accepted or signed** by AutoLab. Do not present it as a signed commercial agreement, and do not block technical development on it.
+* **Strict Scope Lock:** No new product features, no dynamic pricing engines, no checkout carts, no customer login gates, and no scope expansion.
 
 ---
 
 ## 2. CONFIRMED V1 CONFIGURATION FLOW
+
 The confirmed V1 configuration workflow from the Product Blueprint is strictly:
 
 ```
@@ -41,57 +50,61 @@ The confirmed V1 configuration workflow from the Product Blueprint is strictly:
 
 | Dimension | Confirmed Status | Implementation Boundary |
 | :--- | :--- | :--- |
-| **1. Material** | **CONFIRMED V1** | **Leather** is the confirmed primary category. Fabric is supported where backed by catalogue. |
-| **2. Colour** | **CONFIRMED V1 DIMENSION** | The *dimension* is confirmed; specific color swatches are **PROPOSED CANDIDATES** awaiting AutoLab sign-off (Gate 3). |
-| **3. Accent Thread** | **CONFIRMED V1 DIMENSION** | The *dimension* is confirmed; specific thread hues and stitch patterns are **PROPOSED CANDIDATES** awaiting AutoLab sign-off (Gate 4). |
-| **4. Interior Composition** | **CONFIRMED V1 DIMENSION** | Visual representation of the customer's design as a coherent interior composition (e.g., monotone hide, duotone split, or fluted package). |
+| **1. Material** | **CONFIRMED V1** | **Leather** is the confirmed primary category. Fabric/wood are secondary slots where backed by catalogue. |
+| **2. Colour** | **CONFIRMED V1 DIMENSION** | The *dimension* is confirmed; specific color swatches are **PROPOSED CANDIDATES** awaiting AutoLab physical injection. |
+| **3. Accent Thread** | **CONFIRMED V1 DIMENSION** | The *dimension* is confirmed; specific thread hues and stitch patterns are **PROPOSED CANDIDATES** awaiting workshop confirmation. |
+| **4. Interior Composition** | **CONFIRMED V1 DIMENSION** | Visual representation of customer selections as a coherent interior composition (Bespoke Monotone, Bespoke Duotone, or Executive Fluted). |
 
 ---
 
-## 3. PROPOSED / UNCONFIRMED OPTIONS (AWAITING AUTOLAB APPROVAL)
-The following research-derived items are **PROPOSED CANDIDATES ONLY**. Astra must not treat them as frozen AutoLab catalog offerings until signed off under the specified Human Approval Gate:
+## 3. PROPOSED / SHOWCASE SWATCHES (AWAITING PHYSICAL AUTOLAB CATALOGUE)
 
-* **Proposed Leather Colors (GATE-03):** OEM codes (Black 501A, Sienna Brown 502A, Macchiato Beige 505A, Carmine Red) and bespoke shades (Cognac Tan, Royal Oxblood, Nairobi Emerald) are proposed candidates. AutoLab must confirm which specific hides are in workshop stock.
-* **Proposed Trim Veneers (GATE-02 & GATE-05):** Open-Pore Poplar, Walnut, Piano Lacquer, and Forged Carbon are proposed materials. Customer veneer swappability in V1 is unconfirmed.
-* **Proposed Accent Stitching & Patterns (GATE-04):** Champagne Gold, Silver Shadow, Burnt Amber, Crimson Red, diamond quilting, and french seam are proposed machine patterns pending workshop confirmation.
-* **Active Ambient Lighting (GATE-05):** The 253-LED ambient fiber loop is a **feature of the 3D vehicle asset**. Allowing customers to dynamically toggle 64 ambient color channels is an **UNCONFIRMED V1 feature**.
-* **Additional Interior Zones (GATE-05):** Separate customer customization of steering wheel rim, door cards, and console knee pads requires Gate 5 confirmation.
-* **AutoLab Brand Assets & Contact (GATE-06 & GATE-07):** Official vector logo and official WhatsApp Business telephone number require client delivery.
+The research-derived items in `src/config/materials/` are **PROPOSED SHOWCASE CANDIDATES ONLY**:
+
+* **Proposed Leather Colors:** OEM codes (Black 501A, Sienna Brown 502A, Macchiato Beige 505A, Carmine Red) and bespoke shades (Cognac Tan, Royal Oxblood, Nairobi Emerald) are proposed candidates. AutoLab will confirm which hides are in workshop stock.
+* **Proposed Trim Veneers:** Open-Pore Poplar, Walnut, Piano Lacquer, and Forged Carbon are proposed materials.
+* **Proposed Accent Stitching:** Champagne Gold, Silver Shadow, Burnt Amber, Crimson Red, diamond quilting, and french seam are proposed machine patterns pending workshop confirmation.
+* **Active Ambient Lighting:** The 253-LED ambient fiber loop is a **feature of the 3D vehicle asset**. Allowing customers to dynamically toggle 64 ambient color channels is an unconfirmed commercial feature.
+* **Additional Interior Zones:** Separate customer customization of steering wheel rim, door cards, and console knee pads requires Gate 5 confirmation.
+* **AutoLab Brand Assets & Contact:** Official vector logo and official WhatsApp Business telephone number require client delivery (GATE-06 & GATE-07).
 
 ---
 
-## 4. 3D PRODUCTION REQUIREMENTS (ASTRA MUST BUILD IN BLENDER)
-Astra owns 3D asset authoring. The asset must be built so that it is geometrically complete and capable of configuration:
+## 4. 3D PRODUCTION REQUIREMENTS (ASTRA SCOPE)
+
+Astra owns 3D asset authoring. The asset must be built so that it is geometrically complete and capable of programmatic configuration:
 
 * **Platform Baseline:** Mercedes-Benz S-Class (Seventh Generation — Series 223).
 * **Selected Chassis:** **V223 (Long Wheelbase)** in AMG-Line specification (MY 2021–2025 portrait OLED baseline).
 * **Metric Scale (Exact):** Wheelbase: 3,216 mm | Overall Length: 5,289 mm | Width: 1,954 mm | Height: 1,503 mm | Central Screen: 12.8 in diagonal (60° inclination) | Driver Cluster: 12.3 in diagonal.
-* **Interior Scope:** Full cabin cockpit, steering wheel, front multicontour seats, rear executive suite (43.5° recline kinematics), center console tunnel, door panels, and 253-LED ambient fiber strip.
-* **Scene Graph Standard:** Exact node naming matching `docs/3d-assets/interior-component-map.md` (`GEO_*`, `MAT_*`, `RIG_*`).
-* **Material Slot Decoupling:** Mesh primitives must bind to generic slots (`MAT_Upholstery_Primary`, `MAT_Upholstery_Secondary`, `MAT_Trim_Deck_Main`, `MAT_Stitch_Thread`, `EMISSIVE_Ambient_Lighting`) so colors and textures swap programmatically without mesh rebuilds.
-* **Format & Performance Budgets:** Single Draco-compressed binary glTF (`interior.glb`) < 15MB with composite ORM textures; < 350,000 triangles; < 65 draw calls.
-* **Zero-Purchase Mandate:** Astra must model in Blender first. Only the **Hum3D S-Class LWB Commercial Royalty-Free model ($295–$885)** is evaluated as commercial contingency. Stock models with *Editorial Use Only* licenses are strictly prohibited.
+* **Interior Scope:** Full cabin cockpit, steering wheel, front multicontour seats, rear executive suite (43.5° recline kinematics), center console tunnel, door panels, and 253-LED ambient fiber strip. Cabin context (pillars/headliner) per decision D13.
+* **Scene Graph Standard:** Exact node naming matching `src/config/scene-manifest.s-class-v223.json` (`GEO_*`, `MAT_*`).
+* **Material Slot Decoupling:** Mesh primitives must bind to generic slots (`MAT_Upholstery_Primary`, `MAT_Upholstery_Secondary`, `MAT_Trim_Deck_Main`, `MAT_Stitching_Thread`, `EMISSIVE_Ambient_Lighting`) so colors and textures swap programmatically without mesh rebuilds.
+* **Format & Performance Budgets:** Single Draco-compressed binary glTF (`interior.glb`) < 15MB with composite ORM textures; < 350,000 triangles; < 65 draw calls. Low-LOD variant (`interior_low.glb`) for mobile first-load.
+* **Zero-Purchase Mandate:** Astra models in Blender headlessly via reproducible scripts. Royalty-free verification required before any third-party asset is introduced.
 * **Trademark Anonymization:** Mercedes three-pointed star, Maybach logo, and Burmester badging must reside on detachable sub-nodes with neutral AutoLab insignia fallbacks.
 
 ---
 
-## 5. APPLICATION & SALES HANDOFF (CONFIRMED V1 ARCHITECTURE)
-* **Stack:** Next.js 14 App Router, TypeScript (Strict), Tailwind CSS, Three.js / React Three Fiber.
-* **Design Aesthetic:** Anti-AI compliant luxury dark mode (Obsidian `#08090C`, Champagne Gold `#D4AF37`, editorial typography).
-* **Summary & Reference Code:** Generates unique deterministic Reference Code (`AL-SC-2026-XXXX`) carrying the client's choices.
+## 5. APPLICATION & SALES HANDOFF ARCHITECTURE
+
+* **Stack:** Next.js App Router, TypeScript (Strict), Tailwind CSS, Three.js / React Three Fiber.
+* **Design Aesthetic:** Anti-AI compliant luxury dark mode (Obsidian `#0B0B0B`, Electric Cyan `#38B6FF`, Champagne Gold `#D4AF37`, editorial typography).
+* **Summary & Reference Code:** Generates unique deterministic Reference Code (`AL-SC-2026-XXXXXX`) carrying the client's choices.
 * **Sales Handoff:**
   1. WhatsApp direct link (`https://wa.me/{NUMBER}?text={ENCODED_MESSAGE}`) pre-populated with configuration details.
   2. Showroom consultation booking form.
-  3. Advisor reference lookup (`/admin`).
-* **Lean Backend:** Supabase PostgreSQL / Firebase Firestore persisting `configurations`, `enquiries`, and `analytics_events`.
+  3. Protected advisor reference lookup (`/admin`).
+* **Lean Backend:** Supabase PostgreSQL / Drizzle ORM (Firebase deprecated per D5) persisting `configurations`, `enquiries`, and `analytics_events`.
 
 ---
 
 ## 6. FUTURE EXPANSION IDEAS (STRICTLY EXCLUDED FROM V1)
+
 Astra and downstream developers must **NOT** implement:
 * Exterior vehicle modeling, wheels, suspension, or car bodies.
-* Additional vehicles (Range Rover, Toyota Hilux) — these enter in Phase 2 via the vehicle-asset pipeline.
-* Before/after interactive transformation slider (Phase 4).
+* Additional vehicles (Range Rover, Toyota Land Cruiser) — these are showcase references only.
+* Before/after interactive transformation slider.
 * Automated quotation engines or dynamic price calculators.
 * E-commerce checkout, shopping carts, or online payment gateways.
 * Generic automotive platform features: VIN decoders, vehicle databases, marketplace grids.
@@ -99,9 +112,15 @@ Astra and downstream developers must **NOT** implement:
 
 ---
 
-## 7. IMMEDIATE ACTION FOR ASTRA
-1. **Consume:** Read this handoff and [`docs/production-plan.md`](production-plan.md).
-2. **Phase 1 (Blender):** Construct the interior metric bounding cage for the V223 LWB (Wheelbase: 3,216 mm) per [`docs/3d-assets/blender-production-pipeline.md`](3d-assets/blender-production-pipeline.md).
-3. **Phase 2 (Mesh & Slots):** Model the interior cabin, decouple material slots, and rig kinematic pivots.
-4. **Phase 3 (Export):** Export Draco-compressed `interior.glb` to [`public/assets/3d/s-class-v223/`](file:///c:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/public/assets/3d/s-class-v223/).
-5. **Phase 4 (Viewer):** Bind the 3D asset in React Three Fiber and connect the confirmed V1 configuration flow.
+## 7. EXECUTION ROADMAP FOR ASTRA
+
+Astra must follow the canonical execution prompts codified in [`docs/ASTRA_EXECUTION_PROMPTS.md`](ASTRA_EXECUTION_PROMPTS.md):
+
+1. **Orientation:** Read [`docs/ASTRA_START_HERE.md`](ASTRA_START_HERE.md) first.
+2. **Phase 0:** Verify setup and review the plan (upgrade pack already installed by Antigravity).
+3. **Phase 1A & 1B:** Foundations upgrade (Next 16, React 19, Supabase only, type fixes, contract tests).
+4. **Phase 2:** Build and prove the glTF asset gate (`scripts/validate-glb.mjs`).
+5. **Phase 3:** Spike asset (organic driver seat flutes + OLED screen).
+6. **Phase 4 & 5:** Viewer spike (R3F) and human review pack.
+7. **Phase 6:** Incremental Zone authoring (Z1 through Z9).
+8. **Phase 7 to 9B:** Configuration flow, leads/persistence, performance QA, and readiness audit.

@@ -44,3 +44,11 @@ WebGL memory leaks are the primary cause of browser tab crashes. The frontend vi
 2. **Dispose Textures:** Explicitly call `texture.dispose()` on every diffuse, normal, roughness, and metalness map when swapped.
 3. **Dispose Render Targets:** Free shadow maps and PMREM environment textures during page transitions.
 4. **Context Loss Guard:** Automatically throttle rendering or reduce resolution scale (`pixelRatio = 1.0`) on detected mobile low-power states.
+
+## Budget Clarifications (added: PROPOSED, owner to confirm)
+
+1. **File-size semantics.** 5.0 MB is the TARGET and 15.0 MB the HARD MAXIMUM for the delivered GLB as transferred (Draco-compressed geometry, KTX2 textures). Record decoded GPU texture memory separately; the two numbers are not interchangeable.
+2. **GPU texture memory (estimate, not measured).** Using pixels x 1 byte x 1.33 for mips on GPU-compressed formats, at the manifest's resolutions with 3 maps per slot, the 7 defined slots total about 49 MB and the 4 undefined slots at 1024 px add about 17 MB: about 66 MB before framebuffers and the environment map. That exceeds the under-64 MB mobile target. A mobile texture tier is therefore required (for example 1024 px for the two 2048 px slots, which saves about 25 MB) and counts as part of the LOD deliverable.
+3. **Progressive delivery.** Ship `interior_low.glb` for first interaction, then the full-detail file. The 2D SVG stage is the poster while loading.
+4. **Reference device.** Add a mid-range Android phone to the device matrix. The listed devices are flagship-class; mid-range phones are common in the Nairobi market (confirm with AutoLab).
+5. **Measure on a real device.** Headless browsers cannot report real frame rates; headless tests log `renderer.info` only.

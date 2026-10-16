@@ -12,7 +12,7 @@ The Digital Showroom embeds an interactive 3D WebGL canvas built on **Three.js /
 ### Core Rendering Pipeline
 * **Renderer:** `WebGLRenderer` with `antialias: true`, `powerPreference: "high-performance"`.
 * **Tone Mapping:** `ACESFilmicToneMapping` with exposure calibrated to `1.05`.
-* **Color Space:** `sRGBEncoding` (WebGL standard linear-to-sRGB output).
+* **Color Space:** sRGB output via `renderer.outputColorSpace = THREE.SRGBColorSpace` (the default in current three.js). `sRGBEncoding` was removed after r152: do not use it. Colour textures are tagged sRGB; normal and ORM maps stay linear.
 * **Shadows:** Soft PCF shadows enabled for interior ambient grounding (`pcfSoftShadowMap`).
 * **Environment:** Curated studio HDRI environment map (subtle warm interior softboxes) producing realistic specular highlights on leather and lacquer without harsh outdoor daylight.
 
@@ -62,3 +62,13 @@ When the user selects a material, color, or trim option in the UI:
 Mobile browsers under memory pressure frequently drop WebGL contexts. The application must include defensive guards:
 * Listen for `webglcontextlost` on the canvas: Cancel render loop, display graceful fallback UI card (*"Graphics context paused — resuming..."*).
 * Listen for `webglcontextrestored`: Re-instantiate Three.js scene, reload GLB from browser cache, restore last active configuration state.
+
+## 6. Loader, Hosting & Fallback Requirements (added)
+
+1. **Version matrix (verify with `npm ls` before installing):** React 19 requires `@react-three/fiber` 9.x and `@react-three/drei` 10.x; React 18 requires fiber 8.x and drei 9.x. The current fiber/drei releases do not install on React 18. This repo moves to Next 16 / React 19 in Stage 0 (see docs/production-plan.md).
+2. **Decoders are self-hosted.** Copy the Draco decoder to `/public/draco/` and the Basis/KTX2 transcoder to `/public/basis/`. Do not rely on third-party CDNs for decoders.
+3. **Progressive loading.** Load `interior_low.glb` first, then the full-detail GLB. The existing 2D SVG stage is the poster and the fallback for WebGL failure, GLB failure and context loss.
+4. **Caching.** Serve GLB, decoder and texture files with long-lived immutable cache headers and content-hashed file names.
+5. **Material swapping** is performed on one shared material instance per slot, found by material name on load. Never clone materials per mesh and never create materials inside render code.
+6. **Thread and composition** follow the decisions recorded in docs/spike/conflicts.md (D1 and D2).
+7. **Test hook.** Expose `window.__autolab` (current slot colours, `renderer.info`) only when `NEXT_PUBLIC_E2E=1`.

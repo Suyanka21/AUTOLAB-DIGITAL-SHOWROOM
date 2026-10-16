@@ -54,3 +54,11 @@ The WebGL application logic targets specific material slots to execute live swap
                 ├──▶ MAT_Steering_Leather    ──▶ Steering Wheel Outer Rim & Airbag Hub
                 └──▶ EMISSIVE_Ambient_Lighting ➔ Continuous 253-LED Optical Fiber Perimeter
 ```
+
+## OPEN ITEMS (resolve before freezing the manifest)
+
+1. The console node is named three ways: `MAT_Console_Veneer` (table), `MAT_Trim_Deck_Main` (mapping diagram) and `MAT_Console_Veneer_And_Leather` (manifest). One slot cannot carry two physical materials (veneer and leather); see decision D2 in docs/spike/conflicts.md.
+2. Four nodes in this map are absent from the scene manifest: `GEO_Door_Armrests_All`, `GEO_Seat_Front_Driver_Bolsters`, `GEO_Seat_Rear_CalfRest_RH`, `GEO_Seat_Rear_LH_Suite`.
+3. Four slots used by manifest nodes have no entry in the manifest's `materialSlots`: `MAT_Screen_Driver_Cluster`, `MAT_Console_Veneer_And_Leather`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`.
+4. No slot exists for accent thread colour (see material specification, decision D1).
+5. Interior Composition tiers need no extra 3D mechanism if implemented as a slot-assignment rule in application code (monotone: one colour to Primary and Secondary; duotone: two colours). Only a fluted-pattern tier may need a texture or mesh variant.
