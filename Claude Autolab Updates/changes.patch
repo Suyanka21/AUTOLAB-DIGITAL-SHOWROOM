@@ -1,0 +1,512 @@
+diff --git a/.agents/rules/skill-orchestration.md b/.agents/rules/skill-orchestration.md
+index 89b99b4..d1bd21c 100644
+--- a/.agents/rules/skill-orchestration.md
++++ b/.agents/rules/skill-orchestration.md
+@@ -84,3 +84,9 @@ SHIP
+ 3. Clear
+ 4. Efficient
+ 5. Elegant
++
++## Loading Policy and 3D Stream (added)
++
++- Load skills on demand, by name. Never read all skills; never read a skill "just in case".
++- 3D stream order: spec-driven-development, gltf-asset-gate (validator first), blender-asset-pipeline, gltf-asset-gate (run), webgl-viewer-engineering, visual-fidelity-review. anti-ai-design is not used for 3D asset work.
++- `ui-composition-engine` is not installed; skip it.
+diff --git a/.agents/skills/using-agent-skills/SKILL.md b/.agents/skills/using-agent-skills/SKILL.md
+index bab48c1..7dcecb0 100644
+--- a/.agents/skills/using-agent-skills/SKILL.md
++++ b/.agents/skills/using-agent-skills/SKILL.md
+@@ -2,7 +2,7 @@
+ name: using-agent-skills
+ description: >
+   The universal meta-skill that governs every session, every task, and
+-  every output. Load this file at the start of every session. It contains
++  every output. Load this file only when a prompt names it (AGENTS.md carries the operative summary). It contains
+   the complete reasoning protocol, skill discovery map, and audit
+   requirements for all work. The AI does not need to be told to use this —
+   it applies from the first instruction to the last output.
+@@ -507,6 +507,11 @@ Task arrives
+ │   ├── API work? ────────────────→ api-and-interface-design
+ │   ├── Need better context? ─────→ context-engineering
+ │   └── Need doc-verified code? ──→ source-driven-development
++├── 3D asset / viewer work? ───────→ see AGENTS.md '3D WORK STREAM'
++│   ├── Blender authoring/export? ─→ blender-asset-pipeline
++│   ├── GLB validation/budgets? ───→ gltf-asset-gate
++│   ├── Three.js/R3F viewer? ──────→ webgl-viewer-engineering
++│   └── Does it look right? ───────→ visual-fidelity-review (human scores; agent never self-certifies)
+ ├── Writing/running tests? ────────→ test-driven-development
+ │   └── Browser-based? ───────────→ browser-testing-with-devtools
+ ├── Something broke? ──────────────→ debugging-and-error-recovery
+@@ -638,6 +643,8 @@ Sub-references: .agents/skills/anti-ai-design/references/ (load only the file ne
+ ---
+ 
+ 
++> REPO NOTE: `ui-composition-engine` is NOT installed in this repository. Skip 5.1 unless the skill is added. Never invent it.
++
+ ### 5.1 — UI COMPOSITION ENGINE (Spatial Layer — Non-Generic UI)
+ ui-composition-engine runs after anti-ai-design, before frontend-ui-engineering.
+ Structure is decided before aesthetics. Never simultaneously.
+@@ -693,7 +700,7 @@ BUILD VERIFICATION
+ - [ ] If any UI work: anti-ai-design ran first, CJX bundle generated, foundation tokens frozen
+ - [ ] If non-generic UI: ui-composition-engine ran after anti-ai-design,
+       blueprint preserved through implementation
+-- [ ] All 22 anti-AI banned patterns enforced — no violations present
++- [ ] All 18 anti-AI banned patterns enforced — no violations present
+ - [ ] All 4 UX states (loading/empty/error/success) handled per screen
+ - [ ] API contracts defined, no undefined failure states
+ - [ ] All input sanitized, auth verified, sensitive data protected
+diff --git a/AGENTS.md b/AGENTS.md
+index 89c6c6c..2f38e07 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -13,21 +13,15 @@ These are not optional tools. They are the operating system of this agent.
+ All skills live in: `.agents/skills/` (relative to this file)
+ The anti-AI design skill lives in: `.agents/skills/anti-ai-design/`
+ 
+-The master orchestration file must be internalized first:
++Skills are loaded ON DEMAND, by name, never in bulk.
+ 
+-```
+-.agents/skills/using-agent-skills/SKILL.md
+-```
+-
+-This file contains:
+-- The Global Reasoning Layer (Section 0) — how this agent thinks at all times
+-- CodeRabbit DNA (Section 1) — how this agent codes at all times
+-- The Skill Discovery Map (Section 2) — which skill to activate per task type
+-- The UI Design Protocol (Section 5) — anti-ai-design + ui-composition-engine order
+-- The Trustless Audit Gate (Section 6) — what must pass before anything ships
+-- The Complete Lifecycle Sequence (Section 7) — full build-to-ship order
++- Load ONLY the skills the current task prompt names (Codex: invoke with `$skill-name`) or the Decision Tree below selects. Never read all skills. Never read a skill "just in case".
++- `.agents/skills/using-agent-skills/SKILL.md` is the full master reference (~25 KB). Do NOT read it at session start. The STANDING RULES section below is the operative summary of its Sections 0 and 1. Open the master file only when a prompt says to, or to resolve a genuine ambiguity.
++- Reading a skill means reading its whole SKILL.md and following its steps and exit criteria. Reference sub-files load only when a step says so.
++- Cost awareness: the 27 original skills total about 330 KB (roughly 82k tokens). Every skill read spends the owner's limited plan allowance.
++- Known gap: `ui-composition-engine` is referenced in places but is not installed. Skip it; never invent it.
+ 
+-**The agent does not wait to be told to use these. They apply from the first instruction.**
++The master file contains: the Global Reasoning Layer (Section 0), CodeRabbit DNA (Section 1), the Skill Discovery Map (Section 2), the UI Design Protocol (Section 5), the Trustless Audit Gate (Section 6) and the Lifecycle Sequence (Section 7).
+ 
+ 
+ ---
+@@ -90,6 +84,15 @@ This file contains:
+ | trustless-system-auditor | `.agents/skills/trustless-system-auditor/SKILL.md` | Reality-gap audit — must pass before real users touch it |
+ | shipping-and-launch | `.agents/skills/shipping-and-launch/SKILL.md` | Pre-launch checklist, monitoring, rollback |
+ 
++### 3D & VIEWER SKILLS (added)
++
++| Skill | Path | Role |
++| :--- | :--- | :--- |
++| blender-asset-pipeline | `.agents/skills/blender-asset-pipeline/SKILL.md` | Reproducible headless Blender authoring and GLB export |
++| gltf-asset-gate | `.agents/skills/gltf-asset-gate/SKILL.md` | Automated GLB validation against the manifest and budgets |
++| webgl-viewer-engineering | `.agents/skills/webgl-viewer-engineering/SKILL.md` | Three.js / R3F viewer, material swapping, performance, fallbacks |
++| visual-fidelity-review | `.agents/skills/visual-fidelity-review/SKILL.md` | Human visual acceptance; the agent never self-certifies |
++
+ ### SPECIAL SKILLS
+ 
+ | Skill | Path | When to Activate |
+@@ -114,7 +117,7 @@ Every UI task follows this exact order. No exceptions.
+                             Path: .agents/skills/frontend-ui-engineering/SKILL.md
+ ```
+ 
+-**anti-ai-design enforces 22 banned patterns and 14 required quality signals on every generation.**
++**anti-ai-design enforces 18 banned patterns and 12 required quality signals on every generation.**
+ Violating any banned pattern requires immediate regeneration. No exceptions.
+ 
+ ### anti-ai-design Reference Files (load only what is needed per phase)
+@@ -191,6 +194,21 @@ SHIP
+ ---
+ 
+ 
++## 3D WORK STREAM (added)
++
++Order for any 3D task:
++
++```
++1. spec-driven-development    -> confirm the slice and acceptance criteria exist (docs/spike/plan.md or the prompt)
++2. gltf-asset-gate            -> build or extend the validator FIRST (test-driven)
++3. blender-asset-pipeline     -> author and export through the single build script
++4. gltf-asset-gate            -> run it; paste the real output
++5. webgl-viewer-engineering   -> load in the viewer; material-swap test
++6. visual-fidelity-review     -> produce the review pack, then STOP for human scoring
++```
++
++Supporting skills: source-driven-development (verify Blender and three.js docs), debugging-and-error-recovery, performance-optimization. anti-ai-design is NOT used for 3D asset work.
++
+ ## SKILL ACTIVATION DECISION TREE
+ 
+ ```
+@@ -257,6 +275,36 @@ Never invert this order:
+ ---
+ 
+ 
++## STANDING RULES (operative summary of master-file Sections 0 and 1)
++
++1. Priority order: Correct, Safe, Clear, Efficient, Elegant.
++2. Surface assumptions before acting. If sources conflict, STOP, name the conflict, recommend a resolution, and wait.
++3. Make the smallest change that satisfies the task. No unrequested refactors or features.
++4. Evidence, not claims: "done" means exact commands and their real output, failures included. Label anything unverified as unverified.
++5. Async code has explicit error handling and timeouts. Validate edge cases (empty, null, boundaries). Never trust input. No secrets in code or logs. Never suppress lint or type errors.
++6. Performance: no per-frame allocations in render loops; measure before optimising.
++7. Self-review before completion, then the Change Summary below.
++8. Never write "photorealistic", "production-ready" or "verified" without matching evidence.
++
++## SESSION PROTOCOL (added)
++
++- One phase per session. At start, read `docs/STATE.md` if it exists. At the end, update it (max 20 lines: done, next, blockers, decisions, usage notes).
++- Iteration caps: at most 3 attempts on any failing step, and at most 3 render-review rounds per zone. Then stop and report.
++- Cost control: no repeated full builds; run targeted tests first; do not re-read unchanged files; prefer scripts to GUI control.
++- For 3D work, log wall-clock time, attempts and failures in `docs/spike/cost-log.md`.
++- Work on a branch named for the phase. Commit atomically. Never push, open PRs or deploy unless authorised in that message.
++
++## HARD PROHIBITIONS (added)
++
++Unless the owner authorises it explicitly in the same message, the agent must NOT: make purchases; accept any licence or terms; download third-party 3D models, textures, HDRIs or fonts; touch production services, credentials or customer data; install system software; mark any human gate (GATE-01 to GATE-11) as signed, or imply it is.
++
++## 3D EVIDENCE RULES (added)
++
++- A 3D claim requires `gltf-asset-gate` output (JSON report plus exit code 0) tied to the GLB's sha256.
++- A visual claim requires a human review record from `visual-fidelity-review`. The agent may list known defects but never awards a pass.
++- Use only owner-approved reference material and assets. Every node has a provenance entry.
++- Deviations from spec (for example WebP instead of KTX2 when `toktx` is missing) are reported, never silently applied.
++
+ ## CHANGE SUMMARY — REQUIRED ON EVERY COMPLETED TASK
+ 
+ Every completed task must produce this before being marked done:
+diff --git a/GEMINI.md b/GEMINI.md
+index 89c6c6c..2f38e07 100644
+--- a/GEMINI.md
++++ b/GEMINI.md
+@@ -13,21 +13,15 @@ These are not optional tools. They are the operating system of this agent.
+ All skills live in: `.agents/skills/` (relative to this file)
+ The anti-AI design skill lives in: `.agents/skills/anti-ai-design/`
+ 
+-The master orchestration file must be internalized first:
++Skills are loaded ON DEMAND, by name, never in bulk.
+ 
+-```
+-.agents/skills/using-agent-skills/SKILL.md
+-```
+-
+-This file contains:
+-- The Global Reasoning Layer (Section 0) — how this agent thinks at all times
+-- CodeRabbit DNA (Section 1) — how this agent codes at all times
+-- The Skill Discovery Map (Section 2) — which skill to activate per task type
+-- The UI Design Protocol (Section 5) — anti-ai-design + ui-composition-engine order
+-- The Trustless Audit Gate (Section 6) — what must pass before anything ships
+-- The Complete Lifecycle Sequence (Section 7) — full build-to-ship order
++- Load ONLY the skills the current task prompt names (Codex: invoke with `$skill-name`) or the Decision Tree below selects. Never read all skills. Never read a skill "just in case".
++- `.agents/skills/using-agent-skills/SKILL.md` is the full master reference (~25 KB). Do NOT read it at session start. The STANDING RULES section below is the operative summary of its Sections 0 and 1. Open the master file only when a prompt says to, or to resolve a genuine ambiguity.
++- Reading a skill means reading its whole SKILL.md and following its steps and exit criteria. Reference sub-files load only when a step says so.
++- Cost awareness: the 27 original skills total about 330 KB (roughly 82k tokens). Every skill read spends the owner's limited plan allowance.
++- Known gap: `ui-composition-engine` is referenced in places but is not installed. Skip it; never invent it.
+ 
+-**The agent does not wait to be told to use these. They apply from the first instruction.**
++The master file contains: the Global Reasoning Layer (Section 0), CodeRabbit DNA (Section 1), the Skill Discovery Map (Section 2), the UI Design Protocol (Section 5), the Trustless Audit Gate (Section 6) and the Lifecycle Sequence (Section 7).
+ 
+ 
+ ---
+@@ -90,6 +84,15 @@ This file contains:
+ | trustless-system-auditor | `.agents/skills/trustless-system-auditor/SKILL.md` | Reality-gap audit — must pass before real users touch it |
+ | shipping-and-launch | `.agents/skills/shipping-and-launch/SKILL.md` | Pre-launch checklist, monitoring, rollback |
+ 
++### 3D & VIEWER SKILLS (added)
++
++| Skill | Path | Role |
++| :--- | :--- | :--- |
++| blender-asset-pipeline | `.agents/skills/blender-asset-pipeline/SKILL.md` | Reproducible headless Blender authoring and GLB export |
++| gltf-asset-gate | `.agents/skills/gltf-asset-gate/SKILL.md` | Automated GLB validation against the manifest and budgets |
++| webgl-viewer-engineering | `.agents/skills/webgl-viewer-engineering/SKILL.md` | Three.js / R3F viewer, material swapping, performance, fallbacks |
++| visual-fidelity-review | `.agents/skills/visual-fidelity-review/SKILL.md` | Human visual acceptance; the agent never self-certifies |
++
+ ### SPECIAL SKILLS
+ 
+ | Skill | Path | When to Activate |
+@@ -114,7 +117,7 @@ Every UI task follows this exact order. No exceptions.
+                             Path: .agents/skills/frontend-ui-engineering/SKILL.md
+ ```
+ 
+-**anti-ai-design enforces 22 banned patterns and 14 required quality signals on every generation.**
++**anti-ai-design enforces 18 banned patterns and 12 required quality signals on every generation.**
+ Violating any banned pattern requires immediate regeneration. No exceptions.
+ 
+ ### anti-ai-design Reference Files (load only what is needed per phase)
+@@ -191,6 +194,21 @@ SHIP
+ ---
+ 
+ 
++## 3D WORK STREAM (added)
++
++Order for any 3D task:
++
++```
++1. spec-driven-development    -> confirm the slice and acceptance criteria exist (docs/spike/plan.md or the prompt)
++2. gltf-asset-gate            -> build or extend the validator FIRST (test-driven)
++3. blender-asset-pipeline     -> author and export through the single build script
++4. gltf-asset-gate            -> run it; paste the real output
++5. webgl-viewer-engineering   -> load in the viewer; material-swap test
++6. visual-fidelity-review     -> produce the review pack, then STOP for human scoring
++```
++
++Supporting skills: source-driven-development (verify Blender and three.js docs), debugging-and-error-recovery, performance-optimization. anti-ai-design is NOT used for 3D asset work.
++
+ ## SKILL ACTIVATION DECISION TREE
+ 
+ ```
+@@ -257,6 +275,36 @@ Never invert this order:
+ ---
+ 
+ 
++## STANDING RULES (operative summary of master-file Sections 0 and 1)
++
++1. Priority order: Correct, Safe, Clear, Efficient, Elegant.
++2. Surface assumptions before acting. If sources conflict, STOP, name the conflict, recommend a resolution, and wait.
++3. Make the smallest change that satisfies the task. No unrequested refactors or features.
++4. Evidence, not claims: "done" means exact commands and their real output, failures included. Label anything unverified as unverified.
++5. Async code has explicit error handling and timeouts. Validate edge cases (empty, null, boundaries). Never trust input. No secrets in code or logs. Never suppress lint or type errors.
++6. Performance: no per-frame allocations in render loops; measure before optimising.
++7. Self-review before completion, then the Change Summary below.
++8. Never write "photorealistic", "production-ready" or "verified" without matching evidence.
++
++## SESSION PROTOCOL (added)
++
++- One phase per session. At start, read `docs/STATE.md` if it exists. At the end, update it (max 20 lines: done, next, blockers, decisions, usage notes).
++- Iteration caps: at most 3 attempts on any failing step, and at most 3 render-review rounds per zone. Then stop and report.
++- Cost control: no repeated full builds; run targeted tests first; do not re-read unchanged files; prefer scripts to GUI control.
++- For 3D work, log wall-clock time, attempts and failures in `docs/spike/cost-log.md`.
++- Work on a branch named for the phase. Commit atomically. Never push, open PRs or deploy unless authorised in that message.
++
++## HARD PROHIBITIONS (added)
++
++Unless the owner authorises it explicitly in the same message, the agent must NOT: make purchases; accept any licence or terms; download third-party 3D models, textures, HDRIs or fonts; touch production services, credentials or customer data; install system software; mark any human gate (GATE-01 to GATE-11) as signed, or imply it is.
++
++## 3D EVIDENCE RULES (added)
++
++- A 3D claim requires `gltf-asset-gate` output (JSON report plus exit code 0) tied to the GLB's sha256.
++- A visual claim requires a human review record from `visual-fidelity-review`. The agent may list known defects but never awards a pass.
++- Use only owner-approved reference material and assets. Every node has a provenance entry.
++- Deviations from spec (for example WebP instead of KTX2 when `toktx` is missing) are reported, never silently applied.
++
+ ## CHANGE SUMMARY — REQUIRED ON EVERY COMPLETED TASK
+ 
+ Every completed task must produce this before being marked done:
+diff --git a/README.md b/README.md
+index 4fe96e0..86b6b5d 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # AutoLab Digital Showroom
+ > **Interactive 3D Automotive Interior Configurator & Sales Atelier**  
+-> Prepared and codified for downstream production by **Astra**. Governed by 27 active agent skills, Next.js 14 App Router, Three.js WebGL, and Anti-AI Design standards.
++> Prepared and codified for downstream production by **Astra**. Governed by 31 agent skills (27 original + 4 for 3D/viewer work), a Next.js App Router web app, and Anti-AI Design standards. **Current status: a 2D showcase scaffold only.** The Three.js / React Three Fiber viewer, the 3D asset and the persistence layer are planned, not built.
+ 
+ ---
+ 
+@@ -14,10 +14,10 @@
+ >    - All development decisions, 3D asset specifications, and configuration logic must derive strictly from the **`/docs` directory**:
+ >      - [`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md) — Master implementation handoff directive.
+ >      - [`docs/PRD.md`](docs/PRD.md) — Product requirements and customer journey.
+->      - [`docs/production-plan.md`](docs/production-plan.md) — 4-stage machine-readable implementation roadmap.
++>      - [`docs/production-plan.md`](docs/production-plan.md) — staged implementation roadmap (Stage 0 spike and gates, then four build stages).
+ >      - [`docs/3d-assets/`](docs/3d-assets/) — S-Class 3D specification, scene graph map, and Blender pipeline.
+ >      - [`docs/configuration/`](docs/configuration/) — Configuration engine, options catalogue, and vehicle expansion.
+->      - [`docs/human-approval-gates.md`](docs/human-approval-gates.md) — 8 explicit human approval gates.
++>      - [`docs/human-approval-gates.md`](docs/human-approval-gates.md) — 11 explicit human approval gates.
+ >    - Your master orchestration contracts are [AGENTS.md](AGENTS.md) and [.agents/rules/skill-orchestration.md](.agents/rules/skill-orchestration.md).
+ > 2. **Permanent Cognitive Foundations** (Always Active):
+ >    - `.agents/skills/global-reasoning-layer/SKILL.md`: Defensive reasoning engineer, not an unverified generator.
+@@ -40,8 +40,8 @@ docs/
+ ├── PRD.md                                 # Master Product Requirements Document
+ ├── architecture.md                        # Full-stack technical topology & data model
+ ├── design-system.md                       # Luxury Anti-AI design tokens & palette
+-├── human-approval-gates.md                # 8 explicit human sign-off gates
+-├── production-plan.md                     # Machine-readable 4-stage implementation plan
++├── human-approval-gates.md                # 11 explicit human sign-off gates
++├── production-plan.md                     # Staged implementation plan (Stage 0 spike + 4 stages)
+ │
+ ├── product/                               # PRODUCT DEFINITION
+ │   ├── product-constitution.md            # Foundational principles & non-negotiable boundaries
+@@ -132,7 +132,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application shel
+ ### 3. Database Setup (Supabase / Firebase)
+ Configure `.env.local`:
+ ```bash
+-DATABASE_PROVIDER=supabase # or "firebase"
++# Supabase is the single backend (decision D5). The code does not read a DATABASE_PROVIDER toggle.
+ 
+ # Supabase
+ NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
+@@ -140,7 +140,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+ DATABASE_URL="postgres://postgres:password@db.your-project.supabase.co:5432/postgres"
+ 
+ # AutoLab WhatsApp Destination
+-NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER="254700000000"
++NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER=""  # the real number comes from AutoLab (GATE-07); never ship a placeholder
+ ```
+ 
+ ---
+@@ -163,7 +163,7 @@ NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER="254700000000"
+ 
+ ## 📋 Commercial Governance & Human Approval
+ 
+-The project is governed by the **KES 750,000** fixed bespoke production fee. Before public launch, the eight human approval gates in [`docs/human-approval-gates.md`](docs/human-approval-gates.md) must be formally confirmed by AutoLab leadership.
++The project is governed by the **KES 750,000** fixed bespoke production fee. Before public launch, the eleven human approval gates in [`docs/human-approval-gates.md`](docs/human-approval-gates.md) must be formally confirmed by AutoLab leadership.
+ 
+ ---
+ 
+diff --git a/docs/3d-assets/interior-component-map.md b/docs/3d-assets/interior-component-map.md
+index 1596888..6654f87 100644
+--- a/docs/3d-assets/interior-component-map.md
++++ b/docs/3d-assets/interior-component-map.md
+@@ -54,3 +54,11 @@ The WebGL application logic targets specific material slots to execute live swap
+                 ├──▶ MAT_Steering_Leather    ──▶ Steering Wheel Outer Rim & Airbag Hub
+                 └──▶ EMISSIVE_Ambient_Lighting ➔ Continuous 253-LED Optical Fiber Perimeter
+ ```
++
++## OPEN ITEMS (resolve before freezing the manifest)
++
++1. The console node is named three ways: `MAT_Console_Veneer` (table), `MAT_Trim_Deck_Main` (mapping diagram) and `MAT_Console_Veneer_And_Leather` (manifest). One slot cannot carry two physical materials (veneer and leather); see decision D2 in docs/spike/conflicts.md.
++2. Four nodes in this map are absent from the scene manifest: `GEO_Door_Armrests_All`, `GEO_Seat_Front_Driver_Bolsters`, `GEO_Seat_Rear_CalfRest_RH`, `GEO_Seat_Rear_LH_Suite`.
++3. Four slots used by manifest nodes have no entry in the manifest's `materialSlots`: `MAT_Screen_Driver_Cluster`, `MAT_Console_Veneer_And_Leather`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`.
++4. No slot exists for accent thread colour (see material specification, decision D1).
++5. Interior Composition tiers need no extra 3D mechanism if implemented as a slot-assignment rule in application code (monotone: one colour to Primary and Secondary; duotone: two colours). Only a fluted-pattern tier may need a texture or mesh variant.
+diff --git a/docs/3d-assets/material-and-texture-specification.md b/docs/3d-assets/material-and-texture-specification.md
+index 03dabf3..2a79179 100644
+--- a/docs/3d-assets/material-and-texture-specification.md
++++ b/docs/3d-assets/material-and-texture-specification.md
+@@ -7,7 +7,7 @@
+ 
+ ## 1. PBR Shader Architecture
+ 
+-All materials must be authored using the standardized **Physically Based Rendering (PBR) Metallic-Roughness** workflow compatible with `KHR_materials_pbrSpecularGlossiness` and `KHR_materials_clearcoat` extensions in glTF 2.0 / WebGL.
++All materials must be authored using the standardized **Physically Based Rendering (PBR) Metallic-Roughness** workflow. Specular-Glossiness is not used: `KHR_materials_pbrSpecularGlossiness` is deprecated and no longer loaded by current three.js. Use these glTF 2.0 extensions as needed (verify support in the pinned three.js version): `KHR_materials_clearcoat`, `KHR_materials_sheen`, `KHR_materials_specular`, `KHR_materials_ior`, `KHR_materials_anisotropy`, `KHR_materials_emissive_strength`.
+ 
+ ### Required Channel Packing (ORM Texture Standard)
+ To minimize draw calls and GPU memory overhead, textures must be packed into composite channel maps:
+@@ -70,3 +70,10 @@ To balance maximum luxury fidelity against web loading speed:
+ | **Central OLED & Driver Cluster Screens**| 1024 x 1024 px | KTX2 / Basis Universal | WebP / PNG | High-contrast interface graphics |
+ | **Active Ambient Lighting Core** | 512 x 512 px | Emissive Vertex / KTX2 | Vertex Color | Diffuse optical bloom texture |
+ | **Floor Carpeting & Shadow Occlusion** | 512 x 512 px | KTX2 / Basis Universal | WebP | Low-visibility footwell areas |
++
++## Export Reality & Thread Slot (added: PROPOSED, pending decision D1)
++
++1. Blender's built-in glTF exporter writes PNG, JPEG or WebP textures, not KTX2. KTX2 (Basis Universal) is produced by a post-export step (gltf-transform with KTX-Software `toktx`). If that tooling is unavailable the pipeline must STOP and report. Falling back to WebP is allowed only as a recorded, owner-approved deviation.
++2. Procedural Blender shader nodes do not export. Every material must be baked to images or reduced to Principled BSDF inputs.
++3. **Accent thread colour needs its own material slot.** A normal map encodes shape, not colour, so thread colour cannot be changed through the seat normal map. PROPOSED: slot `MAT_Stitching_Thread` (metal-rough, no normal map, roughness set during the spike) carried by dedicated thin stitch meshes on seats, bolsters and wheel. Stitch pattern (Diamond Quilt vs French Seam) is a separate choice: swap the seat's baked normal-map set, or toggle two stitch-mesh variants by visibility.
++4. Four slots used by nodes in the scene manifest are not defined in its `materialSlots` list: `MAT_Screen_Driver_Cluster`, `MAT_Console_Veneer_And_Leather`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`. Define them, or remap the nodes, before asset production.
+diff --git a/docs/3d-assets/s-class-3d-specification.md b/docs/3d-assets/s-class-3d-specification.md
+index 88c459b..104e279 100644
+--- a/docs/3d-assets/s-class-3d-specification.md
++++ b/docs/3d-assets/s-class-3d-specification.md
+@@ -90,3 +90,7 @@ To ensure commercial deployment safety prior to formal brand licensing agreement
+ * **Brand Emblems:** The Mercedes-Benz three-pointed star on the steering wheel boss and the Maybach double-M insignia on the C-pillar/rear console must be isolated on dedicated detachable sub-nodes (`GEO_Logo_Steering_Boss`, `GEO_Logo_Rear_Console`).
+ * **Anonymized Fallback:** The asset must include a clean, unbranded geometric boss cap and an optional **AutoLab Bespoke Atelier** metal badge placeholder that can be toggled via scene configuration.
+ * **Audio Badging:** Burmester® acoustic grilles must feature geometric acoustic hole perforation arrays without embedded registered trademark wordmarks.
++
++## Scope Note: Kinematics (added)
++
++The rigged mechanisms in this specification (rear-seat recline, chauffeur tilt, tambour console door, 4D tweeters) are NOT listed in `docs/product/decision-freeze-and-scope.md`, which includes scene graph, PBR networks, WebGL optimisation (including LOD), the shareable summary card, vehicle abstraction and source traceability. Treat kinematics as STRETCH. Do not start rigging until decision D8 is recorded.
+diff --git a/docs/3d-assets/viewer-and-integration-requirements.md b/docs/3d-assets/viewer-and-integration-requirements.md
+index ce9af92..458db30 100644
+--- a/docs/3d-assets/viewer-and-integration-requirements.md
++++ b/docs/3d-assets/viewer-and-integration-requirements.md
+@@ -12,7 +12,7 @@ The Digital Showroom embeds an interactive 3D WebGL canvas built on **Three.js /
+ ### Core Rendering Pipeline
+ * **Renderer:** `WebGLRenderer` with `antialias: true`, `powerPreference: "high-performance"`.
+ * **Tone Mapping:** `ACESFilmicToneMapping` with exposure calibrated to `1.05`.
+-* **Color Space:** `sRGBEncoding` (WebGL standard linear-to-sRGB output).
++* **Color Space:** sRGB output via `renderer.outputColorSpace = THREE.SRGBColorSpace` (the default in current three.js). `sRGBEncoding` was removed after r152: do not use it. Colour textures are tagged sRGB; normal and ORM maps stay linear.
+ * **Shadows:** Soft PCF shadows enabled for interior ambient grounding (`pcfSoftShadowMap`).
+ * **Environment:** Curated studio HDRI environment map (subtle warm interior softboxes) producing realistic specular highlights on leather and lacquer without harsh outdoor daylight.
+ 
+@@ -62,3 +62,13 @@ When the user selects a material, color, or trim option in the UI:
+ Mobile browsers under memory pressure frequently drop WebGL contexts. The application must include defensive guards:
+ * Listen for `webglcontextlost` on the canvas: Cancel render loop, display graceful fallback UI card (*"Graphics context paused — resuming..."*).
+ * Listen for `webglcontextrestored`: Re-instantiate Three.js scene, reload GLB from browser cache, restore last active configuration state.
++
++## 6. Loader, Hosting & Fallback Requirements (added)
++
++1. **Version matrix (verify with `npm ls` before installing):** React 19 requires `@react-three/fiber` 9.x and `@react-three/drei` 10.x; React 18 requires fiber 8.x and drei 9.x. The current fiber/drei releases do not install on React 18. This repo moves to Next 16 / React 19 in Stage 0 (see docs/production-plan.md).
++2. **Decoders are self-hosted.** Copy the Draco decoder to `/public/draco/` and the Basis/KTX2 transcoder to `/public/basis/`. Do not rely on third-party CDNs for decoders.
++3. **Progressive loading.** Load `interior_low.glb` first, then the full-detail GLB. The existing 2D SVG stage is the poster and the fallback for WebGL failure, GLB failure and context loss.
++4. **Caching.** Serve GLB, decoder and texture files with long-lived immutable cache headers and content-hashed file names.
++5. **Material swapping** is performed on one shared material instance per slot, found by material name on load. Never clone materials per mesh and never create materials inside render code.
++6. **Thread and composition** follow the decisions recorded in docs/spike/conflicts.md (D1 and D2).
++7. **Test hook.** Expose `window.__autolab` (current slot colours, `renderer.info`) only when `NEXT_PUBLIC_E2E=1`.
+diff --git a/docs/human-approval-gates.md b/docs/human-approval-gates.md
+index bd90ee2..354ffe3 100644
+--- a/docs/human-approval-gates.md
++++ b/docs/human-approval-gates.md
+@@ -7,11 +7,11 @@
+ 
+ ## Operating Principle
+ 
+-An AI agent must never invent commercial decisions, catalog offerings, or brand permissions. The following eight decisions require **explicit human confirmation** before downstream production enters final stages:
++An AI agent must never invent commercial decisions, catalog offerings, or brand permissions. The following eleven decisions require **explicit human confirmation** before downstream production enters final stages:
+ 
+ ---
+ 
+-## 1. The Eight Human Approval Gates
++## 1. The Eleven Human Approval Gates
+ 
+ | Gate ID | Human Decision Required | Current Proposed Baseline | Impact if Unapproved | Status |
+ | :--- | :--- | :--- | :--- | :--- |
+@@ -23,6 +23,9 @@ An AI agent must never invent commercial decisions, catalog offerings, or brand
+ | **GATE-06** | **AutoLab Branding & Visual Assets** | Official AutoLab vector logo, luxury wordmark, font files, and workshop portfolio photography. | Prevents generic placeholder styling in the public header and summary sheets. | **PENDING CONFIRMATION** |
+ | **GATE-07** | **Official Contact Destination** | AutoLab official WhatsApp Business telephone number and Nairobi showroom physical address. | Inbound lead messages and booking requests must route to real sales staff. | **PENDING CONFIRMATION** |
+ | **GATE-08** | **Final 3D Asset Quality Signoff** | Approval of Astra's final Blender WebGL interior mesh before public deployment. | Guarantees visual standard aligns with AutoLab's luxury brand reputation. | **PENDING CONFIRMATION** |
++| **GATE-09** | **Hosting, Domain & Account Ownership** | A hosting plan that permits commercial use (see docs/ops/hosting-and-handover.md), AutoLab-owned domain, hosting and database accounts, and a named payer for running costs after delivery. | A commercial site cannot be deployed on a non-commercial plan; unclear ownership blocks handover. | **PENDING CONFIRMATION** |
++| **GATE-10** | **Privacy & Data Protection Position** | AutoLab confirms it is the data controller, its ODPC registration status is checked, and the privacy notice, consent wording and retention period are approved (see docs/ops/privacy-and-data-protection.md). | The lead form collects names and phone numbers; launching without this exposes AutoLab to regulatory and reputational risk. | **PENDING CONFIRMATION** |
++| **GATE-11** | **Reference Material & Third-Party Asset Licences** | Owner-captured reference photos and measurements of a real car, hide and thread swatch photos (see docs/spike/reference-capture-checklist.md), and written approval of any third-party asset (for example a studio HDRI) only after its licence text has been read. | Without ground-truth references the 3D asset cannot be checked for fidelity; unlicensed assets create IP exposure. | **PENDING CONFIRMATION** |
+ 
+ ---
+ 
+@@ -54,4 +57,13 @@ Before public deployment, each box below must be checked and dated by an authori
+ 
+ [ ] GATE-08: Final 3D Asset Quality Signoff Completed
+     Signed: ___________________________ Date: ____________
++
++[ ] GATE-09: Hosting, Domain & Account Ownership Confirmed
++    Signed: ___________________________ Date: ____________
++
++[ ] GATE-10: Privacy & Data Protection Position Approved
++    Signed: ___________________________ Date: ____________
++
++[ ] GATE-11: Reference Material & Third-Party Asset Licences Approved
++    Signed: ___________________________ Date: ____________
+ ```
+diff --git a/docs/production-plan.md b/docs/production-plan.md
+index a12a87c..3ec6e86 100644
+--- a/docs/production-plan.md
++++ b/docs/production-plan.md
+@@ -71,3 +71,16 @@ Stage 4: Lead Flow & Persistence (Supabase / WhatsApp)
+          ├── Consultation booking form & DB persistence
+          └── QA audit against acceptance criteria and production readiness checklist
+ ```
++
++## Stage 0: Foundations, Gates & Feasibility Spike (inserted before Stage 1)
++
++Purpose: prove the riskiest assumptions cheaply before the remaining budget is committed.
++
++- 0A Environment gate (tools, plan, region)
++- 0B Foundations (Next 16 / React 19, Firebase removed, tests and CI, config)
++- 0C Asset gate proven on a synthetic GLB
++- 0D Spike asset: one front seat and the central OLED
++- 0E Viewer spike with a material swap
++- 0F Human visual review, recording one decision: GO, HYBRID or NO-GO
++
++No Stage 1 full-asset work starts until 0F records a decision. Details: `docs/spike/plan.md`.
+diff --git a/docs/quality/performance-requirements.md b/docs/quality/performance-requirements.md
+index 8f4be66..d53137c 100644
+--- a/docs/quality/performance-requirements.md
++++ b/docs/quality/performance-requirements.md
+@@ -44,3 +44,11 @@ WebGL memory leaks are the primary cause of browser tab crashes. The frontend vi
+ 2. **Dispose Textures:** Explicitly call `texture.dispose()` on every diffuse, normal, roughness, and metalness map when swapped.
+ 3. **Dispose Render Targets:** Free shadow maps and PMREM environment textures during page transitions.
+ 4. **Context Loss Guard:** Automatically throttle rendering or reduce resolution scale (`pixelRatio = 1.0`) on detected mobile low-power states.
++
++## Budget Clarifications (added: PROPOSED, owner to confirm)
++
++1. **File-size semantics.** 5.0 MB is the TARGET and 15.0 MB the HARD MAXIMUM for the delivered GLB as transferred (Draco-compressed geometry, KTX2 textures). Record decoded GPU texture memory separately; the two numbers are not interchangeable.
++2. **GPU texture memory (estimate, not measured).** Using pixels x 1 byte x 1.33 for mips on GPU-compressed formats, at the manifest's resolutions with 3 maps per slot, the 7 defined slots total about 49 MB and the 4 undefined slots at 1024 px add about 17 MB: about 66 MB before framebuffers and the environment map. That exceeds the under-64 MB mobile target. A mobile texture tier is therefore required (for example 1024 px for the two 2048 px slots, which saves about 25 MB) and counts as part of the LOD deliverable.
++3. **Progressive delivery.** Ship `interior_low.glb` for first interaction, then the full-detail file. The 2D SVG stage is the poster while loading.
++4. **Reference device.** Add a mid-range Android phone to the device matrix. The listed devices are flagship-class; mid-range phones are common in the Nairobi market (confirm with AutoLab).
++5. **Measure on a real device.** Headless browsers cannot report real frame rates; headless tests log `renderer.info` only.
