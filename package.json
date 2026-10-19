@@ -14,6 +14,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:e2e": "playwright test --project=chromium",
+    "validate:asset": "node scripts/make-fixture.mjs --draco && node scripts/validate-glb.mjs --scope spike --asset tests/fixtures/spike-synthetic.glb --synthetic",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push"
@@ -30,15 +31,19 @@
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
     "@playwright/test": "^1.64.1",
     "@types/node": "^22.20.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "ajv": "^8.20.0",
     "autoprefixer": "^10.4.20",
+    "draco3dgltf": "1.5.9",
     "drizzle-kit": "^0.24.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.2",
+    "gltf-validator": "2.0.0-dev.3.10",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.6.2",

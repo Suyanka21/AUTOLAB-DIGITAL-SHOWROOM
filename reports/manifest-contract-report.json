@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "scope": "full",
+  "asset": null,
+  "sha256": null,
+  "missingMaterialSlots": [
+    "MAT_Carpet_Floor",
+    "MAT_Console_Veneer_And_Leather",
+    "MAT_Door_Card_Substrate",
+    "MAT_Screen_Driver_Cluster"
+  ],
+  "errors": [
+    "undefined material slots: MAT_Carpet_Floor, MAT_Console_Veneer_And_Leather, MAT_Door_Card_Substrate, MAT_Screen_Driver_Cluster"
+  ],
+  "warnings": []
+}

@@ -28,7 +28,7 @@
 | D1 | How does thread colour change in 3D? | Dedicated thin stitch meshes with their own slot `MAT_Stitching_Thread` (a real colour change, one extra material). Alternatives: per-colour texture sets (memory heavy) or a custom shader (breaks standard glTF materials). | Phase 3 | |
 | D2 | Console: one slot for veneer and leather? | Split. `GEO_Console_Center_Front` uses `MAT_Console_Veneer` (define it); armrest lids become a new node using `MAT_Upholstery_Secondary`. | Stage 1 console zone | |
 | D3 | Reference code design | Random 6-character code from the 32-symbol alphabet (about 1.07 billion values), stored, unique constraint and retry. Format `AL-SC-2026-XXXXXX`; update FAC-11 and the configuration model. The public read endpoint returns the configuration only, never personal data. | Phase 7 | Format AL-SC-2026-XXXXXX approved |
-| D4 | Budget semantics | Accept the clarifications in `docs/quality/performance-requirements.md` (5 MB target / 15 MB hard max as transferred; separate GPU estimate; mobile texture tier; low-LOD first). | Phase 2 | |
+| D4 | Budget semantics | Accept the clarifications in `docs/quality/performance-requirements.md` (5 MB target / 15 MB hard max as transferred; separate GPU estimate; mobile texture tier; low-LOD first). | Phase 2 | Approved as proposed by owner, 2026-10-19 |
 | D5 | Backend | Supabase / Drizzle only; remove Firebase. | Phase 1A | Supabase / Drizzle only |
 | D6 | Framework | Upgrade to Next 16 with React 19 now, while the app is tiny. | Phase 1A | Next 16 + React 19 |
 | D7 | Hosting and ownership | A plan that permits commercial use, with AutoLab-owned accounts (see `docs/ops/hosting-and-handover.md`). | Stage 4 | |
