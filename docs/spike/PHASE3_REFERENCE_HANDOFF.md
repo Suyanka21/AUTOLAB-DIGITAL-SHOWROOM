@@ -2,7 +2,7 @@
 **Project:** AutoLab Digital Showroom — Mercedes-Benz S-Class V223 Feasibility Spike  
 **Asset Scope:** `GEO_Seat_Front_Driver_Flutes` & `GEO_Dashboard_Screen_Central_OLED`  
 **Governing Documents:** [`AGENTS.md`](../../AGENTS.md), [`docs/STATE.md`](../STATE.md), [`docs/spike/plan.md`](plan.md), [`docs/spike/conflicts.md`](conflicts.md), [`docs/ASTRA_EXECUTION_PROMPTS.md`](../ASTRA_EXECUTION_PROMPTS.md)  
-**Status:** REFERENCE INTEGRATION COMPLETE • PRE-FLIGHT BLOCKERS DOCUMENTED  
+**Status:** REFERENCE INTEGRATION COMPLETE • TWO-NODE FEASIBILITY SPIKE APPROVED BY OWNER 2026-10-20 • HUMAN GATES OPEN
 
 ---
 
@@ -104,19 +104,19 @@ Prior to full cabin modeling and final visual sign-off (GATE-08), the following 
 
 ## 6. Phase 3 Prerequisites & Blocker Status
 
-Astra High cannot begin Phase 3 execution until the following prerequisites are addressed:
+The owner approved the two-node feasibility spike and D10 on 2026-10-20. The remaining items below limit the claims that may be made from its output.
 
 | Item | Requirement | Current Status | Blocker? |
 | :--- | :--- | :--- | :--- |
 | **Blender 5.2.2 LTS** | Executable and headless `bpy` verified | **VERIFIED** at `C:\Program Files\Blender Foundation\Blender 5.2\blender.exe` | No |
-| **`toktx` (KTX-Software)** | CLI tool for KTX2 texture transcoding | **MISSING** on system PATH and Program Files | **DEVIATION REQUIRED** (Export will use WebP texture fallback per spec) |
+| **`toktx` (KTX-Software)** | CLI tool for KTX2 texture transcoding | **MISSING** on system PATH and Program Files | **FEASIBILITY DEVIATION APPROVED**: document WebP fallback; do not claim KTX2 production compliance. |
 | **Decision D1** | Thread colour mechanism | **UNDECIDED** | **RESOLVED FOR SPIKE** by dropping stitching node from scope |
 | **Decision D4** | Performance budgets | **APPROVED** by owner 2026-10-19 | No |
-| **Decision D10** | Reference capture confirmation | **OPEN / PENDING** (Owner must confirm reference status) | **BLOCKER** |
-| **Feasibility Spike Plan** | [`docs/spike/plan.md`](plan.md) approval | **DRAFT / UNAPPROVED** (Requires explicit owner approval) | **BLOCKER** |
-| **Human Gates** | GATE-01 (Chassis), GATE-11 (Reference Capture) | **OPEN** | Documented as provisional |
+| **Decision D10** | Reference basis for feasibility | **APPROVED** by owner 2026-10-20: available manufacturer and reputable published visual references; targeted web research permitted with source URLs and verified-versus-estimated labels. GAP-01 through GAP-04 remain open. | No for feasibility; physical capture remains needed for final fidelity claims. |
+| **Feasibility Spike Plan** | [`docs/spike/plan.md`](plan.md) approval | **APPROVED** by owner 2026-10-20 for the two-node Phase 3 feasibility spike only. | No |
+| **Human Gates** | GATE-01 (Chassis), GATE-08 (Visual), GATE-11 (Reference Capture) | **OPEN** | No visual or production acceptance implied. |
 
-*Governance Notice:* Antigravity cannot sign Decision D10, approve `docs/spike/plan.md`, or sign off any human approval gate on behalf of the owner. These require human sign-off.
+*Governance Notice:* The owner supplied the D10 and plan approvals directly on 2026-10-20. No agent has signed or may infer passage of GATE-01, GATE-08, or GATE-11.
 
 ---
 

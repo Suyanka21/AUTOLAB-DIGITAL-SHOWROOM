@@ -34,7 +34,7 @@
 | D7 | Hosting and ownership | A plan that permits commercial use, with AutoLab-owned accounts (see `docs/ops/hosting-and-handover.md`). | Stage 4 | |
 | D8 | Kinematics (rigged moving parts) | STRETCH only. Not in the decision freeze; add by change order if wanted. LOD and the share card are in scope. | Stage 1 | Excluded from V1 (strict scope lock) |
 | D9 | Vehicle (GATE-01) | Confirm which S-Class generation AutoLab's customers actually own. The spike proceeds with a PROVISIONAL V223 label. | Full asset | Mercedes-Benz S-Class approved for V1; V223 LWB is working 3D baseline (unverified detailed geometry provisional) |
-| D10 | Reference capture | Owner captures photos and measurements per `docs/spike/reference-capture-checklist.md` before Phase 3 for a meaningful fidelity score. | Phase 3 | |
+| D10 | Reference capture | Owner photos and measurements per `docs/spike/reference-capture-checklist.md` are still needed for final fidelity scoring; the two-node feasibility spike may use manufacturer and reputable published visual references, with provisional geometry and GAP-01 through GAP-04 open. | Phase 3 | Approved by owner, 2026-10-20: proceed on available published references. Astra may do targeted web research for missing views; record source URLs and separate verified facts from estimates. GATE-11 remains open. |
 | D11 | Third-party assets | None for the spike (procedural environment lighting only). Any HDRI or font needs the licence text read and written approval. | Stage 1 | |
 | D12 | Undefined slots (F1) | Define the 4 slots in the manifest with a schema-plus-test check; needed before the full asset, not for the spike. | Stage 1 | |
 
