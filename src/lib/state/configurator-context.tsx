@@ -5,6 +5,7 @@ import materialsCatalogue from "@/config/materials/catalogue.json";
 import colorsCatalogue from "@/config/materials/colors.json";
 import threadsCatalogue from "@/config/materials/accent-threads.json";
 import vehicleConfig from "@/config/vehicles/mercedes-s-class-v223.json";
+import { buildWhatsAppHref } from "@/lib/whatsapp";
 
 export type CameraViewId = "cockpit_master" | "driver_cluster" | "executive_rear" | "door_burmester";
 export type CompositionTier = "bespoke_monotone" | "bespoke_duotone" | "executive_fluted";
@@ -40,7 +41,7 @@ export interface ConfiguratorState {
   selectedAccentThread: typeof threadsCatalogue[0];
   
   // Helpers
-  whatsAppHref: string;
+  whatsAppHref: string | null;
 }
 
 const ConfiguratorContext = createContext<ConfiguratorState | null>(null);
@@ -68,7 +69,8 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     // Generate a unique reference code on client mount
-    setReferenceCode(generateRefCode());
+    const timer = setTimeout(() => setReferenceCode(generateRefCode()), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const selectedPrimaryColor = useMemo(() => {
@@ -127,8 +129,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
       `I would like to book a bespoke consultation with an AutoLab Atelier Specialist.`
     ].join("\n");
 
-    const phone = "254700000000"; // AutoLab Atelier WhatsApp Business Line (Gate 7 placeholder)
-    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    return buildWhatsAppHref(process.env.NEXT_PUBLIC_AUTOLAB_WHATSAPP_NUMBER, text);
   }, [
     referenceCode,
     selectedPrimaryColor,

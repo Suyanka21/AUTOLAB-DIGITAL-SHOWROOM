@@ -46,6 +46,10 @@ export function SummaryBar() {
       ? "Duotone Bolsters"
       : "Executive Fluted";
 
+  const whatsAppUnavailable = "WhatsApp booking is unavailable until AutoLab configures its number.";
+  const bookingClassName = "group relative flex-1 sm:flex-none flex items-center justify-center space-x-2.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#38B6FF] to-[#0090E7] text-black font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(56,182,255,0.35)] hover:shadow-[0_0_28px_rgba(56,182,255,0.55)] transition-all duration-300 active:scale-[0.98]";
+  const bookingContent = <><MessageSquare className="h-4 w-4 fill-black" /><span className="truncate">Book Bespoke Consultation at AutoLab Atelier</span><ExternalLink className="h-3.5 w-3.5 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /></>;
+
   return (
     <>
       {/* Sticky Bottom Bar */}
@@ -137,20 +141,14 @@ export function SummaryBar() {
               </button>
 
               {/* Primary CTA: WhatsApp Atelier Lead */}
-              <a
-                href={whatsAppHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex-1 sm:flex-none flex items-center justify-center space-x-2.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#38B6FF] to-[#0090E7] text-black font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(56,182,255,0.35)] hover:shadow-[0_0_28px_rgba(56,182,255,0.55)] transition-all duration-300 active:scale-[0.98]"
-              >
-                <MessageSquare className="h-4 w-4 fill-black" />
-                <span className="truncate">
-                  Book Bespoke Consultation at AutoLab Atelier
-                </span>
-                <ExternalLink className="h-3.5 w-3.5 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              {whatsAppHref ? (
+                <a href={whatsAppHref} target="_blank" rel="noopener noreferrer" className={bookingClassName}>{bookingContent}</a>
+              ) : (
+                <button type="button" disabled title={whatsAppUnavailable} className={`${bookingClassName} cursor-not-allowed opacity-50`}>{bookingContent}</button>
+              )}
             </div>
           </div>
+          {!whatsAppHref && <p role="status" className="mt-2 text-right text-xs text-amber-300">{whatsAppUnavailable}</p>}
         </div>
       </aside>
 
@@ -238,15 +236,17 @@ export function SummaryBar() {
               >
                 Close
               </button>
-              <a
-                href={whatsAppHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#38B6FF] text-black font-bold text-xs"
-              >
-                <MessageSquare className="h-3.5 w-3.5 fill-black" />
-                <span>Confirm on WhatsApp</span>
-              </a>
+              {whatsAppHref ? (
+                <a href={whatsAppHref} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#38B6FF] text-black font-bold text-xs">
+                  <MessageSquare className="h-3.5 w-3.5 fill-black" />
+                  <span>Confirm on WhatsApp</span>
+                </a>
+              ) : (
+                <button type="button" disabled title={whatsAppUnavailable} className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#38B6FF] text-black font-bold text-xs cursor-not-allowed opacity-50">
+                  <MessageSquare className="h-3.5 w-3.5 fill-black" />
+                  <span>Confirm on WhatsApp</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

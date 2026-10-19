@@ -11,11 +11,11 @@ export type PriorityTier = "HIGH" | "MEDIUM" | "LOW";
 export type GeometricTolerance = "EXACT" | "CONTROLLED_APPROX" | "APPROXIMATION";
 
 export interface SceneNodeDefinition {
-  sceneGraphIdentifier: string; // e.g. "GEO_Dashboard_Screen_Central_OLED"
-  moduleName: "Dashboard" | "Steering" | "Seating" | "Console" | "DoorCards" | "Lighting" | "Peripheral";
+  identifier: string; // e.g. "GEO_Dashboard_Screen_Central_OLED"
+  module: "Dashboard" | "Steering" | "Seating" | "Console" | "DoorCards" | "Lighting" | "Peripheral";
   priorityTier: PriorityTier;
   tolerance: GeometricTolerance;
-  materialSlotId?: string; // e.g. "MAT_Trim_Deck_Main"
+  materialSlot: string; // e.g. "MAT_Trim_Deck_Main"
   kinematic: boolean;
   kinematicDescription?: string;
   notes: string;

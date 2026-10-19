@@ -26,17 +26,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Check local storage for session
-    try {
-      const stored = localStorage.getItem("suyanka_auth_user");
-      if (stored) {
-        setUser(JSON.parse(stored));
+    const timer = setTimeout(() => {
+      // Restore the local session after mount.
+      try {
+        const stored = localStorage.getItem("suyanka_auth_user");
+        if (stored) {
+          setUser(JSON.parse(stored));
+        }
+      } catch {
+        // Ignore storage errors in private browsing
+      } finally {
+        setIsLoading(false);
       }
-    } catch {
-      // Ignore storage errors in private browsing
-    } finally {
-      setIsLoading(false);
-    }
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const saveUserSession = (userData: User | null) => {
