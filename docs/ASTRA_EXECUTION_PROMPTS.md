@@ -179,22 +179,25 @@ STOP after the Change Summary.
 ```
 
 ## Phase 3: The spike asset (the go / no-go)
-*Model: Astra, high effort. Branch: `phase-3-spike-asset`. Requires D1, D4, D10 recorded and plan.md approved by you.*
+*Model: Astra, high effort. Branch: `phase-3-spike-asset`. Requires D4 approved, D10 recorded, and plan.md approved by you (D1 undecided: stitching node is dropped).*
 
 ```
 PHASE 3: SPIKE ASSET
 Skills: $blender-asset-pipeline $gltf-asset-gate $source-driven-development $debugging-and-error-recovery
-Scope: the nodes in the approved docs/spike/plan.md section 3. Label every output
-PROVISIONAL (S-Class V223 LWB, GATE-01 open). Reference material: <path to owner's
-private reference folder, or "none">. Read it read-only; never copy it into the repo.
+Scope: the two approved nodes in docs/spike/plan.md section 3 (GEO_Seat_Front_Driver_Flutes
+and GEO_Dashboard_Screen_Central_OLED; stitching is dropped per undecided D1). Label every output
+PROVISIONAL (S-Class V223 LWB, GATE-01 open). Reference material: docs/spike/phase-3-reference/
+and docs/spike/PHASE3_REFERENCE_HANDOFF.md (or owner's private photo folder). Read read-only.
 
 1. Read the approved plan and ONLY the manifest, specification and component-map rows
-   for the spike nodes. Do not read other documents.
-2. Verify the Blender glTF export arguments for the installed version by
+   for the two spike nodes. Do not read other documents.
+2. Verify the Blender glTF export arguments for the installed version (Blender 5.2.2 LTS) by
    introspection (bpy.ops.export_scene.gltf.get_rna_type().properties.keys()) and
-   cite the Blender manual pages you used. Record the version.
+   cite the Blender manual pages you used. Record the version. Note Blender 5.2.2 uses
+   'Smooth by Angle' modifier (legacy Auto Smooth removed) and AgX view transform.
 3. Write blender/constants.py and blender/build_spike.py following $blender-asset-pipeline.
-   Run headless: blender -b --factory-startup --python blender/build_spike.py.
+   Run headless using verified Blender executable:
+   & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b --factory-startup --python blender/build_spike.py
    Output: public/assets/3d/s-class-v223/spike.glb.
 4. Run the gate: npm run validate:asset -- --scope spike. Paste the full output.
    Fix failures within the iteration cap (3 attempts per failing step).
