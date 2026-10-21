@@ -2,7 +2,7 @@ import { NodeIO } from "@gltf-transform/core";
 import {
   KHRDracoMeshCompression, KHRMaterialsAnisotropy, KHRMaterialsClearcoat,
   KHRMaterialsEmissiveStrength, KHRMaterialsIOR, KHRMaterialsSheen,
-  KHRMaterialsSpecular, KHRTextureBasisu,
+  KHRMaterialsSpecular, KHRTextureBasisu, EXTTextureWebP,
 } from "@gltf-transform/extensions";
 import draco3d from "draco3dgltf";
 import validator from "gltf-validator";
@@ -120,7 +120,29 @@ function extentOfNode(node) {
   return { min, max };
 }
 
-export async function validateGlbBytes(bytes, { scope = "full", synthetic = false } = {}) {
+function activeDisplayDiagonal(node) {
+  const points = new Map();
+  const matrix = node.getWorldMatrix();
+  for (const primitive of node.getMesh().listPrimitives()) {
+    const marker = primitive.getAttribute("_ACTIVE_DISPLAY");
+    const positions = primitive.getAttribute("POSITION");
+    if (!marker || !positions) continue;
+    for (let i = 0; i < positions.getCount(); i++) {
+      if (marker.getScalar(i) < 0.5) continue;
+      const p = positions.getElement(i, []);
+      const world = [0, 1, 2].map(axis =>
+        matrix[axis] * p[0] + matrix[axis + 4] * p[1] + matrix[axis + 8] * p[2] + matrix[axis + 12]);
+      points.set(world.map(v => v.toFixed(7)).join(","), world);
+    }
+  }
+  // Four corner vertices on the actual active face, not user-supplied dimensions.
+  if (points.size !== 4) return null;
+  const corners = [...points.values()];
+  return Math.max(...corners.flatMap((a, i) => corners.slice(i + 1).map(b =>
+    Math.hypot(...a.map((v, axis) => v - b[axis]))))) * 1000;
+}
+
+export async function validateGlbBytes(bytes, { scope = "full", synthetic = false, feasibilityWebp = false } = {}) {
   if (scope !== "full" && scope !== "spike") throw new Error(`Unknown scope: ${scope}`);
   const { manifest, schemaErrors, missingMaterialSlots } = inspectManifest();
   const packageJson = readJson(packagePath);
@@ -132,9 +154,18 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
       gltfValidator: packageJson.devDependencies["gltf-validator"],
     },
     missingMaterialSlots, errors: [...schemaErrors], warnings: [],
+    waivers: [], trianglesByNode: {}, textures: [],
     nodeCount: 0, materialCount: 0, triangleCount: 0, drawCalls: 0,
     fileSizeBytes: bytes.length, gpuTextureBytesEstimated: 0,
+    activeDisplayDiagonalMm: /** @type {number | null} */ (null),
   };
+  if (feasibilityWebp) {
+    if (scope !== "spike" || synthetic) report.errors.push("WebP waiver is only valid for the real spike scope");
+    else {
+      report.waivers.push("P3-WEBP-2026-10-20");
+      report.warnings.push("Owner-approved WebP feasibility deviation; not KTX2 production compliance (docs/spike/waivers.md).");
+    }
+  }
   const expectedNodes = scope === "spike" ? manifest.nodes.filter((node) => spikeNodes.includes(node.identifier)) : manifest.nodes;
   if (scope === "spike" && expectedNodes.length !== spikeNodes.length) report.errors.push("Spike node list does not match the manifest");
   const scopedMissing = expectedNodes.map((node) => node.materialSlot).filter((slot) => missingMaterialSlots.includes(slot));
@@ -150,7 +181,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   catch (error) { report.errors.push(error.message); return report; }
 
   for (const extension of raw.extensionsUsed ?? []) {
-    if (!allowedExtensions.has(extension)) report.errors.push(`banned extension: ${extension}`);
+    if (!allowedExtensions.has(extension) && !(extension === "EXT_texture_webp" && report.waivers.length)) report.errors.push(`banned extension: ${extension}`);
   }
   if ((raw.animations ?? []).length) report.errors.push("undeclared animations");
   const rawNames = (raw.materials ?? []).map((material) => material.name ?? "");
@@ -160,7 +191,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   }
   if (!synthetic) {
     if (!(raw.extensionsUsed ?? []).includes("KHR_draco_mesh_compression")) report.errors.push("missing Draco compression");
-    if ((raw.textures ?? []).length && !(raw.extensionsUsed ?? []).includes("KHR_texture_basisu")) report.errors.push("missing KTX2 textures");
+    if ((raw.textures ?? []).length && !(raw.extensionsUsed ?? []).includes("KHR_texture_basisu") && !report.waivers.length) report.errors.push("missing KTX2 textures");
   } else {
     report.warnings.push(`Synthetic fixture uses generated PNG${(raw.extensionsUsed ?? []).includes("KHR_draco_mesh_compression") ? " with Draco geometry" : " and uncompressed geometry"}; production KTX2 checks are deferred.`);
   }
@@ -180,7 +211,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
     const io = new NodeIO().registerExtensions([
       KHRDracoMeshCompression, KHRMaterialsAnisotropy, KHRMaterialsClearcoat,
       KHRMaterialsEmissiveStrength, KHRMaterialsIOR, KHRMaterialsSheen,
-      KHRMaterialsSpecular, KHRTextureBasisu,
+      KHRMaterialsSpecular, KHRTextureBasisu, EXTTextureWebP,
     ]);
     if ((raw.extensionsUsed ?? []).includes("KHR_draco_mesh_compression")) {
       io.registerDependencies({ "draco3d.decoder": await withTimeout(draco3d.createDecoderModule(), "Draco decoder") });
@@ -192,6 +223,12 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   const rootDoc = doc.getRoot();
   const nodes = rootDoc.listNodes();
   const materials = rootDoc.listMaterials();
+  for (const texture of rootDoc.listTextures()) {
+    const size = texture.getSize();
+    report.textures.push({ name: texture.getName(), mimeType: texture.getMimeType(), size });
+    if (report.waivers.length && texture.getMimeType() !== "image/webp") report.errors.push("WebP waiver requires every texture to be image/webp");
+    if (size) report.gpuTextureBytesEstimated += Math.ceil(size[0] * size[1] * (texture.getMimeType() === "image/ktx2" ? 1 : 4) * 4 / 3);
+  }
   report.nodeCount = nodes.length;
   report.materialCount = materials.length;
   const expectedNames = new Set(expectedNodes.map((node) => node.identifier));
@@ -218,7 +255,6 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
       if (!size) report.errors.push(`unknown texture dimensions: ${name}`);
       else {
         if (Math.max(...size) > Number(slot.textureResolutionBudget)) report.errors.push(`texture resolution exceeds budget: ${name}`);
-        report.gpuTextureBytesEstimated += Math.ceil(size[0] * size[1] * (texture.getMimeType() === "image/ktx2" ? 1 : 4) * 1.33);
       }
     }
     if (!synthetic && name === "MAT_Upholstery_Primary" && (!material.getBaseColorTexture() || !material.getMetallicRoughnessTexture())) {
@@ -245,6 +281,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
       if (material?.getNormalTexture() && !primitive.getAttribute("TANGENT")) report.errors.push(`missing tangents: ${node.getName()}`);
     }
     report.triangleCount += nodeTriangles;
+    report.trianglesByNode[node.getName()] = nodeTriangles;
     const nodeBudget = budgets.perNodeTriangles[node.getName()];
     if (nodeBudget !== undefined && nodeTriangles > nodeBudget) report.errors.push(`node triangle budget exceeded: ${node.getName()}`);
     const extent = extentOfNode(node);
@@ -254,7 +291,10 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
         if (Math.max(Math.abs(extent.min[axis]), Math.abs(extent.max[axis])) > maxExtent[axis]) report.errors.push(`vehicle position exceeded: ${node.getName()} axis ${axis}`);
       }
       if (node.getName() === "GEO_Dashboard_Screen_Central_OLED" && budgets.oledDiagonalMm) {
-        const diagonalMm = Math.hypot(extent.max[0] - extent.min[0], extent.max[1] - extent.min[1]) * 1000;
+        const measured = activeDisplayDiagonal(node);
+        if (measured === null && !synthetic) report.errors.push("missing active-display geometry marker (four corners required)");
+        const diagonalMm = measured ?? Math.hypot(extent.max[0] - extent.min[0], extent.max[1] - extent.min[1]) * 1000;
+        report.activeDisplayDiagonalMm = diagonalMm;
         if (Math.abs(diagonalMm - budgets.oledDiagonalMm) > budgets.oledToleranceMm) report.errors.push(`OLED diagonal tolerance exceeded: ${diagonalMm.toFixed(2)} mm`);
       }
     }
@@ -269,12 +309,13 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
 }
 
 function parseArgs(args) {
-  const options = { scope: "full", synthetic: false, manifestOnly: false, asset: resolve(root, "public/assets/3d/s-class-v223/interior.glb"), report: resolve(root, "reports/glb-report.json") };
+  const options = { scope: "full", synthetic: false, manifestOnly: false, feasibilityWebp: false, asset: resolve(root, "public/assets/3d/s-class-v223/spike.glb"), report: resolve(root, "reports/glb-report.json") };
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--scope") options.scope = args[++index];
     else if (args[index] === "--asset") options.asset = resolve(args[++index]);
     else if (args[index] === "--report") options.report = resolve(args[++index]);
     else if (args[index] === "--synthetic") options.synthetic = true;
+    else if (args[index] === "--feasibility-webp") options.feasibilityWebp = true;
     else if (args[index] === "--manifest-only") options.manifestOnly = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
