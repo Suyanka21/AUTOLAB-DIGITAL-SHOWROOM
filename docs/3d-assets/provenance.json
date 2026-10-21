@@ -1,0 +1,66 @@
+{
+  "status": "PROVISIONAL: Mercedes-Benz S-Class V223 LWB; GATE-01/08/11 open; no human acceptance",
+  "recordedAt": "2026-10-21",
+  "ownerApprovalDate": "2026-10-20",
+  "approvalBaseCommit": "9089f25",
+  "scriptCommitHash": "964db795ee09299cc16d9ba32cce0f153019220c",
+  "asset": "public/assets/3d/s-class-v223/spike.glb",
+  "sha256": "36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e",
+  "tools": {
+    "blender": "5.2.2 LTS (d13f752e3b9c)",
+    "python": "3.13.13 embedded bpy",
+    "gltfTransform": "4.5.1",
+    "draco3dgltf": "1.5.9",
+    "sharp": "0.35.5",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "scripts": ["blender/constants.py", "blender/build_spike.py", "scripts/finalize-spike.mjs", "blender/render_spike.py"],
+  "referenceFiles": [
+    "docs/spike/PHASE3_REFERENCE_HANDOFF.md",
+    "docs/spike/phase-3-reference/VERIFICATION_REGISTER.md",
+    "docs/spike/phase-3-reference/PHASE3_SAFE_MODELING_BRIEF.md",
+    "docs/spike/phase-3-reference/REFERENCE_ACQUISITION_GAPS.md",
+    "docs/spike/phase-3-reference/AUTOLAB_V223_PHASE3_REFERENCE_PACK.txt"
+  ],
+  "formatDeviation": "P3-WEBP-2026-10-20: lossless WebP for feasibility only; no KTX2 compliance",
+  "openGaps": ["GAP-01", "GAP-02", "GAP-03", "GAP-04"],
+  "nodes": [
+    {
+      "node": "GEO_Seat_Front_Driver_Flutes",
+      "materialSlot": "MAT_Upholstery_Primary",
+      "specRows": [
+        "src/config/scene-manifest.s-class-v223.json: nodes[identifier=GEO_Seat_Front_Driver_Flutes], materialSlots[slotIdentifier=MAT_Upholstery_Primary]",
+        "docs/3d-assets/interior-component-map.md: GEO_Seat_Front_Driver_Flutes",
+        "docs/spike/plan.md: sections 3-5",
+        "docs/spike/PHASE3_REFERENCE_HANDOFF.md: sections 2.1, 3.2-3.3",
+        "docs/3d-assets/material-and-texture-specification.md: Primary Seat Leather and ORM rules"
+      ],
+      "construction": "Authored parametric base/back central inserts; temporary dense flute source baked to tangent normal map; no downloaded geometry; no stitching or bolsters",
+      "sourceUrls": ["https://media.mbusa.com/news/the-new-mercedes-benz-s-class-2021", "https://media.mbusa.com/news/meet-the-s-class-digital-luxury-well-being"],
+      "verifiedInformation": "Official publication establishes S-Class interior context and multiple upholstery variants; no measured seat geometry obtained",
+      "estimates": "Eight-flute layout retained from approved supplied pack; not independently confirmed as universal Standard Nappa. Insert width 320mm, base length 440mm, back length 570mm, 6mm bake-source channel depth, crown/recline and mounting positions are provisional. No verified fit claim.",
+      "textures": "Generated neutral brown placeholder albedo, baked normal, constant neutral ORM; not exact AutoLab materials",
+      "triangles": 4860
+    },
+    {
+      "node": "GEO_Dashboard_Screen_Central_OLED",
+      "materialSlot": "MAT_Screen_Central_OLED",
+      "specRows": [
+        "src/config/scene-manifest.s-class-v223.json: nodes[identifier=GEO_Dashboard_Screen_Central_OLED], materialSlots[slotIdentifier=MAT_Screen_Central_OLED]",
+        "docs/3d-assets/interior-component-map.md: GEO_Dashboard_Screen_Central_OLED",
+        "docs/spike/plan.md: sections 3-5",
+        "docs/spike/PHASE3_REFERENCE_HANDOFF.md: sections 2.2, 3.3-3.4"
+      ],
+      "construction": "Authored parametric beveled housing, step, active face and simplified lower strip joined to one mesh/material; four active-face vertices carry _ACTIVE_DISPLAY for gate measurement",
+      "sourceUrls": [
+        "https://media.mbusa.com/news/the-new-mercedes-benz-s-class-2021",
+        "https://media.mbusa.com/news/meet-the-s-class-digital-luxury-well-being",
+        "https://media.mbusa.com/storage/media/thumbnails/cwAppkWu4lKtQz39OkF9pNi6eIljJxoi28eogyHf_thumb.jpg"
+      ],
+      "verifiedInformation": "Manufacturer publication: 12.8-inch OLED, 1888x1728 pixels. Official photo visually inspected for standalone screen, bezel and lower-strip arrangement; no photo downloaded into repo.",
+      "derivedInformation": "219.507453 x 239.832217mm active area from diagonal and pixel ratio assuming square pixels; gate measures 325.106280mm diagonal after Draco",
+      "estimates": "38-degree inclination, 8mm side border, 22mm lower strip, 8mm housing depth and review location. 1.5mm radius and 0.8mm step follow project plan, not factory measurements. No rear mount/air-gap or switch-detail certification.",
+      "triangles": 566
+    }
+  ]
+}

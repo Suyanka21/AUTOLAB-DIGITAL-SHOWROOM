@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "nodeCount": 2,
+  "materialCount": 2,
+  "nodes": {
+    "GEO_Seat_Front_Driver_Flutes": {
+      "triangles": 4860,
+      "vertices": 2434,
+      "dimensionsMetres": [
+        0.3199999928474426,
+        0.6794869303703308,
+        0.5714948177337646
+      ]
+    },
+    "GEO_Dashboard_Screen_Central_OLED": {
+      "triangles": 566,
+      "vertices": 292,
+      "dimensionsMetres": [
+        0.23550745844841003,
+        0.17705616354942322,
+        0.22295713424682617
+      ]
+    }
+  },
+  "rawSha256": "73df3bdf1db68c84b91c78594e3e2efe77ab04bf4488dde64c59acdd99aa1173",
+  "finalSha256": "36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e"
+}

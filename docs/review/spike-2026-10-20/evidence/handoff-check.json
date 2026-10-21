@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-21T11:53:43.557Z",
+  "assetSha256": "36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e",
+  "renderFiles": 5,
+  "allRenderHashesMatch": true,
+  "allRenderTimesUnder300Seconds": true,
+  "stateLines": 15,
+  "sourceCommit": "964db795ee09299cc16d9ba32cce0f153019220c"
+}

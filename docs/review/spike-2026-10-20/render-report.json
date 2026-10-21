@@ -1,0 +1,145 @@
+{
+  "status": "PROVISIONAL: Mercedes-Benz S-Class V223 LWB; GATE-01/08/11 open",
+  "source": "public\\assets\\3d\\s-class-v223\\spike.glb",
+  "sha256": "36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e",
+  "renderer": "Cycles CPU; GPU/FPS/draw-call runtime NOT TESTED",
+  "blender": "5.2.2 LTS",
+  "samples": 24,
+  "resolution": [
+    1200,
+    900
+  ],
+  "threads": 4,
+  "perRenderLimitSeconds": 280,
+  "viewTransform": "AgX",
+  "lights": [
+    [
+      "Key",
+      [
+        -1.3,
+        -1.6,
+        2.6
+      ],
+      500,
+      1.6
+    ],
+    [
+      "Fill",
+      [
+        1.5,
+        -0.4,
+        1.9
+      ],
+      220,
+      1.3
+    ],
+    [
+      "Rim",
+      [
+        -0.4,
+        1.5,
+        2.4
+      ],
+      650,
+      1.0
+    ]
+  ],
+  "views": [
+    {
+      "file": "01-overview.png",
+      "seconds": 60.931373900035396,
+      "location": [
+        -0.03,
+        -2.45,
+        1.6
+      ],
+      "target": [
+        -0.03,
+        0.04,
+        0.72
+      ],
+      "orthoScale": 1.45,
+      "visibleNodes": [
+        "GEO_Seat_Front_Driver_Flutes",
+        "GEO_Dashboard_Screen_Central_OLED"
+      ],
+      "sha256": "b3c1add189ae4ec860e6b2e458d96e2d3d9d5c316668ee50cb82ea00dd60d22c"
+    },
+    {
+      "file": "02-seat-front.png",
+      "seconds": 57.35135139990598,
+      "location": [
+        -0.25,
+        -1.7,
+        1.17
+      ],
+      "target": [
+        -0.25,
+        0.2,
+        0.73
+      ],
+      "orthoScale": 1.12,
+      "visibleNodes": [
+        "GEO_Seat_Front_Driver_Flutes"
+      ],
+      "sha256": "aefecacae53223299f6c1ac94dc56b36da2272e666eb6765c968bb0f832e0863"
+    },
+    {
+      "file": "03-seat-detail.png",
+      "seconds": 54.939663500059396,
+      "location": [
+        -0.6,
+        -0.6,
+        1.1
+      ],
+      "target": [
+        -0.25,
+        0.2,
+        0.75
+      ],
+      "orthoScale": 0.62,
+      "visibleNodes": [
+        "GEO_Seat_Front_Driver_Flutes"
+      ],
+      "sha256": "b068f9582cb75dcfbef8dad9fbb3d8bba3e25d2e577af54a82a5411170be0350"
+    },
+    {
+      "file": "04-oled-front.png",
+      "seconds": 49.18967100000009,
+      "location": [
+        0.2,
+        -1.42,
+        1.54
+      ],
+      "target": [
+        0.2,
+        -0.48,
+        0.8
+      ],
+      "orthoScale": 0.48,
+      "visibleNodes": [
+        "GEO_Dashboard_Screen_Central_OLED"
+      ],
+      "sha256": "1e27ad5e8decc3be11be4c8b48ffa8173b2f1bc4eff11c32a1bfbd0f45012283"
+    },
+    {
+      "file": "05-oled-profile.png",
+      "seconds": 30.508610399905592,
+      "location": [
+        0.8,
+        -0.72,
+        0.99
+      ],
+      "target": [
+        0.2,
+        -0.48,
+        0.8
+      ],
+      "orthoScale": 0.5,
+      "visibleNodes": [
+        "GEO_Dashboard_Screen_Central_OLED"
+      ],
+      "sha256": "b35e7e0b1f0ec3935ce98886c56310f2f13da81433eb8e8f55ff5c63d3eb28d5"
+    }
+  ]
+}

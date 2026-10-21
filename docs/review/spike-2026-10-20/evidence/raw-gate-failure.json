@@ -1,0 +1,65 @@
+{
+  "passed": false,
+  "scope": "spike",
+  "synthetic": false,
+  "sha256": "8584de698fe9614b9ea6459cb440cc8ac83879f686bb7f17c11dce5a59f31bd1",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [
+    "MAT_Carpet_Floor",
+    "MAT_Console_Veneer_And_Leather",
+    "MAT_Door_Card_Substrate",
+    "MAT_Screen_Driver_Cluster"
+  ],
+  "errors": [
+    "file size 6454636 exceeds 3000000 bytes",
+    "missing KTX2 textures",
+    "Primary upholstery is missing required albedo or ORM texture",
+    "missing tangents: GEO_Seat_Front_Driver_Flutes"
+  ],
+  "warnings": [
+    "Out-of-scope undefined material slots: MAT_Carpet_Floor, MAT_Console_Veneer_And_Leather, MAT_Door_Card_Substrate, MAT_Screen_Driver_Cluster",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos MESH_PRIMITIVE_GENERATED_TANGENT_SPACE: Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_Dashboard_Screen_Central_OLED": 566,
+    "GEO_Seat_Front_Driver_Flutes": 4860
+  },
+  "textures": [
+    {
+      "name": "seat-normal",
+      "mimeType": "image/png",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "seat-albedo",
+      "mimeType": "image/png",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "nodeCount": 2,
+  "materialCount": 2,
+  "triangleCount": 5426,
+  "drawCalls": 2,
+  "fileSizeBytes": 6454636,
+  "gpuTextureBytesEstimated": 44739244,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 1
+  },
+  "activeDisplayDiagonalMm": 325.1062795353803,
+  "asset": "blender\\out\\spike-raw.glb"
+}

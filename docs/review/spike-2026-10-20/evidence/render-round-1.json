@@ -1,0 +1,129 @@
+{
+  "status": "PROVISIONAL: Mercedes-Benz S-Class V223 LWB; GATE-01/08/11 open",
+  "source": "public\\assets\\3d\\s-class-v223\\spike.glb",
+  "sha256": "36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e",
+  "renderer": "Cycles CPU; GPU/FPS/draw-call runtime NOT TESTED",
+  "blender": "5.2.2 LTS",
+  "samples": 24,
+  "resolution": [
+    1200,
+    900
+  ],
+  "threads": 4,
+  "perRenderLimitSeconds": 280,
+  "viewTransform": "AgX",
+  "lights": [
+    [
+      "Key",
+      [
+        -1.3,
+        -1.6,
+        2.6
+      ],
+      500,
+      1.6
+    ],
+    [
+      "Fill",
+      [
+        1.5,
+        -0.4,
+        1.9
+      ],
+      220,
+      1.3
+    ],
+    [
+      "Rim",
+      [
+        -0.4,
+        1.5,
+        2.4
+      ],
+      650,
+      1.0
+    ]
+  ],
+  "views": [
+    {
+      "file": "01-overview.png",
+      "seconds": 70.06665030005388,
+      "location": [
+        1.55,
+        -2.45,
+        1.95
+      ],
+      "target": [
+        -0.03,
+        0.04,
+        0.72
+      ],
+      "orthoScale": 1.45,
+      "sha256": "cfeb3ec86b7573c13573bc6201cd70c30744d491270a4df49f02354266021d49"
+    },
+    {
+      "file": "02-seat-front.png",
+      "seconds": 47.48931370000355,
+      "location": [
+        -0.25,
+        -1.7,
+        1.17
+      ],
+      "target": [
+        -0.25,
+        0.2,
+        0.73
+      ],
+      "orthoScale": 1.12,
+      "sha256": "da3ac91380df5b8074c62ed066f023997afc9cf8078af7723421db28260f8f40"
+    },
+    {
+      "file": "03-seat-detail.png",
+      "seconds": 48.98518650000915,
+      "location": [
+        0.26,
+        -0.68,
+        0.98
+      ],
+      "target": [
+        -0.25,
+        0.2,
+        0.7
+      ],
+      "orthoScale": 0.62,
+      "sha256": "77f81ecb939b997d0c1f7aeb583379c6df54b35cd6c4ef08ca6f5a557a23ea69"
+    },
+    {
+      "file": "04-oled-front.png",
+      "seconds": 55.31860990007408,
+      "location": [
+        0.2,
+        -1.42,
+        1.54
+      ],
+      "target": [
+        0.2,
+        -0.48,
+        0.8
+      ],
+      "orthoScale": 0.48,
+      "sha256": "e58e6536bdc5bbf25f693b018180b2de082e02a0aaf575764e327af012098e2d"
+    },
+    {
+      "file": "05-oled-profile.png",
+      "seconds": 43.66929959994741,
+      "location": [
+        0.8,
+        -0.72,
+        0.99
+      ],
+      "target": [
+        0.2,
+        -0.48,
+        0.8
+      ],
+      "orthoScale": 0.5,
+      "sha256": "dfef0dbd76dfa0c74885aeabc57a34af633bee37605a48dc6ff84a594135ded5"
+    }
+  ]
+}

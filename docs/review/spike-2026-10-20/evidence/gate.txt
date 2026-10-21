@@ -1,0 +1,13 @@
+
+> autolab-digital-showroom@1.0.0 validate:asset
+> node scripts/validate-glb.mjs --scope spike --feasibility-webp --scope spike
+
+Asset gate PASS: 2 nodes, 5426 triangles, 2 draw calls; sha256 36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e
+WARN: Owner-approved WebP feasibility deviation; not KTX2 production compliance (docs/spike/waivers.md).
+WARN: Out-of-scope undefined material slots: MAT_Carpet_Floor, MAT_Console_Veneer_And_Leather, MAT_Door_Card_Substrate, MAT_Screen_Driver_Cluster
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+Report: C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\reports\glb-report.json

@@ -1,0 +1,61 @@
+{
+  "status": "PROVISIONAL: Mercedes-Benz S-Class V223 LWB; GATE-01/08/11 open",
+  "blender": "5.2.2 LTS",
+  "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]",
+  "nodes": {
+    "GEO_Seat_Front_Driver_Flutes": {
+      "triangles": 4860,
+      "vertices": 2434,
+      "dimensionsMetres": [
+        0.3199999928474426,
+        0.6794869303703308,
+        0.5714948177337646
+      ]
+    },
+    "GEO_Dashboard_Screen_Central_OLED": {
+      "triangles": 566,
+      "vertices": 292,
+      "dimensionsMetres": [
+        0.23550745844841003,
+        0.17705616354942322,
+        0.22295713424682617
+      ]
+    }
+  },
+  "materials": [
+    "MAT_Upholstery_Primary",
+    "MAT_Screen_Central_OLED"
+  ],
+  "bakeSeconds": 5.134109399979934,
+  "buildSeconds": 13.526524899993092,
+  "activeDisplayWidthMm": 219.50745308968362,
+  "activeDisplayHeightMm": 239.83221726465433,
+  "rawSha256": "73df3bdf1db68c84b91c78594e3e2efe77ab04bf4488dde64c59acdd99aa1173",
+  "scriptSha256": "2def2f825d34b36c38f5db4796c9a71a4658651f52a97515a5307e75e92e36e0",
+  "exportArguments": {
+    "filepath": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\spike-raw.glb",
+    "export_format": "GLB",
+    "use_selection": true,
+    "use_active_scene": true,
+    "export_yup": true,
+    "export_apply": true,
+    "export_cameras": false,
+    "export_lights": false,
+    "export_extras": true,
+    "export_animations": false,
+    "export_skins": false,
+    "export_morph": false,
+    "export_tangents": true,
+    "export_texcoords": true,
+    "export_attributes": true,
+    "export_vertex_color": "ACTIVE",
+    "export_materials": "EXPORT",
+    "export_image_format": "AUTO",
+    "export_draco_mesh_compression_enable": true,
+    "export_draco_mesh_compression_level": 6,
+    "export_draco_position_quantization": 14,
+    "export_draco_normal_quantization": 10,
+    "export_draco_texcoord_quantization": 12,
+    "export_draco_generic_quantization": 12
+  }
+}

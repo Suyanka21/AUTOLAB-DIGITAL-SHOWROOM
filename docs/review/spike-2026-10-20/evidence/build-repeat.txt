@@ -1,0 +1,38 @@
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\build_spike.py:43: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+00:27.843  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\eb70d4d332216637_essentials_brushes-curve_sculpt.blend.index.json".
+00:27.875  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\080df947ac3092fc_essentials_brushes-gp_draw.blend.index.json".
+00:27.906  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\4da878d799a99889_essentials_brushes-gp_sculpt.blend.index.json".
+00:27.937  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\4fcd9547dc15bd2c_essentials_brushes-gp_vertex.blend.index.json".
+00:27.968  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\507f98a48f34cef6_essentials_brushes-gp_weight.blend.index.json".
+00:28.062  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\ec6b01abad7cb1ff_essentials_brushes-mesh_sculpt.blend.index.json".
+00:28.109  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\92698a523c7373f5_essentials_brushes-mesh_texture.blend.index.json".
+00:28.140  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\ee901e1befe8d6a2_essentials_brushes-mesh_vertex.blend.index.json".
+00:28.171  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\ef422178a307e86c_essentials_brushes-mesh_weight.blend.index.json".
+00:28.218  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\16c8268c68b7fed0_compositing_nodes_essentials.blend.index.json".
+00:28.250  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\23ebbaac6b6d83ff_geometry_nodes_dynamics_assets.blend.index.json".
+00:28.328  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\0064c584f358e610_geometry_nodes_essentials.blend.index.json".
+00:28.328  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\712615d5aaa1f479_principal_components.blend.index.json".
+00:28.437  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\86f56a08761708bd_procedural_hair_node_assets.blend.index.json".
+00:28.453  asset.index      | ERROR Index not created: couldn't create folder "C:\Users\user\AppData\Local\Blender Foundation\Blender\Cache\asset-library-indices\4a9542e7af71d38a\28147c8de53813c2_shading_nodes_essentials.blend.index.json".
+Info: Baking map saved to internal image, save it externally or pack it
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+20:16:35 | INFO: Starting glTF 2.0 export
+20:16:35 | INFO: Extracting primitive: GEO_Dashboard_Screen_Central_OLED
+20:16:35 | INFO: Primitives created: 1
+20:16:35 | INFO: Extracting primitive: GEO_Seat_Front_Driver_Flutes
+20:16:35 | INFO: Primitives created: 1
+20:16:35 | INFO: Draco encoder: Encoding mesh GEO_Dashboard_Screen_Central_OLED.
+20:16:35 | INFO: Draco encoder: Encoding mesh GEO_Seat_Front_Driver_Flutes.
+20:16:35 | INFO: Finished glTF 2.0 export in 0.23605871200561523 s
+
+Info: Saved as "spike.blend"
+SPIKE_BUILD {"status": "PROVISIONAL: Mercedes-Benz S-Class V223 LWB; GATE-01/08/11 open", "blender": "5.2.2 LTS", "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]", "nodes": {"GEO_Seat_Front_Driver_Flutes": {"triangles": 4860, "vertices": 2434, "dimensionsMetres": [0.3199999928474426, 0.6794869303703308, 0.5714948177337646]}, "GEO_Dashboard_Screen_Central_OLED": {"triangles": 566, "vertices": 292, "dimensionsMetres": [0.23550745844841003, 0.17705616354942322, 0.22295713424682617]}}, "materials": ["MAT_Upholstery_Primary", "MAT_Screen_Central_OLED"], "bakeSeconds": 10.195279800100252, "buildSeconds": 21.74652220006101, "activeDisplayWidthMm": 219.50745308968362, "activeDisplayHeightMm": 239.83221726465433, "rawSha256": "73df3bdf1db68c84b91c78594e3e2efe77ab04bf4488dde64c59acdd99aa1173", "scriptSha256": "2def2f825d34b36c38f5db4796c9a71a4658651f52a97515a5307e75e92e36e0", "exportArguments": {"filepath": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\spike-raw.glb", "export_format": "GLB", "use_selection": true, "use_active_scene": true, "export_yup": true, "export_apply": true, "export_cameras": false, "export_lights": false, "export_extras": true, "export_animations": false, "export_skins": false, "export_morph": false, "export_tangents": true, "export_texcoords": true, "export_attributes": true, "export_vertex_color": "ACTIVE", "export_materials": "EXPORT", "export_image_format": "AUTO", "export_draco_mesh_compression_enable": true, "export_draco_mesh_compression_level": 6, "export_draco_position_quantization": 14, "export_draco_normal_quantization": 10, "export_draco_texcoord_quantization": 12, "export_draco_generic_quantization": 12}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 352 vertices, 1698 indices, raw size: 24516, encoded size: 4835, compression ratio: 5.07
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2950 vertices, 14580 indices, raw size: 170760, encoded size: 15027, compression ratio: 11.36
+
+Blender quit
