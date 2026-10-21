@@ -6,8 +6,9 @@ import colorsCatalogue from "@/config/materials/colors.json";
 import threadsCatalogue from "@/config/materials/accent-threads.json";
 import vehicleConfig from "@/config/vehicles/mercedes-s-class-v223.json";
 import { buildWhatsAppHref } from "@/lib/whatsapp";
+import type { CameraViewId } from "@/config/spike-camera-presets";
 
-export type CameraViewId = "cockpit_master" | "driver_cluster" | "executive_rear" | "door_burmester";
+export type { CameraViewId } from "@/config/spike-camera-presets";
 export type CompositionTier = "bespoke_monotone" | "bespoke_duotone" | "executive_fluted";
 
 export interface ConfiguratorState {
@@ -64,7 +65,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
   const [accentThreadId, setAccentThreadId] = useState<string>("contrast-champagne-gold");
   const [ambientLightHex, setAmbientLightHex] = useState<string>("#38B6FF"); // AutoLab Electric Cyan
   const [ambientLightName, setAmbientLightName] = useState<string>("AutoLab Electric Cyan");
-  const [activeCameraView, setActiveCameraView] = useState<CameraViewId>("cockpit_master");
+  const [activeCameraView, setActiveCameraView] = useState<CameraViewId>("overview");
   const [referenceCode, setReferenceCode] = useState<string>("AL-SC-2026-V223");
 
   useEffect(() => {

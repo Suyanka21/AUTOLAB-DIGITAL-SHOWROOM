@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Camera, Eye, Sparkles, Layers, Sliders, Maximize2, Info, Compass } from "lucide-react";
 import { useConfigurator, CameraViewId } from "@/lib/state/configurator-context";
+import { SpikeViewer, type RendererStats } from "@/components/configurator/SpikeViewer";
 
 interface CameraPresetTab {
   id: CameraViewId;
@@ -13,28 +14,34 @@ interface CameraPresetTab {
 
 const CAMERA_TABS: CameraPresetTab[] = [
   {
-    id: "cockpit_master",
-    label: "Cockpit Master",
-    sublabel: "Full Horizon & 12.8\" OLED",
-    focalTarget: "Panoramic dashboard sweep, waterfall console, front multicontour seats",
+    id: "overview",
+    label: "Overview",
+    sublabel: "Two-node spike",
+    focalTarget: "Provisional seat inserts and central OLED, isolated for feasibility",
   },
   {
-    id: "driver_cluster",
-    label: "Driver Cluster",
-    sublabel: "12.3\" Cluster & AMG Wheel",
-    focalTarget: "Double-spoke AMG-Line steering wheel, digital instruments, driver tactile zone",
+    id: "seat_front",
+    label: "Seat Front",
+    sublabel: "Central flutes",
+    focalTarget: "Driver central insert; no bolsters, rails or stitching",
   },
   {
-    id: "executive_rear",
-    label: "Executive Rear",
-    sublabel: "43.5° First-Class Suite",
-    focalTarget: "Rear executive suite, folding calf rest, central bespoke business tunnel",
+    id: "seat_detail",
+    label: "Seat Detail",
+    sublabel: "Baked normal",
+    focalTarget: "Inspect flute edges, shading and the base/back junction",
   },
   {
-    id: "door_burmester",
-    label: "Door & Burmester",
-    sublabel: "Acoustic 4D & Veneer Deck",
-    focalTarget: "High-end Burmester 4D speaker perforation, upper wood wing, seat controls",
+    id: "oled_front",
+    label: "OLED Front",
+    sublabel: "Active face",
+    focalTarget: "Inspect the 12.8-inch active face and simplified control strip",
+  },
+  {
+    id: "oled_profile",
+    label: "OLED Profile",
+    sublabel: "Bezel depth",
+    focalTarget: "Inspect provisional screen inclination and housing profile",
   },
 ];
 
@@ -54,6 +61,10 @@ export function VisualizationStage() {
   } = useConfigurator();
 
   const [isFullscreenNote, setIsFullscreenNote] = useState(false);
+  const [viewerStatus, setViewerStatus] = useState<"loading" | "success" | "empty" | "error">("loading");
+  const [rendererStats, setRendererStats] = useState<RendererStats | null>(null);
+  const handleViewerStatus = useCallback((status: "loading" | "success" | "empty" | "error") => setViewerStatus(status), []);
+  const handleRendererStats = useCallback((stats: RendererStats | null) => setRendererStats(stats), []);
 
   // Derive visual colors
   const primaryHex = selectedPrimaryColor?.hexCode || "#75452B";
@@ -131,6 +142,7 @@ export function VisualizationStage() {
 
       {/* Main Viewport Showcase Canvas (Authentic S-Class 2D Studio Representation) */}
       <div className="relative flex-1 flex items-center justify-center p-4 sm:p-8 overflow-hidden select-none">
+        <SpikeViewer view={activeCameraView} primaryHex={primaryHex} onStatus={handleViewerStatus} onStats={handleRendererStats} />
         {/* Subtle Luxury Grid Overlay */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -141,7 +153,8 @@ export function VisualizationStage() {
         />
 
         {/* Architectural Studio Illustration of S-Class Cabin (Reactively reflects colors) */}
-        <div className="relative w-full max-w-2xl aspect-[16/10] flex items-center justify-center transition-all duration-500">
+        <div className="relative w-full max-w-2xl aspect-[16/10] flex items-center justify-center transition-all duration-500"
+          style={{ display: viewerStatus === "success" ? "none" : "flex" }} data-testid="svg-fallback">
           <svg
             viewBox="0 0 800 500"
             className="w-full h-full drop-shadow-2xl transition-all duration-700"
@@ -332,7 +345,8 @@ export function VisualizationStage() {
         </div>
 
         {/* Floating Active-Specification Badge (Live Configuration Summary) */}
-        <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 max-w-[280px] sm:max-w-xs rounded-xl bg-[#141416]/90 border border-white/[0.1] p-3.5 backdrop-blur-xl shadow-2xl transition-all duration-300">
+        <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 max-w-[280px] sm:max-w-xs rounded-xl bg-[#141416]/90 border border-white/[0.1] p-3.5 backdrop-blur-xl shadow-2xl transition-all duration-300"
+          style={{ display: viewerStatus === "success" ? "none" : undefined }}>
           <div className="flex items-center justify-between border-b border-white/[0.08] pb-2 mb-2.5">
             <div className="flex items-center space-x-2">
               <span
@@ -410,7 +424,7 @@ export function VisualizationStage() {
           <Layers className="h-3.5 w-3.5 text-[#38B6FF]" />
           <span className="hidden sm:inline">WebGL Standby:</span>
           <span className="text-slate-200 font-mono text-[11px]">
-            Astra 3D Pipeline Handoff Spec Locked
+            {viewerStatus === "success" ? "Provisional 3D Spike Active" : "2D Preview Available"}
           </span>
         </div>
 
@@ -436,7 +450,7 @@ export function VisualizationStage() {
           </span>
         </div>
         <div className="hidden md:flex items-center space-x-1.5 text-[11px] font-mono text-slate-500">
-          <span>Draco GLB Slot Bridge</span>
+          <span>{rendererStats ? "Calls " + rendererStats.calls + " · Triangles " + rendererStats.triangles + " · Textures " + rendererStats.textures + " · Geometries " + rendererStats.geometries : "Renderer data pending"}</span>
           <span>•</span>
           <span className="text-[#38B6FF]">V1 Baseline</span>
         </div>

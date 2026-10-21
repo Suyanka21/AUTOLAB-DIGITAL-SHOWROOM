@@ -1,0 +1,19 @@
+
+> autolab-digital-showroom@1.0.0 test:e2e
+> playwright test --project=chromium --workers=1
+
+
+Running 8 tests using 1 worker
+
+(node:1884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [chromium] › e2e\quality.spec.ts:3:5 › unconfigured WhatsApp booking is disabled with a clear message (11.0s)
+  ok 2 [chromium] › e2e\quality.spec.ts:10:5 › 3D asset responses carry the immutable cache header (344ms)
+  ok 3 [chromium] › e2e\spike-viewer.spec.ts:12:5 › real GLB decodes Draco and embedded WebP, with live renderer statistics (28.0s)
+  ok 4 [chromium] › e2e\spike-viewer.spec.ts:41:5 › swatch changes only the bound upholstery material (27.9s)
+  ok 5 [chromium] › e2e\spike-viewer.spec.ts:52:5 › GLB 404 retains the SVG fallback (26.7s)
+  ok 6 [chromium] › e2e\spike-viewer.spec.ts:59:5 › WebGL unavailable retains the SVG fallback (10.9s)
+  ok 7 [chromium] › e2e\spike-viewer.spec.ts:73:5 › forced context loss returns to SVG fallback (19.3s)
+  ok 8 [chromium] › e2e\spike-viewer.spec.ts:81:5 › captures all five camera presets at desktop and mobile sizes (1.3m)
+
+  8 passed (3.5m)

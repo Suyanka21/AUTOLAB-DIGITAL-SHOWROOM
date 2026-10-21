@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "assetUrl": "/assets/3d/s-class-v223/spike.glb",
+  "materialState": {
+    "bindings": {
+      "GEO_Seat_Front_Driver_Flutes": "MAT_Upholstery_Primary",
+      "GEO_Dashboard_Screen_Central_OLED": "MAT_Screen_Central_OLED"
+    },
+    "colors": {
+      "MAT_Upholstery_Primary": "#75452b",
+      "MAT_Screen_Central_OLED": "#ffffff"
+    }
+  },
+  "rendererInfo": {
+    "calls": 2,
+    "triangles": 5426,
+    "textures": 6,
+    "geometries": 14
+  },
+  "requests": [
+    "http://127.0.0.1:3100/assets/3d/s-class-v223/spike.glb 200",
+    "http://127.0.0.1:3100/draco/draco_wasm_wrapper.js 200",
+    "http://127.0.0.1:3100/draco/draco_decoder.wasm 200"
+  ],
+  "consoleWarnings": [
+    "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "gpuMemoryBytes": "NOT MEASURED",
+  "frameRate": "NOT MEASURED",
+  "context": "Playwright headless Chromium with SwiftShader"
+}

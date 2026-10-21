@@ -1,0 +1,31 @@
+
+Running 1 test using 1 worker
+
+(node:832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [chromium] › e2e\spike-viewer.spec.ts:41:5 › swatch changes only the bound upholstery material (17.8s)
+
+
+  1) [chromium] › e2e\spike-viewer.spec.ts:41:5 › swatch changes only the bound upholstery material
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "#d8cab8"
+    Received: "#ffffff"
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      45 |   await page.getByRole("button", { name: "2. Colour" }).click();
+      46 |   await page.getByRole("button", { name: /Macchiato Beige/ }).click();
+    > 47 |   await expect.poll(async () => (await snapshot(page))?.materialState?.colors.MAT_Upholstery_Primary).toBe("#d8cab8");
+         |                                                                                                       ^
+      48 |   const after = (await snapshot(page))?.materialState?.colors;
+      49 |   expect(after?.MAT_Screen_Central_OLED).toBe(before?.MAT_Screen_Central_OLED);
+      50 | });
+        at C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\spike-viewer.spec.ts:47:103
+
+    Error Context: test-results\spike-viewer-swatch-change-79a7e-e-bound-upholstery-material-chromium\error-context.md
+
+  1 failed
+    [chromium] › e2e\spike-viewer.spec.ts:41:5 › swatch changes only the bound upholstery material ─

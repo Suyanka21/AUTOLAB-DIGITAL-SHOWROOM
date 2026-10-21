@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+(node:7724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [chromium] › e2e\spike-viewer.spec.ts:81:5 › captures all five camera presets at desktop and mobile sizes (1.7m)
+
+  1 passed (1.8m)
