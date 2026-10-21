@@ -34,3 +34,26 @@ Owner name/date/signature: _____________________________________________________
 Second reviewer name/date/signature: _____________________________________________
 
 Unresolved defects and missing evidence: [review.md](../review/spike-2026-10-20/review.md). Phase 6 must not start until the owner records the human decision and required gate/decision outcomes.
+
+---
+
+## Technical & Governance Decisions Recorded by Owner (2026-10-21)
+
+While the human visual scoring and gate sign-offs (GATE-01, GATE-08, GATE-11) remain open, the owner has recorded the following binding architectural and technical directions:
+
+| Decision ID | Summary of Approved Direction | Status |
+| :--- | :--- | :--- |
+| **O-REF-01** | Coherent V223 LWB front cabin deliverable approved, executed incrementally through existing Z1–Z9 sequence. | **APPROVED** |
+| **O-REF-02** | Longitudinally fluted upholstery pattern approved per authentic master reference. Do not claim specific leather grade or trim name without verification. | **APPROVED** |
+| **D2** | Independent console veneer and upholstered armrest materials approved, reusing existing slots (`MAT_Trim_Deck_Main` + `MAT_Upholstery_Secondary`) and adding required armrest geometry identifier. | **APPROVED** |
+| **D12** | Reconciliation of all four unresolved material slots approved (console remapping + 3 definitions: `MAT_Screen_Driver_Cluster`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`). Requires manifest and asset-gate validation. | **APPROVED** |
+| **D1** | Dedicated, independently recolourable stitch geometry approved as technical direction; defer implementation until its upholstery zone and verify performance before adoption. | **APPROVED** |
+| **D10** | Published-photograph reference permission extended to Phase 6 visible geometry. Preserve GAP-01–04 and all unsupported physical dimensions as provisional. GATE-11 remains open. | **APPROVED** |
+| **D13** | Lightweight cabin-context geometry approved (headliner, pillars, door framing, non-distracting window backdrop) within existing performance limits. | **APPROVED** |
+
+**Current Gate Status:**
+- **Phase 5 Human Visual Acceptance**: **OPEN** (Pending human scoring sheet completion)
+- **GATE-01 (Vehicle Confirmation)**: **OPEN** (Provisional baseline V223 LWB)
+- **GATE-08 (Visual Quality Gate)**: **OPEN** (Requires human visual scores ≥14/21 with no zeroes)
+- **GATE-11 (Capture Validation)**: **OPEN** (Published photographic reference pack with provisional estimates; GAP-01 to GAP-04 open)
+
