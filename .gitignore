@@ -49,3 +49,7 @@ desktop.ini
 .idea/
 # Local-only prompts & plans
 docs/MOTIONSITE_PLAN_AND_PROMPTS.md
+
+# Large authentic reference packs (local-only research; excluded from git and bundling)
+AUTOLAB_V223_REFERENCE_PACK/
+AUTOLAB_V223_AUTHENTIC_REFERENCE_PACK/

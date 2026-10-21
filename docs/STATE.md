@@ -1,12 +1,11 @@
 # State — 2026-10-21
 
-- Done: Phase 5 review pack on `phase-5-review` from `44fe26a`; five Blender renders aligned with five desktop and five mobile browser captures in `docs/review/spike-2026-10-20/contact-sheet.png`.
-- Review: `docs/review/spike-2026-10-20/review.md` is a BLANK seven-criterion sheet for two human reviewers plus owner checklist; no scores, signatures or visual acceptance.
-- Decision: `docs/spike/decision.md` contains measured facts and the plan's GO/HYBRID/NO-GO rule; status PENDING HUMAN SCORES. The plan's proposed threshold still needs owner confirmation before use.
-- Technical evidence: real GLB gate exit 0; unchanged SHA-256 `36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e`; 5,426 triangles, 2 calls, 900,088 bytes. Phase 4 browser 8/8, unit 31/31, typecheck/lint/build exit 0.
-- Performance evidence: five Blender CPU renders total 252.921s; headless renderer 2 calls, 5,426 triangles, 6 textures, 14 geometries. Real-phone load time, FPS, smoothness and GPU memory NOT MEASURED; owner phone check pending.
-- Known defects: seat groove shading, junction separation, simplified silhouette, blank OLED face, broad/hard reflections, absent lower controls and provisional housing. No geometry approval or remodelling.
-- References: no owner physical vehicle/hide photos in repo; published manufacturer links and estimate limits remain in provenance. Stitching/steering close-ups are outside the two-node slice.
-- Open: GATE-01, GATE-08, GATE-11; GAP-01 through GAP-04; D1 and exact AutoLab materials; four undefined out-of-scope slots and 13 development audit findings. WebP waiver `P3-WEBP-2026-10-20` is feasibility-only; no KTX2 production compliance.
-- Validation: 46 local review/decision Markdown links resolved; contact sheet 2480×3768 inspected; GLB hash unchanged; docs-only diff. No application or dependency changes.
-- Next: owner plus at least one AutoLab reviewer score both components, check desktop interaction and a named mid-range phone, then record decision and open gate outcomes. Phase 6 has not begun. Local commit only; no push, PR or deployment.
+- Done: Authentic V223 reference pack (29 files, 25 high-res photos, 4 thumbnails, 1 PDF) verified and integrated via `docs/spike/MANUS_REFERENCE_INTEGRATION_HANDOFF.md`. Pack excluded from git via `.gitignore`.
+- Reference hierarchy: Primary architecture anchor established (`CAB_004`–`CAB_014`); LWB proportions (`MASTER_001`/`002`); leather/grain macros (`MAT_001`/`002`).
+- Upholstery reconciliation: Identified 3 discrete factory variants (Standard Fluted Nappa vs. Exclusive Diamond Quilt vs. AMG Duotone); prohibited hybrid mixing; owner decision O-REF-02 framed.
+- Scope assessment: Owner deliverable of coherent front cabin evaluated against budgets (~172k tris << 350k budget; ~15 draw calls << 65; ~7-8 MB << 15 MB). Feasible within existing manifest node definitions.
+- Prerequisites: Decisions D2 (split console geometry) and D12 (4 missing manifest material slots) must be formally approved before Phase 6.
+- Known defects addressed: Reference evidence maps solutions for Phase 5 seat groove shading, floating silhouette, blank OLED, and reflection defects.
+- Open: GATE-01, GATE-08, GATE-11; GAP-01 to GAP-04; Decisions D1, D2, D10, D12, O-REF-01, O-REF-02. Phase 5 human scoring sheet remains pending reviewer completion.
+- Validation: Reference pack integrity verified against manifest/registers via Python; zero synthetic images; `.gitignore` rules verified.
+- Next: Owner approval on decisions O-REF-01/02 and D2/D12; completion of Phase 5 human scoring. Phase 6 has not begun. Local commit only; no push or deploy.
