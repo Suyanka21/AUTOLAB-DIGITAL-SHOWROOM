@@ -1,4 +1,4 @@
-# Phase 3 review pack
+# Phase 3–5 review pack
 
 **PROVISIONAL: Mercedes-Benz S-Class V223 LWB. GATE-01, GATE-08, GATE-11 OPEN. No human score or production acceptance.**
 
@@ -27,4 +27,11 @@ These are Blender 5.2.2 Cycles **CPU** renders of the delivered GLB, imported wi
 - [Application tests](evidence/tests.txt): 31 passed. [Production build](evidence/build-app.txt): exit 0.
 - [Provenance](../../3d-assets/provenance.json) and [cost log](../../spike/cost-log.md).
 
-**Checkpoint only.** Viewer/material swapping, runtime GPU/phone performance, measured fit and human visual scoring are NOT TESTED. GAP-01 through GAP-04 remain open. No GO/HYBRID/NO-GO ruling is inferred; Phase 4 has not started.
+## Phase 5 owner review checkpoint
+
+- [Contact sheet](contact-sheet.png): five Blender renders beside the matching desktop and mobile viewer captures; the owner-reference column is marked **NOT SUPPLIED** because no physical vehicle or hide photos are stored here. [Generator](make_contact_sheet.py) arranges the original evidence without retouching it.
+- [Blank human scoring form and owner checklist](review.md): visual fidelity, desktop interaction and named mid-range phone performance. No score or signature has been entered.
+- [Decision facts and pending GO/HYBRID/NO-GO form](../../spike/decision.md): technical gate PASS is separate from visual acceptance.
+- [Phase 4 viewer evidence](viewer/README.md): 8/8 full browser tests, 10 captures and headless renderer statistics. Real-phone FPS/GPU memory remain **NOT MEASURED**.
+
+The historical Phase 3 checkpoint above preceded the viewer; Phase 4 evidence is now linked here. GAP-01 through GAP-04 and GATE-01, GATE-08 and GATE-11 remain open. No human visual acceptance or production ruling is inferred.
