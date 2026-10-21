@@ -1,178 +1,55 @@
-# Manus Authentic Reference Pack Integration & Modeling Handoff
-**Project:** AutoLab Digital Showroom — Mercedes-Benz S-Class (V223 LWB)  
-**Document Designation:** `docs/spike/MANUS_REFERENCE_INTEGRATION_HANDOFF.md`  
-**Author:** Antigravity (Integration Agent)  
-**Target Consumer:** Astra (3D Asset Engineering Agent) & Project Owner  
-**Status:** CODIFIED • REFERENCE PACK INTEGRATED • DECISIONS PENDING OWNER APPROVAL  
+# Pre-Phase-6 reference reconciliation and owner approval register
 
----
+**Audited:** 2026-10-21. **Status:** evidence reconciled; new owner choices below are unsigned. This replaces the earlier Manus integration handoff's unsupported inventory, dimensional, scope and performance claims. It authorizes no modelling or human gate closure.
 
-## 1. Executive Summary & Verification
+## 1. Reference authority and provenance
 
-An authentic, high-resolution photographic reference pack (`AUTOLAB_V223_REFERENCE_PACK`) has been placed in the repository root and verified. To safeguard repository hygiene and prevent inadvertent public redistribution of copyrighted publisher media, the directory has been excluded from git tracking via [`.gitignore`](../../.gitignore).
+The available local working pack is the gitignored repository-root `AUTOLAB_V223_REFERENCE_PACK/`, **not** `AUTOLAB_V223_AUTHENTIC_REFERENCE_PACK/` (that named folder was absent from the repository, Desktop sibling and Downloads locations checked). `REFERENCE_MANIFEST.csv` has 29 unique rows matching 29 files in `ORIGINAL_PHOTOGRAPHS/`: **25 JPEG-encoded files and four WebP-encoded files**, zero missing or extra manifest files. All 29 filenames end in `.jpg`; the four `COMP_001`–`COMP_004` files have WebP RIFF signatures despite their `.jpg` extensions. The earlier “25 JPEG + 4 WebP” **content count is correct**, while its format/extension description omitted this mismatch. The pack also has a 38,536,694-byte PDF catalogue and three Markdown guides. The pack is authoritative for **what is locally available to inspect**, not for vehicle specifications, authenticity certification or image rights.
 
-### 1.1. Reference Inventory Verification
-All 29 photographic assets listed in `REFERENCE_MANIFEST.csv`, `MASTER_REFERENCE_SELECTION.md`, and `SOURCE_REGISTER.md` were inspected directly on disk:
-- **Total Files:** 29 photographic images + 1 compiled master PDF catalogue (`AUTOLAB_V223_REFERENCE_CATALOGUE.pdf`, 38.5 MB).
-- **Format Integrity:** 25 JPEGs (up to $7543 \times 5131$ px, 7.1 MB) and 4 WebP thumbnails ($640 \times 480$ px). All images parse cleanly as standard 8-bit RGB color.
-- **Authenticity Confirmation:** **100% authentic real-world photography.** Zero synthetic AI-generated images, zero CAD extractions, and zero marketing concept renders.
-- **Licensing & Usage Boundary:** Images originate from Mercedes-Benz Media, Car and Driver, AUTO BILD, auto motor und sport, and Alejandro Financial. Public redistribution rights are not cleared; all photographs are restricted strictly to internal modeling reference.
+The reported original **31-JPEG Manus repository and its original manifest were not present** in the checked workspace or adjacent locations. The two-file difference cannot be identified, classified as intentional, or declared irrelevant without that original manifest and files. If supplied, compare IDs, filenames, source URLs and hashes against the local CSV before changing pack authority. Do not silently merge the inventories.
 
----
+The local [CSV](../../AUTOLAB_V223_REFERENCE_PACK/REFERENCE_MANIFEST.csv) calls the files “Real photograph”; the [source register](../../AUTOLAB_V223_REFERENCE_PACK/SOURCE_REGISTER.md) says this classification comes from publisher/gallery context and visual inspection. Those facts support their use as **published visual references**, but do not independently prove every image's capture provenance, exclude retouching/CGI, identify every exact vehicle/trim, or clear redistribution rights. Keep the pack internal. `CAB_004`–`CAB_014` are one published gallery, not proven to be one physically identical car with matched camera geometry. `MASTER_001/002` link to an S 580 e 4MATIC lang article, but the article title alone does not certify dimensions or equipment in each frame. `MAT_001/002` have unknown exact seat option; dealer and comparative images have their own variant uncertainty. Use each image's URL and caveat in the [source register](../../AUTOLAB_V223_REFERENCE_PACK/SOURCE_REGISTER.md) and [Phase 3 register](phase-3-reference/VERIFICATION_REGISTER.md).
 
-## 2. Master Reference Set Selection (Pre-Facelift V223 LWB)
+## 2. Corrected physical evidence
 
-To eliminate visual inconsistencies caused by mixing different model years, trim levels, or wheelbase variants, Astra must adhere to the following hierarchical master reference sets:
+| Subject | Supported fact | Estimate, contradiction or open evidence |
+| :--- | :--- | :--- |
+| V223 baseline | Owner approved S-Class for V1 and V223 LWB as a **working** baseline; Mercedes-Benz publishes a 3,216 mm long-wheelbase dimension. | GATE-01 remains open for the exact AutoLab vehicle and trim. Do not infer that all 29 images show the same V223 configuration. |
+| Central OLED option | Mercedes-Benz publishes optional 12.8-inch active diagonal, 1,888 × 1,728 pixels, and **239.06 × 218.8 mm “central display” dimensions**. The manufacturer wording does not identify that rectangle as the illuminated active area or the outer housing. The standard central display is 11.9-inch LCD, so use the OLED evidence only for the approved OLED option. [S-Class facts](https://media.mercedes-benz.com/article/92eb97a3-3477-4ca1-acf1-32ee0e07d646), [MBUX table](https://media.mercedes-benz.com/article/575c2af4-af10-4a23-8718-e65aa9e9914f). | The Phase 3 **model** used 219.507 × 239.832 mm active canvas, derived from diagonal and pixel aspect ratio **assuming square pixels**; this is not a measured manufacturer active rectangle. It used ~235.507 mm outer width and 277.832 mm constructed outer height. The earlier handoff's 235.5 × 275.8 mm housing is a different provisional estimate. Bezel, switch strip, roller and rear air gap are unmeasured (GAP-03/04). No published source here proves an exact housing envelope. |
+| OLED inclination | The [Phase 3 verification register](phase-3-reference/VERIFICATION_REGISTER.md) calls **38° ± 1° from vertical** a photographic estimate; the spike built to this working angle. | The competing **17° from vertical** claim has no traceable source in the available pack, Phase 3 register or manuscript files checked. Legacy “60°” notes in the scene manifest/asset brief do not consistently state a datum (the brief says horizontal, which would mean ~30° vertical). Neither 17° nor 38° is a verified Mercedes-Benz specification. Require side-view measurement with a declared datum before freezing full-cabin rake. |
+| Front seat size | The spike's 320 mm is its **central insert width**, not complete seat width. Mercedes-Benz publishes front shoulder room **1,516 mm** for the 2020 S-Class, not the Phase 3 register's 1,496 mm; see the [S-Class facts table](https://media.mercedes-benz.com/article/92eb97a3-3477-4ca1-acf1-32ee0e07d646). | The 530 mm full-seat claim is unsupported. The 458–480 mm alternative uses assumed 280 mm console width and 150 mm door clearances, and even its shoulder-room input is contradicted by the official table; it is **not** a maximum or verified range. Backrest 840 mm, flute depth 6 mm, eight flutes as a universal count, tunnel 280 mm, steering diameter 375 mm, door gaps 3.5–4.5 mm, LED/fibre dimensions and roller diameter are not physical measurements of the target car. |
+| Upholstery | Mercedes-Benz describes **longitudinal fluting with Lugano leather** and **diamond quilting with Nappa/Nappa Exclusive** in its 2020 [interior description](https://media.mercedes-benz.com/article/92eb97a3-3477-4ca1-acf1-32ee0e07d646). The images can guide visible shape and pattern. | “Standard Fluted Nappa” is the owner's **preferred visual direction**, not yet a verified factory trim designation or image-to-trim match. The old A/B/C assignments to specific `MASTER`, `CAB`, `MAT` or `DLR` frames and the asserted three discrete factory variants are unsupported. Confirm the exact AutoLab option and match photos before treating pattern/count/colour as a specification. |
 
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                    COHERENT REFERENCE HIERARCHY FOR ASTRA                       │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ 1. PRIMARY ARCHITECTURE SET: CAB_004 through CAB_014 (Car and Driver 2021)     │
-│    • Unified photoshoot under consistent atelier studio lighting.               │
-│    • Complete spatial alignment across OLED, dash cowl, console, doors & seats. │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ 2. LWB CHASSIS & SEAT ANCHOR: MASTER_001 & MASTER_002 (AUTO BILD S 580 e lang)  │
-│    • Verified V223 Long Wheelbase (3,216 mm) European test car.                 │
-│    • Anchors real seat bolsters, legroom clearance, and natural daylight tones. │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ 3. CRAFTSMANSHIP & TEXTURE MACROS: MAT_001 & MAT_002 (Car and Driver 7500px)   │
-│    • Extreme high-res macro captures of leather grain, French seams & pores.   │
-│    • Reference for Burmester acoustic grilles, wood pores, and satin metal.    │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
+The [Phase 3 report](phase-3-report.md) and [Phase 5 review](../review/spike-2026-10-20/review.md) record a two-node feasibility asset, with unresolved seat shading, junction/silhouette and OLED appearance. This reconciliation does not repair those defects or score fidelity.
 
----
+## 3. Scope, sequence and budget reconciliation
 
-## 3. Upholstery Variant Reconciliation & Fluting Rules
+**One canonical modelling sequence:** use [Phase 6 in `ASTRA_EXECUTION_PROMPTS.md`](../ASTRA_EXECUTION_PROMPTS.md#phase-6-zone-template-astra-one-zone-per-sitting), one zone per sitting, in the listed order: **Z1 Dashboard → Z2 Steering → Z3 Front seats → Z4 Console → Z5 Doors → Z6 Rear suite → Z7 Ambient → Z8 Floor/context → Z9 Mobile tier/LOD**. The earlier handoff's four geometry stages are withdrawn. The four stages in `docs/production-plan.md` describe a broader asset/viewer/UI/lead-flow lifecycle, not a competing geometry order. No zone begins until the existing Phase 5 owner checkpoint and required decisions are recorded.
 
-### 3.1. The Conflict
-The preliminary Phase 3 spike adopted an unverified assumption of "8 uniform vertical flutes" across the seat insert (`FLUTE_COUNT = 8`, `INSERT_WIDTH = 0.320 m`). Inspection of the authentic reference pack reveals that Mercedes-Benz produces three distinct seat upholstery specifications for the V223 generation:
-1. **Standard Fluted Nappa (Variant B):** Observed in `MASTER_002` and `CAB_002`. Features longitudinal flutes that follow ergonomic contours, tapering near the cushion base, bound by double French seams.
-2. **Exclusive Nappa Diamond-Quilted (Variant A):** Observed in `MAT_001`, `CAB_010`, `CAB_013`, and `DLR_003`. Features continuous diamond-quilted centers with precision perforations and outer flute borders.
-3. **Sport Duotone / AMG-Line (Variant C):** Observed in `DLR_001`–`DLR_005` with high-contrast accent bolsters.
+The [scene manifest](../../src/config/scene-manifest.s-class-v223.json) has **14 nodes and seven defined material slots**. It names dashboard/display, steering, front seat inserts, console, grouped doors, speaker, ambient and footwell elements; it does **not** fully specify a coherent enclosed cabin. Full seat shells/bolsters/headrests, separately bindable console armrest lids and cabin context (headliner, pillars, frames/overhead console/window treatment) have no explicit nodes; central vents are described within the dashboard deck, not independent nodes. [F16/D13](conflicts.md) already records the context gap. A coherent front-cabin preference therefore requires an approved scope/manifest mapping; do not claim the existing ten highlighted nodes are sufficient. Rear suite and kinematics are governed separately; D8 excludes kinematics from V1.
 
-### 3.2. Mandatory Rules for Astra
-- **Zero Configuration Mixing:** Astra must **NEVER** mix incompatible design languages (e.g. do not combine a diamond-quilted backrest with plain fluted cushion inserts, or join AMG-Line racing bolsters with a luxury comfort neck pillow).
-- **Spike vs. Production:** The 8-flute parametric mesh from Phase 3 was an isolated feasibility test. When authoring the full seat, Astra must model the seat as an integrated ergonomic assembly (cushion base, thigh extension, lateral bolsters, backrest, and headrest) docking seamlessly into the center console envelope.
+**D2/D12 material-slot reconciliation, proposed only:** [F1/F3](conflicts.md) finds 11 slot names used by nodes but only seven defined. The four missing names are exactly `MAT_Screen_Driver_Cluster`, `MAT_Console_Veneer_And_Leather`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`. If D2's separation is approved, bind the console veneer/tambour to **existing** `MAT_Trim_Deck_Main`, add an expressly approved armrest-lid node bound to **existing** `MAT_Upholstery_Secondary`, and retire/remap `MAT_Console_Veneer_And_Leather`; do not also add the conflicting `MAT_Console_Veneer` alias. D12 would then define the remaining **three** missing slots (`MAT_Screen_Driver_Cluster`, `MAT_Door_Card_Substrate`, `MAT_Carpet_Floor`) and verify every node/slot cross-reference by test. If D2 is rejected, D12 must instead define **all four**, including the mixed console slot, with its visual limitation acknowledged. This is a conditional resolution of all four F1 names, **not** a recorded owner decision or a current manifest edit. Exact PBR values and AutoLab material catalogue still require source/owner input.
 
----
+| F1 slot | Proposed binding/definition after approval | Existing texture budget source |
+| :--- | :--- | :--- |
+| `MAT_Screen_Driver_Cluster` | Dedicated driver-cluster display surface; glass/display treatment analogous to the existing central-screen slot, without assuming identical UI artwork. | 1024 px, [material specification](../3d-assets/material-and-texture-specification.md). |
+| `MAT_Console_Veneer_And_Leather` | **D2 approved:** remove this mixed reference by rebinding veneer/tambour to `MAT_Trim_Deck_Main` and approved lid geometry to `MAT_Upholstery_Secondary`. **D2 rejected:** define the mixed slot explicitly, while recording that one material cannot represent both surfaces independently. | Existing deck 2048 px and secondary upholstery 1024 px; no separate mixed-slot budget established. |
+| `MAT_Door_Card_Substrate` | Dedicated door-card substrate/armrest surface; PBR material, with exact finish pending AutoLab material evidence. | 1024 px, [material specification](../3d-assets/material-and-texture-specification.md). |
+| `MAT_Carpet_Floor` | Dedicated footwell/carpet surface; PBR material, with exact fibre/colour pending AutoLab material evidence. | 512 px, [material specification](../3d-assets/material-and-texture-specification.md). |
 
-## 4. Phase 3/4 Asset Review vs. Phase 5 Visual Defects
+**Measured versus projected performance:** The [asset gate](../../reports/glb-report.json) records only the two-node spike: SHA-256 `36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e`, 900,088 transferred bytes, 5,426 triangles and 2 draw calls, with a feasibility-only WebP waiver. [Headless browser evidence](../review/spike-2026-10-20/viewer/browser-measurement.json) measured 2 calls, 5,426 triangles, 6 renderer textures and 14 geometries. **Real phone FPS, GPU bytes, full-cabin size, triangles, calls and load time are not measured.** The prior 172,000 triangles, 6.5–8.5 MB and 14–18 calls are speculative allocations, not a gate pass. In particular, 6.5–8.5 MB would miss the owner-approved **5 MB transfer target** even if below the **15 MB hard maximum** (D4); ~172k triangles leaves little margin against the 180k mobile target before cabin context. Keep decoded GPU estimates separate from renderer counters. The approved mobile texture tier and low-LOD-first requirement still apply. WebP is waived for feasibility only, not KTX2 production compliance.
 
-The Phase 5 visual review (`docs/review/spike-2026-10-20/review.md`) and decision register (`docs/spike/decision.md`) documented specific visual failures on the two-node spike asset. The authentic reference pack provides exact guidance for remediation:
+## 4. Owner-approval register — all new choices unsigned
 
-| Component | Existing Phase 3/4 State | Phase 5 Visual Defect | Remediation Action using Reference Pack |
+**Recorded direction, not approval:** coherent front cabin preferred; a “Standard Fluted Nappa” look preferred pending visual and trim confirmation; console material separation preferred; slot harmonisation preferred; accent-thread mechanism undecided; available references sufficient to begin *visible, provisional* geometry after the Phase 5 route decision, while gaps stay open. This direction does **not** itself authorize Phase 6.
+
+| ID | Exact choice requiring owner record | Current status and boundary | Owner decision / date / signature |
 | :--- | :--- | :--- | :--- |
-| **Central OLED Display** | $219.51 \times 239.83$ mm active canvas verified; blank faceplate. | Blank non-emissive screen; broad flat reflections; missing thumbwheel and buttons. | **REUSE & ENHANCE:** Keep verified active canvas coordinates. Remodel outer stepped bezel using `CAB_006` and `DASH_001`. Add lower switch strip with physical volume roller ($14$ mm dia.) and MBUX Zero-Layer emissive graphic. |
-| **Front Driver Seat** | $320$ mm wide flat insert with 8 rectangular columns; baked normal map. | Sharp groove ends, synthetic grain, disconnected silhouette floating in space without bolsters or frame. | **REMODEL AS ASSEMBLY:** The isolated flat insert cannot dock with curved bolsters. Remodel seat cushion, side bolsters, thigh extension, and headrest as an integrated assembly matching `MASTER_002` and `CAB_010`. |
-| **Dashboard Deck** | Non-existent in spike. | Missing context; screen appears floating in a void. | **NEW MODELING:** Model `GEO_Trim_Dashboard_WoodDeck` from `CAB_004`, `CAB_011`, and `DASH_002`. Include the 4 horizontal oblong center vents and cluster hood. |
-| **Center Console** | Non-existent in spike. | Missing foundation; screen has no physical mounting surface. | **NEW MODELING:** Model `GEO_Console_Center_Front` from `CAB_008`, `MASTER_001`, and `DLR_002`. Features cascading veneer waterfall, tambour door, and butterfly armrest. |
-| **Steering Wheel** | Non-existent in spike. | Incomplete driver station. | **NEW MODELING:** Model `GEO_SteeringWheel_AMG_DoubleSpoke` from `CAB_005`, `CAB_007`, and `COMP_002`. Twin capacitive horizontal spokes with flat-bottom rim. |
-| **Front Door Cards** | Non-existent in spike. | Cabin boundary missing; shut gaps undefined. | **NEW MODELING:** Model `GEO_Door_Panels_FL_FR_RL_RR` and `GEO_Door_Speaker_Burmester_4D` from `CAB_009`, `CAB_012`, and `MAT_002`. Maintain 3.5–4.5 mm shut gaps to dashboard cowl. |
+| **O-REF-01** | Approve or reject a coherent **front-cabin** deliverable; specify its visible boundary and approve any missing seat-shell, armrest/context node mappings. | **PENDING**. Preference is recorded. Existing manifest coverage is incomplete; D13 context remains a separate open decision. | ____________________ |
+| **O-REF-02** | Select the visual upholstery pattern **and** identify the actual AutoLab material/trim or accept an explicitly provisional visual interpretation. | **PENDING**. Owner prefers a fluted look described as “Standard Fluted Nappa”; manufacturer literature associates fluting with Lugano and Nappa with diamond quilting. Exact photo-to-trim mapping remains open. | ____________________ |
+| **D2** | Approve or reject separate console veneer/tambour and leather armrest geometry/material bindings, including the armrest-lid node. If approved, choose existing `MAT_Trim_Deck_Main` + `MAT_Upholstery_Secondary` and retire the mixed name as above. | **PENDING**. Separation preferred; this reconciles the conflicting `MAT_Console_Veneer` versus `MAT_Trim_Deck_Main` recommendations. | ____________________ |
+| **D12** | Approve the complete F1 cross-reference remedy conditional on D2: **three definitions + mixed-slot remap if D2 approved**, or **four definitions if D2 rejected**; require manifest/schema and asset-gate tests. | **PENDING**. Harmonisation preferred. Prior handoff omitted `MAT_Carpet_Floor`. | ____________________ |
+| **D1** | Decide whether accent thread is separate geometry/slot, texture variants, another mechanism, or excluded from V1. | **UNDECIDED**. The stitch node stays excluded until this choice is recorded. | ____________________ |
+| **D10** | **Existing approved decision (2026-10-20):** published manufacturer/reputable references, with targeted research and source URLs, permitted for the **Phase 3 two-node feasibility spike** only. **New signature needed:** approve or reject carrying the local 29-JPEG published-source pack into provisional **Phase 6 visible geometry** while GAP-01–04 and GATE-11 stay open; original 31-JPEG set remains unreconciled. | Phase 3 approval **stands**. Phase 6 extension **PENDING**; no capture-gap closure or production/visual acceptance. | Phase 6 extension: ____________________ |
 
----
-
-## 5. Reference-to-Geometry Mapping
-
-The table below maps each scene graph node in the official manifest to authentic reference imagery, verified dimensions, and unresolved gaps:
-
-| Manifest Identifier | Primary Image References | Source Confidence | Confirmed Metric Baseline | Provisional Estimates & Tolerances | Unresolved Gaps |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **`GEO_Dashboard_Screen_Central_OLED`** | `CAB_006`, `MASTER_001`, `DASH_001`, `DLR_002` | **High** (Official & Verified Press) | Diagonal $12.8\text{ in}$ ($325.12\text{ mm}$); Active $219.51 \times 239.83\text{ mm}$; Res $1888 \times 1728$ | Swept rake: $38.0^\circ$ from vertical; Bezel: $8.0\text{ mm}$; Outer: $235.5 \times 275.8\text{ mm}$ | **GAP-03** (Rear cavity concealed) |
-| **`GEO_Seat_Front_Driver_Flutes`** | `MASTER_002`, `CAB_010`, `CAB_013`, `MAT_001` | **High** (Verified LWB & Macro) | Longitudinal ergonomic fluting; Backrest height $\approx 840\text{ mm}$ | Cushion width: $458\text{--}480\text{ mm}$ provisional range; Flute depth: $6\text{ mm}$ | **GAP-01** (Under-seat rails concealed) |
-| **`GEO_Seat_Front_Passenger_Flutes`** | `CAB_010`, `CAB_012`, `DLR_005` | **High** (Official Studio) | Mirrored driver envelope ($458\text{--}480\text{ mm}$ width) | Passenger seat base alignment | Symmetrical to driver |
-| **`GEO_Trim_Dashboard_WoodDeck`** | `CAB_004`, `CAB_011`, `DASH_002` | **High** (Official Studio) | Horizontal wing sweep A-pillar to A-pillar; 4 central oblong vents | Wing curvature radius; Vent louvre pitch | None (Visual coverage complete) |
-| **`GEO_Console_Center_Front`** | `CAB_008`, `MASTER_001`, `DLR_002` | **High** (Verified LWB & Dealer) | Tunnel width $\approx 280\text{ mm}$; Butterfly split armrest | Tambour door curvature; Wireless charging pad depth | **CON_003** (Internal bin interior closed) |
-| **`GEO_SteeringWheel_AMG_DoubleSpoke`** | `CAB_005`, `CAB_007`, `COMP_002` | **High** (Official Macro) | Outer diameter $\approx 375\text{ mm}$; Twin capacitive spokes | Airbag boss taper; Paddle shifter offset | None (Coverage complete) |
-| **`GEO_Dashboard_Screen_Driver_Cluster`** | `CAB_005`, `CAB_007`, `COMP_003` | **High** (Official Studio) | Diagonal $12.3\text{ in}$; Floating landscape pedestal | Pedestal mounting neck height | None (Coverage complete) |
-| **`GEO_Door_Panels_FL_FR_RL_RR`** | `CAB_009`, `CAB_012`, `DLR_004` | **High** (Official Macro & Dealer) | Shut gaps to dash: $3.5\text{--}4.5\text{ mm}$; Floating armrest | Lower door pocket bottom curvature | None (Exterior facing closed) |
-| **`GEO_Door_Speaker_Burmester_4D`** | `CAB_009`, `MAT_002` | **High** (Ultra-High Macro) | Perforated metal acoustic grille at sail panel | Rotational deployment mechanism ($10\text{ mm}$) | Simplified static state for V1 |
-| **`GEO_Interior_AmbientLight_FiberStrip`** | `CAB_001`, `DASH_002`, `CAB_004` | **High** (Official Media) | Continuous 253-LED waistline spline | Fiber cross-section diameter $\approx 3.0\text{ mm}$ | Emissive spline |
-
----
-
-## 6. Owner's Deliverable Scope Assessment: Coherent Front Cabin
-
-### 6.1. Strategic Rationale
-The owner proposes advancing the next 3D deliverable from two isolated floating meshes to a **recognisable, coherent pre-facelift V223 front cabin cockpit**. This directly addresses the core finding of the Phase 5 review: automotive luxury cannot be judged on disembodied fragments.
-
-### 6.2. Architectural & Governance Impact
-1. **Manifest Stability:** Does **NOT** require adding unapproved nodes. All 10 necessary components are already defined in [`src/config/scene-manifest.s-class-v223.json`](../../src/config/scene-manifest.s-class-v223.json).
-2. **Budget & WebGL Limits:**
-   - Manifest overall ceiling: $\le 350,000$ triangles, $\le 65$ draw calls, $\le 15$ MB Draco GLB.
-   - Front cabin budget allocation:
-     - Driver & Passenger Seats: $\le 60,000$ tris combined
-     - Dashboard Deck & Central Vents: $\le 20,000$ tris
-     - Displays (OLED + Cluster): $\le 9,000$ tris combined
-     - Center Console Waterfall & Tunnel: $\le 18,000$ tris
-     - Steering Wheel & Column: $\le 25,000$ tris
-     - Front Door Cards (L+R): $\le 35,000$ tris
-     - Ambient Lighting Spline: $\le 5,000$ tris
-     - **Total Front Cabin Polygon Count:** $\approx 172,000$ triangles (comfortably under the $350,000$ budget).
-     - **Estimated Draco GLB Size:** $\approx 6.5\text{--}8.5$ MB (well within 15 MB limit).
-     - **Estimated Draw Calls:** $\approx 14\text{--}18$ (well within 65 limit).
-3. **Material Slot Governance (Finding F1 & Decisions D2 / D12):**
-   - The front cabin incorporates components referencing slots previously flagged in `docs/spike/conflicts.md` (`MAT_Screen_Driver_Cluster`, `MAT_Console_Veneer_And_Leather`, `MAT_Door_Card_Substrate`).
-   - Before Astra builds the full cabin GLB, the owner must formally approve Decision **D2** (splitting console veneer and leather) and Decision **D12** (defining these slots in the manifest).
-
----
-
-## 7. Recommended Modeling Sequence (Smallest Practical Slices)
-
-To maintain strict control over geometry, budgets, and validation gates, Astra should build the coherent front cabin in four focused, verifiable stages:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                     RECOMMENDED ASTRA MODELING SEQUENCE                         │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ STAGE 1: CONSOLE & DASHBOARD ANCHOR (Datum Establishment)                       │
-│ • Model center console tunnel (GEO_Console_Center_Front).                       │
-│ • Dock the verified OLED display (GEO_Dashboard_Screen_Central_OLED) at 38° rake.│
-│ • Sweep the dashboard wood deck wing (GEO_Trim_Dashboard_WoodDeck).             │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ STAGE 2: DRIVER COCKPIT ENCLOSURE                                               │
-│ • Add driver instrument cluster (GEO_Dashboard_Screen_Driver_Cluster).          │
-│ • Author twin-spoke steering wheel (GEO_SteeringWheel_AMG_DoubleSpoke).         │
-│ • Model left front door card (GEO_Door_Panels_FL_FR_RL_RR) with 3.5mm shut gap. │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ STAGE 3: ERGONOMIC FRONT SEATING SHELLS                                         │
-│ • Remodel driver seat cushion, lateral bolsters, backrest, and headrest.       │
-│ • Integrate central fluted insert seamlessly into bolster recesses.             │
-│ • Mirror driver assembly to passenger side (GEO_Seat_Front_Passenger_Flutes).   │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│ STAGE 4: ATELIER CRAFTSMANSHIP & ILLUMINATION                                   │
-│ • Model central 4 oblong air vents and Burmester speaker acoustic grilles.     │
-│ • Route 253-LED ambient lighting fiber strip (GEO_Interior_AmbientLight...).    │
-│ • Run automated gltf-asset-gate validation on cumulative GLB.                  │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 7.1. Missing Photography Blocker Assessment
-The 15 missing views in `MISSING_REFERENCE_VIEWS.md` are **NOT fatal blockers** for front-cabin visual authoring:
-- Center console internal storage (`CON_003`) is hidden when butterfly doors are shut.
-- Seat underside mechanical rails (`GAP-01`) are concealed beneath floor carpet.
-- Rear OLED housing cavity (`GAP-03`) is concealed against the console veneer.
-- The existing pack contains world-class, high-resolution coverage of all primary visual surfaces. **No synthetic image generation is required or permitted.**
-
----
-
-## 8. Explicit Owner Decisions Requiring Formal Approval
-
-Before Astra is dispatched to implement the coherent front cabin, the owner must formally confirm the following decisions:
-
-1. **[DECISION O-REF-01] Coherent Front Cabin Deliverable Approval:**  
-   Confirm that Astra's next 3D deliverable is a unified front cabin cockpit (dashboard, console, steering, front seats, displays, front doors) rather than iterative isolated parts.
-2. **[DECISION O-REF-02] Primary Front Seat Upholstery Pattern:**  
-   Select the canonical seat upholstery design for V1:
-   - *Option A:* Standard Fluted Nappa (per `MASTER_002` / `CAB_002`) — continuous ergonomic fluting.
-   - *Option B:* Exclusive Nappa Diamond-Quilted (per `MAT_001` / `CAB_010`) — luxury quilted pattern.
-   - *Option C:* AutoLab Bespoke Duotone (per workshop tailoring catalogue).
-3. **[DECISION D2] Console Material Slot Decoupling:**  
-   Approve splitting `MAT_Console_Veneer_And_Leather` into `MAT_Trim_Deck_Main` (tambour/deck) and `MAT_Upholstery_Secondary` (armrest lids).
-4. **[DECISION D12] Manifest Slot Harmonisation:**  
-   Authorize adding `MAT_Screen_Driver_Cluster` and `MAT_Door_Card_Substrate` to the official manifest `materialSlots` array prior to full-cabin gate validation.
-5. **[DECISION D1] Accent Stitching recolouring Mechanism:**  
-   Confirm whether accent thread recoloring is modeled as dedicated geometry or baked normal textures.
-6. **[DECISION D10] Reference Capture Closure:**  
-   Confirm that the authentic Manus reference pack fulfills the reference requirements for Phase 3/Phase 6 front cabin authoring, allowing open gaps GAP-01 to GAP-04 to be closed as controlled approximations.
+The [Phase 5 decision](decision.md) still has **no GO/HYBRID/NO-GO** or human score. [GATE-01, GATE-08, GATE-11](PHASE3_REFERENCE_HANDOFF.md) and **GAP-01 through GAP-04** remain open. The original Manus 31-file manifest, exact upholstery match, physical seat/OLED housing measurements and authoritative rake datum remain missing evidence. No AI signature may close them.

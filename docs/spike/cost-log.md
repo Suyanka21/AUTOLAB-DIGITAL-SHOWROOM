@@ -37,3 +37,9 @@
 - Asset/model changes, Blender runs, browser runs and new third-party downloads: 0. Existing five CPU renders and ten browser screenshots were arranged without retouching source pixels. One contact-sheet layout correction fixed overlapping captions; no render/model iteration occurred.
 - Source measurements reused with links: scoped asset gate SHA-256, triangles, bytes and draw calls; five CPU renders total 252.921 seconds; Phase 4 headless renderer statistics and test logs. No real-phone, GPU-memory or owner-plan-credit values were invented.
 - Documentation checks: all 46 local Markdown links in the review index, scoring sheet and decision form resolved; contact sheet generated at 2480×3768; GLB SHA-256 unchanged. No visual scores, human signatures or gate closures were entered.
+
+## Pre-Phase-6 reference reconciliation — 2026-10-21 (documentation only)
+
+- Wall-clock: exact start time was not captured; elapsed wall-clock and model-credit usage are unavailable. One failed patch format attempt was corrected on the next attempt; no render-review round occurred.
+- Blender runs, browser runs, model/GLB/viewer/dependency edits and third-party asset downloads: 0. Two official Mercedes-Benz publication pages were read for display and upholstery facts.
+- Local inventory command: 29 CSV rows and `.jpg` filenames, zero missing/extra and zero duplicate IDs; byte signatures show 25 JPEG and four WebP payloads (`COMP_001`–`COMP_004`), all named `.jpg`; PDF 38,536,694 bytes. Original 31-JPEG Manus manifest unavailable. Documentation link and diff checks are recorded in the reconciliation handoff/commit.

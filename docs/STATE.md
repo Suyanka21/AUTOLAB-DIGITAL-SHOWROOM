@@ -1,11 +1,12 @@
 # State — 2026-10-21
 
-- Done: Authentic V223 reference pack (29 files, 25 high-res photos, 4 thumbnails, 1 PDF) verified and integrated via `docs/spike/MANUS_REFERENCE_INTEGRATION_HANDOFF.md`. Pack excluded from git via `.gitignore`.
-- Reference hierarchy: Primary architecture anchor established (`CAB_004`–`CAB_014`); LWB proportions (`MASTER_001`/`002`); leather/grain macros (`MAT_001`/`002`).
-- Upholstery reconciliation: Identified 3 discrete factory variants (Standard Fluted Nappa vs. Exclusive Diamond Quilt vs. AMG Duotone); prohibited hybrid mixing; owner decision O-REF-02 framed.
-- Scope assessment: Owner deliverable of coherent front cabin evaluated against budgets (~172k tris << 350k budget; ~15 draw calls << 65; ~7-8 MB << 15 MB). Feasible within existing manifest node definitions.
-- Prerequisites: Decisions D2 (split console geometry) and D12 (4 missing manifest material slots) must be formally approved before Phase 6.
-- Known defects addressed: Reference evidence maps solutions for Phase 5 seat groove shading, floating silhouette, blank OLED, and reflection defects.
-- Open: GATE-01, GATE-08, GATE-11; GAP-01 to GAP-04; Decisions D1, D2, D10, D12, O-REF-01, O-REF-02. Phase 5 human scoring sheet remains pending reviewer completion.
-- Validation: Reference pack integrity verified against manifest/registers via Python; zero synthetic images; `.gitignore` rules verified.
-- Next: Owner approval on decisions O-REF-01/02 and D2/D12; completion of Phase 5 human scoring. Phase 6 has not begun. Local commit only; no push or deploy.
+- Done: Pre-Phase-6 handoff reconciled in `docs/spike/MANUS_REFERENCE_INTEGRATION_HANDOFF.md`; no modelling or application changes.
+- Working local pack: `AUTOLAB_V223_REFERENCE_PACK/` has 29 manifest-matched `.jpg` filenames (25 JPEG payloads, four WebP payloads misnamed `.jpg`) and one PDF. Original 31-JPEG Manus manifest/files unavailable; the two-file difference is unresolved.
+- Published photos guide visible provisional geometry; exact image authenticity, trim identity, material samples and physical measurements are not independently certified. Keep reference gaps open.
+- Manufacturer publishes OLED diagonal/resolution and 239.06 × 218.8 mm display dimensions, without separating active area from housing. Phase 3 active canvas and 38° rake are model derivation/estimate; 17° is untraced.
+- Owner preferences only: coherent front cabin, fluted look called “Standard Fluted Nappa” pending trim confirmation, console split, slot harmonisation, published-pack start for visible geometry. None is a Phase 6 approval.
+- Canonical Phase 6 order is Z1–Z9 in `docs/ASTRA_EXECUTION_PROMPTS.md`; previous four-stage geometry sequence withdrawn.
+- F1 remains: four undefined manifest slots. D2/D12 conditional resolution is documented but unsigned; manifest lacks full cabin/seat-shell/armrest/context nodes.
+- Technical spike: 900,088-byte GLB, 5,426 triangles, two calls; full-cabin estimates and real-phone FPS/GPU memory unmeasured. D4 5 MB target/15 MB hard transfer limit remains approved; WebP is feasibility-only.
+- Open: Phase 5 GO/HYBRID/NO-GO and human scores; GATE-01/08/11; GAP-01–04; O-REF-01/02; D1/D2/D12; D10 Phase 6 extension; D13 context. Phase 3 D10 approval remains recorded.
+- Next: Owner signatures on the pending register and Phase 5 route; then decide whether Phase 6 may begin. No Phase 6 work has started.

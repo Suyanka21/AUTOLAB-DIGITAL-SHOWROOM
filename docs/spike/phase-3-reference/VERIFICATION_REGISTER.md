@@ -1,4 +1,6 @@
 # VERIFICATION REGISTER: AUTOLAB V223 PHASE 3 REFERENCE PACK
+
+> **2026-10-21 correction:** This historical Phase 3 table is not a manufacturer metrology sheet. The 38° OLED rake is a photographic estimate; the competing 17° claim is untraced. Mercedes-Benz publishes front shoulder room as **1,516 mm**, not the 1,496 mm used in the seat-width derivation below; the assumed tunnel and door clearances also prevent either 530 mm or 458–480 mm from becoming a verified seat width. Mercedes-Benz describes longitudinal fluting with **Lugano** leather and diamond quilting with **Nappa/Nappa Exclusive**, so the table's universal eight-flute and exact-variant assertions are unsupported. The official **239.06 × 218.8 mm central-display dimensions** do not explicitly distinguish active rectangle from outer housing; the 219.51 × 239.83 mm model canvas remains an assumption-based derivation. Sources and owner decisions: [reconciled handoff](../MANUS_REFERENCE_INTEGRATION_HANDOFF.md).
 **Project:** AutoLab Digital Showroom — Mercedes-Benz S-Class V223 Phase 3 Feasibility Spike  
 **Asset Scope:** `GEO_Seat_Front_Driver_Flutes` & `GEO_Dashboard_Screen_Central_OLED`  
 **Audit Date:** October 19, 2026  
