@@ -44,7 +44,7 @@
    - Target: `src/config/scene-manifest.lexus-rx350.json` specifying bounded front seats (`GEO_Seat_Front_Driver`, `GEO_Seat_Front_Passenger`), steering wheel (`GEO_SteeringWheel_Lexus`), and dashboard deck/display.
 3. **Camera Presets**:
    - Current: `src/config/spike-camera-presets.ts` targeting S-Class coordinates.
-   - Target: Recalibrated camera presets targeting Lexus front bucket seats, seam macro, and cockpit context (`LRX-08`, `LRX-23`, `LRX-30`, `LRX-31`).
+   - Target: Recalibrated camera presets targeting Lexus front bucket seats, seam macro, and cockpit context (`LEXUS_RX_2020_GALLERY_08.jpg`, `LEXUS_RX_2020_GALLERY_23.jpg`, `LEXUS_RX_2020_GALLERY_30.jpg`, `LEXUS_RX_2020_GALLERY_31.jpg`).
 
 ### 2.3 Obsolete Assets (ARCHIVE & ISOLATE)
 1. **S-Class V223 Spike GLB**:

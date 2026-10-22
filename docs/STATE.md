@@ -1,14 +1,16 @@
 # State — 2026-10-22
 
-- Pivot Approved: Flagship vehicle is now 2020 Lexus RX 350 AWD; inspiration carseatcover.eu; Mercedes-Benz S-Class V223 cabin retired.
-- Locked Scope: Two front seats, steering wheel, dashboard cowl; customisable upholstery, colours, contrast stitching; no full cabin.
+- Pivot Approved: Flagship vehicle 2020 Lexus RX 350 AWD; inspiration carseatcover.eu; S-Class cabin retired.
+- Locked Scope: Two front seats, steering wheel, dashboard cowl; customisable upholstery, colours, contrast stitching.
 - Preserved: Next 16 / React 19 app shell, R3F viewer, RoomEnvironment PMREM lighting, 4-step config flow, test suite (31/31 pass).
-- Reference: AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/ (35 Herb Chambers photos, atlas, recommendations) integrated; untracked in git.
-- Strategy: Hybrid approach (interactive 3D front seats + lightweight cockpit touchpoints + bounded photographic camera presets).
-- Deliverables Created: AUTOLAB_PIVOT_DECISION_RECORD.md, REPOSITORY_REUSE_AND_CLEANUP_AUDIT.md, LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md, LEXUS_IMPLEMENTATION_PLAN.md, ASTRA_LEXUS_HANDOFF.md.
-- Budgets: Cumulative triangles <=45,000 (hard ceiling 80,000); draw calls <=6; file size <=2.5 MB; texture memory <=24 MB.
-- Gates Open: Human review and gates GATE-01, GATE-08, GATE-11 transition to Lexus RX 350; no 3D modeling started.
-- Health: Vitest 31/31 passed, typecheck passed, lint passed with 0 errors. App functional on local dev.
-- Next: Owner authorization of Phase L0/L1 and Astra High prompt in ASTRA_LEXUS_HANDOFF.md. Local commit only; no push/deploy.
+- Reference Paths Corrected: Authentic gallery filenames (LEXUS_RX_2020_GALLERY_01-35.jpg) and relative paths mapped; untracked in git.
+- Usage Boundary: Dealer photographs are internal modeling and design references only; excluded from public UI.
+- Modeling & Semantics: Semantic material zones separated from mesh topology; unsupported precision claims removed.
+- Visual Approval Gate: Mandatory owner visual gate introduced after Phase L2A (single driver-seat prototype only) before cockpit touchpoints.
+- Budgets: Provisional targets (~45-60k tris, <=6 calls, <=2.5-3.5 MB); no arbitrary caps that compromise visible upholstery quality.
+- Gates Open: GATE-01, GATE-08, GATE-11 transition to Lexus RX 350; Phase L2A driver seat review gate pending.
+- Health: Vitest 31/31 pass, tsc exit 0, eslint exit 0 errors. Application functional on local dev.
+- Next: Owner authorization of Phase L0/L1 and Phase L2A driver seat visual prototype.
+
 
 

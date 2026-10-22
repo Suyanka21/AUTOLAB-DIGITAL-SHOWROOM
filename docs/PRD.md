@@ -64,14 +64,14 @@ AutoLab clients frequently desire to transform tired or factory interiors into p
 - Three.js / React Three Fiber WebGL canvas loading Draco-compressed `lexus-interior.glb`.
 - Bounded orbit controls preventing disorientation, floor clipping, or unmodeled void exposure.
 - Four calibrated viewpoint presets derived from authentic Herb Chambers Lexus photography:
-  1. **Driver 3/4 Hero** (`hero_driver`, derived from `LRX-08` / `LRX-29`).
-  2. **Stitch & Seam Macro** (`seam_macro`, derived from `LRX-31`).
-  3. **Cabin Dual-Seat Pair** (`cabin_pair`, derived from `LRX-07` / `LRX-30`).
-  4. **Driver Ingress View** (`driver_cockpit`, derived from `LRX-23` / `LRX-33`).
+  1. **Driver 3/4 Hero** (`hero_driver`, derived from `LEXUS_RX_2020_GALLERY_08.jpg` and `LEXUS_RX_2020_GALLERY_29.jpg`).
+  2. **Stitch & Seam Macro** (`seam_macro`, derived from `LEXUS_RX_2020_GALLERY_31.jpg`).
+  3. **Cabin Dual-Seat Pair** (`cabin_pair`, derived from `LEXUS_RX_2020_GALLERY_07.jpg` and `LEXUS_RX_2020_GALLERY_30.jpg`).
+  4. **Driver Ingress View** (`driver_cockpit`, derived from `LEXUS_RX_2020_GALLERY_23.jpg` and `LEXUS_RX_2020_GALLERY_33.jpg`).
 
 ### 4.3 Module 03: Configuration Engine (Confirmed 4-Step Flow)
 - Confirmed sequence: **Material ➔ Colour ➔ Accent Thread ➔ Interior Composition**.
-- Real-time material uniform updates in < 16ms without model reloads on tagged material slots:
+- Real-time material uniform updates without model reloads on tagged semantic material zones:
   - `MAT_Seat_Primary`: Center cushion flutes and main backrest panel.
   - `MAT_Seat_Secondary`: Outer side bolsters and headrest cushion.
   - `MAT_Seat_Stitching`: Dedicated perimeter seam geometry for contrast thread recolouring.
@@ -96,7 +96,7 @@ AutoLab clients frequently desire to transform tired or factory interiors into p
 ## 5. Non-Functional & Quality Standards
 
 1. **Defensive Engineering (CodeRabbit DNA):** Every async data call renders Loading, Empty, and Error states with retry capabilities.
-2. **WebGL Performance:** Steady 60 FPS on desktop and mobile; master asset < 2.5 MB Draco compressed (< 45,000 triangles, $\le 6$ draw calls, $\le 24$ MB texture memory).
+2. **WebGL Performance:** Provisional target of 60 FPS desktop / fluid mobile ($\ge 30\text{ FPS}$), with formal mobile performance measured on representative hardware; provisional targets: $\approx 45,000\text{--}60,000$ triangles, $\le 6$ draw calls, $\le 2.5\text{--}3.5\text{ MB}$ Draco GLB, $\le 24\text{--}32\text{ MB}$ texture memory. Optimisation must not compromise visible upholstery craftsmanship or seam legibility.
 3. **Accessibility:** WCAG AA contrast standards, keyboard focus rings (`focus-visible:ring-2`), ARIA labels on all swatches and controls.
 4. **Mobile Responsiveness:** Touch-optimized orbit gestures, swipeable preset bar, zero horizontal scroll overflow.
 
@@ -109,4 +109,4 @@ AutoLab clients frequently desire to transform tired or factory interiors into p
 * **Lexus Scope & Architecture:** [`docs/LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md`](LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md)
 * **Lexus Implementation Plan:** [`docs/LEXUS_IMPLEMENTATION_PLAN.md`](LEXUS_IMPLEMENTATION_PLAN.md)
 * **Astra Lexus Directive:** [`docs/ASTRA_LEXUS_HANDOFF.md`](ASTRA_LEXUS_HANDOFF.md)
-* **Reference Pack Atlas:** [`AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/SEAT_REFERENCE_ATLAS.md`](file:///c:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/SEAT_REFERENCE_ATLAS.md)
+* **Reference Pack Atlas:** `AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/SEAT_REFERENCE_ATLAS.md`

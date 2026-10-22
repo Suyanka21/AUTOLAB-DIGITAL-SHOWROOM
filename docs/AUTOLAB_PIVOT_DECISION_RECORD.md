@@ -2,7 +2,7 @@
 
 **Document:** `docs/AUTOLAB_PIVOT_DECISION_RECORD.md`  
 **Authority:** Product Blueprint & Owner Decision Record  
-**Date:** 2026-10-22  
+**Date:** 2026-10-22 (Reconciled & Corrected)  
 **Status:** APPROVED & BINDING  
 **Supersedes:** Mercedes-Benz S-Class V223 Full Cabin Reconstruction Directives  
 
@@ -31,7 +31,8 @@ The product direction is now explicitly inspired by the product-focused customis
 The approved flagship demonstration vehicle is the **2020 Lexus RX 350 AWD**.
 
 - **Vehicle Provenance**: Certified pre-owned vehicle, VIN `2T2HZMDA5LC239309`, Stock `HLSPLC239309`, Atomic Silver exterior, Black interior, gasoline V6.
-- **Reference Anchor**: [`AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/`](file:///c:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/) containing 35 authentic dealership listing photographs from Herb Chambers Lexus of Sharon, complete image manifest, and research documents.
+- **Reference Anchor**: `AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/` containing 35 authentic dealership listing photographs from Herb Chambers Lexus of Sharon, complete image manifest, and research documents.
+- **Photograph Usage Boundary**: All dealer photographs are **internal modeling and design references only**. They are excluded from git tracking and will **not** appear in the public application UI without separate commercial licensing approval.
 - **Market Fit**: The Lexus RX is a ubiquitous, highly aspirational luxury SUV across East Africa and Nairobi, representing AutoLab's core demographic for bespoke interior refreshes and executive leather upgrades.
 
 ---
@@ -77,18 +78,27 @@ The canonical customer configuration journey remains immutable:
 
 ---
 
-## 5. Superseded Historical Decisions Register
+## 5. Early Visual Approval Gate & Modeling Directives
+
+1. **First 3D Deliverable Restricted**: Astra's initial 3D task is strictly restricted to **one Lexus driver-seat visual prototype only** (`GEO_Seat_Front_Driver` + `GEO_Seat_Stitching_Front`).
+2. **Owner Visual Gate**: Astra must submit 3 review renders (`hero_driver`, `driver_cockpit`, `seam_macro`) alongside side-by-side comparisons with reference photos (`LEXUS_RX_2020_GALLERY_08.jpg`, `LEXUS_RX_2020_GALLERY_23.jpg`, `LEXUS_RX_2020_GALLERY_31.jpg`). The owner must visually approve this prototype before any work begins on passenger seats, steering wheel, or dashboard.
+3. **Semantic Material Zones vs. Mesh Topology**: Astra is not forced to limit itself to an artificially small number of mesh nodes. Seating may be authored across multiple sub-meshes (cushion insert, bolster, headrest, controls, seam splines) for optimal topology and baking, as long as each sub-mesh assigns its designated semantic material zone (`MAT_Seat_Primary`, `MAT_Seat_Secondary`, `MAT_Seat_Stitching`).
+4. **Realistic Performance Targets**: Performance budgets ($\approx 45,000\text{--}60,000$ tris, $\le 2.5\text{--}3.5\text{ MB}$, $\le 6$ draw calls) are provisional engineering targets rather than premature arbitrary caps that compromise visible upholstery quality. Hard limits will be established only after testing representative prototype assets on actual mid-range mobile devices.
+
+---
+
+## 6. Superseded Historical Decisions Register
 
 The following earlier decisions regarding the S-Class V223 are formally archived and superseded:
 
 | Previous ID | Previous Scope | Status | Reason Superseded |
 | :--- | :--- | :--- | :--- |
 | **O-REF-01** | Coherent V223 LWB front cabin (10 nodes) | **SUPERSEDED** | S-Class full-cabin deliverable retired in favour of Lexus RX 350 seat-focused demo. |
-| **O-REF-02** | V223 longitudinally fluted seat pattern | **SUPERSEDED** | Replaced by authentic 2020 Lexus RX 350 seat seam and bolster geometry (`LRX-08`, `LRX-31`). |
+| **O-REF-02** | V223 longitudinally fluted seat pattern | **SUPERSEDED** | Replaced by authentic 2020 Lexus RX 350 seat seam and bolster geometry (`LEXUS_RX_2020_GALLERY_08.jpg`, `LEXUS_RX_2020_GALLERY_31.jpg`). |
 | **D2** | S-Class center console split (veneer vs leather) | **SUPERSEDED** | Complex S-Class waterfall console removed from 3D modeling scope. |
 | **D9** | V223 LWB generation baseline | **SUPERSEDED** | Target vehicle transitioned to 2020 Lexus RX 350 AWD. |
 | **D12** | S-Class manifest slots reconciliation (F1) | **SUPERSEDED** | Manifest being rebaselined for Lexus component nodes. |
-| **D13** | S-Class cabin context (headliner, pillars) | **SUPERSEDED** | Cabin context replaced by bounded camera presets and photographic backdrop. |
+| **D13** | S-Class cabin context (headliner, pillars) | **SUPERSEDED** | Cabin context replaced by bounded camera presets and studio shadow plane. |
 
 ### Preserved Foundational Decisions
 - **D1 (Accent Thread Direction)**: Dedicated stitch geometry or dedicated material binding for recolourable thread remains the approved technical path.
