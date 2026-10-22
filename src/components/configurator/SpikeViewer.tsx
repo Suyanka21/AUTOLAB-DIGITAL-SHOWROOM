@@ -6,6 +6,12 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Group, Mesh, MeshStandardMaterial, PMREMGenerator, type Texture } from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { SPIKE_CAMERA_PRESETS, type CameraViewId } from "@/config/spike-camera-presets";
+import { LEXUS_CAMERA_PRESETS } from "@/config/lexus-camera-presets";
+
+const ALL_CAMERA_PRESETS: Record<string, { target: readonly [number, number, number]; position: readonly [number, number, number] }> = {
+  ...SPIKE_CAMERA_PRESETS,
+  ...LEXUS_CAMERA_PRESETS,
+};
 
 // Sources: https://r3f.docs.pmnd.rs/api/canvas,
 // https://drei.docs.pmnd.rs/loaders/gltf-use-gltf,
@@ -62,7 +68,7 @@ function CameraRig({ view }: { view: CameraViewId }) {
     return () => media.removeEventListener("change", update);
   }, []);
   useEffect(() => {
-    const preset = SPIKE_CAMERA_PRESETS[view];
+    const preset = ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview;
     camera.position.set(preset.position[0], preset.position[1], preset.position[2]);
     controls.current?.target.set(preset.target[0], preset.target[1], preset.target[2]);
     controls.current?.update();
@@ -186,7 +192,7 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
   return <div className="absolute inset-0 z-10" style={{ backgroundColor: status === "success" ? "#0F1014" : "transparent" }}
     data-testid="spike-viewer" aria-label="Provisional two-node 3D viewer">
     {supported && status !== "error" && status !== "empty" && <Canvas key={retryKey} frameloop="demand" dpr={[1, 1.5]}
-      camera={{ fov: 38, near: 0.05, far: 10, position: [...SPIKE_CAMERA_PRESETS[view].position] }}
+      camera={{ fov: 38, near: 0.05, far: 10, position: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).position }}
       gl={{ antialias: true, powerPreference: "high-performance" }}
       onCreated={({ gl }) => {
         contextRef.current = gl.getContext();

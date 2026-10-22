@@ -37,11 +37,13 @@ export function AtelierHeader() {
             </div>
           </Link>
 
-          {/* S-Class Atelier Badge */}
+          {/* Platform Atelier Badge */}
           <div className="hidden lg:flex items-center space-x-2 pl-3 border-l border-white/[0.08]">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#141416] border border-white/[0.08] px-3 py-1 text-xs text-slate-300">
               <span className="h-1.5 w-1.5 rounded-full bg-[#38B6FF] shadow-[0_0_6px_#38B6FF]" />
-              <span className="font-medium tracking-wide text-white">S-Class V223 Atelier</span>
+              <span className="font-medium tracking-wide text-white">
+                {referenceCode.startsWith("AL-SC-") ? "S-Class V223 Atelier" : "Lexus RX 350 Atelier"}
+              </span>
             </span>
           </div>
         </div>
@@ -51,10 +53,10 @@ export function AtelierHeader() {
           <Compass className="h-3.5 w-3.5 text-[#38B6FF]" />
           <span className="text-xs font-medium text-slate-300">Selected Platform:</span>
           <span className="text-xs font-semibold tracking-wide text-white">
-            Mercedes-Benz S-Class (V223 LWB)
+            {referenceCode.startsWith("AL-SC-") ? "Mercedes-Benz S-Class (V223 LWB)" : "2020 Lexus RX 350 AWD"}
           </span>
           <span className="text-[10px] font-mono text-slate-500 bg-black/40 px-1.5 py-0.5 rounded">
-            MY 2021-2025
+            {referenceCode.startsWith("AL-SC-") ? "MY 2021-2025" : "MY 2020-2022"}
           </span>
         </div>
 

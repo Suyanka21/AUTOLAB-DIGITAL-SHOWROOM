@@ -1,0 +1,112 @@
+{
+  "assetId": "lexus-rx350-interior",
+  "vehicleModel": "2020 Lexus RX 350 AWD",
+  "format": "glb",
+  "units": "meters",
+  "coordinateSystem": "Y-Up",
+  "nodes": [
+    {
+      "identifier": "GEO_Seat_Front_Driver",
+      "module": "Seating",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Seat_Primary",
+      "allowedMaterialSlots": ["MAT_Seat_Primary", "MAT_Seat_Secondary"],
+      "kinematic": false,
+      "notes": "Driver bucket seat: center fluted insert, side bolsters, headrest cushion, power switch trim"
+    },
+    {
+      "identifier": "GEO_Seat_Front_Passenger",
+      "module": "Seating",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Seat_Primary",
+      "allowedMaterialSlots": ["MAT_Seat_Primary", "MAT_Seat_Secondary"],
+      "kinematic": false,
+      "notes": "Passenger bucket seat: symmetrical counterpart forming the front cabin pair"
+    },
+    {
+      "identifier": "GEO_Seat_Stitching_Front",
+      "module": "Seating",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Seat_Stitching",
+      "allowedMaterialSlots": ["MAT_Seat_Stitching"],
+      "kinematic": false,
+      "notes": "Dedicated perimeter and seam geometry for real-time contrast thread recolouring"
+    },
+    {
+      "identifier": "GEO_SteeringWheel_Lexus",
+      "module": "Cockpit",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Steering_Leather",
+      "allowedMaterialSlots": ["MAT_Steering_Leather"],
+      "kinematic": false,
+      "notes": "3-spoke Lexus steering wheel with airbag boss, thumb rests, and grips"
+    },
+    {
+      "identifier": "GEO_Dashboard_Lexus",
+      "module": "Cockpit",
+      "priorityTier": "HIGH",
+      "tolerance": "CONTROLLED_APPROX",
+      "materialSlot": "MAT_Dashboard_Trim",
+      "allowedMaterialSlots": ["MAT_Dashboard_Trim"],
+      "kinematic": false,
+      "notes": "Upper dashboard deck, instrument binnacle cowl, and central display screen bezel"
+    }
+  ],
+  "materialSlots": [
+    {
+      "slotIdentifier": "MAT_Seat_Primary",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.48,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": true,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Seat_Secondary",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.48,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": true,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Seat_Stitching",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.35,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": false,
+      "hasNormalMap": false,
+      "textureResolutionBudget": "512"
+    },
+    {
+      "slotIdentifier": "MAT_Steering_Leather",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.45,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": false,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Dashboard_Trim",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.65,
+      "defaultMetallic": 0.0,
+      "hasClearcoat": false,
+      "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    }
+  ],
+  "budgets": {
+    "maxTriangles": 80000,
+    "maxDrawCalls": 24,
+    "maxFileSizeBytes": 5242880,
+    "maxGpuMemoryMb": 48
+  }
+}

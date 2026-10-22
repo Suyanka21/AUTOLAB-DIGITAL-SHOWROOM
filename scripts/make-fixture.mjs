@@ -63,7 +63,69 @@ function addQuad(doc, buffer, scene, name, material, width, height, translation)
   scene.addChild(doc.createNode(name).setMesh(doc.createMesh(`${name}_mesh`).addPrimitive(primitive)).setTranslation(translation));
 }
 
-export async function createSyntheticFixture({ draco = false } = {}) {
+export async function createLexusSyntheticFixture({ draco = false } = {}) {
+  const doc = new Document();
+  const buffer = doc.createBuffer();
+  const scene = doc.createScene("SyntheticLexusCockpit");
+  doc.getRoot().setDefaultScene(scene);
+  const clearcoat = doc.createExtension(KHRMaterialsClearcoat);
+  const normal = doc.createTexture("GeneratedFlatNormal")
+    .setImage(makeNormalPng())
+    .setMimeType("image/png");
+
+  // Semantic material zones conforming to scene-manifest.lexus-rx350.json
+  const matPrimary = doc.createMaterial("MAT_Seat_Primary")
+    .setRoughnessFactor(0.48)
+    .setMetallicFactor(0)
+    .setNormalTexture(normal)
+    .setExtension("KHR_materials_clearcoat", clearcoat.createClearcoat().setClearcoatFactor(0.05));
+
+  const matSecondary = doc.createMaterial("MAT_Seat_Secondary")
+    .setRoughnessFactor(0.48)
+    .setMetallicFactor(0)
+    .setNormalTexture(normal)
+    .setExtension("KHR_materials_clearcoat", clearcoat.createClearcoat().setClearcoatFactor(0.05));
+
+  const matStitching = doc.createMaterial("MAT_Seat_Stitching")
+    .setRoughnessFactor(0.35)
+    .setMetallicFactor(0);
+
+  const matSteering = doc.createMaterial("MAT_Steering_Leather")
+    .setRoughnessFactor(0.45)
+    .setMetallicFactor(0)
+    .setNormalTexture(normal);
+
+  const matDashboard = doc.createMaterial("MAT_Dashboard_Trim")
+    .setRoughnessFactor(0.65)
+    .setMetallicFactor(0)
+    .setNormalTexture(normal);
+
+  // 1. Driver seat main insert
+  addQuad(doc, buffer, scene, "GEO_Seat_Front_Driver", matPrimary, 0.45, 0.55, [-0.4, 0.5, 0.1]);
+  // 2. Driver seat bolsters sub-mesh (demonstrating multi-mesh component support)
+  addQuad(doc, buffer, scene, "GEO_Seat_Front_Driver_Bolsters", matSecondary, 0.2, 0.55, [-0.65, 0.5, 0.1]);
+  // 3. Passenger seat
+  addQuad(doc, buffer, scene, "GEO_Seat_Front_Passenger", matPrimary, 0.45, 0.55, [0.4, 0.5, 0.1]);
+  // 4. Stitching geometry
+  addQuad(doc, buffer, scene, "GEO_Seat_Stitching_Front", matStitching, 0.05, 0.55, [-0.4, 0.5, 0.11]);
+  // 5. Steering wheel
+  addQuad(doc, buffer, scene, "GEO_SteeringWheel_Lexus", matSteering, 0.38, 0.38, [-0.38, 0.8, -0.4]);
+  // 6. Dashboard cowl & bezel
+  addQuad(doc, buffer, scene, "GEO_Dashboard_Lexus", matDashboard, 1.4, 0.35, [0, 0.85, -0.6]);
+
+  const io = new NodeIO().registerExtensions([KHRMaterialsClearcoat, KHRDracoMeshCompression]);
+  if (draco) {
+    doc.createExtension(KHRDracoMeshCompression).setRequired(true);
+    io.registerDependencies({ "draco3d.encoder": await draco3d.createEncoderModule() });
+  }
+  return io.writeBinary(doc);
+}
+
+export async function createSyntheticFixture({ scope = "spike", draco = false } = {}) {
+  if (scope === "lexus") {
+    return createLexusSyntheticFixture({ draco });
+  }
+
   const doc = new Document();
   const buffer = doc.createBuffer();
   const scene = doc.createScene("SyntheticSpike");
@@ -92,9 +154,13 @@ export async function createSyntheticFixture({ draco = false } = {}) {
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const output = resolve(process.argv.find((arg) => arg.endsWith(".glb")) ?? "tests/fixtures/spike-synthetic.glb");
-  const bytes = await createSyntheticFixture({ draco: process.argv.includes("--draco") });
+  const isLexus = process.argv.includes("--scope") && process.argv[process.argv.indexOf("--scope") + 1] === "lexus";
+  const defaultOutput = isLexus ? "tests/fixtures/lexus-synthetic.glb" : "tests/fixtures/spike-synthetic.glb";
+  const output = resolve(process.argv.find((arg) => arg.endsWith(".glb")) ?? defaultOutput);
+  const bytes = isLexus
+    ? await createLexusSyntheticFixture({ draco: process.argv.includes("--draco") })
+    : await createSyntheticFixture({ draco: process.argv.includes("--draco") });
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, bytes);
-  console.log(`Synthetic GLB: ${output} (${bytes.length} bytes, sha256 ${createHash("sha256").update(bytes).digest("hex")})`);
+  console.log(`Synthetic GLB (${isLexus ? "Lexus" : "Spike"}): ${output} (${bytes.length} bytes, sha256 ${createHash("sha256").update(bytes).digest("hex")})`);
 }

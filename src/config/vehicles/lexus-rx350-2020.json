@@ -1,0 +1,126 @@
+{
+  "id": "lexus-rx350-2020",
+  "brand": "Lexus",
+  "model": "RX 350",
+  "generation": "Fourth Generation (AL20 Facelift)",
+  "modelYears": "2020-2022",
+  "chassisCode": "AL20",
+  "status": "active",
+  "dimensions": {
+    "wheelbaseMm": 2790,
+    "overallLengthMm": 4890,
+    "overallWidthMm": 1895,
+    "overallHeightMm": 1690,
+    "frontHeadroomMm": 1001,
+    "rearHeadroomMm": 993,
+    "frontLegroomMm": 1120,
+    "rearLegroomMm": 965
+  },
+  "assetSource": {
+    "modelFile": "assets/3d/lexus-rx350/cockpit.glb",
+    "lodLowFile": "assets/3d/lexus-rx350/cockpit_low.glb",
+    "dracoCompressed": true,
+    "ktx2Textures": true
+  },
+  "materialZones": [
+    {
+      "zoneId": "zone_seat_primary",
+      "name": "Seat Primary Upholstery",
+      "description": "Center cushion flutes and center backrest insert for front driver and passenger seats.",
+      "targetMeshPrefixes": [
+        "GEO_Seat_Front_Driver",
+        "GEO_Seat_Front_Passenger"
+      ],
+      "allowedMaterialTypes": ["leather", "fabric"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "sienna-brown-502a",
+      "defaultAccentThreadId": "contrast-champagne-gold"
+    },
+    {
+      "zoneId": "zone_seat_secondary",
+      "name": "Seat Secondary Accent Upholstery",
+      "description": "Outer side bolsters, headrest cushion, and side profile bands.",
+      "targetMeshPrefixes": [
+        "GEO_Seat_Front_Driver",
+        "GEO_Seat_Front_Passenger"
+      ],
+      "allowedMaterialTypes": ["leather"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "black-nappa-501a",
+      "defaultAccentThreadId": "contrast-champagne-gold"
+    },
+    {
+      "zoneId": "zone_seat_stitching",
+      "name": "Contrast Perimeter Seam Stitching",
+      "description": "Dedicated perimeter seam and accent thread geometry.",
+      "targetMeshPrefixes": [
+        "GEO_Seat_Stitching_Front"
+      ],
+      "allowedMaterialTypes": ["leather", "fabric"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "contrast-champagne-gold",
+      "defaultAccentThreadId": "contrast-champagne-gold"
+    },
+    {
+      "zoneId": "zone_steering_wheel",
+      "name": "Steering Wheel Assembly",
+      "description": "3-spoke Lexus steering wheel with airbag boss and grips.",
+      "targetMeshPrefixes": [
+        "GEO_SteeringWheel_Lexus"
+      ],
+      "allowedMaterialTypes": ["leather"],
+      "defaultMaterialId": "nappa-exclusive",
+      "defaultColorId": "black-nappa-501a"
+    },
+    {
+      "zoneId": "zone_dashboard_trim",
+      "name": "Dashboard Cowl & Display Bezel",
+      "description": "Upper dashboard deck, instrument cowl, and central display screen bezel.",
+      "targetMeshPrefixes": [
+        "GEO_Dashboard_Lexus"
+      ],
+      "allowedMaterialTypes": ["wood", "leather"],
+      "defaultMaterialId": "open-pore-poplar",
+      "defaultColorId": "anthracite-poplar"
+    }
+  ],
+  "cameraPresets": [
+    {
+      "id": "hero_driver",
+      "name": "Driver Hero",
+      "description": "Front three-quarter view showing full driver seat, headrest, outer bolster, and door ingress profile.",
+      "position": [-1.2, 0.95, 0.85],
+      "target": [-0.38, 0.65, 0.10],
+      "fov": 38
+    },
+    {
+      "id": "seam_macro",
+      "name": "Stitch Detail",
+      "description": "Close-up macro view focusing on cushion bolster transition, perforations, and double-stitched seam.",
+      "position": [-0.55, 0.75, 0.45],
+      "target": [-0.28, 0.55, 0.20],
+      "fov": 28
+    },
+    {
+      "id": "cabin_pair",
+      "name": "Cabin Pair",
+      "description": "Wide cockpit view from center rear showing both driver and passenger seats, console spacing, and steering wheel.",
+      "position": [0.0, 1.15, 1.25],
+      "target": [0.0, 0.70, 0.0],
+      "fov": 45
+    },
+    {
+      "id": "driver_cockpit",
+      "name": "Driver Ingress",
+      "description": "Eye-level perspective through open driver door showing steering wheel relationship and seat cushion base.",
+      "position": [-0.95, 1.05, 0.15],
+      "target": [-0.35, 0.85, -0.15],
+      "fov": 42
+    }
+  ],
+  "metadata": {
+    "sourceBrief": "docs/LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md",
+    "evidenceConfidence": "CONFIRMED",
+    "notes": "Verified against Lexus RX 350 AWD MY2020 OEM specification and Herb Chambers dealership reference pack."
+  }
+}

@@ -1,3 +1,5 @@
+import { LEXUS_CAMERA_PRESETS, type LexusCameraViewId } from "./lexus-camera-presets";
+
 // Phase 3 review cameras, converted from Blender Z-up to glTF Y-up.
 // Source: blender/constants.py VIEWS. These inspect the two-node spike only.
 export const SPIKE_CAMERA_PRESETS = {
@@ -8,4 +10,7 @@ export const SPIKE_CAMERA_PRESETS = {
   oled_profile: { label: "OLED Profile", target: [0.2, 0.8, 0.48], position: [0.55, 0.91, 0.65] },
 } as const;
 
-export type CameraViewId = keyof typeof SPIKE_CAMERA_PRESETS;
+export type SpikeCameraViewId = keyof typeof SPIKE_CAMERA_PRESETS;
+export type CameraViewId = SpikeCameraViewId | LexusCameraViewId;
+
+export { LEXUS_CAMERA_PRESETS, type LexusCameraViewId };

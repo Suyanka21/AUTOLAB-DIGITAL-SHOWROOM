@@ -4,7 +4,6 @@ import React, { createContext, useContext, useState, useMemo, useEffect } from "
 import materialsCatalogue from "@/config/materials/catalogue.json";
 import colorsCatalogue from "@/config/materials/colors.json";
 import threadsCatalogue from "@/config/materials/accent-threads.json";
-import vehicleConfig from "@/config/vehicles/mercedes-s-class-v223.json";
 import { buildWhatsAppHref } from "@/lib/whatsapp";
 import type { CameraViewId } from "@/config/spike-camera-presets";
 
@@ -47,13 +46,18 @@ export interface ConfiguratorState {
 
 const ConfiguratorContext = createContext<ConfiguratorState | null>(null);
 
-function generateRefCode(): string {
+export function generateRefCode(platform: "lexus" | "mercedes" = "lexus"): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let hash = "";
   for (let i = 0; i < 4; i++) {
     hash += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  return `AL-SC-2026-${hash}`;
+  const prefix = platform === "mercedes" ? "AL-SC-2026" : "AL-RX-2026";
+  return `${prefix}-${hash}`;
+}
+
+export function isLexusRefCode(code: string): boolean {
+  return code.startsWith("AL-RX-");
 }
 
 export function ConfiguratorProvider({ children }: { children: React.ReactNode }) {
@@ -65,12 +69,12 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
   const [accentThreadId, setAccentThreadId] = useState<string>("contrast-champagne-gold");
   const [ambientLightHex, setAmbientLightHex] = useState<string>("#38B6FF"); // AutoLab Electric Cyan
   const [ambientLightName, setAmbientLightName] = useState<string>("AutoLab Electric Cyan");
-  const [activeCameraView, setActiveCameraView] = useState<CameraViewId>("overview");
-  const [referenceCode, setReferenceCode] = useState<string>("AL-SC-2026-V223");
+  const [activeCameraView, setActiveCameraView] = useState<CameraViewId>("hero_driver");
+  const [referenceCode, setReferenceCode] = useState<string>("AL-RX-2026-RX01");
 
   useEffect(() => {
-    // Generate a unique reference code on client mount
-    const timer = setTimeout(() => setReferenceCode(generateRefCode()), 0);
+    // Generate a unique reference code on client mount (defaulting to Lexus RX 350 prefix)
+    const timer = setTimeout(() => setReferenceCode(generateRefCode("lexus")), 0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -117,7 +121,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
     const text = [
       `*AutoLab Digital Showroom — Consultation Request*`,
       `• Reference Code: ${referenceCode}`,
-      `• Vehicle: Mercedes-Benz S-Class (V223 LWB)`,
+      `• Vehicle: ${referenceCode.startsWith("AL-SC-") ? "Mercedes-Benz S-Class (V223 LWB)" : "2020 Lexus RX 350 AWD"}`,
       ``,
       `*Curated Specification:*`,
       `• Primary Leather: ${selectedPrimaryColor?.name || primaryColorId}`,

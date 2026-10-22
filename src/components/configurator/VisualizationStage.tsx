@@ -14,34 +14,28 @@ interface CameraPresetTab {
 
 const CAMERA_TABS: CameraPresetTab[] = [
   {
-    id: "overview",
-    label: "Overview",
-    sublabel: "Two-node spike",
-    focalTarget: "Provisional seat inserts and central OLED, isolated for feasibility",
+    id: "hero_driver",
+    label: "Driver Hero",
+    sublabel: "Front 3/4 Ingress",
+    focalTarget: "Full driver seat, headrest, outer bolster, and door ingress profile",
   },
   {
-    id: "seat_front",
-    label: "Seat Front",
-    sublabel: "Central flutes",
-    focalTarget: "Driver central insert; no bolsters, rails or stitching",
+    id: "seam_macro",
+    label: "Stitch Detail",
+    sublabel: "Macro Seam & Flutes",
+    focalTarget: "Cushion bolster transition, perforations, and contrast double-stitch seam",
   },
   {
-    id: "seat_detail",
-    label: "Seat Detail",
-    sublabel: "Baked normal",
-    focalTarget: "Inspect flute edges, shading and the base/back junction",
+    id: "cabin_pair",
+    label: "Cabin Pair",
+    sublabel: "Front Cabin Width",
+    focalTarget: "Wide cockpit view showing both front seats, console spacing, and steering wheel",
   },
   {
-    id: "oled_front",
-    label: "OLED Front",
-    sublabel: "Active face",
-    focalTarget: "Inspect the 12.8-inch active face and simplified control strip",
-  },
-  {
-    id: "oled_profile",
-    label: "OLED Profile",
-    sublabel: "Bezel depth",
-    focalTarget: "Inspect provisional screen inclination and housing profile",
+    id: "driver_cockpit",
+    label: "Driver Ingress",
+    sublabel: "Cockpit Perspective",
+    focalTarget: "Eye-level perspective through open driver door showing steering wheel relationship and seat cushion base",
   },
 ];
 
@@ -136,7 +130,7 @@ export function VisualizationStage() {
         {/* Viewport Scale Indicator */}
         <div className="hidden sm:flex items-center space-x-2 text-[11px] font-mono text-slate-400">
           <span className="h-2 w-2 rounded-full bg-[#38B6FF]" />
-          <span>V223 LWB (3,216 mm)</span>
+          <span>{referenceCode.startsWith("AL-SC-") ? "V223 LWB (3,216 mm)" : "Lexus RX 350 AWD (2,790 mm)"}</span>
         </div>
       </div>
 

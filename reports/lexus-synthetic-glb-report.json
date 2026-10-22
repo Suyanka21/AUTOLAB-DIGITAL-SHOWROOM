@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "scope": "lexus",
+  "synthetic": true,
+  "sha256": "10d0acfe63fcb3515e87ca67f8aa1364b1df57c0718a36c637ec8182a96250b3",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [],
+  "warnings": [
+    "Synthetic fixture uses generated PNG with Draco geometry; production KTX2 checks are deferred.",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_Seat_Front_Driver": 2,
+    "GEO_Seat_Front_Driver_Bolsters": 2,
+    "GEO_Seat_Front_Passenger": 2,
+    "GEO_Seat_Stitching_Front": 2,
+    "GEO_SteeringWheel_Lexus": 2,
+    "GEO_Dashboard_Lexus": 2
+  },
+  "textures": [
+    {
+      "name": "GeneratedFlatNormal",
+      "mimeType": "image/png",
+      "size": [
+        2,
+        2
+      ]
+    }
+  ],
+  "nodeCount": 6,
+  "materialCount": 5,
+  "triangleCount": 12,
+  "drawCalls": 6,
+  "fileSizeBytes": 8188,
+  "gpuTextureBytesEstimated": 22,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0
+  },
+  "asset": "tests\\fixtures\\lexus-synthetic.glb"
+}

@@ -14,11 +14,13 @@ import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const manifestPath = resolve(root, "src/config/scene-manifest.s-class-v223.json");
+const sClassManifestPath = resolve(root, "src/config/scene-manifest.s-class-v223.json");
+const lexusManifestPath = resolve(root, "src/config/scene-manifest.lexus-rx350.json");
 const schemaPath = resolve(root, "docs/schemas/scene-manifest.schema.json");
 const planPath = resolve(root, "docs/spike/plan.md");
 const performancePath = resolve(root, "docs/quality/performance-requirements.md");
-const vehiclePath = resolve(root, "src/config/vehicles/mercedes-s-class-v223.json");
+const sClassVehiclePath = resolve(root, "src/config/vehicles/mercedes-s-class-v223.json");
+const lexusVehiclePath = resolve(root, "src/config/vehicles/lexus-rx350-2020.json");
 const packagePath = resolve(root, "package.json");
 const spikeNodes = ["GEO_Seat_Front_Driver_Flutes", "GEO_Dashboard_Screen_Central_OLED"];
 // Sources: docs/3d-assets/material-and-texture-specification.md and docs/quality/performance-requirements.md.
@@ -43,6 +45,15 @@ function numberFrom(text, pattern, label) {
 }
 
 function loadBudgets(scope, manifest) {
+  if (scope === "lexus") {
+    return {
+      triangles: manifest.budgets.maxTriangles,
+      drawCalls: manifest.budgets.maxDrawCalls,
+      fileSizeBytes: manifest.budgets.maxFileSizeBytes,
+      targetFileSizeBytes: 3_500_000,
+      perNodeTriangles: {},
+    };
+  }
   if (scope !== "spike") {
     const performance = readFileSync(performancePath, "utf8");
     const targetMb = numberFrom(performance, /(5\.0) MB is the TARGET/i, "5 MB transfer target");
@@ -70,8 +81,8 @@ function loadBudgets(scope, manifest) {
   };
 }
 
-export function inspectManifest() {
-  const manifest = readJson(manifestPath);
+export function inspectManifest(manifestFile = sClassManifestPath) {
+  const manifest = readJson(manifestFile);
   const schema = readJson(schemaPath);
   const ajv = new Ajv({ allErrors: true });
   const valid = ajv.validate(schema, manifest);
@@ -143,8 +154,10 @@ function activeDisplayDiagonal(node) {
 }
 
 export async function validateGlbBytes(bytes, { scope = "full", synthetic = false, feasibilityWebp = false } = {}) {
-  if (scope !== "full" && scope !== "spike") throw new Error(`Unknown scope: ${scope}`);
-  const { manifest, schemaErrors, missingMaterialSlots } = inspectManifest();
+  if (scope !== "full" && scope !== "spike" && scope !== "lexus") throw new Error(`Unknown scope: ${scope}`);
+  const activeManifestPath = scope === "lexus" ? lexusManifestPath : sClassManifestPath;
+  const activeVehiclePath = scope === "lexus" ? lexusVehiclePath : sClassVehiclePath;
+  const { manifest, schemaErrors, missingMaterialSlots } = inspectManifest(activeManifestPath);
   const packageJson = readJson(packagePath);
   const report = {
     passed: false, scope, synthetic,
@@ -166,6 +179,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
       report.warnings.push("Owner-approved WebP feasibility deviation; not KTX2 production compliance (docs/spike/waivers.md).");
     }
   }
+
   const expectedNodes = scope === "spike" ? manifest.nodes.filter((node) => spikeNodes.includes(node.identifier)) : manifest.nodes;
   if (scope === "spike" && expectedNodes.length !== spikeNodes.length) report.errors.push("Spike node list does not match the manifest");
   const scopedMissing = expectedNodes.map((node) => node.materialSlot).filter((slot) => missingMaterialSlots.includes(slot));
@@ -231,19 +245,41 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   }
   report.nodeCount = nodes.length;
   report.materialCount = materials.length;
-  const expectedNames = new Set(expectedNodes.map((node) => node.identifier));
+
   const actualNames = nodes.map((node) => node.getName());
-  for (const name of expectedNames) if (!actualNames.includes(name)) report.errors.push(`missing node: ${name}`);
-  for (const name of actualNames) if (!expectedNames.has(name)) report.errors.push(`extra node: ${name}`);
+  if (scope === "lexus") {
+    // Lexus rebaseline: support multiple sub-meshes per component group
+    const componentGroups = expectedNodes.map((node) => node.identifier);
+    for (const comp of componentGroups) {
+      const hasMatch = actualNames.some((name) => name === comp || name.startsWith(`${comp}_`));
+      if (!hasMatch) report.errors.push(`missing node: ${comp}`);
+    }
+    for (const name of actualNames) {
+      const matches = componentGroups.some((comp) => name === comp || name.startsWith(`${comp}_`));
+      if (!matches) report.errors.push(`extra node: ${name}`);
+    }
+  } else {
+    const expectedNames = new Set(expectedNodes.map((node) => node.identifier));
+    for (const name of expectedNames) if (!actualNames.includes(name)) report.errors.push(`missing node: ${name}`);
+    for (const name of actualNames) if (!expectedNames.has(name)) report.errors.push(`extra node: ${name}`);
+  }
   if (new Set(actualNames).size !== actualNames.length) report.errors.push("duplicate node names");
   if (nodes.some((node) => node.getCamera())) report.errors.push("camera node is not allowed");
 
   const slots = new Map(manifest.materialSlots.map((slot) => [slot.slotIdentifier, slot]));
-  const expectedMaterialNames = new Set(expectedNodes.map((node) => node.materialSlot));
-  for (const name of expectedMaterialNames) if (!materials.some((material) => material.getName() === name)) report.errors.push(`missing material: ${name}`);
+  const allowedMaterialNames = new Set(manifest.materialSlots.map((slot) => slot.slotIdentifier));
+  const expectedMaterialNames = scope === "lexus"
+    ? allowedMaterialNames
+    : new Set(expectedNodes.map((node) => node.materialSlot));
+
+  if (scope !== "lexus") {
+    for (const name of expectedMaterialNames) if (!materials.some((material) => material.getName() === name)) report.errors.push(`missing material: ${name}`);
+  }
   for (const material of materials) {
     const name = material.getName();
-    if (!expectedMaterialNames.has(name)) report.errors.push(`extra material: ${name}`);
+    if (!allowedMaterialNames.has(name) || (scope !== "lexus" && !expectedMaterialNames.has(name))) {
+      report.errors.push(`extra material: ${name}`);
+    }
     const slot = slots.get(name);
     if (!slot) continue;
     if (Math.abs(material.getRoughnessFactor() - slot.defaultRoughness) > 0.0001) report.errors.push(`roughness mismatch: ${name}`);
@@ -262,35 +298,49 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
     }
   }
 
-  const vehicle = readJson(vehiclePath);
+  const vehicle = readJson(activeVehiclePath);
   const maxExtent = [vehicle.dimensions.overallWidthMm, vehicle.dimensions.overallHeightMm, vehicle.dimensions.overallLengthMm].map((mm) => mm / 1000);
   for (const node of nodes) {
-    const definition = expectedNodes.find((item) => item.identifier === node.getName());
+    const nodeName = node.getName();
+    const definition = scope === "lexus"
+      ? expectedNodes.find((item) => nodeName === item.identifier || nodeName.startsWith(`${item.identifier}_`))
+      : expectedNodes.find((item) => item.identifier === nodeName);
     const mesh = node.getMesh();
-    if (!mesh) { report.errors.push(`node has no mesh: ${node.getName()}`); continue; }
+    if (!mesh) { report.errors.push(`node has no mesh: ${nodeName}`); continue; }
     let nodeTriangles = 0;
     for (const primitive of mesh.listPrimitives()) {
       report.drawCalls++;
-      if (primitive.getMode() !== 4) report.errors.push(`non-triangle primitive: ${node.getName()}`);
+      if (primitive.getMode() !== 4) report.errors.push(`non-triangle primitive: ${nodeName}`);
       const triangles = (primitive.getIndices()?.getCount() ?? primitive.getAttribute("POSITION")?.getCount() ?? 0) / 3;
       nodeTriangles += triangles;
       const material = primitive.getMaterial();
-      if (definition && material?.getName() !== definition.materialSlot) report.errors.push(`material binding mismatch: ${node.getName()}`);
+      if (definition) {
+        if (scope === "lexus") {
+          const allowedSlots = definition.allowedMaterialSlots ?? [definition.materialSlot];
+          if (!material || !allowedSlots.includes(material.getName())) {
+            report.errors.push(`material binding mismatch: ${nodeName}`);
+          }
+        } else {
+          if (material?.getName() !== definition.materialSlot) {
+            report.errors.push(`material binding mismatch: ${nodeName}`);
+          }
+        }
+      }
       const textured = material && [material.getBaseColorTexture(), material.getNormalTexture(), material.getMetallicRoughnessTexture(), material.getEmissiveTexture(), material.getOcclusionTexture()].some(Boolean);
-      if (textured && !primitive.getAttribute("TEXCOORD_0")) report.errors.push(`missing UV: ${node.getName()}`);
-      if (material?.getNormalTexture() && !primitive.getAttribute("TANGENT")) report.errors.push(`missing tangents: ${node.getName()}`);
+      if (textured && !primitive.getAttribute("TEXCOORD_0")) report.errors.push(`missing UV: ${nodeName}`);
+      if (material?.getNormalTexture() && !primitive.getAttribute("TANGENT")) report.errors.push(`missing tangents: ${nodeName}`);
     }
     report.triangleCount += nodeTriangles;
-    report.trianglesByNode[node.getName()] = nodeTriangles;
-    const nodeBudget = budgets.perNodeTriangles[node.getName()];
-    if (nodeBudget !== undefined && nodeTriangles > nodeBudget) report.errors.push(`node triangle budget exceeded: ${node.getName()}`);
+    report.trianglesByNode[nodeName] = nodeTriangles;
+    const nodeBudget = budgets.perNodeTriangles[nodeName];
+    if (nodeBudget !== undefined && nodeTriangles > nodeBudget) report.errors.push(`node triangle budget exceeded: ${nodeName}`);
     const extent = extentOfNode(node);
     if (extent.min.every(Number.isFinite)) {
       for (let axis = 0; axis < 3; axis++) {
-        if (extent.max[axis] - extent.min[axis] > maxExtent[axis]) report.errors.push(`vehicle bounds exceeded: ${node.getName()} axis ${axis}`);
-        if (Math.max(Math.abs(extent.min[axis]), Math.abs(extent.max[axis])) > maxExtent[axis]) report.errors.push(`vehicle position exceeded: ${node.getName()} axis ${axis}`);
+        if (extent.max[axis] - extent.min[axis] > maxExtent[axis]) report.errors.push(`vehicle bounds exceeded: ${nodeName} axis ${axis}`);
+        if (Math.max(Math.abs(extent.min[axis]), Math.abs(extent.max[axis])) > maxExtent[axis]) report.errors.push(`vehicle position exceeded: ${nodeName} axis ${axis}`);
       }
-      if (node.getName() === "GEO_Dashboard_Screen_Central_OLED" && budgets.oledDiagonalMm) {
+      if (nodeName === "GEO_Dashboard_Screen_Central_OLED" && budgets.oledDiagonalMm) {
         const measured = activeDisplayDiagonal(node);
         if (measured === null && !synthetic) report.errors.push("missing active-display geometry marker (four corners required)");
         const diagonalMm = measured ?? Math.hypot(extent.max[0] - extent.min[0], extent.max[1] - extent.min[1]) * 1000;
@@ -309,7 +359,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
 }
 
 function parseArgs(args) {
-  const options = { scope: "full", synthetic: false, manifestOnly: false, feasibilityWebp: false, asset: resolve(root, "public/assets/3d/s-class-v223/spike.glb"), report: resolve(root, "reports/glb-report.json") };
+  const options = { scope: "full", synthetic: false, manifestOnly: false, feasibilityWebp: false, asset: null, report: resolve(root, "reports/glb-report.json") };
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--scope") options.scope = args[++index];
     else if (args[index] === "--asset") options.asset = resolve(args[++index]);
@@ -319,7 +369,14 @@ function parseArgs(args) {
     else if (args[index] === "--manifest-only") options.manifestOnly = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
-  if (!["full", "spike"].includes(options.scope)) throw new Error(`Unknown scope: ${options.scope}`);
+  if (!["full", "spike", "lexus"].includes(options.scope)) throw new Error(`Unknown scope: ${options.scope}`);
+  if (!options.asset) {
+    if (options.scope === "lexus") {
+      options.asset = resolve(root, "tests/fixtures/lexus-synthetic.glb");
+    } else {
+      options.asset = resolve(root, "public/assets/3d/s-class-v223/spike.glb");
+    }
+  }
   return options;
 }
 
@@ -330,8 +387,9 @@ async function main() {
     const options = parseArgs(process.argv.slice(2));
     output = options.report;
     if (options.manifestOnly) {
-      const { schemaErrors, missingMaterialSlots } = inspectManifest();
-      report = { passed: false, scope: "full", asset: null, sha256: null, missingMaterialSlots,
+      const activeManifest = options.scope === "lexus" ? lexusManifestPath : sClassManifestPath;
+      const { schemaErrors, missingMaterialSlots } = inspectManifest(activeManifest);
+      report = { passed: false, scope: options.scope, asset: null, sha256: null, missingMaterialSlots,
         errors: [...schemaErrors, ...(missingMaterialSlots.length ? [`undefined material slots: ${missingMaterialSlots.join(", ")}`] : [])], warnings: [] };
       report.passed = report.errors.length === 0;
     } else {
