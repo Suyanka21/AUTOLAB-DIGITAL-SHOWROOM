@@ -3,7 +3,7 @@ import { spawnSync } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve, sep } from "node:path";
-import { createLexusSyntheticFixture } from "../scripts/make-fixture.mjs";
+import { createLexusPrototypeFixture, createLexusSyntheticFixture } from "../scripts/make-fixture.mjs";
 import { inspectManifest, validateGlbBytes } from "../scripts/validate-glb.mjs";
 
 type GlbJson = {
@@ -168,3 +168,98 @@ describe("Lexus RX 350 Asset Gate & Synthetic Fixture (Phase L1)", () => {
     }
   });
 });
+
+describe("Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype)", () => {
+  it("accepts the synthetic Lexus L2A prototype fixture with driver seat, bolsters, stitching, and 3 seat materials", async () => {
+    const fixture = await createLexusPrototypeFixture();
+    const report = await validateGlbBytes(fixture, { scope: "lexus-l2a", synthetic: true });
+    expect(report.passed, report.errors.join("; ")).toBe(true);
+    expect(report.sha256).toMatch(/^[a-f0-9]{64}$/);
+    expect(report.nodeCount).toBe(3); // GEO_Seat_Front_Driver, GEO_Seat_Front_Driver_Bolsters, GEO_Seat_Stitching_Front
+    expect(report.materialCount).toBe(3); // MAT_Seat_Primary, MAT_Seat_Secondary, MAT_Seat_Stitching
+    expect(report.drawCalls).toBe(3);
+    expect(report.missingMaterialSlots).toEqual([]);
+  });
+
+  it("generates byte-identical synthetic Lexus L2A prototype fixtures", async () => {
+    expect(await createLexusPrototypeFixture()).toEqual(await createLexusPrototypeFixture());
+  });
+
+  it("passes CLI validation on the synthetic Lexus L2A prototype GLB with exit code 0", () => {
+    const temp = mkdtempSync(join(tmpdir(), "autolab-lexus-l2a-cli-"));
+    try {
+      const result = spawnSync(process.execPath, [
+        "scripts/validate-glb.mjs",
+        "--scope",
+        "lexus-l2a",
+        "--synthetic",
+        "--asset",
+        "tests/fixtures/lexus-prototype-synthetic.glb",
+        "--report",
+        join(temp, "report.json"),
+      ], {
+        cwd: resolve("."),
+        encoding: "utf8",
+        timeout: 15_000,
+      });
+      expect(result.status).toBe(0);
+      expect(result.stdout).toContain("Asset gate PASS");
+    } finally {
+      if (resolve(temp).startsWith(resolve(tmpdir()) + sep)) rmSync(temp, { recursive: true, force: true });
+    }
+  });
+
+  it.each([
+    ["renamed driver seat group", (json: GlbJson) => {
+      json.nodes[0].name = "GEO_Seat_Front_Other";
+      json.nodes[1].name = "GEO_Seat_Front_Other_Bolsters";
+    }, "missing node: GEO_Seat_Front_Driver"],
+    ["renamed stitching node", (json: GlbJson) => {
+      json.nodes[2].name = "GEO_Seat_Stitching_Rear";
+    }, "missing node: GEO_Seat_Stitching_Front"],
+    ["extra node (steering wheel)", (json: GlbJson) => {
+      json.scenes[0].nodes.push(json.nodes.length);
+      json.nodes.push({ name: "GEO_SteeringWheel_Lexus" });
+    }, "extra node: GEO_SteeringWheel_Lexus"],
+    ["extra node (passenger seat)", (json: GlbJson) => {
+      json.scenes[0].nodes.push(json.nodes.length);
+      json.nodes.push({ name: "GEO_Seat_Front_Passenger" });
+    }, "extra node: GEO_Seat_Front_Passenger"],
+    ["extra material (dashboard trim)", (json: GlbJson) => {
+      json.materials.push({ name: "MAT_Dashboard_Trim", pbrMetallicRoughness: {} });
+    }, "extra material: MAT_Dashboard_Trim"],
+    ["missing required material (secondary bolsters)", (json: GlbJson) => {
+      json.materials[1].name = "MAT_Seat_Alternative";
+    }, "missing material: MAT_Seat_Secondary"],
+    ["material binding mismatch on driver seat", (json: GlbJson) => {
+      json.meshes[0].primitives[0].material = 2; // Point driver seat to stitching
+    }, "material binding mismatch: GEO_Seat_Front_Driver"],
+  ])("rejects %s with a specific error in Lexus L2A scope", async (_label, change, message) => {
+    const fixture = await createLexusPrototypeFixture();
+    const mutated = mutateGlb(fixture, change);
+    const report = await validateGlbBytes(mutated, { scope: "lexus-l2a", synthetic: true });
+    expect(report.passed).toBe(false);
+    expect(report.errors.join("; ")).toContain(message);
+  });
+
+  it("rejects L2A prototype asset when validated against full Lexus scope due to missing components", async () => {
+    const fixture = await createLexusPrototypeFixture();
+    const report = await validateGlbBytes(fixture, { scope: "lexus", synthetic: true });
+    expect(report.passed).toBe(false);
+    expect(report.errors.join("; ")).toContain("missing node: GEO_Seat_Front_Passenger");
+    expect(report.errors.join("; ")).toContain("missing node: GEO_SteeringWheel_Lexus");
+    expect(report.errors.join("; ")).toContain("missing node: GEO_Dashboard_Lexus");
+  });
+
+  it("rejects full Lexus asset when validated against L2A scope due to extra nodes and materials", async () => {
+    const fullFixture = await createLexusSyntheticFixture();
+    const report = await validateGlbBytes(fullFixture, { scope: "lexus-l2a", synthetic: true });
+    expect(report.passed).toBe(false);
+    expect(report.errors.join("; ")).toContain("extra node: GEO_Seat_Front_Passenger");
+    expect(report.errors.join("; ")).toContain("extra node: GEO_SteeringWheel_Lexus");
+    expect(report.errors.join("; ")).toContain("extra node: GEO_Dashboard_Lexus");
+    expect(report.errors.join("; ")).toContain("extra material: MAT_Steering_Leather");
+    expect(report.errors.join("; ")).toContain("extra material: MAT_Dashboard_Trim");
+  });
+});
+

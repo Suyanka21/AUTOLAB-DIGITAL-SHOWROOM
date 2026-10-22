@@ -63,7 +63,58 @@ function addQuad(doc, buffer, scene, name, material, width, height, translation)
   scene.addChild(doc.createNode(name).setMesh(doc.createMesh(`${name}_mesh`).addPrimitive(primitive)).setTranslation(translation));
 }
 
-export async function createLexusSyntheticFixture({ draco = false } = {}) {
+/**
+ * Phase L2A Driver Seat Prototype Fixture
+ * Requires ONLY:
+ * - GEO_Seat_Front_Driver and permitted sub-meshes (GEO_Seat_Front_Driver_Bolsters)
+ * - GEO_Seat_Stitching_Front
+ * - MAT_Seat_Primary, MAT_Seat_Secondary, MAT_Seat_Stitching
+ */
+export async function createLexusPrototypeFixture({ draco = false } = {}) {
+  const doc = new Document();
+  const buffer = doc.createBuffer();
+  const scene = doc.createScene("SyntheticLexusDriverSeatPrototype");
+  doc.getRoot().setDefaultScene(scene);
+  const clearcoat = doc.createExtension(KHRMaterialsClearcoat);
+  const normal = doc.createTexture("GeneratedFlatNormal")
+    .setImage(makeNormalPng())
+    .setMimeType("image/png");
+
+  const matPrimary = doc.createMaterial("MAT_Seat_Primary")
+    .setRoughnessFactor(0.48)
+    .setMetallicFactor(0)
+    .setNormalTexture(normal)
+    .setExtension("KHR_materials_clearcoat", clearcoat.createClearcoat().setClearcoatFactor(0.05));
+
+  const matSecondary = doc.createMaterial("MAT_Seat_Secondary")
+    .setRoughnessFactor(0.48)
+    .setMetallicFactor(0)
+    .setNormalTexture(normal)
+    .setExtension("KHR_materials_clearcoat", clearcoat.createClearcoat().setClearcoatFactor(0.05));
+
+  const matStitching = doc.createMaterial("MAT_Seat_Stitching")
+    .setRoughnessFactor(0.35)
+    .setMetallicFactor(0);
+
+  // 1. Driver seat main insert
+  addQuad(doc, buffer, scene, "GEO_Seat_Front_Driver", matPrimary, 0.45, 0.55, [-0.4, 0.5, 0.1]);
+  // 2. Driver seat bolsters sub-mesh
+  addQuad(doc, buffer, scene, "GEO_Seat_Front_Driver_Bolsters", matSecondary, 0.2, 0.55, [-0.65, 0.5, 0.1]);
+  // 3. Driver seat contrast stitching
+  addQuad(doc, buffer, scene, "GEO_Seat_Stitching_Front", matStitching, 0.05, 0.55, [-0.4, 0.5, 0.11]);
+
+  const io = new NodeIO().registerExtensions([KHRMaterialsClearcoat, KHRDracoMeshCompression]);
+  if (draco) {
+    doc.createExtension(KHRDracoMeshCompression).setRequired(true);
+    io.registerDependencies({ "draco3d.encoder": await draco3d.createEncoderModule() });
+  }
+  return io.writeBinary(doc);
+}
+
+/**
+ * Full Lexus Scope Fixture (All 5 component groups)
+ */
+export async function createLexusFullSyntheticFixture({ draco = false } = {}) {
   const doc = new Document();
   const buffer = doc.createBuffer();
   const scene = doc.createScene("SyntheticLexusCockpit");
@@ -73,7 +124,6 @@ export async function createLexusSyntheticFixture({ draco = false } = {}) {
     .setImage(makeNormalPng())
     .setMimeType("image/png");
 
-  // Semantic material zones conforming to scene-manifest.lexus-rx350.json
   const matPrimary = doc.createMaterial("MAT_Seat_Primary")
     .setRoughnessFactor(0.48)
     .setMetallicFactor(0)
@@ -102,7 +152,7 @@ export async function createLexusSyntheticFixture({ draco = false } = {}) {
 
   // 1. Driver seat main insert
   addQuad(doc, buffer, scene, "GEO_Seat_Front_Driver", matPrimary, 0.45, 0.55, [-0.4, 0.5, 0.1]);
-  // 2. Driver seat bolsters sub-mesh (demonstrating multi-mesh component support)
+  // 2. Driver seat bolsters sub-mesh
   addQuad(doc, buffer, scene, "GEO_Seat_Front_Driver_Bolsters", matSecondary, 0.2, 0.55, [-0.65, 0.5, 0.1]);
   // 3. Passenger seat
   addQuad(doc, buffer, scene, "GEO_Seat_Front_Passenger", matPrimary, 0.45, 0.55, [0.4, 0.5, 0.1]);
@@ -121,9 +171,14 @@ export async function createLexusSyntheticFixture({ draco = false } = {}) {
   return io.writeBinary(doc);
 }
 
+export const createLexusSyntheticFixture = createLexusFullSyntheticFixture;
+
 export async function createSyntheticFixture({ scope = "spike", draco = false } = {}) {
+  if (scope === "lexus-l2a" || scope === "l2a") {
+    return createLexusPrototypeFixture({ draco });
+  }
   if (scope === "lexus") {
-    return createLexusSyntheticFixture({ draco });
+    return createLexusFullSyntheticFixture({ draco });
   }
 
   const doc = new Document();
@@ -154,13 +209,21 @@ export async function createSyntheticFixture({ scope = "spike", draco = false } 
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const isLexus = process.argv.includes("--scope") && process.argv[process.argv.indexOf("--scope") + 1] === "lexus";
-  const defaultOutput = isLexus ? "tests/fixtures/lexus-synthetic.glb" : "tests/fixtures/spike-synthetic.glb";
+  const scopeIdx = process.argv.indexOf("--scope");
+  const scope = scopeIdx !== -1 ? process.argv[scopeIdx + 1] : "spike";
+  const defaultOutput = scope === "lexus-l2a" || scope === "l2a"
+    ? "tests/fixtures/lexus-prototype-synthetic.glb"
+    : scope === "lexus"
+    ? "tests/fixtures/lexus-synthetic.glb"
+    : "tests/fixtures/spike-synthetic.glb";
   const output = resolve(process.argv.find((arg) => arg.endsWith(".glb")) ?? defaultOutput);
-  const bytes = isLexus
-    ? await createLexusSyntheticFixture({ draco: process.argv.includes("--draco") })
-    : await createSyntheticFixture({ draco: process.argv.includes("--draco") });
+  const draco = process.argv.includes("--draco");
+  const bytes = scope === "lexus-l2a" || scope === "l2a"
+    ? await createLexusPrototypeFixture({ draco })
+    : scope === "lexus"
+    ? await createLexusFullSyntheticFixture({ draco })
+    : await createSyntheticFixture({ draco });
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, bytes);
-  console.log(`Synthetic GLB (${isLexus ? "Lexus" : "Spike"}): ${output} (${bytes.length} bytes, sha256 ${createHash("sha256").update(bytes).digest("hex")})`);
+  console.log(`Synthetic GLB (${scope}): ${output} (${bytes.length} bytes, sha256 ${createHash("sha256").update(bytes).digest("hex")})`);
 }

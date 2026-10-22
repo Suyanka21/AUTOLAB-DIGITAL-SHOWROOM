@@ -3,12 +3,16 @@
 import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Group, Mesh, MeshStandardMaterial, PMREMGenerator, type Texture } from "three";
+import { Group, Mesh, MeshStandardMaterial, PMREMGenerator, PerspectiveCamera, type Texture } from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { SPIKE_CAMERA_PRESETS, type CameraViewId } from "@/config/spike-camera-presets";
 import { LEXUS_CAMERA_PRESETS } from "@/config/lexus-camera-presets";
 
-const ALL_CAMERA_PRESETS: Record<string, { target: readonly [number, number, number]; position: readonly [number, number, number] }> = {
+const ALL_CAMERA_PRESETS: Record<string, {
+  target: readonly [number, number, number];
+  position: readonly [number, number, number];
+  fov?: number;
+}> = {
   ...SPIKE_CAMERA_PRESETS,
   ...LEXUS_CAMERA_PRESETS,
 };
@@ -25,7 +29,14 @@ const OLED_SLOT = "MAT_Screen_Central_OLED";
 type ViewerStatus = "loading" | "success" | "empty" | "error";
 export type RendererStats = { calls: number; triangles: number; textures: number; geometries: number };
 type MaterialState = { bindings: Record<string, string>; colors: Record<string, string> };
-export type ViewerEvidence = { status: ViewerStatus; assetUrl: string; materialState: MaterialState | null; renderer: RendererStats | null; error: string | null };
+export type ViewerEvidence = {
+  status: ViewerStatus;
+  assetUrl: string;
+  materialState: MaterialState | null;
+  renderer: RendererStats | null;
+  error: string | null;
+  cameraFov?: number;
+};
 
 declare global {
   interface Window {
@@ -56,6 +67,23 @@ function RoomLighting() {
   return <>{environment && <primitive attach="environment" object={environment} />}<ambientLight intensity={0.35} /><directionalLight position={[-1.5, 2.2, 1.5]} intensity={1.6} /></>;
 }
 
+function syncCameraRig(
+  cam: unknown,
+  ctrls: React.ElementRef<typeof OrbitControls> | null,
+  preset: { position: readonly [number, number, number]; target: readonly [number, number, number]; fov?: number },
+) {
+  if (cam instanceof PerspectiveCamera) {
+    cam.position.set(preset.position[0], preset.position[1], preset.position[2]);
+    const targetFov = preset.fov ?? 38;
+    if (cam.fov !== targetFov) {
+      cam.fov = targetFov;
+    }
+    cam.updateProjectionMatrix();
+  }
+  ctrls?.target.set(preset.target[0], preset.target[1], preset.target[2]);
+  ctrls?.update();
+}
+
 function CameraRig({ view }: { view: CameraViewId }) {
   const { camera, invalidate } = useThree();
   const controls = useRef<React.ElementRef<typeof OrbitControls>>(null);
@@ -69,10 +97,7 @@ function CameraRig({ view }: { view: CameraViewId }) {
   }, []);
   useEffect(() => {
     const preset = ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview;
-    camera.position.set(preset.position[0], preset.position[1], preset.position[2]);
-    controls.current?.target.set(preset.target[0], preset.target[1], preset.target[2]);
-    controls.current?.update();
-    camera.updateProjectionMatrix();
+    syncCameraRig(camera, controls.current, preset);
     invalidate();
   }, [camera, invalidate, view]);
   return <OrbitControls ref={controls} makeDefault enablePan={false} enableDamping={!reducedMotion}
@@ -170,8 +195,9 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
   }, [fail]);
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_E2E !== "1") return;
+    const currentFov = (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38;
     window.__autolab = {
-      snapshot: () => ({ status, assetUrl: url, materialState, renderer, error }),
+      snapshot: () => ({ status, assetUrl: url, materialState, renderer, error, cameraFov: currentFov }),
       loseContext: () => {
         const extension = contextRef.current?.getExtension("WEBGL_lose_context");
         if (!extension) return false;
@@ -180,7 +206,7 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
       },
     };
     return () => { delete window.__autolab; };
-  }, [status, url, materialState, renderer, error]);
+  }, [status, url, materialState, renderer, error, view]);
 
   const retry = () => {
     cleanupRef.current?.();
@@ -192,7 +218,12 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
   return <div className="absolute inset-0 z-10" style={{ backgroundColor: status === "success" ? "#0F1014" : "transparent" }}
     data-testid="spike-viewer" aria-label="Provisional two-node 3D viewer">
     {supported && status !== "error" && status !== "empty" && <Canvas key={retryKey} frameloop="demand" dpr={[1, 1.5]}
-      camera={{ fov: 38, near: 0.05, far: 10, position: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).position }}
+      camera={{
+        fov: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38,
+        near: 0.05,
+        far: 10,
+        position: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).position,
+      }}
       gl={{ antialias: true, powerPreference: "high-performance" }}
       onCreated={({ gl }) => {
         contextRef.current = gl.getContext();

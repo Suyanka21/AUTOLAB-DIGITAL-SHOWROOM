@@ -9,6 +9,9 @@ import colours from "../src/config/materials/colors.json";
 import materials from "../src/config/materials/catalogue.json";
 import manifestSchema from "../docs/schemas/scene-manifest.schema.json";
 import vehicleSchema from "../docs/schemas/vehicle.schema.json";
+import { LEXUS_CAMERA_PRESETS } from "../src/config/lexus-camera-presets";
+import { SPIKE_CAMERA_PRESETS } from "../src/config/spike-camera-presets";
+import { PerspectiveCamera } from "three";
 
 describe("S-Class configuration contracts (Historical Baseline)", () => {
   it("maps every scene node to a defined material slot", () => {
@@ -107,4 +110,60 @@ describe("Lexus RX 350 configuration contracts (Rebaseline Phase L0)", () => {
       expect(preset.fov).toBeLessThan(60);
     }
   });
+
+  it("assigns exact calibrated FOVs to all Lexus presets and preserves Mercedes default FOV", () => {
+    expect(LEXUS_CAMERA_PRESETS.hero_driver.fov).toBe(38);
+    expect(LEXUS_CAMERA_PRESETS.seam_macro.fov).toBe(28);
+    expect(LEXUS_CAMERA_PRESETS.cabin_pair.fov).toBe(45);
+    expect(LEXUS_CAMERA_PRESETS.driver_cockpit.fov).toBe(42);
+
+    for (const key of Object.keys(SPIKE_CAMERA_PRESETS) as Array<keyof typeof SPIKE_CAMERA_PRESETS>) {
+      const preset = SPIKE_CAMERA_PRESETS[key] as { fov?: number };
+      expect(preset.fov).toBeUndefined();
+    }
+  });
+
+  it("updates camera FOV, projection matrix, and transitions safely between all views", () => {
+    const camera = new PerspectiveCamera(38, 16 / 9, 0.05, 10);
+    camera.updateProjectionMatrix();
+    const initialProjection = camera.projectionMatrix.clone();
+
+    const sequence: Array<{ view: string; expectedFov: number }> = [
+      { view: "overview", expectedFov: 38 },
+      { view: "seam_macro", expectedFov: 28 },
+      { view: "cabin_pair", expectedFov: 45 },
+      { view: "driver_cockpit", expectedFov: 42 },
+      { view: "hero_driver", expectedFov: 38 },
+      { view: "seat_detail", expectedFov: 38 },
+    ];
+
+    const allPresets: Record<string, { fov?: number; position: readonly [number, number, number]; target: readonly [number, number, number] }> = {
+      ...SPIKE_CAMERA_PRESETS,
+      ...LEXUS_CAMERA_PRESETS,
+    };
+
+    for (const step of sequence) {
+      const preset = allPresets[step.view];
+      expect(preset).toBeDefined();
+
+      const targetFov = preset.fov ?? 38;
+      expect(targetFov).toBe(step.expectedFov);
+
+      camera.position.set(preset.position[0], preset.position[1], preset.position[2]);
+      if (camera.fov !== targetFov) {
+        camera.fov = targetFov;
+      }
+      camera.updateProjectionMatrix();
+
+      expect(camera.fov).toBe(step.expectedFov);
+      expect(Number.isFinite(camera.projectionMatrix.elements[0])).toBe(true);
+
+      if (step.expectedFov !== 38) {
+        expect(camera.projectionMatrix.equals(initialProjection)).toBe(false);
+      } else {
+        expect(camera.projectionMatrix.elements[0]).toBeCloseTo(initialProjection.elements[0], 5);
+      }
+    }
+  });
 });
+

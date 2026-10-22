@@ -45,6 +45,16 @@ function numberFrom(text, pattern, label) {
 }
 
 function loadBudgets(scope, manifest) {
+  if (scope === "lexus-l2a" || scope === "l2a") {
+    // Driver seat prototype budgets per docs/LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md
+    return {
+      triangles: 35000,
+      drawCalls: 12,
+      fileSizeBytes: 3500000,
+      targetFileSizeBytes: 2500000,
+      perNodeTriangles: {},
+    };
+  }
   if (scope === "lexus") {
     return {
       triangles: manifest.budgets.maxTriangles,
@@ -154,9 +164,13 @@ function activeDisplayDiagonal(node) {
 }
 
 export async function validateGlbBytes(bytes, { scope = "full", synthetic = false, feasibilityWebp = false } = {}) {
-  if (scope !== "full" && scope !== "spike" && scope !== "lexus") throw new Error(`Unknown scope: ${scope}`);
-  const activeManifestPath = scope === "lexus" ? lexusManifestPath : sClassManifestPath;
-  const activeVehiclePath = scope === "lexus" ? lexusVehiclePath : sClassVehiclePath;
+  if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(scope)) {
+    throw new Error(`Unknown scope: ${scope}`);
+  }
+  const isL2A = scope === "lexus-l2a" || scope === "l2a";
+  const isLexus = scope === "lexus" || isL2A;
+  const activeManifestPath = isLexus ? lexusManifestPath : sClassManifestPath;
+  const activeVehiclePath = isLexus ? lexusVehiclePath : sClassVehiclePath;
   const { manifest, schemaErrors, missingMaterialSlots } = inspectManifest(activeManifestPath);
   const packageJson = readJson(packagePath);
   const report = {
@@ -180,7 +194,12 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
     }
   }
 
-  const expectedNodes = scope === "spike" ? manifest.nodes.filter((node) => spikeNodes.includes(node.identifier)) : manifest.nodes;
+  const expectedNodes = scope === "spike"
+    ? manifest.nodes.filter((node) => spikeNodes.includes(node.identifier))
+    : isL2A
+    ? manifest.nodes.filter((node) => ["GEO_Seat_Front_Driver", "GEO_Seat_Stitching_Front"].includes(node.identifier))
+    : manifest.nodes;
+
   if (scope === "spike" && expectedNodes.length !== spikeNodes.length) report.errors.push("Spike node list does not match the manifest");
   const scopedMissing = expectedNodes.map((node) => node.materialSlot).filter((slot) => missingMaterialSlots.includes(slot));
   if (scopedMissing.length) report.errors.push(`undefined material slots: ${Array.from(new Set(scopedMissing)).sort().join(", ")}`);
@@ -247,9 +266,11 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   report.materialCount = materials.length;
 
   const actualNames = nodes.map((node) => node.getName());
-  if (scope === "lexus") {
-    // Lexus rebaseline: support multiple sub-meshes per component group
-    const componentGroups = expectedNodes.map((node) => node.identifier);
+  if (isLexus) {
+    const componentGroups = isL2A
+      ? ["GEO_Seat_Front_Driver", "GEO_Seat_Stitching_Front"]
+      : expectedNodes.map((node) => node.identifier);
+
     for (const comp of componentGroups) {
       const hasMatch = actualNames.some((name) => name === comp || name.startsWith(`${comp}_`));
       if (!hasMatch) report.errors.push(`missing node: ${comp}`);
@@ -268,16 +289,33 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
 
   const slots = new Map(manifest.materialSlots.map((slot) => [slot.slotIdentifier, slot]));
   const allowedMaterialNames = new Set(manifest.materialSlots.map((slot) => slot.slotIdentifier));
-  const expectedMaterialNames = scope === "lexus"
+  const l2aAllowedMaterials = new Set(["MAT_Seat_Primary", "MAT_Seat_Secondary", "MAT_Seat_Stitching"]);
+  const expectedMaterialNames = isL2A
+    ? l2aAllowedMaterials
+    : scope === "lexus"
     ? allowedMaterialNames
     : new Set(expectedNodes.map((node) => node.materialSlot));
 
-  if (scope !== "lexus") {
-    for (const name of expectedMaterialNames) if (!materials.some((material) => material.getName() === name)) report.errors.push(`missing material: ${name}`);
+  if (isL2A) {
+    // Require primary seat upholstery, secondary bolsters, and contrast stitching
+    for (const req of ["MAT_Seat_Primary", "MAT_Seat_Secondary", "MAT_Seat_Stitching"]) {
+      if (!materials.some((material) => material.getName() === req)) {
+        report.errors.push(`missing material: ${req}`);
+      }
+    }
+  } else if (scope !== "lexus") {
+    for (const name of expectedMaterialNames) {
+      if (!materials.some((material) => material.getName() === name)) report.errors.push(`missing material: ${name}`);
+    }
   }
+
   for (const material of materials) {
     const name = material.getName();
-    if (!allowedMaterialNames.has(name) || (scope !== "lexus" && !expectedMaterialNames.has(name))) {
+    if (isL2A) {
+      if (!l2aAllowedMaterials.has(name)) {
+        report.errors.push(`extra material: ${name}`);
+      }
+    } else if (!allowedMaterialNames.has(name) || (scope !== "lexus" && !expectedMaterialNames.has(name))) {
       report.errors.push(`extra material: ${name}`);
     }
     const slot = slots.get(name);
@@ -302,7 +340,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   const maxExtent = [vehicle.dimensions.overallWidthMm, vehicle.dimensions.overallHeightMm, vehicle.dimensions.overallLengthMm].map((mm) => mm / 1000);
   for (const node of nodes) {
     const nodeName = node.getName();
-    const definition = scope === "lexus"
+    const definition = isLexus
       ? expectedNodes.find((item) => nodeName === item.identifier || nodeName.startsWith(`${item.identifier}_`))
       : expectedNodes.find((item) => item.identifier === nodeName);
     const mesh = node.getMesh();
@@ -315,7 +353,14 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
       nodeTriangles += triangles;
       const material = primitive.getMaterial();
       if (definition) {
-        if (scope === "lexus") {
+        if (isL2A) {
+          const allowedSlots = definition.identifier === "GEO_Seat_Front_Driver"
+            ? ["MAT_Seat_Primary", "MAT_Seat_Secondary"]
+            : ["MAT_Seat_Stitching"];
+          if (!material || !allowedSlots.includes(material.getName())) {
+            report.errors.push(`material binding mismatch: ${nodeName}`);
+          }
+        } else if (scope === "lexus") {
           const allowedSlots = definition.allowedMaterialSlots ?? [definition.materialSlot];
           if (!material || !allowedSlots.includes(material.getName())) {
             report.errors.push(`material binding mismatch: ${nodeName}`);
@@ -358,8 +403,19 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   return report;
 }
 
+function defaultReportFor(scope, synthetic) {
+  if (synthetic) {
+    if (scope === "lexus-l2a" || scope === "l2a") return resolve(root, "reports/lexus-l2a-synthetic-report.json");
+    if (scope === "lexus") return resolve(root, "reports/lexus-synthetic-glb-report.json");
+    return resolve(root, "reports/synthetic-glb-report.json");
+  }
+  if (scope === "lexus-l2a" || scope === "l2a") return resolve(root, "reports/lexus-l2a-report.json");
+  if (scope === "lexus") return resolve(root, "reports/lexus-report.json");
+  return resolve(root, "reports/glb-report.json");
+}
+
 function parseArgs(args) {
-  const options = { scope: "full", synthetic: false, manifestOnly: false, feasibilityWebp: false, asset: null, report: resolve(root, "reports/glb-report.json") };
+  const options = { scope: "full", synthetic: false, manifestOnly: false, feasibilityWebp: false, asset: null, report: null };
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--scope") options.scope = args[++index];
     else if (args[index] === "--asset") options.asset = resolve(args[++index]);
@@ -369,9 +425,13 @@ function parseArgs(args) {
     else if (args[index] === "--manifest-only") options.manifestOnly = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
-  if (!["full", "spike", "lexus"].includes(options.scope)) throw new Error(`Unknown scope: ${options.scope}`);
+  if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(options.scope)) {
+    throw new Error(`Unknown scope: ${options.scope}`);
+  }
   if (!options.asset) {
-    if (options.scope === "lexus") {
+    if (options.scope === "lexus-l2a" || options.scope === "l2a") {
+      options.asset = resolve(root, "tests/fixtures/lexus-prototype-synthetic.glb");
+    } else if (options.scope === "lexus") {
       options.asset = resolve(root, "tests/fixtures/lexus-synthetic.glb");
     } else {
       options.asset = resolve(root, "public/assets/3d/s-class-v223/spike.glb");
@@ -381,13 +441,15 @@ function parseArgs(args) {
 }
 
 async function main() {
-  let output = resolve(root, "reports/glb-report.json");
+  let output;
   let report;
   try {
     const options = parseArgs(process.argv.slice(2));
-    output = options.report;
+    output = options.report ?? defaultReportFor(options.scope, options.synthetic);
     if (options.manifestOnly) {
-      const activeManifest = options.scope === "lexus" ? lexusManifestPath : sClassManifestPath;
+      const activeManifest = (options.scope === "lexus" || options.scope === "lexus-l2a" || options.scope === "l2a")
+        ? lexusManifestPath
+        : sClassManifestPath;
       const { schemaErrors, missingMaterialSlots } = inspectManifest(activeManifest);
       report = { passed: false, scope: options.scope, asset: null, sha256: null, missingMaterialSlots,
         errors: [...schemaErrors, ...(missingMaterialSlots.length ? [`undefined material slots: ${missingMaterialSlots.join(", ")}`] : [])], warnings: [] };

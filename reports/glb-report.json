@@ -1,16 +1,71 @@
 {
-  "passed": false,
-  "scope": "full",
-  "asset": null,
-  "sha256": null,
+  "passed": true,
+  "scope": "spike",
+  "synthetic": false,
+  "sha256": "36a107f152039a464d4a4dd7786794f66ea40628b5c97ad2d8083964ad1b458e",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
   "missingMaterialSlots": [
     "MAT_Carpet_Floor",
     "MAT_Console_Veneer_And_Leather",
     "MAT_Door_Card_Substrate",
     "MAT_Screen_Driver_Cluster"
   ],
-  "errors": [
-    "undefined material slots: MAT_Carpet_Floor, MAT_Console_Veneer_And_Leather, MAT_Door_Card_Substrate, MAT_Screen_Driver_Cluster"
+  "errors": [],
+  "warnings": [
+    "Owner-approved WebP feasibility deviation; not KTX2 production compliance (docs/spike/waivers.md).",
+    "Out-of-scope undefined material slots: MAT_Carpet_Floor, MAT_Console_Veneer_And_Leather, MAT_Door_Card_Substrate, MAT_Screen_Driver_Cluster",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused."
   ],
-  "warnings": []
+  "waivers": [
+    "P3-WEBP-2026-10-20"
+  ],
+  "trianglesByNode": {
+    "GEO_Dashboard_Screen_Central_OLED": 566,
+    "GEO_Seat_Front_Driver_Flutes": 4860
+  },
+  "textures": [
+    {
+      "name": "seat-normal",
+      "mimeType": "image/webp",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "seat-albedo",
+      "mimeType": "image/webp",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "seat-orm",
+      "mimeType": "image/webp",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "nodeCount": 2,
+  "materialCount": 2,
+  "triangleCount": 5426,
+  "drawCalls": 2,
+  "fileSizeBytes": 900088,
+  "gpuTextureBytesEstimated": 67108866,
+  "activeDisplayDiagonalMm": 325.1062795353803,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0
+  },
+  "asset": "public\\assets\\3d\\s-class-v223\\spike.glb"
 }

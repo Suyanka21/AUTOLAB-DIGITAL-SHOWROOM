@@ -18,6 +18,7 @@
     "validate:fixture": "node scripts/make-fixture.mjs --draco && node scripts/validate-glb.mjs --scope spike --asset tests/fixtures/spike-synthetic.glb --synthetic --report reports/synthetic-glb-report.json",
     "validate:lexus": "node scripts/validate-glb.mjs --scope lexus",
     "validate:lexus:fixture": "node scripts/make-fixture.mjs --scope lexus --draco tests/fixtures/lexus-synthetic.glb && node scripts/validate-glb.mjs --scope lexus --asset tests/fixtures/lexus-synthetic.glb --synthetic --report reports/lexus-synthetic-glb-report.json",
+    "validate:lexus:l2a": "node scripts/make-fixture.mjs --scope lexus-l2a --draco tests/fixtures/lexus-prototype-synthetic.glb && node scripts/validate-glb.mjs --scope lexus-l2a --asset tests/fixtures/lexus-prototype-synthetic.glb --synthetic --report reports/lexus-l2a-synthetic-report.json",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push"
