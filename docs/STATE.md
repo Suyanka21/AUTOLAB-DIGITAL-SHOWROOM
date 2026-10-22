@@ -1,12 +1,14 @@
-# State — 2026-10-21
+# State — 2026-10-22
 
-- Done: Owner-approved decisions recorded (O-REF-01, O-REF-02, D1, D2, D10, D12, D13) across registers. No modeling or app code touched.
-- Scope: Coherent V223 LWB front cabin approved as deliverable, executed incrementally through canonical Z1–Z9 sequence.
-- Upholstery: Longitudinally fluted pattern approved per authentic master reference; specific leather grade/trim name unverified.
-- Material slots: Console separation approved (MAT_Trim_Deck_Main + MAT_Upholstery_Secondary); four F1 slots reconciled.
-- Technical: Dedicated stitch geometry approved as technical direction (deferred to Z3); lightweight cabin context approved (Z8).
-- References: Published photographic pack extended to Phase 6 visible geometry; dimensions remain provisional; GAP-01–04 open.
-- Open gates: Phase 5 human visual scoring (GO/HYBRID/NO-GO) and GATE-01, GATE-08, GATE-11 remain strictly open; no visual acceptance.
-- Prepared: Phase 6 Zone Z1 Dashboard execution plan and Astra High execution prompt framed for single-zone authorization.
-- Next: Owner reviews Z1 prompt and completes Phase 5 human scoring. Local commit only; no modeling, push, or deploy.
+- Pivot Approved: Flagship vehicle is now 2020 Lexus RX 350 AWD; inspiration carseatcover.eu; Mercedes-Benz S-Class V223 cabin retired.
+- Locked Scope: Two front seats, steering wheel, dashboard cowl; customisable upholstery, colours, contrast stitching; no full cabin.
+- Preserved: Next 16 / React 19 app shell, R3F viewer, RoomEnvironment PMREM lighting, 4-step config flow, test suite (31/31 pass).
+- Reference: AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/ (35 Herb Chambers photos, atlas, recommendations) integrated; untracked in git.
+- Strategy: Hybrid approach (interactive 3D front seats + lightweight cockpit touchpoints + bounded photographic camera presets).
+- Deliverables Created: AUTOLAB_PIVOT_DECISION_RECORD.md, REPOSITORY_REUSE_AND_CLEANUP_AUDIT.md, LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md, LEXUS_IMPLEMENTATION_PLAN.md, ASTRA_LEXUS_HANDOFF.md.
+- Budgets: Cumulative triangles <=45,000 (hard ceiling 80,000); draw calls <=6; file size <=2.5 MB; texture memory <=24 MB.
+- Gates Open: Human review and gates GATE-01, GATE-08, GATE-11 transition to Lexus RX 350; no 3D modeling started.
+- Health: Vitest 31/31 passed, typecheck passed, lint passed with 0 errors. App functional on local dev.
+- Next: Owner authorization of Phase L0/L1 and Astra High prompt in ASTRA_LEXUS_HANDOFF.md. Local commit only; no push/deploy.
+
 

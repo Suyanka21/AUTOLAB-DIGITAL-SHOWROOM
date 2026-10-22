@@ -1,6 +1,8 @@
 # AutoLab Digital Showroom
 > **Interactive 3D Automotive Interior Configurator & Sales Atelier**  
-> Prepared and codified for downstream production by **Astra**. Governed by 31 agent skills (27 original + 4 for 3D/viewer work), a Next.js App Router web app, and Anti-AI Design standards. **Current status: a 2D showcase scaffold only.** The Three.js / React Three Fiber viewer, the 3D asset and the persistence layer are planned, not built.
+> Prepared and codified for downstream production by **Astra**. Governed by agent skills, Next.js 16 App Router, React 19, Three.js / R3F WebGL, and Anti-AI Design standards.  
+> **Flagship Vehicle (Rebaselined 2026-10-22): 2020 Lexus RX 350 AWD.**  
+> Focused demonstration scope: Two front seats, steering wheel, dashboard cowl, customisable upholstery, and accent stitching inspired by [carseatcover.eu](https://carseatcover.eu/).
 
 ---
 
@@ -9,15 +11,15 @@
 > **Applies to**: Astra, Claude Code, Cursor, Antigravity, Kilo Code, Windsurf, VS Code (Cline / Roo / Copilot), Bolt.new, v0.dev.
 >
 > 1. **Primary Operational Specification**:
->    - Your master entry document is **[`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md)**.
->    - You are building the **AutoLab Digital Showroom** for the Mercedes-Benz S-Class (V223 LWB).
->    - All development decisions, 3D asset specifications, and configuration logic must derive strictly from the **`/docs` directory**:
->      - [`docs/ASTRA_HANDOFF.md`](docs/ASTRA_HANDOFF.md) — Master implementation handoff directive.
+>    - Your master entry document is **[`docs/ASTRA_LEXUS_HANDOFF.md`](docs/ASTRA_LEXUS_HANDOFF.md)**.
+>    - The flagship demonstration vehicle is the **2020 Lexus RX 350 AWD** (Certified Pre-Owned, Stock `HLSPLC239309`).
+>    - The strategic pivot record is **[`docs/AUTOLAB_PIVOT_DECISION_RECORD.md`](docs/AUTOLAB_PIVOT_DECISION_RECORD.md)**.
+>    - All development decisions, asset specifications, and configuration logic must derive strictly from the **`/docs` directory**:
+>      - [`docs/ASTRA_LEXUS_HANDOFF.md`](docs/ASTRA_LEXUS_HANDOFF.md) — Master implementation handoff directive.
+>      - [`docs/LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md`](docs/LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md) — Scope, scene graph, and camera calibration.
+>      - [`docs/LEXUS_IMPLEMENTATION_PLAN.md`](docs/LEXUS_IMPLEMENTATION_PLAN.md) — Phased execution roadmap (Phases L0–L5).
 >      - [`docs/PRD.md`](docs/PRD.md) — Product requirements and customer journey.
->      - [`docs/production-plan.md`](docs/production-plan.md) — staged implementation roadmap (Stage 0 spike and gates, then four build stages).
->      - [`docs/3d-assets/`](docs/3d-assets/) — S-Class 3D specification, scene graph map, and Blender pipeline.
->      - [`docs/configuration/`](docs/configuration/) — Configuration engine, options catalogue, and vehicle expansion.
->      - [`docs/human-approval-gates.md`](docs/human-approval-gates.md) — 11 explicit human approval gates.
+>      - [`AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/`](AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/) — Primary authentic photographic references.
 >    - Your master orchestration contracts are [AGENTS.md](AGENTS.md) and [.agents/rules/skill-orchestration.md](.agents/rules/skill-orchestration.md).
 > 2. **Permanent Cognitive Foundations** (Always Active):
 >    - `.agents/skills/global-reasoning-layer/SKILL.md`: Defensive reasoning engineer, not an unverified generator.
@@ -36,7 +38,11 @@ The `/docs` directory is the immutable source of truth for the AutoLab Digital S
 
 ```
 docs/
-├── ASTRA_HANDOFF.md                       # ★ Master production directive for Astra
+├── ASTRA_LEXUS_HANDOFF.md                 # ★ Master production directive for Astra (Lexus RX 350)
+├── AUTOLAB_PIVOT_DECISION_RECORD.md       # Strategic pivot & rebaseline record
+├── LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md   # Hybrid scope & technical architecture
+├── LEXUS_IMPLEMENTATION_PLAN.md           # Phased roadmap (Phases L0–L5)
+├── REPOSITORY_REUSE_AND_CLEANUP_AUDIT.md  # Detailed component reuse & cleanup audit
 ├── PRD.md                                 # Master Product Requirements Document
 ├── architecture.md                        # Full-stack technical topology & data model
 ├── design-system.md                       # Luxury Anti-AI design tokens & palette
