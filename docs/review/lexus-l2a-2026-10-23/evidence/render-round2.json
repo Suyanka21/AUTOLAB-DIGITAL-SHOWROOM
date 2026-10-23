@@ -1,0 +1,95 @@
+{
+  "assetSha256": "6bc967edeaab4c31e9900127932ad7f2fa7958cc916fcfdfb7ca29549d510d7f",
+  "renderInput": "driver-seat-render-decoded.glb",
+  "textureMethod": "Final GLB round-trip; only KTX2 level-0 pixels decoded to PNG for Blender. Not original source textures.",
+  "blender": "5.2.2 LTS",
+  "renderer": "Cycles CPU; GPU memory and real-device FPS NOT MEASURED",
+  "samples": 32,
+  "resolution": [
+    1400,
+    1200
+  ],
+  "lights": [
+    [
+      "Key",
+      [
+        -1.6,
+        -1.8,
+        2.5
+      ],
+      150,
+      1.6
+    ],
+    [
+      "Fill",
+      [
+        1.0,
+        -0.6,
+        1.7
+      ],
+      70,
+      1.5
+    ],
+    [
+      "Rim",
+      [
+        -0.6,
+        1.3,
+        2.3
+      ],
+      150,
+      1.2
+    ]
+  ],
+  "views": [
+    {
+      "file": "01-driver-hero.png",
+      "seconds": 131.27000299998326,
+      "location": [
+        -1.65,
+        -1.95,
+        1.55
+      ],
+      "target": [
+        -0.38,
+        0.05,
+        0.86
+      ],
+      "lensMm": 55,
+      "sha256": "ad35bed5bd8beca439bb2ec6e81ffe8e782806106b2652fad684f997485f49c6"
+    },
+    {
+      "file": "02-open-door-profile.png",
+      "seconds": 98.15604110001004,
+      "location": [
+        -2.65,
+        -0.48,
+        1.17
+      ],
+      "target": [
+        -0.38,
+        0.07,
+        0.84
+      ],
+      "lensMm": 55,
+      "sha256": "c333cb0389e891fa494789eab64637100e65d92b0e39cb850ccf3183cd779096"
+    },
+    {
+      "file": "03-seam-macro.png",
+      "seconds": 175.14459960002569,
+      "location": [
+        -0.93,
+        -0.72,
+        0.95
+      ],
+      "target": [
+        -0.57,
+        -0.12,
+        0.51
+      ],
+      "lensMm": 65,
+      "sha256": "1d8cda9c697269eed336aa5366fafd66414d72fbaafd2fbd7634528565450ee6"
+    }
+  ],
+  "round": "round2"
+}

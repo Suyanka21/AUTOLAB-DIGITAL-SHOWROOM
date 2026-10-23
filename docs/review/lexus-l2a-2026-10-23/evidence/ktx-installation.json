@@ -1,0 +1,8 @@
+{
+  "toktx": "toktx v4.4.2",
+  "sha256": "1F323B0FEC19794F5E6C0425A61D4B1DA396872A10BE862D105F4F4B2D2957FE",
+  "installerExitCode": 0,
+  "signature": "Valid",
+  "authorization": "Owner: Permit KTX-Software installation",
+  "url": "https://github.com/KhronosGroup/KTX-Software/releases/download/v4.4.2/KTX-Software-4.4.2-Windows-x64.exe"
+}

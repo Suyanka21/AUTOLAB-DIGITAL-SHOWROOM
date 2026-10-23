@@ -1,0 +1,46 @@
+{
+  "rawSha256After": "D886C6384D75732BA98AD239FE8D4704372950B6F469A23388E2C98312C4D6CA",
+  "before": {
+    "GEO_Seat_Front_Driver": {
+      "triangles": 20400,
+      "vertices": 10220,
+      "dimensionsMetres": [
+        0.5648481845855713,
+        0.794399082660675,
+        1.0999999046325684
+      ]
+    },
+    "GEO_Seat_Stitching_Front": {
+      "triangles": 14160,
+      "vertices": 14160,
+      "dimensionsMetres": [
+        0.525935173034668,
+        0.6771564483642578,
+        0.9115113019943237
+      ]
+    }
+  },
+  "rawSha256Before": "B4E4D85A391CC54090F43A6A3A672C3BF5E0269AD333ADB35757BDA2E30774E4",
+  "bytesIdentical": false,
+  "nodeCountsMatch": true,
+  "after": {
+    "GEO_Seat_Front_Driver": {
+      "triangles": 20400,
+      "vertices": 10220,
+      "dimensionsMetres": [
+        0.5648481845855713,
+        0.794399082660675,
+        1.0999999046325684
+      ]
+    },
+    "GEO_Seat_Stitching_Front": {
+      "triangles": 14160,
+      "vertices": 14160,
+      "dimensionsMetres": [
+        0.525935173034668,
+        0.6771564483642578,
+        0.9115113019943237
+      ]
+    }
+  }
+}

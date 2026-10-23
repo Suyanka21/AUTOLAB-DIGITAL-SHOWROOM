@@ -1,0 +1,76 @@
+{
+  "passed": false,
+  "scope": "lexus-l2a",
+  "synthetic": false,
+  "sha256": "fa0708fa26488e09a0b6f1f74523b77d2275aa4b374e4846d4c875516a72e154",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [
+    "file size 5418132 exceeds 3500000 bytes",
+    "missing KTX2 textures",
+    "triangle budget exceeded: 43628"
+  ],
+  "warnings": [
+    "file size exceeds 2500000-byte transfer target",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_Seat_Front_Driver": 22760,
+    "GEO_Seat_Stitching_Front": 20868
+  },
+  "textures": [
+    {
+      "name": "lexus-insert-normal",
+      "mimeType": "image/png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-insert-base",
+      "mimeType": "image/png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-bolster-normal",
+      "mimeType": "image/png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-bolster-base",
+      "mimeType": "image/png",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "nodeCount": 2,
+  "materialCount": 3,
+  "triangleCount": 43628,
+  "drawCalls": 3,
+  "fileSizeBytes": 5418132,
+  "gpuTextureBytesEstimated": 22369624,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0
+  },
+  "asset": "blender\\out\\lexus-l2a\\driver-seat-raw.glb"
+}

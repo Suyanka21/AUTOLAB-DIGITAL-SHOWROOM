@@ -1,0 +1,61 @@
+{
+  "status": "PROVISIONAL Lexus RX 350 driver-seat visual prototype; owner approval pending",
+  "blender": "5.2.2 LTS",
+  "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]",
+  "nodes": {
+    "GEO_Seat_Front_Driver": {
+      "triangles": 20400,
+      "vertices": 10220,
+      "dimensionsMetres": [
+        0.5648481845855713,
+        0.794399082660675,
+        1.0999999046325684
+      ]
+    },
+    "GEO_Seat_Stitching_Front": {
+      "triangles": 14160,
+      "vertices": 14160,
+      "dimensionsMetres": [
+        0.525935173034668,
+        0.6771564483642578,
+        0.9115113019943237
+      ]
+    }
+  },
+  "buildSeconds": 3.2793701000045985,
+  "exportArguments": {
+    "filepath": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l2a\\driver-seat-raw.glb",
+    "export_format": "GLB",
+    "use_selection": true,
+    "use_active_scene": true,
+    "export_yup": true,
+    "export_apply": true,
+    "export_cameras": false,
+    "export_lights": false,
+    "export_extras": true,
+    "export_animations": false,
+    "export_skins": false,
+    "export_morph": false,
+    "export_tangents": true,
+    "export_texcoords": true,
+    "export_vertex_color": "ACTIVE",
+    "export_materials": "EXPORT",
+    "export_image_format": "AUTO",
+    "export_draco_mesh_compression_enable": true,
+    "export_draco_mesh_compression_level": 6,
+    "export_draco_position_quantization": 16,
+    "export_draco_normal_quantization": 10,
+    "export_draco_texcoord_quantization": 14,
+    "export_draco_generic_quantization": 12
+  },
+  "sourceHashes": {
+    "tools\\build-lexus-asset.py": "ebac74c625409151ce2fa47e8a36f3dd294654178e4f79df2034b84a708046b6",
+    "blender\\lexus_constants.py": "f4da7aaa637441233803505670ad83d03a81ecb830d641841113b1c8505e2800"
+  },
+  "textureMethod": "Seeded analytic leather grain and perforation normal/ORM fields; no photo pixels",
+  "materialNames": [
+    "MAT_Seat_Primary",
+    "MAT_Seat_Secondary",
+    "MAT_Seat_Stitching"
+  ]
+}

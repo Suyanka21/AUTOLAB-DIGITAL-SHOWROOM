@@ -1,0 +1,10 @@
+00:07.203  blend            | Read blend: "C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2a\driver-seat.blend"
+SEAT_INTEGRITY boundary_edges=1080 degenerate_faces=178
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError: Visible upholstery shells must be closed and non-degenerate
+
+Error: script failed, expr: 'import bpy,bmesh; o=bpy.data.objects['GEO_Seat_Front_Driver']; bm=bmesh.new();bm.from_mesh(o.data); n=sum(e.is_boundary for e in bm.edges); d=sum(f.calc_area()<1e-12 for f in bm.faces);print('SEAT_INTEGRITY boundary_edges='+str(n)+' degenerate_faces='+str(d),flush=True);assert n==0 and d==0, 'Visible upholstery shells must be closed and non-degenerate'', exiting.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

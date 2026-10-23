@@ -1,0 +1,69 @@
+{
+  "status": "PROVISIONAL: Lexus RX 350 driver-seat candidate; owner visual approval pending; stop before L2B",
+  "recordedAt": "2026-10-23",
+  "approval": "Owner's Phase L2A driver-seat prototype instruction and explicit KTX-Software installation permission in this session",
+  "baseCommit": "26b8c4b",
+  "scriptCommitHash": "da489f2c975deccd516aba351b16cf2291b6a56b",
+  "asset": "public/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+  "sha256": "1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3",
+  "tools": {
+    "blender": "5.2.2 LTS d13f752e3b9c",
+    "python": "3.13.13 embedded bpy",
+    "toktx": "4.4.2",
+    "gltfTransform": "4.5.1",
+    "draco3dgltf": "1.5.9",
+    "gltfValidator": "2.0.0-dev.3.10",
+    "three": "0.186.1"
+  },
+  "scripts": [
+    "tools/build-lexus-asset.py",
+    "blender/lexus_constants.py",
+    "scripts/finalize-lexus-l2a.mjs",
+    "blender/render_lexus_l2a.py"
+  ],
+  "sourceHashesReport": "docs/review/lexus-l2a-2026-10-23/evidence/build-report.json",
+  "referenceFiles": [
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_08.jpg",
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_23.jpg",
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_29.jpg",
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/03_BOLSTERS_HEADREST_AND_STITCHING/LEXUS_RX_2020_GALLERY_31.jpg"
+  ],
+  "referenceSourceUrl": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+  "referenceLimits": "Owner-supplied pack attribution, not independent authenticity proof. LRX-29 is passenger-side context; LRX-31 is rear-cabin/shoulder context, not a front-seat macro. All physical measurements and microtexture dimensions are estimates.",
+  "nodes": [
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "materials": ["MAT_Seat_Primary", "MAT_Seat_Secondary"],
+      "specRows": [
+        "src/config/scene-manifest.lexus-rx350.json: nodes[identifier=GEO_Seat_Front_Driver]",
+        "docs/LEXUS_IMPLEMENTATION_PLAN.md: Phase L2A",
+        "Owner Phase L2A prompt: sections 3-6"
+      ],
+      "references": ["LRX-08", "LRX-23", "LRX-29 supporting silhouette", "LRX-31 shoulder context"],
+      "method": "Parametric closed cushion/backrest shells, tapered headrest and visible control solids; original Lexus authoring, no Mercedes geometry reuse",
+      "uncertainty": "CONTROLLED_APPROX; proportions, foam profile, panel topology, trim material appearance and scale await owner review"
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front",
+      "materials": ["MAT_Seat_Stitching"],
+      "specRows": [
+        "src/config/scene-manifest.lexus-rx350.json: nodes[identifier=GEO_Seat_Stitching_Front]",
+        "Owner Phase L2A prompt: separate independently controllable stitching"
+      ],
+      "references": ["LRX-08 visible seam paths", "LRX-23 outer seam context"],
+      "method": "Individual thread dashes projected onto the tessellated seat; open tube ends omitted",
+      "uncertainty": "Thread diameter, pitch, row count and spacing are visual estimates; no calibrated macro supplied"
+    }
+  ],
+  "textures": "Seeded analytic leather/perforation base, tangent normal and neutral-AO ORM maps; no photo pixels or external textures; KTX2 UASTC with mipmaps",
+  "deviationsAndLimits": [
+    "Microdetail is analytically authored instead of high-poly baked; UVs repeat for tileable textures",
+    "Transfer target exceeded; hard L2A limits pass",
+    "Two separately named identical ORM payloads remain; prune/dedup optimisation incomplete",
+    "Blender review uses decoded delivered KTX pixels in a hash-checked PNG proxy; not native KTX2 Blender rendering",
+    "Repeat build counts and dimensions match; compressed raw GLB bytes are not identical",
+    "Desktop application integration and real-phone profiling deferred to their documented later phases"
+  ],
+  "formatWaiver": null,
+  "historicalMercedesRecords": "Unmodified: provenance.json, spike.glb and reports/glb-report.json; historical gates/gaps/WebP waiver not closed or reused"
+}
