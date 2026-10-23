@@ -6,8 +6,8 @@ export const LEXUS_CAMERA_PRESETS = {
     label: "Driver Hero",
     sublabel: "Front 3/4 Ingress",
     focalTarget: "Full driver seat, headrest, outer bolster, and door ingress profile",
-    target: [-0.38, 0.65, 0.10] as [number, number, number],
-    position: [-1.2, 0.95, 0.85] as [number, number, number],
+    target: [-0.38, 0.82, -0.08] as [number, number, number],
+    position: [-1.4, 1.2, 0.9] as [number, number, number],
     fov: 38,
   },
   seam_macro: {
@@ -15,8 +15,8 @@ export const LEXUS_CAMERA_PRESETS = {
     label: "Stitch Detail",
     sublabel: "Macro Seam & Flutes",
     focalTarget: "Cushion bolster transition, perforations, and contrast double-stitch seam",
-    target: [-0.28, 0.55, 0.20] as [number, number, number],
-    position: [-0.55, 0.75, 0.45] as [number, number, number],
+    target: [-0.35, 0.62, 0.05] as [number, number, number],
+    position: [-0.68, 0.85, 0.45] as [number, number, number],
     fov: 28,
   },
   cabin_pair: {

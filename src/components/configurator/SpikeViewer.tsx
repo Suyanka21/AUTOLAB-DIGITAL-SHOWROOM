@@ -5,6 +5,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Group, Mesh, MeshStandardMaterial, PMREMGenerator, PerspectiveCamera, type Texture } from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { KTX2Loader } from "three-stdlib";
 import { SPIKE_CAMERA_PRESETS, type CameraViewId } from "@/config/spike-camera-presets";
 import { LEXUS_CAMERA_PRESETS } from "@/config/lexus-camera-presets";
 
@@ -21,11 +22,18 @@ const ALL_CAMERA_PRESETS: Record<string, {
 // https://drei.docs.pmnd.rs/loaders/gltf-use-gltf,
 // https://threejs.org/docs/pages/RoomEnvironment.html,
 // https://threejs.org/docs/pages/GLTFLoader.html.
-const ASSET_URL = "/assets/3d/s-class-v223/spike.glb";
-const SEAT_NODE = "GEO_Seat_Front_Driver_Flutes";
-const OLED_NODE = "GEO_Dashboard_Screen_Central_OLED";
-const SEAT_SLOT = "MAT_Upholstery_Primary";
-const OLED_SLOT = "MAT_Screen_Central_OLED";
+const LEXUS_L2A_ASSET_URL = "/assets/3d/lexus-rx350/driver-seat-l2a.glb";
+const MERCEDES_SPIKE_ASSET_URL = "/assets/3d/s-class-v223/spike.glb";
+
+// Active Lexus RX 350 L2A driver-seat contract
+const LEXUS_PRIMARY_SLOT = "MAT_Seat_Primary";
+const LEXUS_SECONDARY_SLOT = "MAT_Seat_Secondary";
+const LEXUS_STITCHING_SLOT = "MAT_Seat_Stitching";
+
+// Legacy Mercedes-Benz S-Class spike contract (preserved for historical regression)
+const LEGACY_SEAT_SLOT = "MAT_Upholstery_Primary";
+const LEGACY_OLED_SLOT = "MAT_Screen_Central_OLED";
+
 type ViewerStatus = "loading" | "success" | "empty" | "error";
 export type RendererStats = { calls: number; triangles: number; textures: number; geometries: number };
 type MaterialState = { bindings: Record<string, string>; colors: Record<string, string> };
@@ -47,7 +55,16 @@ declare global {
 function testParam(key: string) {
   return process.env.NEXT_PUBLIC_E2E === "1" && typeof window !== "undefined" && new URLSearchParams(window.location.search).has(key);
 }
-function getAssetUrl() { return testParam("missing-spike") ? "/assets/3d/s-class-v223/missing-spike.glb" : ASSET_URL; }
+
+function getAssetUrl() {
+  if (testParam("missing-spike") || testParam("missing-asset")) {
+    return "/assets/3d/lexus-rx350/missing-asset.glb";
+  }
+  if (testParam("legacy-spike") || testParam("s-class")) {
+    return MERCEDES_SPIKE_ASSET_URL;
+  }
+  return LEXUS_L2A_ASSET_URL;
+}
 
 function RoomLighting() {
   const { gl, invalidate } = useThree();
@@ -104,49 +121,127 @@ function CameraRig({ view }: { view: CameraViewId }) {
     minDistance={0.35} maxDistance={4} minPolarAngle={0.15} maxPolarAngle={Math.PI * 0.82} />;
 }
 
-function modelMaterials(scene: Group) {
-  const meshes: Mesh[] = [];
-  scene.traverse((object) => { if (object instanceof Mesh) meshes.push(object); });
-  if (meshes.length === 0) return null;
-  if (meshes.length !== 2) throw new Error("Expected two spike meshes; found " + meshes.length);
-  const seat = meshes.find((mesh) => mesh.name === SEAT_NODE);
-  const oled = meshes.find((mesh) => mesh.name === OLED_NODE);
-  if (!seat || !oled || !(seat.material instanceof MeshStandardMaterial) || !(oled.material instanceof MeshStandardMaterial)) {
-    throw new Error("Spike mesh or material contract is missing");
-  }
-  if (seat.material.name !== SEAT_SLOT || oled.material.name !== OLED_SLOT) throw new Error("Spike material binding mismatch");
-  return { seat: seat.material, oled: oled.material };
+interface ExtractedModel {
+  isLexus: boolean;
+  materials: Record<string, MeshStandardMaterial>;
+  bindings: Record<string, string>;
 }
 
-function SpikeModel({ url, primaryHex, onLoaded, onStats }: {
-  url: string; primaryHex: string; onLoaded: (state: MaterialState | null) => void; onStats: (stats: RendererStats) => void;
+function modelMaterials(scene: Group): ExtractedModel | null {
+  const materials: Record<string, MeshStandardMaterial> = {};
+  const bindings: Record<string, string> = {};
+
+  scene.traverse((object) => {
+    if (object instanceof Mesh) {
+      const mats = Array.isArray(object.material) ? object.material : [object.material];
+      for (const m of mats) {
+        if (m instanceof MeshStandardMaterial && m.name) {
+          materials[m.name] = m;
+          bindings[object.name] = m.name;
+        }
+      }
+    }
+  });
+
+  const materialNames = Object.keys(materials);
+  if (materialNames.length === 0) return null;
+
+  // Active Lexus L2A Driver Seat Prototype
+  if (materials[LEXUS_PRIMARY_SLOT]) {
+    if (!materials[LEXUS_SECONDARY_SLOT] || !materials[LEXUS_STITCHING_SLOT]) {
+      throw new Error("Lexus L2A asset is missing required secondary or stitching material slot");
+    }
+    return { isLexus: true, materials, bindings };
+  }
+
+  // Legacy Mercedes Spike compatibility (preserved for historical regression)
+  if (materials[LEGACY_SEAT_SLOT]) {
+    if (!materials[LEGACY_OLED_SLOT]) {
+      throw new Error("Legacy Mercedes spike missing OLED material contract");
+    }
+    return { isLexus: false, materials, bindings };
+  }
+
+  throw new Error("Unrecognized 3D asset material contract: " + materialNames.join(", "));
+}
+
+function SpikeModel({ url, primaryHex, secondaryHex = primaryHex, threadHex = "#D4AF37", onLoaded, onStats }: {
+  url: string;
+  primaryHex: string;
+  secondaryHex?: string;
+  threadHex?: string;
+  onLoaded: (state: MaterialState | null) => void;
+  onStats: (stats: RendererStats) => void;
 }) {
-  // A local decoder path avoids Drei's default external decoder CDN.
-  const { scene } = useGLTF(url, "/draco/") as { scene: Group };
   const { gl, invalidate } = useThree();
-  const materials = useMemo(() => modelMaterials(scene), [scene]);
+
+  // Local Draco and KTX2 loader configuration
+  const { scene } = useGLTF(url, "/draco/", false, (loader) => {
+    const ktx2Loader = new KTX2Loader();
+    ktx2Loader.setTranscoderPath("/basis/");
+    ktx2Loader.detectSupport(gl);
+    loader.setKTX2Loader(ktx2Loader);
+  }) as { scene: Group };
+
+  const parsed = useMemo(() => modelMaterials(scene), [scene]);
+
   useEffect(() => {
-    if (!materials) { onLoaded(null); return; }
+    if (!parsed) {
+      onLoaded(null);
+      return;
+    }
+    const colorMap: Record<string, string> = {};
+    for (const [name, mat] of Object.entries(parsed.materials)) {
+      colorMap[name] = "#" + mat.color.getHexString();
+    }
     onLoaded({
-      bindings: { [SEAT_NODE]: materials.seat.name, [OLED_NODE]: materials.oled.name },
-      colors: { [SEAT_SLOT]: "#" + materials.seat.color.getHexString(), [OLED_SLOT]: "#" + materials.oled.color.getHexString() },
+      bindings: parsed.bindings,
+      colors: colorMap,
     });
-  }, [materials, onLoaded]);
+  }, [parsed, onLoaded]);
+
   useEffect(() => {
-    if (!materials) return;
-    // Test-only fault injection proves the swatch assertion catches a broken binding.
-    if (!testParam("break-seat-binding")) materials.seat.color.set(primaryHex);
+    if (!parsed) return;
+    const { materials, bindings, isLexus } = parsed;
+
+    if (isLexus) {
+      if (!testParam("break-seat-binding") && materials[LEXUS_PRIMARY_SLOT]) {
+        materials[LEXUS_PRIMARY_SLOT].color.set(primaryHex);
+      }
+      if (materials[LEXUS_SECONDARY_SLOT]) {
+        materials[LEXUS_SECONDARY_SLOT].color.set(secondaryHex);
+      }
+      if (materials[LEXUS_STITCHING_SLOT]) {
+        materials[LEXUS_STITCHING_SLOT].color.set(threadHex);
+      }
+    } else {
+      if (!testParam("break-seat-binding") && materials[LEGACY_SEAT_SLOT]) {
+        materials[LEGACY_SEAT_SLOT].color.set(primaryHex);
+      }
+    }
+
     invalidate();
+
     const timer = window.setTimeout(() => {
+      const colorMap: Record<string, string> = {};
+      for (const [name, mat] of Object.entries(materials)) {
+        colorMap[name] = "#" + mat.color.getHexString();
+      }
       onLoaded({
-        bindings: { [SEAT_NODE]: materials.seat.name, [OLED_NODE]: materials.oled.name },
-        colors: { [SEAT_SLOT]: "#" + materials.seat.color.getHexString(), [OLED_SLOT]: "#" + materials.oled.color.getHexString() },
+        bindings,
+        colors: colorMap,
       });
-      onStats({ calls: gl.info.render.calls, triangles: gl.info.render.triangles,
-        textures: gl.info.memory.textures, geometries: gl.info.memory.geometries });
-    }, 300);
+      onStats({
+        calls: gl.info.render.calls,
+        triangles: gl.info.render.triangles,
+        textures: gl.info.memory.textures,
+        geometries: gl.info.memory.geometries,
+      });
+    }, 120);
+
     return () => window.clearTimeout(timer);
-  }, [materials, primaryHex, invalidate, onLoaded, onStats, gl]);
+  }, [parsed, primaryHex, secondaryHex, threadHex, invalidate, onLoaded, onStats, gl]);
+
   return <primitive object={scene} />;
 }
 
@@ -157,8 +252,20 @@ class SceneBoundary extends React.Component<{ children: React.ReactNode; onError
   render() { return this.state.failed ? null : this.props.children; }
 }
 
-export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
-  view: CameraViewId; primaryHex: string; onStatus: (status: ViewerStatus) => void; onStats: (stats: RendererStats | null) => void;
+export function SpikeViewer({
+  view,
+  primaryHex,
+  secondaryHex = primaryHex,
+  threadHex = "#D4AF37",
+  onStatus,
+  onStats,
+}: {
+  view: CameraViewId;
+  primaryHex: string;
+  secondaryHex?: string;
+  threadHex?: string;
+  onStatus: (status: ViewerStatus) => void;
+  onStats: (stats: RendererStats | null) => void;
 }) {
   const [supported, setSupported] = useState(false);
   const [status, setStatus] = useState<ViewerStatus>("loading");
@@ -193,6 +300,7 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
     }, 0);
     return () => { window.clearTimeout(probeTimer); cleanupRef.current?.(); };
   }, [fail]);
+
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_E2E !== "1") return;
     const currentFov = (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38;
@@ -215,8 +323,9 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
     setStatus("loading"); onStatus("loading"); onStats(null);
     setRetryKey((value) => value + 1);
   };
+
   return <div className="absolute inset-0 z-10" style={{ backgroundColor: status === "success" ? "#0F1014" : "transparent" }}
-    data-testid="spike-viewer" aria-label="Provisional two-node 3D viewer">
+    data-testid="spike-viewer" aria-label="Lexus RX 350 interactive 3D driver seat viewer">
     {supported && status !== "error" && status !== "empty" && <Canvas key={retryKey} frameloop="demand" dpr={[1, 1.5]}
       camera={{
         fov: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38,
@@ -241,12 +350,19 @@ export function SpikeViewer({ view, primaryHex, onStatus, onStats }: {
       <RoomLighting />
       <CameraRig view={view} />
       <SceneBoundary onError={fail}><Suspense fallback={null}>
-        <SpikeModel url={url} primaryHex={primaryHex} onLoaded={loaded} onStats={stats} />
+        <SpikeModel
+          url={url}
+          primaryHex={primaryHex}
+          secondaryHex={secondaryHex}
+          threadHex={threadHex}
+          onLoaded={loaded}
+          onStats={stats}
+        />
       </Suspense></SceneBoundary>
     </Canvas>}
     {status !== "success" && <div className="absolute inset-x-3 bottom-14 z-10 rounded-lg bg-[#141416]/90 px-3 py-2 text-xs text-slate-200"
       role="status" aria-live="polite" data-testid="viewer-status">
-      {status === "loading" ? "Loading provisional 3D spike…" : status === "empty" ? "3D spike contains no meshes. Showing the 2D preview." : "3D preview unavailable (" + (error ?? "unknown error") + "). Showing the 2D preview."}
+      {status === "loading" ? "Loading Lexus RX 350 3D driver seat…" : status === "empty" ? "3D model contains no geometry. Showing studio preview." : "3D preview unavailable (" + (error ?? "unknown error") + "). Showing studio preview."}
       {status !== "loading" && <button type="button" onClick={retry} className="ml-3 underline underline-offset-2">Retry 3D</button>}
     </div>}
   </div>;

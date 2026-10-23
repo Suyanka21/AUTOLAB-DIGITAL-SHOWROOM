@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve, sep } from "node:path";
 import { createLexusPrototypeFixture, createLexusSyntheticFixture } from "../scripts/make-fixture.mjs";
@@ -251,15 +251,40 @@ describe("Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype)", () => 
     expect(report.errors.join("; ")).toContain("missing node: GEO_Dashboard_Lexus");
   });
 
-  it("rejects full Lexus asset when validated against L2A scope due to extra nodes and materials", async () => {
-    const fullFixture = await createLexusSyntheticFixture();
-    const report = await validateGlbBytes(fullFixture, { scope: "lexus-l2a", synthetic: true });
-    expect(report.passed).toBe(false);
-    expect(report.errors.join("; ")).toContain("extra node: GEO_Seat_Front_Passenger");
-    expect(report.errors.join("; ")).toContain("extra node: GEO_SteeringWheel_Lexus");
-    expect(report.errors.join("; ")).toContain("extra node: GEO_Dashboard_Lexus");
-    expect(report.errors.join("; ")).toContain("extra material: MAT_Steering_Leather");
-    expect(report.errors.join("; ")).toContain("extra material: MAT_Dashboard_Trim");
+  it("validates the real Lexus L2A driver-seat GLB asset with zero errors", async () => {
+    const assetPath = resolve("public/assets/3d/lexus-rx350/driver-seat-l2a.glb");
+    const bytes = readFileSync(assetPath);
+    const report = await validateGlbBytes(bytes, { scope: "lexus-l2a", synthetic: false });
+    expect(report.passed, report.errors.join("; ")).toBe(true);
+    expect(report.sha256).toBe("1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3");
+    expect(report.nodeCount).toBe(2);
+    expect(report.materialCount).toBe(3);
+    expect(report.drawCalls).toBe(3);
+    expect(report.triangleCount).toBe(34560);
+    expect(report.errors).toEqual([]);
+  });
+
+  it("passes CLI validation on the real Lexus L2A driver-seat GLB with exit code 0", () => {
+    const temp = mkdtempSync(join(tmpdir(), "autolab-lexus-real-cli-"));
+    try {
+      const result = spawnSync(process.execPath, [
+        "scripts/validate-glb.mjs",
+        "--scope",
+        "lexus-l2a",
+        "--asset",
+        "public/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+        "--report",
+        join(temp, "report.json"),
+      ], {
+        cwd: resolve("."),
+        encoding: "utf8",
+        timeout: 15_000,
+      });
+      expect(result.status).toBe(0);
+      expect(result.stdout).toContain("Asset gate PASS");
+    } finally {
+      if (resolve(temp).startsWith(resolve(tmpdir()) + sep)) rmSync(temp, { recursive: true, force: true });
+    }
   });
 });
 

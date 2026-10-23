@@ -179,7 +179,9 @@ export function SummaryBar() {
             <div className="space-y-3 text-xs">
               <div className="flex items-center justify-between py-2 border-b border-white/[0.04]">
                 <span className="text-slate-400">Chassis Platform:</span>
-                <span className="font-semibold text-white">Mercedes-Benz S-Class (V223 LWB)</span>
+                <span className="font-semibold text-white">
+                  {referenceCode.startsWith("AL-SC-") ? "Mercedes-Benz S-Class (V223 LWB)" : "2020 Lexus RX 350 AWD"}
+                </span>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-white/[0.04]">
                 <span className="text-slate-400">Atelier Reference:</span>

@@ -10,6 +10,8 @@ interface CameraPresetTab {
   label: string;
   sublabel: string;
   focalTarget: string;
+  isAvailable?: boolean;
+  statusBadge?: string;
 }
 
 const CAMERA_TABS: CameraPresetTab[] = [
@@ -18,24 +20,30 @@ const CAMERA_TABS: CameraPresetTab[] = [
     label: "Driver Hero",
     sublabel: "Front 3/4 Ingress",
     focalTarget: "Full driver seat, headrest, outer bolster, and door ingress profile",
+    isAvailable: true,
   },
   {
     id: "seam_macro",
     label: "Stitch Detail",
     sublabel: "Macro Seam & Flutes",
     focalTarget: "Cushion bolster transition, perforations, and contrast double-stitch seam",
+    isAvailable: true,
   },
   {
     id: "cabin_pair",
     label: "Cabin Pair",
     sublabel: "Front Cabin Width",
-    focalTarget: "Wide cockpit view showing both front seats, console spacing, and steering wheel",
+    focalTarget: "Wide cockpit view showing both front seats, console spacing, and steering wheel (Scheduled for Phase L2B)",
+    isAvailable: false,
+    statusBadge: "L2B Pending",
   },
   {
     id: "driver_cockpit",
     label: "Driver Ingress",
     sublabel: "Cockpit Perspective",
-    focalTarget: "Eye-level perspective through open driver door showing steering wheel relationship and seat cushion base",
+    focalTarget: "Eye-level perspective through open driver door showing steering wheel relationship and seat cushion base (Scheduled for Phase L2B)",
+    isAvailable: false,
+    statusBadge: "L2B Pending",
   },
 ];
 
@@ -104,15 +112,22 @@ export function VisualizationStage() {
         <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-black/40 border border-white/[0.06]">
           {CAMERA_TABS.map((tab) => {
             const isActive = tab.id === activeCameraView;
+            const isAvailable = tab.isAvailable !== false;
             return (
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setActiveCameraView(tab.id)}
+                onClick={() => {
+                  if (isAvailable) setActiveCameraView(tab.id);
+                }}
+                disabled={!isAvailable}
+                title={isAvailable ? `${tab.label}: ${tab.sublabel}` : `${tab.label} — ${tab.statusBadge} (Deliverable in Phase L2B)`}
                 className={`relative px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 flex items-center space-x-1.5 ${
                   isActive
                     ? "bg-[#1C1E24] text-white shadow-sm border border-[#38B6FF]/40 shadow-[0_0_12px_rgba(56,182,255,0.2)]"
-                    : "text-slate-400 hover:text-white hover:bg-white/[0.03]"
+                    : isAvailable
+                    ? "text-slate-400 hover:text-white hover:bg-white/[0.03]"
+                    : "text-slate-600 cursor-not-allowed opacity-50"
                 }`}
               >
                 {isActive && (
@@ -122,6 +137,11 @@ export function VisualizationStage() {
                   />
                 )}
                 <span>{tab.label}</span>
+                {tab.statusBadge && (
+                  <span className="text-[9px] font-mono px-1 py-0.5 rounded bg-amber-500/10 text-amber-400/80 border border-amber-500/20">
+                    L2B
+                  </span>
+                )}
               </button>
             );
           })}
@@ -134,9 +154,16 @@ export function VisualizationStage() {
         </div>
       </div>
 
-      {/* Main Viewport Showcase Canvas (Authentic S-Class 2D Studio Representation) */}
+      {/* Main Viewport Showcase Canvas */}
       <div className="relative flex-1 flex items-center justify-center p-4 sm:p-8 overflow-hidden select-none">
-        <SpikeViewer view={activeCameraView} primaryHex={primaryHex} onStatus={handleViewerStatus} onStats={handleRendererStats} />
+        <SpikeViewer
+          view={activeCameraView}
+          primaryHex={primaryHex}
+          secondaryHex={secondaryHex}
+          threadHex={threadHex}
+          onStatus={handleViewerStatus}
+          onStats={handleRendererStats}
+        />
         {/* Subtle Luxury Grid Overlay */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -297,7 +324,7 @@ export function VisualizationStage() {
             />
             <line x1="400" y1="370" x2="400" y2="440" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
 
-            {/* 12.8" MBUX Central OLED Display (60° Inclination) */}
+            {/* 12.3" Lexus Center Display */}
             <rect
               x="345"
               y="255"
@@ -310,7 +337,7 @@ export function VisualizationStage() {
               strokeOpacity="0.6"
             />
             <text x="400" y="295" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" fontFamily="monospace" letterSpacing="1">
-              MBUX ATELIER
+              LEXUS ATELIER
             </text>
             <text x="400" y="315" textAnchor="middle" fill="#94A3B8" fontSize="7.5" fontFamily="sans-serif">
               {activeTabMeta.label}
@@ -416,9 +443,9 @@ export function VisualizationStage() {
         {/* Bottom Floating Info Pill (Astra 3D WebGL Bridge Status) */}
         <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-20 flex items-center space-x-2 rounded-full bg-[#141416]/90 border border-white/[0.08] px-3.5 py-1.5 text-xs text-slate-400 backdrop-blur-md">
           <Layers className="h-3.5 w-3.5 text-[#38B6FF]" />
-          <span className="hidden sm:inline">WebGL Standby:</span>
+          <span className="hidden sm:inline">WebGL Studio:</span>
           <span className="text-slate-200 font-mono text-[11px]">
-            {viewerStatus === "success" ? "Provisional 3D Spike Active" : "2D Preview Available"}
+            {viewerStatus === "success" ? "Lexus L2A Driver Seat Prototype Active" : "2D Studio Preview"}
           </span>
         </div>
 
