@@ -41,8 +41,8 @@ describe("Lexus RX 350 Asset Gate & Synthetic Fixture (Phase L1)", () => {
     expect(report.passed, report.errors.join("; ")).toBe(true);
     expect(report.sha256).toMatch(/^[a-f0-9]{64}$/);
     expect(report.nodeCount).toBe(6); // 5 component groups + sub-mesh GEO_Seat_Front_Driver_Bolsters
-    expect(report.materialCount).toBe(5); // MAT_Seat_Primary, MAT_Seat_Secondary, MAT_Seat_Stitching, MAT_Steering_Leather, MAT_Dashboard_Trim
-    expect(report.drawCalls).toBe(6);
+    expect(report.materialCount).toBe(7); // Original five + bound cockpit accent and black.
+    expect(report.drawCalls).toBe(11);
     expect(report.missingMaterialSlots).toEqual([]);
   });
 

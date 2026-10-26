@@ -11,9 +11,16 @@
       "priorityTier": "HIGH",
       "tolerance": "CONTROLLED_APPROX",
       "materialSlot": "MAT_Seat_Primary",
-      "allowedMaterialSlots": ["MAT_Seat_Primary", "MAT_Seat_Secondary"],
+      "allowedMaterialSlots": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary"
+      ],
       "kinematic": false,
-      "notes": "Driver bucket seat: center fluted insert, side bolsters, headrest cushion, power switch trim"
+      "notes": "Driver bucket seat: center fluted insert, side bolsters, headrest cushion, power switch trim",
+      "requiredMaterialSlots": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary"
+      ]
     },
     {
       "identifier": "GEO_Seat_Front_Passenger",
@@ -21,9 +28,16 @@
       "priorityTier": "HIGH",
       "tolerance": "CONTROLLED_APPROX",
       "materialSlot": "MAT_Seat_Primary",
-      "allowedMaterialSlots": ["MAT_Seat_Primary", "MAT_Seat_Secondary"],
+      "allowedMaterialSlots": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary"
+      ],
       "kinematic": false,
-      "notes": "Passenger bucket seat: symmetrical counterpart forming the front cabin pair"
+      "notes": "Passenger bucket seat: symmetrical counterpart forming the front cabin pair",
+      "requiredMaterialSlots": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary"
+      ]
     },
     {
       "identifier": "GEO_Seat_Stitching_Front",
@@ -31,9 +45,14 @@
       "priorityTier": "HIGH",
       "tolerance": "CONTROLLED_APPROX",
       "materialSlot": "MAT_Seat_Stitching",
-      "allowedMaterialSlots": ["MAT_Seat_Stitching"],
+      "allowedMaterialSlots": [
+        "MAT_Seat_Stitching"
+      ],
       "kinematic": false,
-      "notes": "Dedicated perimeter and seam geometry for real-time contrast thread recolouring"
+      "notes": "Dedicated perimeter and seam geometry for real-time contrast thread recolouring",
+      "requiredMaterialSlots": [
+        "MAT_Seat_Stitching"
+      ]
     },
     {
       "identifier": "GEO_SteeringWheel_Lexus",
@@ -41,9 +60,18 @@
       "priorityTier": "HIGH",
       "tolerance": "CONTROLLED_APPROX",
       "materialSlot": "MAT_Steering_Leather",
-      "allowedMaterialSlots": ["MAT_Steering_Leather"],
+      "allowedMaterialSlots": [
+        "MAT_Steering_Leather",
+        "MAT_Cockpit_Accent",
+        "MAT_Cockpit_Black"
+      ],
       "kinematic": false,
-      "notes": "3-spoke Lexus steering wheel with airbag boss, thumb rests, and grips"
+      "notes": "3-spoke Lexus steering wheel with airbag boss, thumb rests, and grips",
+      "requiredMaterialSlots": [
+        "MAT_Steering_Leather",
+        "MAT_Cockpit_Accent",
+        "MAT_Cockpit_Black"
+      ]
     },
     {
       "identifier": "GEO_Dashboard_Lexus",
@@ -51,9 +79,18 @@
       "priorityTier": "HIGH",
       "tolerance": "CONTROLLED_APPROX",
       "materialSlot": "MAT_Dashboard_Trim",
-      "allowedMaterialSlots": ["MAT_Dashboard_Trim"],
+      "allowedMaterialSlots": [
+        "MAT_Dashboard_Trim",
+        "MAT_Cockpit_Accent",
+        "MAT_Cockpit_Black"
+      ],
       "kinematic": false,
-      "notes": "Upper dashboard deck, instrument binnacle cowl, and central display screen bezel"
+      "notes": "Upper dashboard deck, instrument binnacle cowl, and central display screen bezel",
+      "requiredMaterialSlots": [
+        "MAT_Dashboard_Trim",
+        "MAT_Cockpit_Accent",
+        "MAT_Cockpit_Black"
+      ]
     }
   ],
   "materialSlots": [
@@ -100,6 +137,24 @@
       "defaultMetallic": 0.0,
       "hasClearcoat": false,
       "hasNormalMap": true,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Cockpit_Accent",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.3,
+      "defaultMetallic": 0.7,
+      "hasClearcoat": false,
+      "hasNormalMap": false,
+      "textureResolutionBudget": "1024"
+    },
+    {
+      "slotIdentifier": "MAT_Cockpit_Black",
+      "shaderType": "pbr_metallic_roughness",
+      "defaultRoughness": 0.3,
+      "defaultMetallic": 0,
+      "hasClearcoat": false,
+      "hasNormalMap": false,
       "textureResolutionBudget": "1024"
     }
   ],

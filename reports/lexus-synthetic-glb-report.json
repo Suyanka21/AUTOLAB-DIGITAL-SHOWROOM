@@ -2,7 +2,7 @@
   "passed": true,
   "scope": "lexus",
   "synthetic": true,
-  "sha256": "10d0acfe63fcb3515e87ca67f8aa1364b1df57c0718a36c637ec8182a96250b3",
+  "sha256": "3362b8c0cfc691523999131f084f1f297a318361724b92cef574a85fe2456e26",
   "toolVersions": {
     "gltfTransformCore": "4.5.1",
     "gltfValidator": "2.0.0-dev.3.10"
@@ -12,6 +12,14 @@
   "warnings": [
     "Synthetic fixture uses generated PNG with Draco geometry; production KTX2 checks are deferred.",
     "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
     "Khronos UNUSED_OBJECT: This object may be unused.",
     "Khronos UNUSED_OBJECT: This object may be unused.",
     "Khronos UNUSED_OBJECT: This object may be unused.",
@@ -23,10 +31,10 @@
   "trianglesByNode": {
     "GEO_Seat_Front_Driver": 2,
     "GEO_Seat_Front_Driver_Bolsters": 2,
-    "GEO_Seat_Front_Passenger": 2,
+    "GEO_Seat_Front_Passenger": 4,
     "GEO_Seat_Stitching_Front": 2,
-    "GEO_SteeringWheel_Lexus": 2,
-    "GEO_Dashboard_Lexus": 2
+    "GEO_SteeringWheel_Lexus": 6,
+    "GEO_Dashboard_Lexus": 6
   },
   "textures": [
     {
@@ -39,15 +47,27 @@
     }
   ],
   "nodeCount": 6,
-  "materialCount": 5,
-  "triangleCount": 12,
-  "drawCalls": 6,
-  "fileSizeBytes": 8188,
+  "materialCount": 7,
+  "triangleCount": 22,
+  "drawCalls": 11,
+  "fileSizeBytes": 9552,
   "gpuTextureBytesEstimated": 22,
   "activeDisplayDiagonalMm": null,
   "validator": {
     "numErrors": 0,
     "numWarnings": 0
+  },
+  "boundsMetres": {
+    "min": [
+      -0.7500000014901161,
+      0.22499999403953552,
+      -0.6
+    ],
+    "max": [
+      0.699999988079071,
+      1.0250213652849198,
+      0.11
+    ]
   },
   "asset": "tests\\fixtures\\lexus-synthetic.glb"
 }

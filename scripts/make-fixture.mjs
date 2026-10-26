@@ -163,6 +163,16 @@ export async function createLexusFullSyntheticFixture({ draco = false } = {}) {
   // 6. Dashboard cowl & bezel
   addQuad(doc, buffer, scene, "GEO_Dashboard_Lexus", matDashboard, 1.4, 0.35, [0, 0.85, -0.6]);
 
+  // L2B keeps existing nodes/material indexes and adds actual finish bindings.
+  const accent = doc.createMaterial("MAT_Cockpit_Accent").setRoughnessFactor(.30).setMetallicFactor(.70);
+  const black = doc.createMaterial("MAT_Cockpit_Black").setRoughnessFactor(.30).setMetallicFactor(0);
+  const passenger = doc.getRoot().listNodes().find(n => n.getName() === "GEO_Seat_Front_Passenger").getMesh();
+  passenger.addPrimitive(passenger.listPrimitives()[0].clone().setMaterial(matSecondary));
+  for (const name of ["GEO_SteeringWheel_Lexus", "GEO_Dashboard_Lexus"]) {
+    const mesh = doc.getRoot().listNodes().find(n => n.getName() === name).getMesh();
+    for (const material of [accent, black]) mesh.addPrimitive(mesh.listPrimitives()[0].clone().setMaterial(material));
+  }
+
   const io = new NodeIO().registerExtensions([KHRMaterialsClearcoat, KHRDracoMeshCompression]);
   if (draco) {
     doc.createExtension(KHRDracoMeshCompression).setRequired(true);

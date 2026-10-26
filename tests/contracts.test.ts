@@ -72,7 +72,7 @@ describe("Lexus RX 350 configuration contracts (Rebaseline Phase L0)", () => {
     ]);
   });
 
-  it("defines the five semantic material zones with zero unresolved slots", () => {
+  it("preserves the five semantic zones and adds two independent L2B cockpit finishes", () => {
     const slotIds = lexusManifest.materialSlots.map((s) => s.slotIdentifier);
     expect(slotIds).toEqual([
       "MAT_Seat_Primary",
@@ -80,6 +80,8 @@ describe("Lexus RX 350 configuration contracts (Rebaseline Phase L0)", () => {
       "MAT_Seat_Stitching",
       "MAT_Steering_Leather",
       "MAT_Dashboard_Trim",
+      "MAT_Cockpit_Accent",
+      "MAT_Cockpit_Black",
     ]);
   });
 

@@ -44,7 +44,10 @@ function numberFrom(text, pattern, label) {
   return Number(match[1].replaceAll(",", ""));
 }
 
+const componentBudgets = readJson(resolve(root, "docs/3d-assets/lexus-l2b-budgets.json"));
+
 function loadBudgets(scope, manifest) {
+  if (componentBudgets[scope]) return componentBudgets[scope];
   if (scope === "lexus-l2a" || scope === "l2a") {
     // Driver seat prototype budgets per docs/LEXUS_DEMO_SCOPE_AND_ARCHITECTURE.md
     return {
@@ -164,11 +167,12 @@ function activeDisplayDiagonal(node) {
 }
 
 export async function validateGlbBytes(bytes, { scope = "full", synthetic = false, feasibilityWebp = false } = {}) {
-  if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(scope)) {
+  if (!["full", "spike", "lexus", "lexus-l2a", "l2a", ...Object.keys(componentBudgets)].includes(scope)) {
     throw new Error(`Unknown scope: ${scope}`);
   }
   const isL2A = scope === "lexus-l2a" || scope === "l2a";
-  const isLexus = scope === "lexus" || isL2A;
+  const isComponent = Boolean(componentBudgets[scope]);
+  const isLexus = scope === "lexus" || isL2A || isComponent;
   const activeManifestPath = isLexus ? lexusManifestPath : sClassManifestPath;
   const activeVehiclePath = isLexus ? lexusVehiclePath : sClassVehiclePath;
   const { manifest, schemaErrors, missingMaterialSlots } = inspectManifest(activeManifestPath);
@@ -194,7 +198,9 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
     }
   }
 
-  const expectedNodes = scope === "spike"
+  const expectedNodes = isComponent
+    ? manifest.nodes.filter(node => componentBudgets[scope].nodes.includes(node.identifier))
+    : scope === "spike"
     ? manifest.nodes.filter((node) => spikeNodes.includes(node.identifier))
     : isL2A
     ? manifest.nodes.filter((node) => ["GEO_Seat_Front_Driver", "GEO_Seat_Stitching_Front"].includes(node.identifier))
@@ -225,6 +231,9 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   if (!synthetic) {
     if (!(raw.extensionsUsed ?? []).includes("KHR_draco_mesh_compression")) report.errors.push("missing Draco compression");
     if ((raw.textures ?? []).length && !(raw.extensionsUsed ?? []).includes("KHR_texture_basisu") && !report.waivers.length) report.errors.push("missing KTX2 textures");
+    if (isLexus) for (const mesh of raw.meshes ?? []) for (const primitive of mesh.primitives ?? []) {
+      if (primitive.extensions?.KHR_draco_mesh_compression?.bufferView === undefined) report.errors.push(`uncompressed primitive: ${mesh.name ?? "unnamed"}`);
+    }
   } else {
     report.warnings.push(`Synthetic fixture uses generated PNG${(raw.extensionsUsed ?? []).includes("KHR_draco_mesh_compression") ? " with Draco geometry" : " and uncompressed geometry"}; production KTX2 checks are deferred.`);
   }
@@ -257,6 +266,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
   const nodes = rootDoc.listNodes();
   const materials = rootDoc.listMaterials();
   for (const texture of rootDoc.listTextures()) {
+    if (isLexus && !synthetic && texture.getMimeType() !== "image/ktx2") report.errors.push(`non-KTX2 texture: ${texture.getName()}`);
     const size = texture.getSize();
     report.textures.push({ name: texture.getName(), mimeType: texture.getMimeType(), size });
     if (report.waivers.length && texture.getMimeType() !== "image/webp") report.errors.push("WebP waiver requires every texture to be image/webp");
@@ -294,7 +304,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
     ? l2aAllowedMaterials
     : scope === "lexus"
     ? allowedMaterialNames
-    : new Set(expectedNodes.map((node) => node.materialSlot));
+    : new Set(expectedNodes.flatMap((node) => node.allowedMaterialSlots ?? [node.materialSlot]));
 
   if (isL2A) {
     // Require primary seat upholstery, secondary bolsters, and contrast stitching
@@ -303,7 +313,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
         report.errors.push(`missing material: ${req}`);
       }
     }
-  } else if (scope !== "lexus") {
+  } else if (scope !== "lexus" && !isComponent) {
     for (const name of expectedMaterialNames) {
       if (!materials.some((material) => material.getName() === name)) report.errors.push(`missing material: ${name}`);
     }
@@ -338,6 +348,14 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
 
   const vehicle = readJson(activeVehiclePath);
   const maxExtent = [vehicle.dimensions.overallWidthMm, vehicle.dimensions.overallHeightMm, vehicle.dimensions.overallLengthMm].map((mm) => mm / 1000);
+  const combinedBounds = { min: [Infinity, Infinity, Infinity], max: [-Infinity, -Infinity, -Infinity] };
+  if (isLexus) for (const definition of expectedNodes) {
+    const bound = new Set(nodes.filter(n => n.getName() === definition.identifier || n.getName().startsWith(definition.identifier + "_"))
+      .flatMap(n => n.getMesh()?.listPrimitives().map(p => p.getMaterial()?.getName()) ?? []));
+    for (const name of definition.requiredMaterialSlots ?? [definition.materialSlot]) {
+      if (!bound.has(name)) report.errors.push(`missing required binding: ${definition.identifier} / ${name}`);
+    }
+  }
   for (const node of nodes) {
     const nodeName = node.getName();
     const definition = isLexus
@@ -360,7 +378,7 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
           if (!material || !allowedSlots.includes(material.getName())) {
             report.errors.push(`material binding mismatch: ${nodeName}`);
           }
-        } else if (scope === "lexus") {
+        } else if (scope === "lexus" || isComponent) {
           const allowedSlots = definition.allowedMaterialSlots ?? [definition.materialSlot];
           if (!material || !allowedSlots.includes(material.getName())) {
             report.errors.push(`material binding mismatch: ${nodeName}`);
@@ -382,6 +400,8 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
     const extent = extentOfNode(node);
     if (extent.min.every(Number.isFinite)) {
       for (let axis = 0; axis < 3; axis++) {
+        combinedBounds.min[axis] = Math.min(combinedBounds.min[axis], extent.min[axis]);
+        combinedBounds.max[axis] = Math.max(combinedBounds.max[axis], extent.max[axis]);
         if (extent.max[axis] - extent.min[axis] > maxExtent[axis]) report.errors.push(`vehicle bounds exceeded: ${nodeName} axis ${axis}`);
         if (Math.max(Math.abs(extent.min[axis]), Math.abs(extent.max[axis])) > maxExtent[axis]) report.errors.push(`vehicle position exceeded: ${nodeName} axis ${axis}`);
       }
@@ -392,6 +412,12 @@ export async function validateGlbBytes(bytes, { scope = "full", synthetic = fals
         report.activeDisplayDiagonalMm = diagonalMm;
         if (Math.abs(diagonalMm - budgets.oledDiagonalMm) > budgets.oledToleranceMm) report.errors.push(`OLED diagonal tolerance exceeded: ${diagonalMm.toFixed(2)} mm`);
       }
+    }
+  }
+  if (isLexus) {
+    report.boundsMetres = combinedBounds;
+    for (let axis = 0; axis < 3; axis++) {
+      if (combinedBounds.max[axis] - combinedBounds.min[axis] > maxExtent[axis]) report.errors.push(`combined vehicle bounds exceeded: axis ${axis}`);
     }
   }
   if (report.triangleCount > budgets.triangles) report.errors.push(`triangle budget exceeded: ${report.triangleCount}`);
@@ -425,7 +451,7 @@ function parseArgs(args) {
     else if (args[index] === "--manifest-only") options.manifestOnly = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
-  if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(options.scope)) {
+  if (!["full", "spike", "lexus", "lexus-l2a", "l2a", ...Object.keys(componentBudgets)].includes(options.scope)) {
     throw new Error(`Unknown scope: ${options.scope}`);
   }
   if (!options.asset) {
@@ -447,7 +473,7 @@ async function main() {
     const options = parseArgs(process.argv.slice(2));
     output = options.report ?? defaultReportFor(options.scope, options.synthetic);
     if (options.manifestOnly) {
-      const activeManifest = (options.scope === "lexus" || options.scope === "lexus-l2a" || options.scope === "l2a")
+      const activeManifest = (options.scope === "lexus" || options.scope === "lexus-l2a" || options.scope === "l2a" || componentBudgets[options.scope])
         ? lexusManifestPath
         : sClassManifestPath;
       const { schemaErrors, missingMaterialSlots } = inspectManifest(activeManifest);

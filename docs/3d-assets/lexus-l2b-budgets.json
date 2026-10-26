@@ -1,0 +1,5 @@
+{
+  "lexus-passenger": {"nodes": ["GEO_Seat_Front_Passenger", "GEO_Seat_Stitching_Front"], "triangles": 35000, "drawCalls": 3, "fileSizeBytes": 3500000, "targetFileSizeBytes": 2500000, "perNodeTriangles": {}},
+  "lexus-wheel": {"nodes": ["GEO_SteeringWheel_Lexus"], "triangles": 7000, "drawCalls": 3, "fileSizeBytes": 1800000, "targetFileSizeBytes": 1200000, "perNodeTriangles": {}},
+  "lexus-dashboard": {"nodes": ["GEO_Dashboard_Lexus"], "triangles": 8000, "drawCalls": 3, "fileSizeBytes": 1800000, "targetFileSizeBytes": 1200000, "perNodeTriangles": {}}
+}
