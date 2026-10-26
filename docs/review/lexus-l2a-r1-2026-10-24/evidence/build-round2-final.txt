@@ -1,0 +1,26 @@
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\tools\build-lexus-asset.py:86: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material.use_nodes = True
+CONTROL_SURROUND signed_volume_m3=0.0001394264584586538
+SEAT_INTEGRITY boundary_edges=0 degenerate_faces=0
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+18:34:50 | INFO: Starting glTF 2.0 export
+18:34:50 | INFO: Extracting primitive: GEO_Seat_Front_Driver
+18:34:50 | INFO: Primitives created: 2
+18:34:50 | INFO: Extracting primitive: GEO_Seat_Stitching_Front
+18:34:51 | INFO: Primitives created: 1
+18:34:51 | INFO: Draco encoder: Encoding mesh GEO_Seat_Front_Driver.
+18:34:51 | INFO: Draco encoder: Encoding mesh GEO_Seat_Stitching_Front.
+18:34:51 | INFO: Finished glTF 2.0 export in 0.4910910129547119 s
+
+Info: Saved as "driver-seat.blend"
+LEXUS_BUILD {"status": "PROVISIONAL Lexus RX 350 L2A-R1 refinement; owner visual approval pending", "blender": "5.2.2 LTS", "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]", "nodes": {"GEO_Seat_Front_Driver": {"triangles": 20196, "vertices": 10118, "dimensionsMetres": [0.5725406408309937, 0.8076176643371582, 0.9949963688850403]}, "GEO_Seat_Stitching_Front": {"triangles": 12216, "vertices": 12216, "dimensionsMetres": [0.5257976055145264, 0.7108573913574219, 0.8348019123077393]}}, "controlSurroundSignedVolumeMetresCubed": 0.0001394264584586538, "buildSeconds": 5.265782900038175, "exportArguments": {"filepath": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l2a-r1\\driver-seat-raw.glb", "export_format": "GLB", "use_selection": true, "use_active_scene": true, "export_yup": true, "export_apply": true, "export_cameras": false, "export_lights": false, "export_extras": true, "export_animations": false, "export_skins": false, "export_morph": false, "export_tangents": true, "export_texcoords": true, "export_vertex_color": "ACTIVE", "export_materials": "EXPORT", "export_image_format": "AUTO", "export_draco_mesh_compression_enable": true, "export_draco_mesh_compression_level": 6, "export_draco_position_quantization": 16, "export_draco_normal_quantization": 10, "export_draco_texcoord_quantization": 14, "export_draco_generic_quantization": 12}, "sourceHashes": {"tools\\build-lexus-asset.py": "c3e381fc4b552616d91f6482ed5fccd723b491ea469bf463a5003fd63f230c66", "blender\\lexus_constants.py": "9677f86747faa6359ee0a2a9204144e0b816a196497c4911a22cb3947cafbba9"}, "textureMethod": "Seeded analytic leather grain and perforation normal/ORM fields; no photo pixels", "materialNames": ["MAT_Seat_Primary", "MAT_Seat_Secondary", "MAT_Seat_Stitching"]}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2707 vertices, 15336 indices, raw size: 193092, encoded size: 18956, compression ratio: 10.19
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 8705 vertices, 45252 indices, raw size: 612804, encoded size: 83083, compression ratio: 7.38
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 20360 vertices, 36648 indices, raw size: 1050576, encoded size: 192736, compression ratio: 5.45
+
+Blender quit

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "assetSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "scriptCommitHash": "d7a9ee43ba308cc7acae115a11d9f8aa7cfe808a",
+  "checkedLocalLinks": 36,
+  "renderHashCount": 3,
+  "sourceHashesMatch": true,
+  "comparisonHashesMatch": true,
+  "rollbackHashMatches": true,
+  "applicationDependenciesAndCameraSourcesUnchanged": true,
+  "stateLines": 17
+}

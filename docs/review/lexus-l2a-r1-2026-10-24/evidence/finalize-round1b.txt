@@ -1,0 +1,1 @@
+{"sha256":"ddcea5f7be095f2e623b02efeccdb5abae60e883905891bf25e9f6f4d23a62f6","fileSizeBytes":3503752,"textures":6,"seconds":57.6670309}

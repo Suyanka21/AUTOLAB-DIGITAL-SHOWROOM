@@ -1,0 +1,99 @@
+{
+  "assetSha256": "9859a05153843c37bef29f86e52938ed47b7ebef61b3b889ae5c8e37e063315a",
+  "renderInput": "driver-seat-render-decoded.glb",
+  "renderInputSha256": "d1ec5f7b7ac3d080d411780fd5dcc89d5f7439f37248f33b1429010f8fe09ee6",
+  "textureMethod": "Final GLB round-trip; only KTX2 level-0 pixels decoded to PNG for Blender. Not original source textures.",
+  "blender": "5.2.2 LTS",
+  "renderer": "Cycles CPU; GPU memory and real-device FPS NOT MEASURED",
+  "sampleLimit": 32,
+  "tracingTimeLimitSeconds": 160,
+  "achievedSamples": null,
+  "samplingNote": "32 is the configured maximum, not a measured count; the time limit may stop tracing earlier. Achieved count is not exposed by this report.",
+  "resolution": [
+    1400,
+    1200
+  ],
+  "lights": [
+    [
+      "Key",
+      [
+        -1.6,
+        -1.8,
+        2.5
+      ],
+      150,
+      1.6
+    ],
+    [
+      "Fill",
+      [
+        1.0,
+        -0.6,
+        1.7
+      ],
+      70,
+      1.5
+    ],
+    [
+      "Rim",
+      [
+        -0.6,
+        1.3,
+        2.3
+      ],
+      150,
+      1.2
+    ]
+  ],
+  "views": [
+    {
+      "file": "01-driver-hero.png",
+      "seconds": 153.20527909998782,
+      "location": [
+        -1.65,
+        -1.95,
+        1.55
+      ],
+      "target": [
+        -0.38,
+        0.05,
+        0.86
+      ],
+      "lensMm": 55,
+      "sha256": "5974d94225dc424ecd4a5205ae8e9d9051c30ea4c9dfb99e8004baac17f3ca5d"
+    },
+    {
+      "file": "02-open-door-profile.png",
+      "seconds": 123.05147509998642,
+      "location": [
+        -2.65,
+        -0.48,
+        1.17
+      ],
+      "target": [
+        -0.38,
+        0.07,
+        0.84
+      ],
+      "lensMm": 55,
+      "sha256": "b239f6a893fe5cbb56fdb3bf8bfd1177e77deb65e4ecf28af395ee7a48187fc0"
+    },
+    {
+      "file": "03-seam-macro.png",
+      "seconds": 192.66476220003096,
+      "location": [
+        -0.93,
+        -0.72,
+        0.95
+      ],
+      "target": [
+        -0.57,
+        -0.12,
+        0.51
+      ],
+      "lensMm": 65,
+      "sha256": "a5e1d192146d27c2915a1540c270b3d94ac1b518815086baff8320fe6aac6788"
+    }
+  ],
+  "round": "round1"
+}

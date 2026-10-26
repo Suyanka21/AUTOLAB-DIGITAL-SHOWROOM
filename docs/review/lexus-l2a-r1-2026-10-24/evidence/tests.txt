@@ -1,0 +1,84 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+ ❯ tests/glb-gate.test.ts (14 tests | 1 failed) 23348ms
+   ❯ synthetic GLB gate (14)
+     × exits nonzero for the real manifest's unresolved slots 8931ms
+ ❯ tests/lexus-gate.test.ts (29 tests | 4 failed) 64473ms
+   ❯ Lexus RX 350 Asset Gate & Synthetic Fixture (Phase L1) (16)
+     × rejects 100x scale with a specific error in Lexus scope 8673ms
+     × rejects stripped UVs with a specific error in Lexus scope 5472ms
+   ❯ Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype) (13)
+     × passes CLI validation on the synthetic Lexus L2A prototype GLB with exit code 0 11140ms
+     × validates the real Lexus L2A driver-seat GLB asset with zero errors 851ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/glb-gate.test.ts > synthetic GLB gate > exits nonzero for the real manifest's unresolved slots
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/glb-gate.test.ts:118:3
+    116|   });
+    117|
+    118|   it("exits nonzero for the real manifest's unresolved slots", () => {
+       |   ^
+    119|     const temp = mkdtempSync(join(tmpdir(), "autolab-manifest-"));
+    120|     try {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  tests/lexus-gate.test.ts > Lexus RX 350 Asset Gate & Synthetic Fixture (Phase L1) > rejects 100x scale with a specific error in Lexus scope
+ FAIL  tests/lexus-gate.test.ts > Lexus RX 350 Asset Gate & Synthetic Fixture (Phase L1) > rejects stripped UVs with a specific error in Lexus scope
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/lexus-gate.test.ts:139:4
+    137|       json.meshes[3].primitives[0].material = 0;
+    138|     }, "material binding mismatch: GEO_Seat_Stitching_Front"],
+    139|   ])("rejects %s with a specific error in Lexus scope", async (_label,…
+       |    ^
+    140|     const fixture = await createLexusSyntheticFixture();
+    141|     const mutated = mutateGlb(fixture, change);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  tests/lexus-gate.test.ts > Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype) > passes CLI validation on the synthetic Lexus L2A prototype GLB with exit code 0
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/lexus-gate.test.ts:188:3
+    186|   });
+    187|
+    188|   it("passes CLI validation on the synthetic Lexus L2A prototype GLB w…
+       |   ^
+    189|     const temp = mkdtempSync(join(tmpdir(), "autolab-lexus-l2a-cli-"));
+    190|     try {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  tests/lexus-gate.test.ts > Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype) > validates the real Lexus L2A driver-seat GLB asset with zero errors
+AssertionError: expected '9859a05153843c37bef29f86e52938ed47b7e…' to be '1a00561068f4845e9b7206a813a2e024ce13d…' // Object.is equality
+
+Expected: "1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3"
+Received: "9859a05153843c37bef29f86e52938ed47b7ebef61b3b889ae5c8e37e063315a"
+
+ ❯ tests/lexus-gate.test.ts:259:27
+    257|     const report = await validateGlbBytes(bytes, { scope: "lexus-l2a",…
+    258|     expect(report.passed, report.errors.join("; ")).toBe(true);
+    259|     expect(report.sha256).toBe("1a00561068f4845e9b7206a813a2e024ce13d8…
+       |                           ^
+    260|     expect(report.nodeCount).toBe(2);
+    261|     expect(report.materialCount).toBe(3);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  5 failed | 62 passed (67)
+   Start at  18:15:35
+   Duration  100.01s (tests 91%, import 6%, transform 2%)
+
+    Isolate  5 workers spawned · ~20.19s startup each (spawn + environment, per file)
+             at least ~13.46s faster with isolate: false — reuses workers across files instead of one per file

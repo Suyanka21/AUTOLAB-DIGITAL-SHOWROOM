@@ -1,0 +1,9 @@
+{
+  "baselineAssetSha256": "1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3",
+  "assetSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "sha256": "2b8d1ea4a4c0dfbb73e0a7d7f669249f6ce5dcd0a3a20231c5536d757a68e91b",
+  "cameraAndLightEqualityChecked": true,
+  "method": "Unretouched historical and revised renders, resized and labelled",
+  "beforeRenderReport": "docs\\review\\lexus-l2a-2026-10-23\\render-report.json",
+  "afterRenderReport": "docs\\review\\lexus-l2a-r1-2026-10-24\\render-report.json"
+}

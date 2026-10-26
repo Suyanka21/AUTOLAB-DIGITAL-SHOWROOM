@@ -1,0 +1,125 @@
+{
+  "ok": true,
+  "loadMs": 1862.8999999761581,
+  "threeRevision": "186",
+  "meshes": [
+    "GEO_Seat_Front_Driver_1",
+    "GEO_Seat_Front_Driver_2",
+    "GEO_Seat_Stitching_Front"
+  ],
+  "materials": [
+    "MAT_Seat_Primary",
+    "MAT_Seat_Secondary",
+    "MAT_Seat_Stitching"
+  ],
+  "swaps": [
+    {
+      "name": "MAT_Seat_Primary",
+      "changed": true,
+      "pixelsChanged": true,
+      "othersUnchanged": true
+    },
+    {
+      "name": "MAT_Seat_Secondary",
+      "changed": true,
+      "pixelsChanged": true,
+      "othersUnchanged": true
+    },
+    {
+      "name": "MAT_Seat_Stitching",
+      "changed": true,
+      "pixelsChanged": true,
+      "othersUnchanged": true
+    }
+  ],
+  "geometryAudit": [
+    {
+      "mesh": "GEO_Seat_Front_Driver_1",
+      "triangles": 5112,
+      "minimumTriangleAreaSquareMetres": 0.000052255296705524204
+    },
+    {
+      "mesh": "GEO_Seat_Front_Driver_2",
+      "triangles": 15388,
+      "minimumTriangleAreaSquareMetres": 2.395202289839915e-7
+    },
+    {
+      "mesh": "GEO_Seat_Stitching_Front",
+      "triangles": 14016,
+      "minimumTriangleAreaSquareMetres": 6.328983387513289e-7
+    }
+  ],
+  "dimensionsMetres": [
+    0.551343560218811,
+    0.9949963688850403,
+    0.8076118230819702
+  ],
+  "compressedTextures": [
+    {
+      "name": "lexus-insert-base",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    },
+    {
+      "name": "lexus-insert-normal",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    },
+    {
+      "name": "lexus-insert-orm",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    },
+    {
+      "name": "lexus-bolster-base",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    },
+    {
+      "name": "lexus-bolster-normal",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    },
+    {
+      "name": "lexus-bolster-orm",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    }
+  ],
+  "renderer": {
+    "calls": 3,
+    "triangles": 34516,
+    "textures": 7,
+    "geometries": 3
+  },
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "note": "Local headless Chromium compatibility smoke only; not real-phone FPS or GPU memory measurement. Main application integration belongs to L3.",
+  "errors": [],
+  "warnings": [
+    "[.WebGL-0x50e4001ca000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x50e4001ca000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x50e4001ca000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x50e4001ca000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+  ],
+  "failures": [],
+  "assetSha256": "9859a05153843c37bef29f86e52938ed47b7ebef61b3b889ae5c8e37e063315a",
+  "browser": "156.0.8078.4"
+}

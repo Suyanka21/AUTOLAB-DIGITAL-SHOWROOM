@@ -1,0 +1,28 @@
+Asset gate PASS: 2 nodes, 34560 triangles, 3 draw calls; sha256 1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3
+WARN: file size exceeds 2500000-byte transfer target
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+Report: C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\reports\lexus-l2a-report.json

@@ -1,0 +1,241 @@
+{
+  "assetSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "initial": {
+    "status": "success",
+    "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+    "materialState": {
+      "bindings": {
+        "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+      },
+      "colors": {
+        "MAT_Seat_Primary": "#75452b",
+        "MAT_Seat_Secondary": "#151618",
+        "MAT_Seat_Stitching": "#d4af37"
+      }
+    },
+    "renderer": {
+      "calls": 3,
+      "triangles": 32412,
+      "textures": 9,
+      "geometries": 15
+    },
+    "error": null,
+    "cameraFov": 38
+  },
+  "primary": {
+    "status": "success",
+    "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+    "materialState": {
+      "bindings": {
+        "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+      },
+      "colors": {
+        "MAT_Seat_Primary": "#d8cab8",
+        "MAT_Seat_Secondary": "#151618",
+        "MAT_Seat_Stitching": "#d4af37"
+      }
+    },
+    "renderer": {
+      "calls": 3,
+      "triangles": 32412,
+      "textures": 9,
+      "geometries": 15
+    },
+    "error": null,
+    "cameraFov": 38
+  },
+  "secondary": {
+    "status": "success",
+    "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+    "materialState": {
+      "bindings": {
+        "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+      },
+      "colors": {
+        "MAT_Seat_Primary": "#d8cab8",
+        "MAT_Seat_Secondary": "#d8cab8",
+        "MAT_Seat_Stitching": "#d4af37"
+      }
+    },
+    "renderer": {
+      "calls": 3,
+      "triangles": 32412,
+      "textures": 9,
+      "geometries": 15
+    },
+    "error": null,
+    "cameraFov": 38
+  },
+  "thread": {
+    "status": "success",
+    "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+    "materialState": {
+      "bindings": {
+        "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+      },
+      "colors": {
+        "MAT_Seat_Primary": "#d8cab8",
+        "MAT_Seat_Secondary": "#d8cab8",
+        "MAT_Seat_Stitching": "#c0c4cc"
+      }
+    },
+    "renderer": {
+      "calls": 3,
+      "triangles": 32412,
+      "textures": 9,
+      "geometries": 15
+    },
+    "error": null,
+    "cameraFov": 38
+  },
+  "cameras": [
+    {
+      "viewport": {
+        "label": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "label": "Driver Hero",
+      "snapshot": {
+        "status": "success",
+        "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+        "materialState": {
+          "bindings": {
+            "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+            "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+            "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+          },
+          "colors": {
+            "MAT_Seat_Primary": "#d8cab8",
+            "MAT_Seat_Secondary": "#d8cab8",
+            "MAT_Seat_Stitching": "#c0c4cc"
+          }
+        },
+        "renderer": {
+          "calls": 3,
+          "triangles": 32412,
+          "textures": 9,
+          "geometries": 15
+        },
+        "error": null,
+        "cameraFov": 38
+      }
+    },
+    {
+      "viewport": {
+        "label": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "label": "Stitch Detail",
+      "snapshot": {
+        "status": "success",
+        "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+        "materialState": {
+          "bindings": {
+            "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+            "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+            "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+          },
+          "colors": {
+            "MAT_Seat_Primary": "#d8cab8",
+            "MAT_Seat_Secondary": "#d8cab8",
+            "MAT_Seat_Stitching": "#c0c4cc"
+          }
+        },
+        "renderer": {
+          "calls": 3,
+          "triangles": 32412,
+          "textures": 9,
+          "geometries": 15
+        },
+        "error": null,
+        "cameraFov": 28
+      }
+    },
+    {
+      "viewport": {
+        "label": "mobile-emulation",
+        "width": 390,
+        "height": 844
+      },
+      "label": "Driver Hero",
+      "snapshot": {
+        "status": "success",
+        "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+        "materialState": {
+          "bindings": {
+            "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+            "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+            "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+          },
+          "colors": {
+            "MAT_Seat_Primary": "#d8cab8",
+            "MAT_Seat_Secondary": "#d8cab8",
+            "MAT_Seat_Stitching": "#c0c4cc"
+          }
+        },
+        "renderer": {
+          "calls": 3,
+          "triangles": 32412,
+          "textures": 9,
+          "geometries": 15
+        },
+        "error": null,
+        "cameraFov": 38
+      }
+    },
+    {
+      "viewport": {
+        "label": "mobile-emulation",
+        "width": 390,
+        "height": 844
+      },
+      "label": "Stitch Detail",
+      "snapshot": {
+        "status": "success",
+        "assetUrl": "/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+        "materialState": {
+          "bindings": {
+            "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+            "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+            "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching"
+          },
+          "colors": {
+            "MAT_Seat_Primary": "#d8cab8",
+            "MAT_Seat_Secondary": "#d8cab8",
+            "MAT_Seat_Stitching": "#c0c4cc"
+          }
+        },
+        "renderer": {
+          "calls": 3,
+          "triangles": 32412,
+          "textures": 9,
+          "geometries": 15
+        },
+        "error": null,
+        "cameraFov": 28
+      }
+    }
+  ],
+  "requests": [
+    "200 http://127.0.0.1:3100/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+    "200 http://127.0.0.1:3100/draco/draco_wasm_wrapper.js",
+    "200 http://127.0.0.1:3100/basis/basis_transcoder.js",
+    "200 http://127.0.0.1:3100/basis/basis_transcoder.wasm",
+    "200 http://127.0.0.1:3100/draco/draco_decoder.wasm"
+  ],
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "context": "Actual Next/R3F app, Chromium with SwiftShader. Mobile viewport emulation only; physical-phone FPS and GPU memory NOT MEASURED."
+}

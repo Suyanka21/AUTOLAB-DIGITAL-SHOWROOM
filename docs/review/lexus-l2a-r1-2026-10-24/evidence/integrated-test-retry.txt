@@ -1,0 +1,35 @@
+[WebServer] (node:13352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:17292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+  x  1 [chromium] › e2e\lexus-refinement.spec.ts:8:5 › revised Lexus asset retains integrated cameras and independent material controls (3.0m)
+
+
+  1) [chromium] › e2e\lexus-refinement.spec.ts:8:5 › revised Lexus asset retains integrated cameras and independent material controls
+
+    Test timeout of 180000ms exceeded.
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: '4. Composition', exact: true })
+
+
+      27 |   await expect(page.getByRole("button", { name: /^Cabin Pair/ })).toBeDisabled();
+      28 |   await expect(page.getByRole("button", { name: /^Driver Ingress/ })).toBeDisabled();
+    > 29 |   await page.getByRole("button", { name: "4. Composition", exact: true }).click();
+         |                                                                           ^
+      30 |   await page.getByRole("button", { name: /Bespoke Duotone/ }).click();
+      31 |   const initial = await snapshot(page);
+      32 |   await page.getByRole("button", { name: "2. Colour", exact: true }).click();
+        at C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\lexus-refinement.spec.ts:29:75
+
+    Error Context: test-results\lexus-refinement-revised-L-1a8b4-dependent-material-controls-chromium\error-context.md
+
+  1 failed
+    [chromium] › e2e\lexus-refinement.spec.ts:8:5 › revised Lexus asset retains integrated cameras and independent material controls

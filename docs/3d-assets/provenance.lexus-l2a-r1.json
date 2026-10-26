@@ -1,0 +1,92 @@
+{
+  "status": "PROVISIONAL Lexus RX 350 L2A-R1 driver-seat refinement; visual acceptance pending; L2B locked",
+  "recordedAt": "2026-10-26",
+  "approval": "Owner Phase L2A-R1 refinement prompt; no visual acceptance or L2B authorization",
+  "baseCommit": "16a53622676722486ba30cd21d316363b97ce006",
+  "scriptCommitHash": "d7a9ee43ba308cc7acae115a11d9f8aa7cfe808a",
+  "asset": "public/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+  "sha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "tools": {
+    "blender": "5.2.2 LTS d13f752e3b9c",
+    "python": "3.13.13 embedded bpy",
+    "toktx": "4.4.2",
+    "gltfTransform": "4.5.1",
+    "draco3dgltf": "1.5.9",
+    "gltfValidator": "2.0.0-dev.3.10",
+    "three": "0.186.1"
+  },
+  "scripts": [
+    "tools/build-lexus-asset.py",
+    "blender/lexus_constants.py",
+    "scripts/finalize-lexus-l2a.mjs",
+    "blender/render_lexus_l2a.py"
+  ],
+  "sourceHashesReport": "docs/review/lexus-l2a-r1-2026-10-24/evidence/build-report.json",
+  "referenceFiles": [
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_08.jpg",
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_23.jpg",
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_29.jpg",
+    "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/03_BOLSTERS_HEADREST_AND_STITCHING/LEXUS_RX_2020_GALLERY_31.jpg"
+  ],
+  "referenceSourceUrl": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+  "referenceLimits": "Owner-supplied pack attribution, not independent authenticity proof. LRX-29 is passenger-side context; LRX-31 is rear-cabin/shoulder context, not a front-seat macro. All physical measurements and microtexture dimensions are estimates.",
+  "nodes": [
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "materials": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary"
+      ],
+      "specRows": [
+        "src/config/scene-manifest.lexus-rx350.json: nodes[identifier=GEO_Seat_Front_Driver]",
+        "docs/LEXUS_IMPLEMENTATION_PLAN.md: Phase L2A",
+        "Owner Phase L2A prompt: sections 3-6",
+        "Owner Phase L2A-R1 prompt: visual refinement only; L2B locked"
+      ],
+      "references": [
+        "LRX-08",
+        "LRX-23",
+        "LRX-29 supporting silhouette",
+        "LRX-31 shoulder context"
+      ],
+      "method": "Refined existing continuous shells; shorter broader backrest, revised headrest crown, rolled cushion and visible rounded controls. No new cabin components.",
+      "uncertainty": "CONTROLLED_APPROX; proportions, foam profile, panel topology, trim material appearance and scale await owner review"
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front",
+      "materials": [
+        "MAT_Seat_Stitching"
+      ],
+      "specRows": [
+        "src/config/scene-manifest.lexus-rx350.json: nodes[identifier=GEO_Seat_Stitching_Front]",
+        "Owner Phase L2A prompt: separate independently controllable stitching",
+        "Owner Phase L2A-R1 prompt: visual refinement only; L2B locked"
+      ],
+      "references": [
+        "LRX-08 visible seam paths",
+        "LRX-23 outer seam context"
+      ],
+      "method": "Projected individual dashes with three-sided sections; cushion rows return around front; cross-seam ends separated from double rows; route ends taper into surface.",
+      "uncertainty": "Thread diameter, pitch, row count and spacing are visual estimates; no calibrated macro supplied"
+    }
+  ],
+  "textures": "Seeded analytic neutral base and grain/perforation tangent normals; constant panel-specific ORM; six KTX2 UASTC/Zstd mipmapped payloads; RDO lambda 1.1",
+  "deviationsAndLimits": [
+    "All physical dimensions, grain/perforation scale, seam construction and exact upholstery trim identity remain estimates.",
+    "Transfer target exceeded; unchanged hard budget passes. Payload is close to its maximum.",
+    "Three-sided thread sections replace four-sided sections; nominal radius and pitch retained, but section shading is approximate and awaits macro review.",
+    "Analytic microdetail rather than a high-poly bake; repeat UVs are for tileable textures.",
+    "Blender review uses a hash-checked proxy with decoded delivered KTX pixels, not native KTX2 rendering.",
+    "Byte-identical R1 compressed rebuild has not been established.",
+    "Actual integrated app tested in headless Chromium/SwiftShader; real-phone FPS and GPU bytes unmeasured.",
+    "Existing app hero framing clips lower base; mobile UI overlaps lower viewport; bright swatches lose contrast. Viewer/camera contracts preserved."
+  ],
+  "formatWaiver": null,
+  "historicalMercedesRecords": "Unmodified: provenance.json, spike.glb and reports/glb-report.json; historical gates/gaps/WebP waiver not closed or reused",
+  "rollback": {
+    "commit": "16a53622676722486ba30cd21d316363b97ce006",
+    "assetSha256": "1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3",
+    "localCopy": "blender/out/lexus-l2a-r1/baseline/driver-seat-l2a.glb",
+    "gateSnapshot": "docs/review/lexus-l2a-r1-2026-10-24/evidence/baseline-gate.json"
+  }
+}

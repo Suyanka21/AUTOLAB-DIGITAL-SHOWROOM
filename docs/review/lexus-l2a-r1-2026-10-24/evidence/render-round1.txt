@@ -1,0 +1,23 @@
+18:16:15 | INFO: Data are loaded, start creating Blender stuff
+18:16:15 | INFO: Blender create Mesh node GEO_Seat_Front_Driver
+18:16:15 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+18:16:15 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+18:16:15 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front
+18:16:15 | INFO: Draco Decoder: Decode primitive GEO_Seat_Stitching_Front
+18:16:16 | INFO: glTF import finished in 0.76s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2a.py:39: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes = True
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2a.py:63: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes=True
+02:46.766  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2a-r1\review\round1\01-driver-hero.png'
+LEXUS_RENDER {"file": "01-driver-hero.png", "seconds": 153.20527909998782, "location": [-1.65, -1.95, 1.55], "target": [-0.38, 0.05, 0.86], "lensMm": 55, "sha256": "5974d94225dc424ecd4a5205ae8e9d9051c30ea4c9dfb99e8004baac17f3ca5d"}
+04:49.907  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2a-r1\review\round1\02-open-door-profile.png'
+LEXUS_RENDER {"file": "02-open-door-profile.png", "seconds": 123.05147509998642, "location": [-2.65, -0.48, 1.17], "target": [-0.38, 0.07, 0.84], "lensMm": 55, "sha256": "b239f6a893fe5cbb56fdb3bf8bfd1177e77deb65e4ecf28af395ee7a48187fc0"}
+08:02.672  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2a-r1\review\round1\03-seam-macro.png'
+LEXUS_RENDER {"file": "03-seam-macro.png", "seconds": 192.66476220003096, "location": [-0.93, -0.72, 0.95], "target": [-0.57, -0.12, 0.51], "lensMm": 65, "sha256": "a5e1d192146d27c2915a1540c270b3d94ac1b518815086baff8320fe6aac6788"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoDecoder | Decoded 2707 vertices, 15336 indices
+DracoDecoder | Decoded 8780 vertices, 46164 indices
+DracoDecoder | Decoded 21124 vertices, 42048 indices
+
+Blender quit

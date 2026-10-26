@@ -1,0 +1,38 @@
+{
+  "localOnlyOutput": "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK\\L2A_R1_REVIEW\\contact-sheet.png",
+  "sha256": "2e0249498da917f5452b2a10fbadf8f5cac668e8312d41e905371ba7db16b4b4",
+  "size": [
+    2080,
+    3030
+  ],
+  "method": "Resizing and labelled LRX-08 crop only; no retouching or generated reference imagery",
+  "assetSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "rows": [
+    {
+      "render": "01-driver-hero.png",
+      "reference": "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK\\01_FRONT_SEAT_COMPLETE\\LEXUS_RX_2020_GALLERY_08.jpg",
+      "cropPixels": null,
+      "renderSha256": "c506455272f3d0ce41e53e091e5d892bd7b1427c8b73990ea6c3d8bcb4ada970",
+      "referenceSha256": "c4725604a133351ac346c30fde27b1d875d5cfeadf91abfaac508b1e997ae96a"
+    },
+    {
+      "render": "02-open-door-profile.png",
+      "reference": "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK\\01_FRONT_SEAT_COMPLETE\\LEXUS_RX_2020_GALLERY_23.jpg",
+      "cropPixels": null,
+      "renderSha256": "f5b792e2c74b13674bdd7fb7663116da6288d8071b366cecf65ab0466756354f",
+      "referenceSha256": "004808143a13d58da1c8cd1f55f1355615c6accae905b59e84c81de2e7deea41"
+    },
+    {
+      "render": "03-seam-macro.png",
+      "reference": "AUTOLAB_LEXUS_SEAT_REFERENCE_PACK\\01_FRONT_SEAT_COMPLETE\\LEXUS_RX_2020_GALLERY_08.jpg",
+      "cropPixels": [
+        500,
+        700,
+        1090,
+        1067
+      ],
+      "renderSha256": "58b39cf8cd6b5202a4f0f0d55eb6f18ac475c97d5308fe706aac44cb048c6283",
+      "referenceSha256": "c4725604a133351ac346c30fde27b1d875d5cfeadf91abfaac508b1e997ae96a"
+    }
+  ]
+}
