@@ -7,7 +7,7 @@ import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 
 const root = process.cwd();
-const out = resolve(root, 'blender/out/lexus-l2a/browser');
+const out = resolve(root, 'blender/out/lexus-l2a-r1/browser');
 await mkdir(out, { recursive: true });
 const assetPath = '/assets/3d/lexus-rx350/driver-seat-l2a.glb';
 const html = `<!doctype html><html><head><meta charset="utf-8"><title>L2A asset compatibility probe</title>

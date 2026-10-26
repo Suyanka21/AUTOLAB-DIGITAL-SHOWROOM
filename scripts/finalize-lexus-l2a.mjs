@@ -10,7 +10,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const out = resolve(root, "blender/out/lexus-l2a");
+const out = resolve(root, "blender/out/lexus-l2a-r1");
 const destination = resolve(root, "public/assets/3d/lexus-rx350/driver-seat-l2a.glb");
 const ktxBin = process.env.KTX_BIN ?? "C:/Program Files/KTX-Software/bin";
 const run = (exe, args) => execFileSync(resolve(ktxBin, exe), args, { encoding: "utf8", timeout: 180_000 });
@@ -35,7 +35,7 @@ for (const [index, texture] of doc.getRoot().listTextures().entries()) {
   const ktx = resolve(out, stem + ".ktx2");
   await writeFile(png, texture.getImage());
   const isColor = doc.getRoot().listMaterials().some(m => m.getBaseColorTexture() === texture);
-  const args = ["--t2", "--encode", "uastc", "--uastc_quality", "2", "--uastc_rdo_l", "1.0",
+  const args = ["--t2", "--encode", "uastc", "--uastc_quality", "2", "--uastc_rdo_l", "1.1",
     "--zcmp", "9", "--genmipmap", "--assign_oetf", isColor ? "srgb" : "linear", "--threads", "4", ktx, png];
   run("toktx.exe", args);
   run("ktx.exe", ["validate", ktx]);

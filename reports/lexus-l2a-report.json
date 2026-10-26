@@ -2,7 +2,7 @@
   "passed": true,
   "scope": "lexus-l2a",
   "synthetic": false,
-  "sha256": "1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3",
+  "sha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
   "toolVersions": {
     "gltfTransformCore": "4.5.1",
     "gltfValidator": "2.0.0-dev.3.10"
@@ -39,8 +39,8 @@
   ],
   "waivers": [],
   "trianglesByNode": {
-    "GEO_Seat_Front_Driver": 20400,
-    "GEO_Seat_Stitching_Front": 14160
+    "GEO_Seat_Front_Driver": 20196,
+    "GEO_Seat_Stitching_Front": 12216
   },
   "textures": [
     {
@@ -94,9 +94,9 @@
   ],
   "nodeCount": 2,
   "materialCount": 3,
-  "triangleCount": 34560,
+  "triangleCount": 32412,
   "drawCalls": 3,
-  "fileSizeBytes": 3244632,
+  "fileSizeBytes": 3463000,
   "gpuTextureBytesEstimated": 8388612,
   "activeDisplayDiagonalMm": null,
   "validator": {

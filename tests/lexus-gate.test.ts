@@ -256,11 +256,11 @@ describe("Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype)", () => 
     const bytes = readFileSync(assetPath);
     const report = await validateGlbBytes(bytes, { scope: "lexus-l2a", synthetic: false });
     expect(report.passed, report.errors.join("; ")).toBe(true);
-    expect(report.sha256).toBe("1a00561068f4845e9b7206a813a2e024ce13d879d898a41b05a7fc723220e8b3");
+    expect(report.sha256).toBe("b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52");
     expect(report.nodeCount).toBe(2);
     expect(report.materialCount).toBe(3);
     expect(report.drawCalls).toBe(3);
-    expect(report.triangleCount).toBe(34560);
+    expect(report.triangleCount).toBe(32412);
     expect(report.errors).toEqual([]);
   });
 
