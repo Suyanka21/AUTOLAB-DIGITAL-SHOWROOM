@@ -1,10 +1,12 @@
 # ASTRA PRODUCTION DIRECTIVE: 2020 LEXUS RX 350 DEMO
 
+**Owner update, 2026-10-26:** R1 accepted as a provisional mock-up baseline; L2B asset production and push authorized. Fidelity scores and human gates remain open. See [L2B handoff](3d-assets/LEXUS_L2B_HANDOFF.md). L3 integration is not authorized by this update.
+
 **Document:** `docs/ASTRA_LEXUS_HANDOFF.md`  
 **Target Agent:** Astra (3D Asset & Blender Engineering Agent)  
 **Author:** Antigravity (Integration & Preparation Agent)  
 **Date:** 2026-10-22 (Reconciled & Corrected)  
-**Status:** BINDING PRODUCTION DIRECTIVE — AWAITING OWNER AUTHORIZATION  
+**Status:** BINDING PRODUCTION DIRECTIVE — L2B AUTHORIZED; L3 EXCLUDED
 **Supersedes:** `docs/ASTRA_HANDOFF.md` (Mercedes-Benz S-Class V223 Directive)  
 
 ---
@@ -17,7 +19,7 @@
 > The objective of AutoLab Digital Showroom is to showcase **bespoke upholstery craftsmanship, leather finishes, and contrast stitching** inspired by the focused product experience at **[carseatcover.eu](https://carseatcover.eu/)**.  
 > It is **NOT** to produce an OEM manufacturer digital twin.  
 > 
-> **FIRST TASK SCOPE LOCK**: Astra's initial 3D task is strictly restricted to **one Lexus driver-seat visual prototype only**. No passenger seat, steering wheel, or dashboard geometry may be authored until the owner signs off on the driver-seat visual quality.
+> **Historical L2A scope lock:** The initial task was one driver seat. The owner's 2026-10-26 L2B instruction accepts R1 provisionally and permits the bounded passenger/wheel/upper-dashboard slice. Detailed visual acceptance remains open; L3 still requires separate authorization.
 
 ---
 

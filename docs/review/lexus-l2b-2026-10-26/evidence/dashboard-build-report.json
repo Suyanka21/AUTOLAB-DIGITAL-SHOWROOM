@@ -1,0 +1,23 @@
+{
+  "stage": "dashboard",
+  "blender": "5.2.2 LTS",
+  "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]",
+  "nodes": {
+    "GEO_Dashboard_Lexus": {
+      "triangles": 6166,
+      "dimensionsMetres": [
+        1.5,
+        0.45895105600357056,
+        0.3974999189376831
+      ],
+      "boundaryEdges": 0,
+      "degenerateFaces": 0
+    }
+  },
+  "seconds": 3.330560099973809,
+  "driverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "sourceHashes": {
+    "blender\\build_lexus_l2b.py": "b2961a00811402b6e45ba1801a62df84e0a30cf2c72442bbc9af159973570110",
+    "blender\\lexus_l2b_constants.py": "1e68726a6ef147e2dffcbaca8a7ee74ba8605f9eeb2121b3b05ce2d4a017470b"
+  }
+}

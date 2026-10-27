@@ -1,0 +1,74 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run --maxWorkers=1 tests/lexus-l2b-gate.test.ts
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+ ❯ tests/lexus-l2b-gate.test.ts (10 tests | 3 failed) 1325ms
+   ❯ L2B component gates preserve full-scene restrictions (10)
+     × requires independently bound cockpit trim 73ms
+     × rejects a full scene whose individually valid nodes span beyond vehicle bounds 67ms
+     × rejects advertised compression that is not present on every payload 90ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > requires independently bound cockpit trim
+AssertionError: expected '' to contain 'missing required binding: GEO_Steerin…'
+
+- Expected
++ Received
+
+- missing required binding: GEO_SteeringWheel_Lexus / MAT_Cockpit_Accent
+
+ ❯ tests/lexus-l2b-gate.test.ts:47:38
+     45|   it("requires independently bound cockpit trim", async () => {
+     46|     const report = await validateGlbBytes(await component("lexus-wheel…
+     47|     expect(report.errors.join("; ")).toContain("missing required bindi…
+       |                                      ^
+     48|   });
+     49|   it("rejects a full scene whose individually valid nodes span beyond …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > rejects a full scene whose individually valid nodes span beyond vehicle bounds
+AssertionError: expected '' to contain 'combined vehicle bounds exceeded'
+
+- Expected
++ Received
+
+- combined vehicle bounds exceeded
+
+ ❯ tests/lexus-l2b-gate.test.ts:55:38
+     53|     doc.getRoot().listNodes()[2].setTranslation([1.3,.5,.1]);
+     54|     const report = await validateGlbBytes(await io.writeBinary(doc), {…
+     55|     expect(report.errors.join("; ")).toContain("combined vehicle bound…
+       |                                      ^
+     56|   });
+     57|   it("rejects advertised compression that is not present on every payl…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > rejects advertised compression that is not present on every payload
+AssertionError: expected '' to contain 'uncompressed primitive'
+
+- Expected
++ Received
+
+- uncompressed primitive
+
+ ❯ tests/lexus-l2b-gate.test.ts:61:38
+     59|     json.extensionsUsed.push("KHR_draco_mesh_compression","KHR_texture…
+     60|     const report=await validateGlbBytes(packGlb(json,bin),{scope:"lexu…
+     61|     expect(report.errors.join("; ")).toContain("uncompressed primitive…
+       |                                      ^
+     62|     expect(report.errors.join("; ")).toContain("non-KTX2 texture");
+     63|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 7 passed (10)
+   Start at  22:36:10
+   Duration  25.26s (tests 66%, import 21%, transform 9%, worker 5%)

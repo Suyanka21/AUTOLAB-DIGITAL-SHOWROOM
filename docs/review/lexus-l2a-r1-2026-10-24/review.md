@@ -1,6 +1,6 @@
 # Owner visual review — L2A-R1
 
-**PENDING. No visual score or approval has been assigned by the agent. L2B remains locked.**
+**Owner accepted R1 as a provisional mock-up baseline on 2026-10-26 and authorized L2B. This is permission to progress, not photographic or production acceptance. The fidelity checks below remain unscored; no agent-assigned approval or human gate closure.**
 
 Use [before/after](before-after.png), [hero](01-driver-hero.png), [profile](02-open-door-profile.png), [macro](03-seam-macro.png), and the internal photo comparison at `AUTOLAB_LEXUS_SEAT_REFERENCE_PACK/L2A_R1_REVIEW/contact-sheet.png`.
 

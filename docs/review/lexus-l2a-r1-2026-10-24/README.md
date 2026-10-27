@@ -1,6 +1,6 @@
 # Lexus driver seat — L2A-R1 owner review
 
-Started 2026-10-24; completed evidence packaging 2026-10-26. **Technical gate PASS; visual acceptance PENDING. L2B remains locked.**
+Started 2026-10-24; completed evidence packaging 2026-10-26. **Technical gate PASS. Owner accepted R1 as a provisional mock-up baseline on 2026-10-26 and authorized L2B. Detailed fidelity scores remain pending.**
 
 ## Deliverables
 
@@ -94,4 +94,4 @@ npx playwright test e2e/lexus-refinement.spec.ts --project=chromium
 
 Copy the three generated PNGs and render report from `blender/out/lexus-l2a-r1/review/review/` into this review directory, then run `python tools/make-lexus-l2a-review.py`. The script rejects stale asset/render hashes. A rebuild is expected to reproduce source-controlled topology and settings; byte-identical compressed output has not been established for R1.
 
-**STOP for [owner visual review](review.md). No human gate, reference gap or Mercedes WebP waiver is closed or reused. Lexus uses KTX2. No L2B geometry is authorized.**
+**Historical checkpoint superseded by the owner's 2026-10-26 L2B authorization. [Review record](review.md) retains unscored fidelity items. No human gate, reference gap or Mercedes WebP waiver is closed or reused. Lexus uses KTX2.**

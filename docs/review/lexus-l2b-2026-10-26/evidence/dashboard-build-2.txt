@@ -1,0 +1,19 @@
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\build_lexus_l2b.py:29: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+22:33:46 | INFO: Starting glTF 2.0 export
+22:33:46 | INFO: Extracting primitive: GEO_Dashboard_Lexus
+22:33:46 | INFO: Primitives created: 3
+22:33:46 | INFO: Draco encoder: Encoding mesh GEO_Dashboard_Lexus.
+22:33:46 | INFO: Finished glTF 2.0 export in 0.19907546043395996 s
+
+Info: Saved as "dashboard.blend"
+L2B_BUILD {"stage": "dashboard", "blender": "5.2.2 LTS", "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]", "nodes": {"GEO_Dashboard_Lexus": {"triangles": 6166, "dimensionsMetres": [1.5, 0.45895105600357056, 0.43249988555908203], "boundaryEdges": 0, "degenerateFaces": 0}}, "seconds": 1.7642025999957696, "driverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52", "sourceHashes": {"blender\\build_lexus_l2b.py": "3cceb8eadfe3ee5b375e66080a26627f5a52bd99f1cc77e472acfeca32f7ab9e", "blender\\lexus_l2b_constants.py": "0ed6cc2a79e7fd51c003f91b4ecb8fd5e6332716f59925e5ad8ffab374c95d57"}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 1769 vertices, 7608 indices, raw size: 100128, encoded size: 18222, compression ratio: 5.49
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 1295 vertices, 3804 indices, raw size: 69768, encoded size: 17212, compression ratio: 4.05
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2212 vertices, 7086 indices, raw size: 120348, encoded size: 26051, compression ratio: 4.62

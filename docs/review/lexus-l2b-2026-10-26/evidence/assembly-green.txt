@@ -1,0 +1,12 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run --maxWorkers=1 tests/lexus-assembly.test.ts
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  17:55:31
+   Duration  1.19s (tests 44%, transform 30%, import 24%, worker 2%)

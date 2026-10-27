@@ -1,0 +1,6 @@
+
+> autolab-digital-showroom@1.0.0 typecheck
+> tsc --noEmit
+
+tests/lexus-assembly.test.ts(6,21): error TS7016: Could not find a declaration file for module 'draco3dgltf'. 'C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/node_modules/draco3dgltf/draco3dgltf.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/draco3dgltf` if it exists or add a new declaration (.d.ts) file containing `declare module 'draco3dgltf';`

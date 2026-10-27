@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py", line 18, in <module>
+    assert sha(C.ROOT/record['asset'])==record['sha256']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Error: script failed, file: 'blender/render_lexus_l2b.py', exiting.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

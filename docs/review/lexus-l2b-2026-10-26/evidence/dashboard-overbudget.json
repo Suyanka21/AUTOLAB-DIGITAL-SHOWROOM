@@ -1,0 +1,54 @@
+{
+  "passed": false,
+  "scope": "lexus-dashboard",
+  "synthetic": false,
+  "sha256": "e27e7ef2f10bd19959b338f596f9fd8d0174ee07a0e76b2a45d632b8aaf1b014",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [
+    "triangle budget exceeded: 8758"
+  ],
+  "warnings": [
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_Dashboard_Lexus": 8758
+  },
+  "textures": [
+    {
+      "name": "lexus-bolster-normal",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "nodeCount": 1,
+  "materialCount": 3,
+  "triangleCount": 8758,
+  "drawCalls": 3,
+  "fileSizeBytes": 1111864,
+  "gpuTextureBytesEstimated": 1398102,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 2
+  },
+  "asset": "public\\assets\\3d\\lexus-rx350\\dashboard-l2b.glb"
+}

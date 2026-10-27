@@ -1,0 +1,12 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run --maxWorkers=1 tests/lexus-l2b-gate.test.ts
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  17:53:11
+   Duration  3.36s (tests 56%, import 29%, transform 14%, worker 1%)

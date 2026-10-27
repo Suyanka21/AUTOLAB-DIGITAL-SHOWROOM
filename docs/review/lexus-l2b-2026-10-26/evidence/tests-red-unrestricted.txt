@@ -1,0 +1,77 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run --maxWorkers=1 tests/lexus-l2b-gate.test.ts
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+ ❯ tests/lexus-l2b-gate.test.ts (7 tests | 6 failed) 329ms
+   ❯ L2B component gates preserve full-scene restrictions (7)
+     × accepts a scoped fixture for lexus-passenger 55ms
+     × accepts a scoped fixture for lexus-wheel 26ms
+     × accepts a scoped fixture for lexus-dashboard 17ms
+     × rejects malformed wheel: UV 11ms
+     × rejects malformed wheel: scale 11ms
+     × rejects malformed wheel: extra 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > accepts a scoped fixture for lexus-passenger
+Error: Unknown scope: lexus-passenger
+ ❯ validateGlbBytes scripts/validate-glb.mjs:168:11
+    166| export async function validateGlbBytes(bytes, { scope = "full", synthe…
+    167|   if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(scope))…
+    168|     throw new Error(`Unknown scope: ${scope}`);
+       |           ^
+    169|   }
+    170|   const isL2A = scope === "lexus-l2a" || scope === "l2a";
+ ❯ tests/lexus-l2b-gate.test.ts:29:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > accepts a scoped fixture for lexus-wheel
+Error: Unknown scope: lexus-wheel
+ ❯ validateGlbBytes scripts/validate-glb.mjs:168:11
+    166| export async function validateGlbBytes(bytes, { scope = "full", synthe…
+    167|   if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(scope))…
+    168|     throw new Error(`Unknown scope: ${scope}`);
+       |           ^
+    169|   }
+    170|   const isL2A = scope === "lexus-l2a" || scope === "l2a";
+ ❯ tests/lexus-l2b-gate.test.ts:29:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > accepts a scoped fixture for lexus-dashboard
+Error: Unknown scope: lexus-dashboard
+ ❯ validateGlbBytes scripts/validate-glb.mjs:168:11
+    166| export async function validateGlbBytes(bytes, { scope = "full", synthe…
+    167|   if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(scope))…
+    168|     throw new Error(`Unknown scope: ${scope}`);
+       |           ^
+    169|   }
+    170|   const isL2A = scope === "lexus-l2a" || scope === "l2a";
+ ❯ tests/lexus-l2b-gate.test.ts:29:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > rejects malformed wheel: UV
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > rejects malformed wheel: scale
+ FAIL  tests/lexus-l2b-gate.test.ts > L2B component gates preserve full-scene restrictions > rejects malformed wheel: extra
+Error: Unknown scope: lexus-wheel
+ ❯ validateGlbBytes scripts/validate-glb.mjs:168:11
+    166| export async function validateGlbBytes(bytes, { scope = "full", synthe…
+    167|   if (!["full", "spike", "lexus", "lexus-l2a", "l2a"].includes(scope))…
+    168|     throw new Error(`Unknown scope: ${scope}`);
+       |           ^
+    169|   }
+    170|   const isL2A = scope === "lexus-l2a" || scope === "l2a";
+ ❯ tests/lexus-l2b-gate.test.ts:33:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 1 passed (7)
+   Start at  17:51:39
+   Duration  32.02s (import 83%, tests 8%, transform 8%, worker 2%)

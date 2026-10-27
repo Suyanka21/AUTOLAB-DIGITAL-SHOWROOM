@@ -1,0 +1,15 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run --maxWorkers=1 tests/lexus-l2b-gate.test.ts tests/lexus-gate.test.ts tests/contracts.test.ts tests/lexus-assembly.test.ts
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+
+ Test Files  4 passed (4)
+      Tests  52 passed (52)
+   Start at  22:38:03
+   Duration  21.03s (tests 86%, import 11%, transform 3%)
+
+    Isolate  4 workers spawned · ~539ms startup each (spawn + environment, per file)
+             at least ~1.62s faster with isolate: false — reuses workers across files instead of one per file

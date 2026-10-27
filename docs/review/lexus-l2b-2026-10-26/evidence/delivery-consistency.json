@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "assetsWithMatchingGateBrowserRenderHashes": 4,
+  "renderHashes": 6,
+  "sourceHashes": 9,
+  "localLinksChecked": 40,
+  "stateLines": 19,
+  "driverUnchanged": true,
+  "appAndDependenciesUnchanged": true,
+  "assetCommit": "5ecda81",
+  "gateCommit": "8317af9",
+  "visualAcceptance": "PENDING",
+  "physicalPhone": "NOT TESTED"
+}

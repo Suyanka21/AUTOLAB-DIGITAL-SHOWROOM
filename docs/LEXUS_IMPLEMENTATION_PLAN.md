@@ -1,15 +1,17 @@
 # Lexus RX 350 Demonstration Implementation Plan
 
+**Owner update, 2026-10-26:** R1 accepted as a provisional mock-up baseline; L2B asset production and push authorized. Fidelity scores and human gates remain open. See [L2B handoff](3d-assets/LEXUS_L2B_HANDOFF.md). L3 integration is not authorized by this update.
+
 **Document:** `docs/LEXUS_IMPLEMENTATION_PLAN.md`  
 **Date:** 2026-10-22 (Reconciled & Corrected)  
-**Status:** PHASED ROADMAP — READY FOR OWNER AUTHORIZATION  
+**Status:** PHASED ROADMAP — L2B AUTHORIZED; L3 EXCLUDED
 **Target Vehicle:** 2020 Lexus RX 350 AWD  
 
 ---
 
 ## 1. Phased Delivery Roadmap
 
-The implementation plan is structured into thin, verifiable phases with an **early visual approval gate** before multi-component modeling begins:
+The original roadmap below required an early owner review before multi-component modeling. The owner's 2026-10-26 L2B instruction explicitly permits progress on the provisional R1 baseline; it does not assign visual fidelity scores or production acceptance:
 
 ```mermaid
 graph TD

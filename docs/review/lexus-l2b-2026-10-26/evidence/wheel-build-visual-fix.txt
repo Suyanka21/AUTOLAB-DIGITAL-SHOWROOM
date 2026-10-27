@@ -1,0 +1,19 @@
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\build_lexus_l2b.py:29: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+22:45:03 | INFO: Starting glTF 2.0 export
+22:45:03 | INFO: Extracting primitive: GEO_SteeringWheel_Lexus
+22:45:04 | INFO: Primitives created: 3
+22:45:04 | INFO: Draco encoder: Encoding mesh GEO_SteeringWheel_Lexus.
+22:45:04 | INFO: Finished glTF 2.0 export in 0.4104580879211426 s
+
+Info: Saved as "wheel.blend"
+L2B_BUILD {"stage": "wheel", "blender": "5.2.2 LTS", "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]", "nodes": {"GEO_SteeringWheel_Lexus": {"triangles": 6972, "dimensionsMetres": [0.3884281814098358, 0.1537095606327057, 0.3569181561470032], "boundaryEdges": 0, "degenerateFaces": 0}}, "seconds": 3.5131971000228077, "driverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52", "sourceHashes": {"blender\\build_lexus_l2b.py": "b2961a00811402b6e45ba1801a62df84e0a30cf2c72442bbc9af159973570110", "blender\\lexus_l2b_constants.py": "1e68726a6ef147e2dffcbaca8a7ee74ba8605f9eeb2121b3b05ce2d4a017470b"}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2754 vertices, 11760 indices, raw size: 155712, encoded size: 33686, compression ratio: 4.62
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2158 vertices, 8028 indices, raw size: 119640, encoded size: 26508, compression ratio: 4.51
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 292 vertices, 1128 indices, raw size: 16272, encoded size: 4269, compression ratio: 3.81

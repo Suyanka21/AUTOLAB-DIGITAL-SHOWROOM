@@ -1,0 +1,70 @@
+{
+  "asset": "public/assets/3d/lexus-rx350/wheel-l2b.glb",
+  "assetSha256": "735aefb52c4d9ed84049f46704fa41d24f310eaae5b38026797e70d971b56928",
+  "proxySha256": "506953228ee61459081f1c3ef4e7820432d377ab190f59ba9b4135796a8ac81a",
+  "renderer": "Cycles CPU",
+  "blender": "5.2.2 LTS",
+  "sampleLimit": 32,
+  "achievedSamples": null,
+  "tracingTimeLimitSeconds": 90,
+  "resolution": [
+    1200,
+    1000
+  ],
+  "lights": [
+    [
+      "Key",
+      [
+        -1.6,
+        -1.8,
+        2.5
+      ],
+      150,
+      1.6
+    ],
+    [
+      "Fill",
+      [
+        1,
+        -0.6,
+        1.7
+      ],
+      70,
+      1.5
+    ],
+    [
+      "Rim",
+      [
+        -0.6,
+        1.3,
+        2.3
+      ],
+      150,
+      1.2
+    ]
+  ],
+  "lightTarget": [
+    0,
+    -0.25,
+    0.85
+  ],
+  "note": "Delivered Draco geometry and decoded delivered KTX level-0 pixels; ground and lights are presentation-only. No human scores or GPU measurements.",
+  "views": [
+    {
+      "file": "03-wheel.png",
+      "location": [
+        -0.76,
+        0.35,
+        1.19
+      ],
+      "target": [
+        -0.38,
+        -0.43,
+        0.9
+      ],
+      "lensMm": 60,
+      "seconds": 99.65144659997895,
+      "sha256": "84e6723cd657bfb02fad00b8ce7f4947c5b7c99b47145ca422c733852fdaf20e"
+    }
+  ]
+}

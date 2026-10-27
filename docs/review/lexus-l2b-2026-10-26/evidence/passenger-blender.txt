@@ -1,0 +1,7 @@
+18:00:40 | INFO: Data are loaded, start creating Blender stuff
+18:00:40 | INFO: Blender create Mesh node GEO_Seat_Front_Passenger
+18:00:40 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front_Passenger
+18:00:40 | INFO: glTF import finished in 0.49s
+Info: Saved as "passenger.blend"
+L2B_BUILD {"stage": "passenger", "blender": "5.2.2 LTS", "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]", "nodes": {"GEO_Seat_Front_Passenger": {"triangles": 20196, "dimensionsMetres": [0.5725385546684265, 0.8076118230819702, 0.9949963688850403], "boundaryEdges": 2600, "degenerateFaces": 0}, "GEO_Seat_Stitching_Front_Passenger": {"triangles": 12216, "dimensionsMetres": [0.5257971882820129, 0.7108586430549622, 0.8348019123077393], "boundaryEdges": 20360, "degenerateFaces": 0}}, "seconds": 2.7261814000084996, "driverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52", "sourceHashes": {"blender\\build_lexus_l2b.py": "d0f6d2ee200ad5fe8dfc2d271c07c22f47e165b60238e659049a83184340cbf5", "blender\\lexus_l2b_constants.py": "0ed6cc2a79e7fd51c003f91b4ecb8fd5e6332716f59925e5ad8ffab374c95d57"}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)

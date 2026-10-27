@@ -1,0 +1,18 @@
+Asset gate PASS: 6 nodes, 22 triangles, 11 draw calls; sha256 3362b8c0cfc691523999131f084f1f297a318361724b92cef574a85fe2456e26
+WARN: Synthetic fixture uses generated PNG with Draco geometry; production KTX2 checks are deferred.
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+Report: C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\reports\lexus-synthetic-glb-report.json

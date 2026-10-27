@@ -1,0 +1,19 @@
+15:32:29 | INFO: Data are loaded, start creating Blender stuff
+15:32:29 | INFO: Blender create Mesh node GEO_Seat_Front_Driver
+15:32:29 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front
+15:32:29 | INFO: Blender create Mesh node GEO_Seat_Front_Passenger
+15:32:30 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front_Passenger
+15:32:30 | INFO: Blender create Mesh node GEO_SteeringWheel_Lexus
+15:32:30 | INFO: Blender create Mesh node GEO_Dashboard_Lexus
+15:32:30 | INFO: glTF import finished in 1.24s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:27: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:37: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Review-only neutral');m.use_nodes=True
+01:37.172  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2b\review\combined\05-combined.png'
+L2B_RENDER {"file": "05-combined.png", "location": [-2.15, -1.7, 1.85], "target": [0, -0.15, 0.83], "lensMm": 48, "seconds": 86.37536559998989, "sha256": "1266aa7d466698bec5d3d6ff6c589213f73667ac41bb830a5845aed68e81a115"}
+02:55.890  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2b\review\combined\06-cockpit-overview.png'
+L2B_RENDER {"file": "06-cockpit-overview.png", "location": [-1.5, 0.65, 1.6], "target": [0, -0.46, 0.85], "lensMm": 46, "seconds": 78.64009079994867, "sha256": "2a65fe83306015693ca76d8590eb8289d42827aef98150ed55a0729205578421"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

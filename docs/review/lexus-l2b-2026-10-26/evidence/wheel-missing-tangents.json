@@ -1,0 +1,53 @@
+{
+  "passed": false,
+  "scope": "lexus-wheel",
+  "synthetic": false,
+  "sha256": "7cfd70c8f0ed9c554307e8e321e190fdd4c15ee3e8dca72b5be1c93e7e22dc7e",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [
+    "missing tangents: GEO_SteeringWheel_Lexus"
+  ],
+  "warnings": [
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos MESH_PRIMITIVE_GENERATED_TANGENT_SPACE: Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_SteeringWheel_Lexus": 6972
+  },
+  "textures": [
+    {
+      "name": "lexus-bolster-normal",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "nodeCount": 1,
+  "materialCount": 3,
+  "triangleCount": 6972,
+  "drawCalls": 3,
+  "fileSizeBytes": 1077424,
+  "gpuTextureBytesEstimated": 1398102,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 3
+  },
+  "asset": "public\\assets\\3d\\lexus-rx350\\wheel-l2b.glb"
+}

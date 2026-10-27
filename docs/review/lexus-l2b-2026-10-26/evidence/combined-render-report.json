@@ -1,0 +1,86 @@
+{
+  "asset": "public/assets/3d/lexus-rx350/interior-l2b.glb",
+  "assetSha256": "aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f",
+  "proxySha256": "e628ecb191e57cf999993ea63e70f425c9773ea0372d58793ae0acb081332fbb",
+  "renderer": "Cycles CPU",
+  "blender": "5.2.2 LTS",
+  "sampleLimit": 32,
+  "achievedSamples": null,
+  "tracingTimeLimitSeconds": 90,
+  "resolution": [
+    1200,
+    1000
+  ],
+  "lights": [
+    [
+      "Key",
+      [
+        -1.6,
+        -1.8,
+        2.5
+      ],
+      150,
+      1.6
+    ],
+    [
+      "Fill",
+      [
+        1,
+        -0.6,
+        1.7
+      ],
+      70,
+      1.5
+    ],
+    [
+      "Rim",
+      [
+        -0.6,
+        1.3,
+        2.3
+      ],
+      150,
+      1.2
+    ]
+  ],
+  "lightTarget": [
+    0,
+    -0.25,
+    0.85
+  ],
+  "note": "Delivered Draco geometry and decoded delivered KTX level-0 pixels; ground and lights are presentation-only. No human scores or GPU measurements.",
+  "views": [
+    {
+      "file": "05-combined.png",
+      "location": [
+        -2.15,
+        -1.7,
+        1.85
+      ],
+      "target": [
+        0,
+        -0.15,
+        0.83
+      ],
+      "lensMm": 48,
+      "seconds": 86.37536559998989,
+      "sha256": "1266aa7d466698bec5d3d6ff6c589213f73667ac41bb830a5845aed68e81a115"
+    },
+    {
+      "file": "06-cockpit-overview.png",
+      "location": [
+        -1.5,
+        0.65,
+        1.6
+      ],
+      "target": [
+        0,
+        -0.46,
+        0.85
+      ],
+      "lensMm": 46,
+      "seconds": 78.64009079994867,
+      "sha256": "2a65fe83306015693ca76d8590eb8289d42827aef98150ed55a0729205578421"
+    }
+  ]
+}

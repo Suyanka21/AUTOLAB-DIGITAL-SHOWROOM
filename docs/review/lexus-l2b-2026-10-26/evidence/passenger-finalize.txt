@@ -1,0 +1,74 @@
+{
+  "stage": "passenger",
+  "asset": "public/assets/3d/lexus-rx350/passenger-seat-l2b.glb",
+  "sha256": "54f5c69f86363ae78bada085719e30d4d0641966e7653cabb9e4f9c8fc05172c",
+  "fileSizeBytes": 3461200,
+  "driverInputSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "derivation": "Delivered R1 reflected across X=0; winding and tangent handedness reversed. Outward power controls supported by photo 29.",
+  "proxySha256": "d6e87bffb8872dbfefcb0580175fa3368702920bbbea050a8a532f596d1ee51a",
+  "textures": [
+    {
+      "name": "lexus-insert-normal",
+      "sha256": "189f177e5653e9006adf9e107f9b5073831168e912188dbb527a978bab6b9850",
+      "bytes": 1072890,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-insert-base",
+      "sha256": "d4d47fc1139a3f8acf24b3fafd41689d260ce45a3e5e00ea40af1b13eab2c9bf",
+      "bytes": 471792,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-bolster-normal",
+      "sha256": "3e10e7367715abefdc2b03e6a2421121ffd42e2eee560cbfea99ac0408d43314",
+      "bytes": 1043048,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-bolster-base",
+      "sha256": "8299545b0abf473f0f042ac0bc871a5d403c2ecc16b6096d87ce4dade4f25f00",
+      "bytes": 622642,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-insert-orm",
+      "sha256": "9acebd5de265d26c0e7ebf3cb264480ad5b4ca52fab472e7e1eb2726205f2973",
+      "bytes": 925,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-bolster-orm",
+      "sha256": "2e1537b6e051e093577e0e2663c81ddad20a9d0cc1c6641e3b7fcc931ab2847b",
+      "bytes": 925,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    }
+  ],
+  "seconds": 8.4399477,
+  "scriptSha256": "f1ab7ef3d3b033b181a33e2194d1370f421353676bf012a49735de52fb3367a6",
+  "textureMethod": "Unmodified existing R1 KTX2 payloads; no new texture encoding, downloaded pixels or WebP waiver."
+}

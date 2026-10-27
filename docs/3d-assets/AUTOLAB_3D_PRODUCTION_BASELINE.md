@@ -1,6 +1,6 @@
 # AutoLab 3D production baseline
 
-Recorded 2026-10-24 during Lexus L2A-R1. **Technical procedures have evidence; visual techniques remain candidates awaiting owner approval.** This document grants no visual, production or L2B approval.
+Recorded 2026-10-24 during Lexus L2A-R1. **Technical procedures have evidence; visual techniques remain candidates awaiting owner approval.** Owner update 2026-10-26: R1 is accepted as a provisional mock-up baseline and L2B is authorized; this does not grant visual or production acceptance.
 
 ## Procedures demonstrated on the driver seat
 
@@ -37,4 +37,14 @@ Review hero, profile and macro against photos 08/23/31. Check shoulder width, wa
 
 Reuse export/finalization, provenance, material-slot validation, hash checks, review packaging and browser decoding procedures for future components. A passenger seat may reuse the upholstery methods only after checking its photographed asymmetries and its own bindings; do not mirror driver controls blindly. Steering wheels and dashboards require component-specific topology, UV layouts, scale references and material slots. Do not copy seat foam contours, perforation fields, seam routes or driver-seat camera framing onto them.
 
-The reference candidate and review evidence are indexed in [L2A-R1 review](../review/lexus-l2a-r1-2026-10-24/README.md). The historical Mercedes gaps/gates and WebP waiver remain separate. Lexus uses KTX2 without borrowing that waiver. **Stop for owner visual review; L2B remains locked.**
+The reference candidate and review evidence are indexed in [L2A-R1 review](../review/lexus-l2a-r1-2026-10-24/README.md). The historical Mercedes gaps/gates and WebP waiver remain separate. Lexus uses KTX2 without borrowing that waiver. **L2B was authorized on 2026-10-26; stop at its review checkpoint before L3.**
+
+## L2B demonstrated extensions — 2026-10-27
+
+- Use the same entrypoint with `-- --l2b passenger|wheel|dashboard`; do not invoke the default driver rebuild for this slice. See [L2B handoff](LEXUS_L2B_HANDOFF.md) for the ordered commands.
+- Reflection requires position/normal X reversal, triangle winding reversal and tangent handedness reversal. Photo 29 supports outward passenger controls; hidden side differences remain unknown.
+- Assemble compressed buffers without recompressing the approved driver. Tests compare decoded attributes, transforms, material factors and texture hashes; finalization also checks original Draco payload hashes. Deduplicate shared seat textures across all components.
+- Triangulate authored cockpit meshes explicitly. Check finite positions, degenerate faces, closed source solids, decoded triangle areas and normals. Imported seat vertex splits and intentionally open thread ends are not evidence of a watertight mesh; keep that distinction in reports.
+- Scope component budgets before authoring. Require each declared material binding, aggregate scene bounds and Draco/KTX payloads individually. Full-scene limits remain unchanged.
+- New wheel/dashboard UVs use smart-projected islands and a reused non-perforated seat normal map. Coarse grain and island seams remain limitations for future directional or quilted patterns. Reprojection/UV refinement may be needed; no new pattern system was built.
+- [L2B review](../review/lexus-l2b-2026-10-26/README.md) documents technical PASS separately from unscored visual fidelity, blank display and approximate cockpit placement. No hardware performance or OEM measurement claim follows from these results.

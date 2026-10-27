@@ -1,0 +1,14 @@
+Asset gate FAIL: 1 nodes, 6972 triangles, 3 draw calls; sha256 7cfd70c8f0ed9c554307e8e321e190fdd4c15ee3e8dca72b5be1c93e7e22dc7e
+ERROR: missing tangents: GEO_SteeringWheel_Lexus
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos MESH_PRIMITIVE_GENERATED_TANGENT_SPACE: Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+Report: C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\reports\lexus-wheel-report.json

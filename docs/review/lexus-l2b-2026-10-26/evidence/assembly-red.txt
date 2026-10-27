@@ -1,0 +1,28 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run --maxWorkers=1 tests/lexus-assembly.test.ts
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+ ❯ tests/lexus-assembly.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/lexus-assembly.test.ts [ tests/lexus-assembly.test.ts ]
+Error: Cannot find module '../scripts/lib/merge-glbs.mjs' imported from C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tests/lexus-assembly.test.ts
+ ❯ tests/lexus-assembly.test.ts:3:1
+      1| import { expect, it } from "vitest";
+      2| import { createLexusPrototypeFixture } from "../scripts/make-fixture.m…
+      3| import { mergeGlbs } from "../scripts/lib/merge-glbs.mjs";
+       | ^
+      4| import { NodeIO } from "@gltf-transform/core";
+      5| import { ALL_EXTENSIONS } from "@gltf-transform/extensions";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  17:54:29
+   Duration  2.18s (worker 96%, environment 4%)

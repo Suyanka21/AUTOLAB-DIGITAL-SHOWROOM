@@ -1,0 +1,241 @@
+{
+  "phase": "L2B",
+  "date": "2026-10-27",
+  "approval": "R1 provisional baseline and bounded L2B production authorized 2026-10-26; no visual or production acceptance",
+  "driverInputSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "driverSourceCommits": [
+    "d7a9ee4",
+    "b5a7adf"
+  ],
+  "referenceStatus": "Owner-supplied dealer gallery attributed to 2020 RX 350 AWD VIN 2T2HZMDA5LC239309. Independent authenticity, exact trim and physical measurements are unverified. Photo 34 is lower-console context outside this upper-dashboard slice.",
+  "references": [
+    {
+      "image_id": "LRX-07",
+      "filename": "LEXUS_RX_2020_GALLERY_07.jpg",
+      "primary_folder": "04_FRONT_SEAT_PAIR",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/0954/7982d5c5a50146c85020596cda47e9eex.jpg",
+      "sha256": "997e027bc3cc4bbe71d6971b779ba4d6a4de62208a1498c3c4035f79cf3cafd7"
+    },
+    {
+      "image_id": "LRX-08",
+      "filename": "LEXUS_RX_2020_GALLERY_08.jpg",
+      "primary_folder": "01_FRONT_SEAT_COMPLETE",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/1342/233af055fc3c7d1d7df092c405f0b40bx.jpg",
+      "sha256": "c4725604a133351ac346c30fde27b1d875d5cfeadf91abfaac508b1e997ae96a"
+    },
+    {
+      "image_id": "LRX-16",
+      "filename": "LEXUS_RX_2020_GALLERY_16.jpg",
+      "primary_folder": "05_DASHBOARD_AND_TRIM",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/1585/be18e57c90afa9a6d887a96f7e45ef7ax.jpg",
+      "sha256": "8eec4ca40a26db0da68f3beab9200bd9611d70e353e6a9da531ff0a62d676b62"
+    },
+    {
+      "image_id": "LRX-23",
+      "filename": "LEXUS_RX_2020_GALLERY_23.jpg",
+      "primary_folder": "01_FRONT_SEAT_COMPLETE",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/1923/24db5d0944acd9ac1c5c33089e37fffex.jpg",
+      "sha256": "004808143a13d58da1c8cd1f55f1355615c6accae905b59e84c81de2e7deea41"
+    },
+    {
+      "image_id": "LRX-29",
+      "filename": "LEXUS_RX_2020_GALLERY_29.jpg",
+      "primary_folder": "01_FRONT_SEAT_COMPLETE",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/1668/79479408d628776a993ad62d058f895ax.jpg",
+      "sha256": "a4e31d212ab04b8c0589bdad6029920b1ceb846a2220fe55ae0d1b8ba5deb9db"
+    },
+    {
+      "image_id": "LRX-31",
+      "filename": "LEXUS_RX_2020_GALLERY_31.jpg",
+      "primary_folder": "03_BOLSTERS_HEADREST_AND_STITCHING",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/0762/2aca2387545551359b54abc8a3aca9c4x.jpg",
+      "sha256": "f7749b28eaad163eb7cbecd630f93fcbb797c01be98723c1b19c4c979ce8c285"
+    },
+    {
+      "image_id": "LRX-33",
+      "filename": "LEXUS_RX_2020_GALLERY_33.jpg",
+      "primary_folder": "01_FRONT_SEAT_COMPLETE",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/0953/92033536600df7c70f7bc5ffbdf9f44fx.jpg",
+      "sha256": "a1898622ab00f11032605f76d020c6166379131556821d0d9ca8b50fa325853f"
+    },
+    {
+      "image_id": "LRX-35",
+      "filename": "LEXUS_RX_2020_GALLERY_35.jpg",
+      "primary_folder": "05_DASHBOARD_AND_TRIM",
+      "source_page": "https://www.herbchambers.com/certified/Lexus/2020-Lexus-RX-350--5d87d62cac1844a957f07faa15dad1f8.htm",
+      "source_url": "https://pictures.dealer.com/a/asblexussharonlexus/0088/000d1e376f654e1612ba72af39ed7219x.jpg",
+      "sha256": "55fee143f8b9b0f962065347b4e9a9565a5b1db2409ffdefd9c96a147b3be5ab"
+    }
+  ],
+  "nodes": [
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "references": [
+        "LRX-08",
+        "LRX-23",
+        "LRX-31"
+      ],
+      "method": "Unmodified owner-accepted provisional R1 asset",
+      "measurementStatus": "Provisional; not OEM measured"
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front",
+      "references": [
+        "LRX-08",
+        "LRX-23",
+        "LRX-31"
+      ],
+      "method": "Unmodified R1 projected thread geometry",
+      "measurementStatus": "Provisional; not OEM measured"
+    },
+    {
+      "node": "GEO_Seat_Front_Passenger",
+      "references": [
+        "LRX-29"
+      ],
+      "method": "R1 X reflection with corrected winding/tangent handedness; outward controls",
+      "measurementStatus": "Provisional; not OEM measured"
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front_Passenger",
+      "references": [
+        "LRX-29"
+      ],
+      "method": "R1 stitching reflected with passenger",
+      "measurementStatus": "Provisional; not OEM measured"
+    },
+    {
+      "node": "GEO_SteeringWheel_Lexus",
+      "references": [
+        "LRX-33",
+        "LRX-07"
+      ],
+      "method": "Procedural authored approximate rim, three spokes, hub, trim, generic controls",
+      "measurementStatus": "Provisional; not OEM measured"
+    },
+    {
+      "node": "GEO_Dashboard_Lexus",
+      "references": [
+        "LRX-35",
+        "LRX-16",
+        "LRX-07"
+      ],
+      "method": "Procedural authored upper deck, binnacle, display housing, vents/clock and trim",
+      "measurementStatus": "Provisional; not OEM measured"
+    }
+  ],
+  "textures": "Only existing analytic R1 KTX2 payloads. No dealer pixels, AI patterns, third-party texture/model downloads or WebP waiver.",
+  "tools": {
+    "blender": "5.2.2 LTS d13f752e3b9c",
+    "embeddedPython": "3.13.13",
+    "ktxSoftware": "4.4.2",
+    "node": "22.23.2",
+    "gltfTransform": "4.5.1",
+    "draco3dgltf": "1.5.9",
+    "three": "0.186.1"
+  },
+  "assets": [
+    {
+      "stage": "passenger",
+      "asset": "public\\assets\\3d\\lexus-rx350\\passenger-seat-l2b.glb",
+      "sha256": "54f5c69f86363ae78bada085719e30d4d0641966e7653cabb9e4f9c8fc05172c",
+      "triangles": 32412,
+      "drawCalls": 3,
+      "fileSizeBytes": 3461200,
+      "textureCount": 6,
+      "gpuTextureBytesEstimated": 8388612,
+      "gateExitCode": 0,
+      "browserVerificationPassed": true,
+      "browserRenderer": {
+        "calls": 3,
+        "triangles": 32412,
+        "textures": 7,
+        "geometries": 3
+      },
+      "browserLoadMs": 1250.5999999642372,
+      "renderSeconds": 224.63725389994215
+    },
+    {
+      "stage": "wheel",
+      "asset": "public\\assets\\3d\\lexus-rx350\\wheel-l2b.glb",
+      "sha256": "8995424464d449ed98c547fa8572ea2f5f089d40c59e778cf78a17cc9fe1a469",
+      "triangles": 6972,
+      "drawCalls": 3,
+      "fileSizeBytes": 1101416,
+      "textureCount": 1,
+      "gpuTextureBytesEstimated": 1398102,
+      "gateExitCode": 0,
+      "browserVerificationPassed": true,
+      "browserRenderer": {
+        "calls": 3,
+        "triangles": 6972,
+        "textures": 2,
+        "geometries": 3
+      },
+      "browserLoadMs": 688,
+      "renderSeconds": 99.17879639996681
+    },
+    {
+      "stage": "dashboard",
+      "asset": "public\\assets\\3d\\lexus-rx350\\dashboard-l2b.glb",
+      "sha256": "476c3878449322f5ab44158422f9fbe497de60683966fc5d411069d8968316b8",
+      "triangles": 6166,
+      "drawCalls": 3,
+      "fileSizeBytes": 1097348,
+      "textureCount": 1,
+      "gpuTextureBytesEstimated": 1398102,
+      "gateExitCode": 0,
+      "browserVerificationPassed": true,
+      "browserRenderer": {
+        "calls": 3,
+        "triangles": 6166,
+        "textures": 2,
+        "geometries": 3
+      },
+      "browserLoadMs": 635.1000000238419,
+      "renderSeconds": 97.5067045999458
+    },
+    {
+      "stage": "combined",
+      "asset": "public\\assets\\3d\\lexus-rx350\\interior-l2b.glb",
+      "sha256": "aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f",
+      "triangles": 77962,
+      "drawCalls": 12,
+      "fileSizeBytes": 3820024,
+      "textureCount": 6,
+      "gpuTextureBytesEstimated": 8388612,
+      "gateExitCode": 0,
+      "browserVerificationPassed": true,
+      "browserRenderer": {
+        "calls": 12,
+        "triangles": 77962,
+        "textures": 7,
+        "geometries": 12
+      },
+      "browserLoadMs": 850.5,
+      "renderSeconds": 165.01545639993856
+    }
+  ],
+  "sourceHashes": {
+    "tools/build-lexus-asset.py": "a3675f81d9df2f9fd0cabf78959a32b8fc996b6a44362cd8ef3c31cf269ce3a0",
+    "blender/build_lexus_l2b.py": "b2961a00811402b6e45ba1801a62df84e0a30cf2c72442bbc9af159973570110",
+    "blender/lexus_l2b_constants.py": "1e68726a6ef147e2dffcbaca8a7ee74ba8605f9eeb2121b3b05ce2d4a017470b",
+    "blender/render_lexus_l2b.py": "955c22b63dc876c6f7651c6ce4ee773a1aaa1a80724ecbd06edd330b9476e122",
+    "scripts/finalize-lexus-l2b.mjs": "f1ab7ef3d3b033b181a33e2194d1370f421353676bf012a49735de52fb3367a6",
+    "scripts/lib/merge-glbs.mjs": "2ecdd96f46c9be9bb52136bf58d4000904bcb7330aa158cbe2eba21939b33412",
+    "scripts/validate-glb.mjs": "b360b5d73aa30553303644d4a333d5f667ba5628c6a651f193a1a5cab422664f",
+    "tools/verify-lexus-l2a.mjs": "d9c6d9f369c02a8f2d3c99c793163cdfd8d342caa792fcdaf26bfb7f5977bdfb",
+    "tools/package-lexus-l2b-review.py": "c0fb3fa31bb70c65d1696700d6a9a9482318630f087e0e72b6d9c5d5444ccaec"
+  },
+  "deliveryIndex": "docs/review/lexus-l2b-2026-10-26/delivery-index.json",
+  "unitsAndPlacement": "Metres; Blender (x,y,z) -> glTF (x,z,-y). Driver X=-0.38, passenger X=+0.38; wheel glTF centre [-0.38,0.90,0.43], 20-degree estimated tilt; display centre [0.08,1.020,0.78], outer modeled size 0.35 x 0.145 x 0.035m. All estimates/conventions, not measured specifications.",
+  "assetSourceCommit": "5ecda81",
+  "gateContractCommit": "8317af9"
+}

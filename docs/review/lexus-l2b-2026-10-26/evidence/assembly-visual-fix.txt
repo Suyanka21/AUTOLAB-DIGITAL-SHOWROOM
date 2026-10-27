@@ -1,0 +1,90 @@
+{
+  "stage": "assemble",
+  "asset": "public/assets/3d/lexus-rx350/interior-l2b.glb",
+  "sha256": "aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f",
+  "fileSizeBytes": 3820024,
+  "driverInputSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "driverCompressedPayloadsUnchanged": [
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "primitive": 0,
+      "sha256": "f986dac8c8a844cb2c2cf62cb477b74ab3f935388650007687cb8dcc1bf694b4"
+    },
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "primitive": 1,
+      "sha256": "eb8d0a2eb185276ece723336dcdad3baed9ff72442a4553076ce87b076f2a7d9"
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front",
+      "primitive": 0,
+      "sha256": "423eb12403bf8f3d3beed2e4fb7661b8d0f88de8c2b1825693d9231cab8dd87e"
+    }
+  ],
+  "proxySha256": "e628ecb191e57cf999993ea63e70f425c9773ea0372d58793ae0acb081332fbb",
+  "textures": [
+    {
+      "name": "lexus-insert-normal",
+      "sha256": "189f177e5653e9006adf9e107f9b5073831168e912188dbb527a978bab6b9850",
+      "bytes": 1072890,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-insert-base",
+      "sha256": "d4d47fc1139a3f8acf24b3fafd41689d260ce45a3e5e00ea40af1b13eab2c9bf",
+      "bytes": 471792,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-bolster-normal",
+      "sha256": "3e10e7367715abefdc2b03e6a2421121ffd42e2eee560cbfea99ac0408d43314",
+      "bytes": 1043048,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-bolster-base",
+      "sha256": "8299545b0abf473f0f042ac0bc871a5d403c2ecc16b6096d87ce4dade4f25f00",
+      "bytes": 622642,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-insert-orm",
+      "sha256": "9acebd5de265d26c0e7ebf3cb264480ad5b4ca52fab472e7e1eb2726205f2973",
+      "bytes": 925,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    },
+    {
+      "name": "lexus-bolster-orm",
+      "sha256": "2e1537b6e051e093577e0e2663c81ddad20a9d0cc1c6641e3b7fcc931ab2847b",
+      "bytes": 925,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    }
+  ],
+  "seconds": 8.794311,
+  "scriptSha256": "f1ab7ef3d3b033b181a33e2194d1370f421353676bf012a49735de52fb3367a6",
+  "textureMethod": "Unmodified existing R1 KTX2 payloads; no new texture encoding, downloaded pixels or WebP waiver."
+}

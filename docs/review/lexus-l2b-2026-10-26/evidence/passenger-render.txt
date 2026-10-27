@@ -1,0 +1,15 @@
+22:28:56 | INFO: Data are loaded, start creating Blender stuff
+22:28:56 | INFO: Blender create Mesh node GEO_Seat_Front_Passenger
+22:28:56 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front_Passenger
+22:28:57 | INFO: glTF import finished in 0.45s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:27: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:37: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Review-only neutral');m.use_nodes=True
+01:47.360  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2b\review\passenger\01-passenger.png'
+L2B_RENDER {"file": "01-passenger.png", "location": [1.65, -1.95, 1.55], "target": [0.38, 0.05, 0.86], "lensMm": 55, "seconds": 98.51065249997191, "sha256": "380695d4812cd7b6110a66acbacc84c137d4fc98514ccca5008df3ab9465a354"}
+03:53.516  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2b\review\passenger\02-passenger-seam.png'
+L2B_RENDER {"file": "02-passenger-seam.png", "location": [0.93, -0.72, 0.95], "target": [0.57, -0.12, 0.51], "lensMm": 65, "seconds": 126.12660139997024, "sha256": "f084a12a7123fa32ed2863b2360bc07d035905460e1372c9aed45672b55140c7"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit
