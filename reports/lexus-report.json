@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "scope": "lexus",
+  "synthetic": false,
+  "sha256": "aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [],
+  "warnings": [
+    "file size exceeds 3500000-byte transfer target",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_Seat_Front_Driver": 20196,
+    "GEO_Seat_Stitching_Front": 12216,
+    "GEO_Seat_Front_Passenger": 20196,
+    "GEO_Seat_Stitching_Front_Passenger": 12216,
+    "GEO_SteeringWheel_Lexus": 6972,
+    "GEO_Dashboard_Lexus": 6166
+  },
+  "textures": [
+    {
+      "name": "lexus-insert-normal",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-insert-base",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-bolster-normal",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-bolster-base",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-insert-orm",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "lexus-bolster-orm",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "nodeCount": 6,
+  "materialCount": 7,
+  "triangleCount": 77962,
+  "drawCalls": 12,
+  "fileSizeBytes": 3820024,
+  "gpuTextureBytesEstimated": 8388612,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 12
+  },
+  "boundsMetres": {
+    "min": [
+      -0.75,
+      0.3100000023841858,
+      -0.5049999952316284
+    ],
+    "max": [
+      0.75,
+      1.304996371269226,
+      0.9400017261505127
+    ]
+  },
+  "asset": "public\\assets\\3d\\lexus-rx350\\interior-l2b.glb"
+}

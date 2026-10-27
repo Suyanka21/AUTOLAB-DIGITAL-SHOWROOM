@@ -18,6 +18,10 @@ from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "blender"))
+if '--l2b' in sys.argv:
+    import runpy
+    runpy.run_path(str(Path(__file__).resolve().parents[1] / 'blender/build_lexus_l2b.py'), run_name='__main__')
+    raise SystemExit(0)
 import lexus_constants as C
 
 started = time.perf_counter()
