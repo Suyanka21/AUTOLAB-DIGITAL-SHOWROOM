@@ -22,13 +22,18 @@ const ALL_CAMERA_PRESETS: Record<string, {
 // https://drei.docs.pmnd.rs/loaders/gltf-use-gltf,
 // https://threejs.org/docs/pages/RoomEnvironment.html,
 // https://threejs.org/docs/pages/GLTFLoader.html.
+const LEXUS_L2B_ASSET_URL = "/assets/3d/lexus-rx350/interior-l2b.glb";
 const LEXUS_L2A_ASSET_URL = "/assets/3d/lexus-rx350/driver-seat-l2a.glb";
 const MERCEDES_SPIKE_ASSET_URL = "/assets/3d/s-class-v223/spike.glb";
 
-// Active Lexus RX 350 L2A driver-seat contract
-const LEXUS_PRIMARY_SLOT = "MAT_Seat_Primary";
-const LEXUS_SECONDARY_SLOT = "MAT_Seat_Secondary";
-const LEXUS_STITCHING_SLOT = "MAT_Seat_Stitching";
+// Active Lexus RX 350 L2B interior assembly contract (all 7 slots)
+const LEXUS_SEAT_PRIMARY = "MAT_Seat_Primary";
+const LEXUS_SEAT_SECONDARY = "MAT_Seat_Secondary";
+const LEXUS_SEAT_STITCHING = "MAT_Seat_Stitching";
+const LEXUS_STEERING_LEATHER = "MAT_Steering_Leather";
+const LEXUS_DASHBOARD_TRIM = "MAT_Dashboard_Trim";
+const LEXUS_COCKPIT_ACCENT = "MAT_Cockpit_Accent";
+const LEXUS_COCKPIT_BLACK = "MAT_Cockpit_Black";
 
 // Legacy Mercedes-Benz S-Class spike contract (preserved for historical regression)
 const LEGACY_SEAT_SLOT = "MAT_Upholstery_Primary";
@@ -63,7 +68,10 @@ function getAssetUrl() {
   if (testParam("legacy-spike") || testParam("s-class")) {
     return MERCEDES_SPIKE_ASSET_URL;
   }
-  return LEXUS_L2A_ASSET_URL;
+  if (testParam("l2a-driver-seat") || testParam("driver-seat-only")) {
+    return LEXUS_L2A_ASSET_URL;
+  }
+  return LEXUS_L2B_ASSET_URL;
 }
 
 function RoomLighting() {
@@ -123,6 +131,7 @@ function CameraRig({ view }: { view: CameraViewId }) {
 
 interface ExtractedModel {
   isLexus: boolean;
+  isCompleteAssembly: boolean;
   materials: Record<string, MeshStandardMaterial>;
   bindings: Record<string, string>;
 }
@@ -146,12 +155,18 @@ function modelMaterials(scene: Group): ExtractedModel | null {
   const materialNames = Object.keys(materials);
   if (materialNames.length === 0) return null;
 
-  // Active Lexus L2A Driver Seat Prototype
-  if (materials[LEXUS_PRIMARY_SLOT]) {
-    if (!materials[LEXUS_SECONDARY_SLOT] || !materials[LEXUS_STITCHING_SLOT]) {
-      throw new Error("Lexus L2A asset is missing required secondary or stitching material slot");
+  // Active Lexus RX 350 Assembly (7-slot L2B interior or 3-slot L2A driver-seat rollback)
+  if (materials[LEXUS_SEAT_PRIMARY]) {
+    if (!materials[LEXUS_SEAT_SECONDARY] || !materials[LEXUS_SEAT_STITCHING]) {
+      throw new Error("Lexus asset is missing required secondary or stitching material slot");
     }
-    return { isLexus: true, materials, bindings };
+    const isComplete = Boolean(
+      materials[LEXUS_STEERING_LEATHER] &&
+      materials[LEXUS_DASHBOARD_TRIM] &&
+      materials[LEXUS_COCKPIT_ACCENT] &&
+      materials[LEXUS_COCKPIT_BLACK]
+    );
+    return { isLexus: true, isCompleteAssembly: isComplete, materials, bindings };
   }
 
   // Legacy Mercedes Spike compatibility (preserved for historical regression)
@@ -159,17 +174,32 @@ function modelMaterials(scene: Group): ExtractedModel | null {
     if (!materials[LEGACY_OLED_SLOT]) {
       throw new Error("Legacy Mercedes spike missing OLED material contract");
     }
-    return { isLexus: false, materials, bindings };
+    return { isLexus: false, isCompleteAssembly: false, materials, bindings };
   }
 
   throw new Error("Unrecognized 3D asset material contract: " + materialNames.join(", "));
 }
 
-function SpikeModel({ url, primaryHex, secondaryHex = primaryHex, threadHex = "#D4AF37", onLoaded, onStats }: {
+function SpikeModel({
+  url,
+  primaryHex,
+  secondaryHex = primaryHex,
+  threadHex = "#D4AF37",
+  trimHex = "#2A2B2E",
+  steeringHex = secondaryHex,
+  accentHex = "#787D82",
+  cockpitBlackHex = "#121316",
+  onLoaded,
+  onStats,
+}: {
   url: string;
   primaryHex: string;
   secondaryHex?: string;
   threadHex?: string;
+  trimHex?: string;
+  steeringHex?: string;
+  accentHex?: string;
+  cockpitBlackHex?: string;
   onLoaded: (state: MaterialState | null) => void;
   onStats: (stats: RendererStats) => void;
 }) {
@@ -205,14 +235,26 @@ function SpikeModel({ url, primaryHex, secondaryHex = primaryHex, threadHex = "#
     const { materials, bindings, isLexus } = parsed;
 
     if (isLexus) {
-      if (!testParam("break-seat-binding") && materials[LEXUS_PRIMARY_SLOT]) {
-        materials[LEXUS_PRIMARY_SLOT].color.set(primaryHex);
+      if (!testParam("break-seat-binding") && materials[LEXUS_SEAT_PRIMARY]) {
+        materials[LEXUS_SEAT_PRIMARY].color.set(primaryHex);
       }
-      if (materials[LEXUS_SECONDARY_SLOT]) {
-        materials[LEXUS_SECONDARY_SLOT].color.set(secondaryHex);
+      if (materials[LEXUS_SEAT_SECONDARY]) {
+        materials[LEXUS_SEAT_SECONDARY].color.set(secondaryHex);
       }
-      if (materials[LEXUS_STITCHING_SLOT]) {
-        materials[LEXUS_STITCHING_SLOT].color.set(threadHex);
+      if (materials[LEXUS_SEAT_STITCHING]) {
+        materials[LEXUS_SEAT_STITCHING].color.set(threadHex);
+      }
+      if (materials[LEXUS_STEERING_LEATHER]) {
+        materials[LEXUS_STEERING_LEATHER].color.set(steeringHex ?? secondaryHex);
+      }
+      if (materials[LEXUS_DASHBOARD_TRIM]) {
+        materials[LEXUS_DASHBOARD_TRIM].color.set(trimHex ?? "#2A2B2E");
+      }
+      if (materials[LEXUS_COCKPIT_ACCENT]) {
+        materials[LEXUS_COCKPIT_ACCENT].color.set(accentHex ?? "#787D82");
+      }
+      if (materials[LEXUS_COCKPIT_BLACK]) {
+        materials[LEXUS_COCKPIT_BLACK].color.set(cockpitBlackHex ?? "#121316");
       }
     } else {
       if (!testParam("break-seat-binding") && materials[LEGACY_SEAT_SLOT]) {
@@ -240,7 +282,7 @@ function SpikeModel({ url, primaryHex, secondaryHex = primaryHex, threadHex = "#
     }, 120);
 
     return () => window.clearTimeout(timer);
-  }, [parsed, primaryHex, secondaryHex, threadHex, invalidate, onLoaded, onStats, gl]);
+  }, [parsed, primaryHex, secondaryHex, threadHex, trimHex, steeringHex, accentHex, cockpitBlackHex, invalidate, onLoaded, onStats, gl]);
 
   return <primitive object={scene} />;
 }
@@ -257,6 +299,10 @@ export function SpikeViewer({
   primaryHex,
   secondaryHex = primaryHex,
   threadHex = "#D4AF37",
+  trimHex = "#2A2B2E",
+  steeringHex = secondaryHex,
+  accentHex = "#787D82",
+  cockpitBlackHex = "#121316",
   onStatus,
   onStats,
 }: {
@@ -264,6 +310,10 @@ export function SpikeViewer({
   primaryHex: string;
   secondaryHex?: string;
   threadHex?: string;
+  trimHex?: string;
+  steeringHex?: string;
+  accentHex?: string;
+  cockpitBlackHex?: string;
   onStatus: (status: ViewerStatus) => void;
   onStats: (stats: RendererStats | null) => void;
 }) {
@@ -325,7 +375,7 @@ export function SpikeViewer({
   };
 
   return <div className="absolute inset-0 z-10" style={{ backgroundColor: status === "success" ? "#0F1014" : "transparent" }}
-    data-testid="spike-viewer" aria-label="Lexus RX 350 interactive 3D driver seat viewer">
+    data-testid="spike-viewer" aria-label="2020 Lexus RX 350 interactive 3D interior viewer">
     {supported && status !== "error" && status !== "empty" && <Canvas key={retryKey} frameloop="demand" dpr={[1, 1.5]}
       camera={{
         fov: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38,
@@ -355,6 +405,10 @@ export function SpikeViewer({
           primaryHex={primaryHex}
           secondaryHex={secondaryHex}
           threadHex={threadHex}
+          trimHex={trimHex}
+          steeringHex={steeringHex}
+          accentHex={accentHex}
+          cockpitBlackHex={cockpitBlackHex}
           onLoaded={loaded}
           onStats={stats}
         />
@@ -362,7 +416,7 @@ export function SpikeViewer({
     </Canvas>}
     {status !== "success" && <div className="absolute inset-x-3 bottom-14 z-10 rounded-lg bg-[#141416]/90 px-3 py-2 text-xs text-slate-200"
       role="status" aria-live="polite" data-testid="viewer-status">
-      {status === "loading" ? "Loading Lexus RX 350 3D driver seat…" : status === "empty" ? "3D model contains no geometry. Showing studio preview." : "3D preview unavailable (" + (error ?? "unknown error") + "). Showing studio preview."}
+      {status === "loading" ? "Loading 2020 Lexus RX 350 interior assembly…" : status === "empty" ? "3D model contains no geometry. Showing studio preview." : "3D preview unavailable (" + (error ?? "unknown error") + "). Showing studio preview."}
       {status !== "loading" && <button type="button" onClick={retry} className="ml-3 underline underline-offset-2">Retry 3D</button>}
     </div>}
   </div>;

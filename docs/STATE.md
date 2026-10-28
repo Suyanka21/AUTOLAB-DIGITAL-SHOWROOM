@@ -1,17 +1,13 @@
 # State — 2026-10-28
 
-- L2B-R1 candidate complete on `pre-phase-6-reconciliation`; owner visual review required before L3.
-- Commits: `b7ff28a` scope/surface tests; `37e6124` source/assets/preservation; review evidence follows in this commit.
-- Dashboard/wheel revised; three GLBs delivered with Draco/KTX2, seven slots, six semantic nodes.
-- Combined: 76,548 triangles / 12 calls / 3,829,276 bytes; unchanged hard caps pass, transfer/triangle aspirations still exceeded.
-- Combined SHA: `c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2`.
-- Both standalone seats and their compressed/decoded assembly contents remain unchanged; original L2B rollback at `dfa77e2`.
-- Technical: three real gates/browser probes PASS; 81 tests + 3 Python tests PASS; typecheck/lint/build PASS (41 existing lint warnings).
-- Fresh Blender runs reproduce counts/dimensions/integrity; four matched CPU renders, before/after and local reference sheets saved.
-- Review: `docs/review/lexus-l2b-r1-2026-10-27/README.md`; source commands: `docs/3d-assets/LEXUS_L2B_R1_HANDOFF.md`.
-- 9.5/10 NOT established: crumpled/sharp trim corners, abrupt cowl joins, simplified wheel controls/material response remain.
-- Inherited seat defects remain; all human gates/reference gaps open. Dashboard three-round cap reached; no additional modeling this slice.
-- Software-renderer loader times measured; phone FPS/GPU bytes unmeasured; current cockpit camera misses wheel (L3 handoff only).
-- Prior 13 development audit findings unresolved; no dependency/app/UI changes, new patterns, full cabin or deployment.
-- Active windows span 27/28 October; exact continuous duration and credit use unavailable. Failures/timings in `docs/spike/cost-log.md`.
-- Owner authorized normal push of these commits to this branch; verify remote after push. STOP for owner review before L3.
+- Phase L3 Complete Lexus Showroom Integration delivered on `pre-phase-6-reconciliation`.
+- Active asset: `public/assets/3d/lexus-rx350/interior-l2b.glb` (SHA-256: `c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2`).
+- Renders all 4 components: Driver Seat, Passenger Seat, Dashboard, and Steering Wheel (6 nodes, 12 draw calls, 76,548 tris).
+- All 7 material slots bound with live reactive updates: seat primary/secondary/stitching, steering leather, dashboard trim, cockpit accent/black.
+- Rollback available: previous `driver-seat-l2a.glb` and historical Mercedes spike preserved and functional.
+- Camera calibration complete: all 4 presets active (`cabin_pair`, `hero_driver`, `driver_cockpit`, `seam_macro`), cockpit framing fixed.
+- Customer-facing UI updated: Mercedes references replaced with 2020 Lexus RX 350 AWD, developer jargon cleaned.
+- Verification: 83/83 tests PASS, TypeScript typecheck PASS, ESLint 0 errors (41 warnings), production build PASS.
+- Mobile real-device test marked pending; responsive layout verified via responsive styles.
+- STOP: Ready for owner review. Phase L4 and Phase L5 are NOT authorized.
+

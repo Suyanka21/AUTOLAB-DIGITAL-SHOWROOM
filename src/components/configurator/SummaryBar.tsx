@@ -70,8 +70,8 @@ export function SummaryBar() {
                     <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
                       Atelier Code
                     </span>
-                    <span className="text-[9px] font-mono text-amber-400/80 bg-amber-500/10 px-1 rounded">
-                      Scaffold
+                    <span className="text-[9px] font-mono text-[#38B6FF] bg-[#38B6FF]/10 px-1 rounded">
+                      Active
                     </span>
                   </div>
                   <span className="font-mono text-xs sm:text-sm font-bold text-white group-hover:text-[#38B6FF] transition-colors">

@@ -3,9 +3,9 @@ import { AuthProvider } from "@/lib/auth/auth-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AutoLab Digital Showroom | Mercedes-Benz S-Class (V223 LWB) Atelier",
+  title: "AutoLab Digital Showroom | 2020 Lexus RX 350 AWD Atelier",
   description:
-    "Interactive 2D Bespoke Interior Configurator for the Mercedes-Benz S-Class V223. Curate handcrafted hides, contrast tailoring, and bespoke compositions at the AutoLab Atelier.",
+    "Interactive 3D Bespoke Interior Configurator for the 2020 Lexus RX 350 AWD. Curate handcrafted hides, contrast tailoring, and bespoke compositions at the AutoLab Atelier.",
 };
 
 export default function RootLayout({

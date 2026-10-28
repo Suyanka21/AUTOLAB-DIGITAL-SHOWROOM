@@ -286,5 +286,41 @@ describe("Lexus RX 350 L2A Prototype Asset Gate (Driver Seat Prototype)", () => 
       if (resolve(temp).startsWith(resolve(tmpdir()) + sep)) rmSync(temp, { recursive: true, force: true });
     }
   });
+
+  it("validates the real Lexus L2B complete interior assembly GLB asset with zero errors", async () => {
+    const assetPath = resolve("public/assets/3d/lexus-rx350/interior-l2b.glb");
+    const bytes = readFileSync(assetPath);
+    const report = await validateGlbBytes(bytes, { scope: "lexus", synthetic: false });
+    expect(report.passed, report.errors.join("; ")).toBe(true);
+    expect(report.sha256).toBe("c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2");
+    expect(report.nodeCount).toBe(6);
+    expect(report.materialCount).toBe(7);
+    expect(report.drawCalls).toBe(12);
+    expect(report.triangleCount).toBe(76548);
+    expect(report.errors).toEqual([]);
+  });
+
+  it("passes CLI validation on the real Lexus L2B complete interior GLB with exit code 0", () => {
+    const temp = mkdtempSync(join(tmpdir(), "autolab-lexus-l2b-real-cli-"));
+    try {
+      const result = spawnSync(process.execPath, [
+        "scripts/validate-glb.mjs",
+        "--scope",
+        "lexus",
+        "--asset",
+        "public/assets/3d/lexus-rx350/interior-l2b.glb",
+        "--report",
+        join(temp, "report.json"),
+      ], {
+        cwd: resolve("."),
+        encoding: "utf8",
+        timeout: 15_000,
+      });
+      expect(result.status).toBe(0);
+      expect(result.stdout).toContain("Asset gate PASS");
+    } finally {
+      if (resolve(temp).startsWith(resolve(tmpdir()) + sep)) rmSync(temp, { recursive: true, force: true });
+    }
+  });
 });
 

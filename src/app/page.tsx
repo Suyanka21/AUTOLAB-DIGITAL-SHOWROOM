@@ -26,7 +26,7 @@ export default function AtelierShowroomPage() {
                     Tailoring Atelier Program
                   </span>
                   <span className="text-slate-600">•</span>
-                  <span className="text-xs text-slate-400">Mercedes-Benz S-Class Series 223</span>
+                  <span className="text-xs text-slate-400">2020 Lexus RX 350 AWD</span>
                 </div>
                 <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-0.5">
                   Bespoke Interior Configurator
@@ -60,19 +60,18 @@ export default function AtelierShowroomPage() {
                 <div className="text-xs space-y-1">
                   <div className="flex items-center space-x-2">
                     <p className="font-semibold text-white">
-                      Pre-Production Showcase Shell • Interaction Scaffold
+                      Bespoke Atelier Demonstration • 2020 Lexus RX 350 AWD
                     </p>
-                    <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
-                      UI Demonstration Only
+                    <span className="text-[10px] font-mono text-[#38B6FF] bg-[#38B6FF]/10 px-1.5 py-0.5 rounded border border-[#38B6FF]/20">
+                      Demonstration Studio
                     </span>
                   </div>
                   <p className="text-slate-400 leading-relaxed">
-                    This local interface demonstrates the frontend architecture for the confirmed V1 flow:{" "}
+                    This interactive studio demonstrates the 4-step interior tailoring sequence:{" "}
                     <span className="text-[#38B6FF] font-medium">
                       Material → Colour → Accent Thread → Interior Composition
                     </span>
-                    . Visible options (leather hues, veneers, stitch patterns, ambient presets) are proposed candidates for interaction prototyping only and are{" "}
-                    <span className="text-amber-300 font-medium">not AutoLab-approved commercial catalogue items</span>.
+                    . Explore handpicked hides, contrasting seat bolsters, custom stitch patterns, and timber veneers for the 2020 Lexus RX 350.
                   </p>
                 </div>
               </div>

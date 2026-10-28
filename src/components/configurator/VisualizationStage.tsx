@@ -16,10 +16,24 @@ interface CameraPresetTab {
 
 const CAMERA_TABS: CameraPresetTab[] = [
   {
+    id: "cabin_pair",
+    label: "Cabin Pair",
+    sublabel: "Front Cabin Width",
+    focalTarget: "Wide cockpit perspective showing driver and passenger seats, console spacing, and steering wheel",
+    isAvailable: true,
+  },
+  {
     id: "hero_driver",
     label: "Driver Hero",
     sublabel: "Front 3/4 Ingress",
     focalTarget: "Full driver seat, headrest, outer bolster, and door ingress profile",
+    isAvailable: true,
+  },
+  {
+    id: "driver_cockpit",
+    label: "Cockpit & Dash",
+    sublabel: "Wheel & Instrument Display",
+    focalTarget: "Eye-level perspective through driver door framing steering wheel, instrument cluster, and dashboard",
     isAvailable: true,
   },
   {
@@ -28,22 +42,6 @@ const CAMERA_TABS: CameraPresetTab[] = [
     sublabel: "Macro Seam & Flutes",
     focalTarget: "Cushion bolster transition, perforations, and contrast double-stitch seam",
     isAvailable: true,
-  },
-  {
-    id: "cabin_pair",
-    label: "Cabin Pair",
-    sublabel: "Front Cabin Width",
-    focalTarget: "Wide cockpit view showing both front seats, console spacing, and steering wheel (Scheduled for Phase L2B)",
-    isAvailable: false,
-    statusBadge: "L2B Pending",
-  },
-  {
-    id: "driver_cockpit",
-    label: "Driver Ingress",
-    sublabel: "Cockpit Perspective",
-    focalTarget: "Eye-level perspective through open driver door showing steering wheel relationship and seat cushion base (Scheduled for Phase L2B)",
-    isAvailable: false,
-    statusBadge: "L2B Pending",
   },
 ];
 
@@ -161,6 +159,8 @@ export function VisualizationStage() {
           primaryHex={primaryHex}
           secondaryHex={secondaryHex}
           threadHex={threadHex}
+          trimHex={trimHex}
+          steeringHex={secondaryHex}
           onStatus={handleViewerStatus}
           onStats={handleRendererStats}
         />
@@ -375,11 +375,11 @@ export function VisualizationStage() {
                 style={{ backgroundColor: ambientLightHex }}
               />
               <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300">
-                Live Spec (UI Scaffold)
+                Live Specification
               </span>
             </div>
-            <span className="text-[9px] font-mono text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">
-              Proposed
+            <span className="text-[9px] font-mono text-[#38B6FF] bg-[#38B6FF]/10 px-1.5 py-0.5 rounded border border-[#38B6FF]/20">
+              Bespoke Spec
             </span>
           </div>
 
@@ -445,7 +445,7 @@ export function VisualizationStage() {
           <Layers className="h-3.5 w-3.5 text-[#38B6FF]" />
           <span className="hidden sm:inline">WebGL Studio:</span>
           <span className="text-slate-200 font-mono text-[11px]">
-            {viewerStatus === "success" ? "Lexus L2A Driver Seat Prototype Active" : "2D Studio Preview"}
+            {viewerStatus === "success" ? "2020 Lexus RX 350 Interactive 3D Cabin" : "2D Studio Preview"}
           </span>
         </div>
 
@@ -473,7 +473,7 @@ export function VisualizationStage() {
         <div className="hidden md:flex items-center space-x-1.5 text-[11px] font-mono text-slate-500">
           <span>{rendererStats ? "Calls " + rendererStats.calls + " · Triangles " + rendererStats.triangles + " · Textures " + rendererStats.textures + " · Geometries " + rendererStats.geometries : "Renderer data pending"}</span>
           <span>•</span>
-          <span className="text-[#38B6FF]">V1 Baseline</span>
+          <span className="text-[#38B6FF]">Atelier Preview</span>
         </div>
       </div>
     </div>

@@ -105,8 +105,8 @@ export function ConfigurationDrawer() {
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 flex items-center space-x-2.5">
         <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0" />
         <p className="text-[11px] text-amber-200/90 leading-tight">
-          <span className="font-semibold text-amber-300">Showcase Interaction Scaffold:</span>{" "}
-          Options shown are proposed candidates demonstrating UI architecture. Not AutoLab-approved commercial catalogue items.
+          <span className="font-semibold text-amber-300">Atelier Preview:</span>{" "}
+          Options demonstrate the bespoke customisation sequence for the 2020 Lexus RX 350 AWD.
         </p>
       </div>
 
@@ -116,7 +116,7 @@ export function ConfigurationDrawer() {
           <div className="flex items-center space-x-2">
             <Sliders className="h-4 w-4 text-[#38B6FF]" />
             <h2 className="text-base font-semibold tracking-wide text-white">
-              V1 Configurator Sequence
+              Interior Customisation
             </h2>
           </div>
           <span className="text-[10px] font-mono text-[#38B6FF] bg-[#38B6FF]/10 px-2.5 py-1 rounded border border-[#38B6FF]/20">

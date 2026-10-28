@@ -89,8 +89,8 @@
       "id": "hero_driver",
       "name": "Driver Hero",
       "description": "Front three-quarter view showing full driver seat, headrest, outer bolster, and door ingress profile.",
-      "position": [-1.4, 1.2, 0.9],
-      "target": [-0.38, 0.82, -0.08],
+      "position": [-1.45, 1.25, 0.95],
+      "target": [-0.38, 0.82, -0.05],
       "fov": 38
     },
     {
@@ -105,16 +105,16 @@
       "id": "cabin_pair",
       "name": "Cabin Pair",
       "description": "Wide cockpit view from center rear showing both driver and passenger seats, console spacing, and steering wheel.",
-      "position": [0.0, 1.15, 1.25],
-      "target": [0.0, 0.70, 0.0],
+      "position": [0.0, 1.30, 1.85],
+      "target": [0.0, 0.76, 0.15],
       "fov": 45
     },
     {
       "id": "driver_cockpit",
-      "name": "Driver Ingress",
-      "description": "Eye-level perspective through open driver door showing steering wheel relationship and seat cushion base.",
-      "position": [-0.95, 1.05, 0.15],
-      "target": [-0.35, 0.85, -0.15],
+      "name": "Cockpit & Dash",
+      "description": "Eye-level perspective through driver door framing steering wheel, instrument cluster, and dashboard.",
+      "position": [-1.00, 1.12, 0.05],
+      "target": [-0.30, 0.86, 0.38],
       "fov": 42
     }
   ],
