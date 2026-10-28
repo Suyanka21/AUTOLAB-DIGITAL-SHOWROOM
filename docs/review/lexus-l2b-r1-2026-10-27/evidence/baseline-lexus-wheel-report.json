@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "scope": "lexus-wheel",
+  "synthetic": false,
+  "sha256": "8995424464d449ed98c547fa8572ea2f5f089d40c59e778cf78a17cc9fe1a469",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [],
+  "warnings": [
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_SteeringWheel_Lexus": 6972
+  },
+  "textures": [
+    {
+      "name": "lexus-bolster-normal",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "nodeCount": 1,
+  "materialCount": 3,
+  "triangleCount": 6972,
+  "drawCalls": 3,
+  "fileSizeBytes": 1101416,
+  "gpuTextureBytesEstimated": 1398102,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 2
+  },
+  "boundsMetres": {
+    "min": [
+      -0.5742141008377075,
+      0.7262393832206726,
+      0.35485532879829407
+    ],
+    "max": [
+      -0.1857859194278717,
+      1.0831594467163086,
+      0.5085670351982117
+    ]
+  },
+  "asset": "public\\assets\\3d\\lexus-rx350\\wheel-l2b.glb"
+}

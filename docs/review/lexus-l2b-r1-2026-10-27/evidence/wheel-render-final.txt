@@ -1,0 +1,12 @@
+17:17:26 | INFO: Data are loaded, start creating Blender stuff
+17:17:26 | INFO: Blender create Mesh node GEO_SteeringWheel_Lexus
+17:17:26 | INFO: glTF import finished in 0.06s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:27: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:37: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Review-only neutral');m.use_nodes=True
+01:43.454  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2b-r1\review\wheel\03-wheel.png'
+L2B_RENDER {"file": "03-wheel.png", "location": [-0.76, 0.35, 1.19], "target": [-0.38, -0.43, 0.9], "lensMm": 60, "seconds": 94.22908059996553, "sha256": "a386a0fbe8d3d3988dd9c27380ac1168e0939291fcd751a27e3b6e0bf387b36c"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

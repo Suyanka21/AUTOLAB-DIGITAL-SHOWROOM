@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "scope": "lexus-dashboard",
+  "synthetic": false,
+  "sha256": "51a706b18d3ed623cf5f059a962ad203202df0ddcb2d249318646f84ee343efd",
+  "toolVersions": {
+    "gltfTransformCore": "4.5.1",
+    "gltfValidator": "2.0.0-dev.3.10"
+  },
+  "missingMaterialSlots": [],
+  "errors": [],
+  "warnings": [
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.",
+    "Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.",
+    "Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos UNUSED_OBJECT: This object may be unused.",
+    "Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized."
+  ],
+  "waivers": [],
+  "trianglesByNode": {
+    "GEO_Dashboard_Lexus": 6700
+  },
+  "textures": [
+    {
+      "name": "lexus-bolster-normal",
+      "mimeType": "image/ktx2",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "nodeCount": 1,
+  "materialCount": 3,
+  "triangleCount": 6700,
+  "drawCalls": 3,
+  "fileSizeBytes": 1118168,
+  "gpuTextureBytesEstimated": 1398102,
+  "activeDisplayDiagonalMm": null,
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 2
+  },
+  "boundsMetres": {
+    "min": [
+      -0.75,
+      0.7180900573730469,
+      0.4781000018119812
+    ],
+    "max": [
+      0.75,
+      1.0882662534713745,
+      0.9646989107131958
+    ]
+  },
+  "asset": "public\\assets\\3d\\lexus-rx350\\dashboard-l2b.glb"
+}

@@ -1,0 +1,19 @@
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\build_lexus_l2b.py:29: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+16:17:38 | INFO: Starting glTF 2.0 export
+16:17:38 | INFO: Extracting primitive: GEO_Dashboard_Lexus
+16:17:38 | INFO: Primitives created: 3
+16:17:38 | INFO: Draco encoder: Encoding mesh GEO_Dashboard_Lexus.
+16:17:38 | INFO: Finished glTF 2.0 export in 0.16547322273254395 s
+
+Info: Saved as "dashboard.blend"
+L2B_BUILD {"stage": "dashboard", "blender": "5.2.2 LTS", "python": "3.13.13 (main, May  8 2026, 12:37:03) [MSC v.1944 64 bit (AMD64)]", "nodes": {"GEO_Dashboard_Lexus": {"triangles": 5676, "dimensionsMetres": [1.5, 0.4865875244140625, 0.37557530403137207], "boundaryEdges": 0, "degenerateFaces": 0}}, "seconds": 1.5358553000260144, "driverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52", "sourceHashes": {"blender\\build_lexus_l2b.py": "861590cba145ec8306746c9555b6fb5f758592408acfb604a3176622997721a0", "blender\\lexus_l2b_constants.py": "2df5f2968e16523694d44e5f4db0eb1e471630fa9db2a49c828b2343bee5ae35", "blender\\lexus_l2b_cockpit.py": "14d3c119bbbc01331ce5cd5aa18db53104b25d06ef45eaa353419243e7e17ab7", "blender\\cockpit_surfaces.py": "328fbb163dc3b86e01078eb40cf4282be638a66da2377b3babf71aeb2962b731"}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 1286 vertices, 4764 indices, raw size: 71256, encoded size: 16084, compression ratio: 4.43
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2196 vertices, 5736 indices, raw size: 116784, encoded size: 29283, compression ratio: 3.99
+DracoEncoder | Preserve triangle order: no
+DracoEncoder | Encoded 2475 vertices, 6528 indices, raw size: 131808, encoded size: 31811, compression ratio: 4.14

@@ -1,0 +1,14 @@
+Asset gate PASS: 1 nodes, 5024 triangles, 3 draw calls; sha256 3a926bdc83bb6a2ff2557c0c4ffc8e53fe3eb58200db901d443ab2d20130a4e7
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_draco_mesh_compression'.
+WARN: Khronos UNSUPPORTED_EXTENSION: Cannot validate an extension as it is not supported by the validator: 'KHR_texture_basisu'.
+WARN: Khronos VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png').
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_MESH_TANGENT: Tangents are not used because the material has no normal texture.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos UNUSED_OBJECT: This object may be unused.
+WARN: Khronos IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized.
+Report: C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\reports\lexus-wheel-report.json

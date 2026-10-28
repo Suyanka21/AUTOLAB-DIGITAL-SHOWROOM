@@ -1,19 +1,17 @@
-# State — 2026-10-27
+# State — 2026-10-28
 
-- L2B COMPLETE; stop at owner review. Branch `pre-phase-6-reconciliation`; L3 not started.
-- Owner accepted R1 provisionally and authorized L2B plus push on 2026-10-26; no photographic/production acceptance.
-- R1 `d7a9ee4`/`b5a7adf` fast-forwarded and pushed before modeling; rollback history preserved.
-- L2B commits: `8317af9` gate contracts; `5ecda81` source/assets/tests. Review/evidence commit follows.
-- Four delivered GLBs: passenger, wheel, dashboard, combined under `public/assets/3d/lexus-rx350/`.
-- Driver SHA unchanged: `b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52`.
-- Combined SHA: `aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f`; driver Draco payloads unchanged.
-- Combined 77,962 triangles / 12 calls / 3,820,024 bytes / six shared KTX2 textures; four actual gates PASS.
-- Four actual browser decode/tint probes PASS; six hash-matched Blender renders and contact sheet packaged.
-- Full suite 80/80; final assembly 3/3; typecheck/lint/build PASS. 41 old lint warnings; 13 prior dev audit findings unresolved.
-- Over-target transfer/triangles disclosed; unchanged hard limits pass. No real-phone FPS/GPU-byte measurement.
-- Known visual limits: inherited seat edge/grain/seams, simplified wheel controls/hub, blank display and blocky upper dash.
-- Existing cockpit camera misses wheel; calibration/integrated checks belong to separately authorized Antigravity L3.
-- Handoff: `docs/3d-assets/LEXUS_L2B_HANDOFF.md`; review: `docs/review/lexus-l2b-2026-10-26/README.md`.
-- All unverified reference gaps and unsigned human gates remain open; Mercedes WebP waiver not reused for Lexus.
-- No full cabin, new patterns/UI, dependencies, deployment or L3 work. Push authorized; remote status confirmed at delivery.
-- Cost/failed attempts recorded in `docs/spike/cost-log.md`; exact model-credit usage unavailable.
+- L2B-R1 candidate complete on `pre-phase-6-reconciliation`; owner visual review required before L3.
+- Commits: `b7ff28a` scope/surface tests; `37e6124` source/assets/preservation; review evidence follows in this commit.
+- Dashboard/wheel revised; three GLBs delivered with Draco/KTX2, seven slots, six semantic nodes.
+- Combined: 76,548 triangles / 12 calls / 3,829,276 bytes; unchanged hard caps pass, transfer/triangle aspirations still exceeded.
+- Combined SHA: `c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2`.
+- Both standalone seats and their compressed/decoded assembly contents remain unchanged; original L2B rollback at `dfa77e2`.
+- Technical: three real gates/browser probes PASS; 81 tests + 3 Python tests PASS; typecheck/lint/build PASS (41 existing lint warnings).
+- Fresh Blender runs reproduce counts/dimensions/integrity; four matched CPU renders, before/after and local reference sheets saved.
+- Review: `docs/review/lexus-l2b-r1-2026-10-27/README.md`; source commands: `docs/3d-assets/LEXUS_L2B_R1_HANDOFF.md`.
+- 9.5/10 NOT established: crumpled/sharp trim corners, abrupt cowl joins, simplified wheel controls/material response remain.
+- Inherited seat defects remain; all human gates/reference gaps open. Dashboard three-round cap reached; no additional modeling this slice.
+- Software-renderer loader times measured; phone FPS/GPU bytes unmeasured; current cockpit camera misses wheel (L3 handoff only).
+- Prior 13 development audit findings unresolved; no dependency/app/UI changes, new patterns, full cabin or deployment.
+- Active windows span 27/28 October; exact continuous duration and credit use unavailable. Failures/timings in `docs/spike/cost-log.md`.
+- Owner authorized normal push of these commits to this branch; verify remote after push. STOP for owner review before L3.

@@ -1,0 +1,23 @@
+{
+  "stage": "wheel",
+  "asset": "public/assets/3d/lexus-rx350/wheel-l2b.glb",
+  "sha256": "3a926bdc83bb6a2ff2557c0c4ffc8e53fe3eb58200db901d443ab2d20130a4e7",
+  "fileSizeBytes": 1089844,
+  "driverInputSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "proxySha256": "19e481d9d46c3bdeee59d608fd0192a13420dfe5677e1b48b5fc85841a557eed",
+  "textures": [
+    {
+      "name": "lexus-bolster-normal",
+      "sha256": "3e10e7367715abefdc2b03e6a2421121ffd42e2eee560cbfea99ac0408d43314",
+      "bytes": 1043048,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    }
+  ],
+  "seconds": 1.4694744999999998,
+  "scriptSha256": "f3414ad610465ea38afa46e553cb5ade75cb2bc6760a1dc7eba7d9fc5dc2673a",
+  "textureMethod": "Unmodified existing R1 KTX2 payloads; no new texture encoding, downloaded pixels or WebP waiver."
+}

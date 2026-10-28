@@ -1,0 +1,7 @@
+dashboard: asset/gate/browser/finalizer/render hashes and matched camera/light settings PASS
+wheel: asset/gate/browser/finalizer/render hashes and matched camera/light settings PASS
+combined: asset/gate/browser/finalizer/render hashes and matched camera/light settings PASS
+Source, sheet, original rollback Git bytes, baseline reports and both unchanged seat hashes PASS
+95 local documentation links PASS; six-node provenance and 17-line STATE PASS
+Application/dependency files unchanged from dfa77e2 PASS
+Repeat Blender node/count/dimension/integrity/source comparisons PASS (repeat-consistency.json)

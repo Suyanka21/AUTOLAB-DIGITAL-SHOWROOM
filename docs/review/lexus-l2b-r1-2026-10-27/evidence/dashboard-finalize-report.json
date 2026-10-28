@@ -1,0 +1,23 @@
+{
+  "stage": "dashboard",
+  "asset": "public/assets/3d/lexus-rx350/dashboard-l2b.glb",
+  "sha256": "51a706b18d3ed623cf5f059a962ad203202df0ddcb2d249318646f84ee343efd",
+  "fileSizeBytes": 1118168,
+  "driverInputSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "proxySha256": "ef0eb142e5e4112bb86846c075021dbd7f193d76f8f7bd078c28755a7196ca20",
+  "textures": [
+    {
+      "name": "lexus-bolster-normal",
+      "sha256": "3e10e7367715abefdc2b03e6a2421121ffd42e2eee560cbfea99ac0408d43314",
+      "bytes": 1043048,
+      "size": [
+        1024,
+        1024
+      ],
+      "ktxValidateExitCode": 0
+    }
+  ],
+  "seconds": 2.0373894999999997,
+  "scriptSha256": "f3414ad610465ea38afa46e553cb5ade75cb2bc6760a1dc7eba7d9fc5dc2673a",
+  "textureMethod": "Unmodified existing R1 KTX2 payloads; no new texture encoding, downloaded pixels or WebP waiver."
+}

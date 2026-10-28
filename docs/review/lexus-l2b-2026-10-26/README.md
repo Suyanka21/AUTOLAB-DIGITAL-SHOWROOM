@@ -1,5 +1,7 @@
 # Lexus L2B review pack
 
+> Frozen L2B evidence from `dfa77e2`. Since 2026-10-28 the live dashboard/wheel/combined GLB URLs point to the L2B-R1 candidate; they are not the original bytes described below. See [current review](../lexus-l2b-r1-2026-10-27/README.md) and its rollback index. Original renders, browser evidence and this pack's hashes remain historical.
+
 Authored 2026-10-26; resumed and packaged 2026-10-27. **Technical checks PASS. Human visual acceptance PENDING.** Owner accepted only the R1 driver as a provisional baseline and authorized this bounded L2B slice. No L3 implementation, deployment or human gate closure.
 
 ## Deliverables and evidence
@@ -19,7 +21,7 @@ Authored 2026-10-26; resumed and packaged 2026-10-27. **Technical checks PASS. H
 | dashboard | 6,166 | 3 | 1,097,348 | 1 | 635.1 |
 | combined | 77,962 | 12 | 3,820,024 | 6 | 850.5 |
 
-All four actual gates exit 0: [passenger](../../../reports/lexus-passenger-report.json), [wheel](../../../reports/lexus-wheel-report.json), [dashboard](../../../reports/lexus-dashboard-report.json), [combined](../../../reports/lexus-report.json). CLI output is retained in `evidence/*gate*.txt`; final delivery reports and index identify the current hashes. Six semantic nodes, seven material slots and six shared 1024px KTX2 textures (11 levels each) are present in the combined asset. Its SHA is `aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f`.
+All four historical gates exit 0: [passenger](../../../reports/lexus-passenger-report.json), [wheel](../lexus-l2b-r1-2026-10-27/evidence/baseline-lexus-wheel-report.json), [dashboard](../lexus-l2b-r1-2026-10-27/evidence/baseline-lexus-dashboard-report.json), [combined](../lexus-l2b-r1-2026-10-27/evidence/baseline-lexus-report.json). CLI output is retained in `evidence/*gate*.txt`; final delivery reports and index identify the historical hashes. Six semantic nodes, seven material slots and six shared 1024px KTX2 textures (11 levels each) are present in that combined asset. Its SHA is `aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f`.
 
 Combined browser renderer records 12 calls / 77,962 triangles / 12 geometries / 7 texture allocations. Each component records 3 calls / 3 geometries; seat allocates 7 textures, cockpit components 2 each. Allocation counters include the browser harness environment and are not GPU byte measurements. Gate estimate: 8,388,612 texture bytes for the combined asset; **not measured GPU memory**.
 

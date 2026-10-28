@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "loadMs": 641.6000000238419,
+  "threeRevision": "186",
+  "meshes": [
+    "GEO_Dashboard_Lexus_1",
+    "GEO_Dashboard_Lexus_2",
+    "GEO_Dashboard_Lexus_3"
+  ],
+  "materials": [
+    "MAT_Dashboard_Trim",
+    "MAT_Cockpit_Black",
+    "MAT_Cockpit_Accent"
+  ],
+  "swaps": [
+    {
+      "name": "MAT_Dashboard_Trim",
+      "changed": true,
+      "pixelsChanged": true,
+      "othersUnchanged": true
+    },
+    {
+      "name": "MAT_Cockpit_Black",
+      "changed": true,
+      "pixelsChanged": true,
+      "othersUnchanged": true
+    },
+    {
+      "name": "MAT_Cockpit_Accent",
+      "changed": true,
+      "pixelsChanged": true,
+      "othersUnchanged": true
+    }
+  ],
+  "geometryAudit": [
+    {
+      "mesh": "GEO_Dashboard_Lexus_1",
+      "triangles": 1780,
+      "minimumTriangleAreaSquareMetres": 0.0000012994698863622034,
+      "maxNormalLengthError": 1.4518187851919606e-7
+    },
+    {
+      "mesh": "GEO_Dashboard_Lexus_2",
+      "triangles": 2744,
+      "minimumTriangleAreaSquareMetres": 9.815745040158414e-8,
+      "maxNormalLengthError": 1.249054724095089e-7
+    },
+    {
+      "mesh": "GEO_Dashboard_Lexus_3",
+      "triangles": 2176,
+      "minimumTriangleAreaSquareMetres": 5.363208106680356e-7,
+      "maxNormalLengthError": 1.227965675809628e-7
+    }
+  ],
+  "dimensionsMetres": [
+    1.5,
+    0.37017619609832764,
+    0.4865989089012146
+  ],
+  "compressedTextures": [
+    {
+      "name": "lexus-bolster-normal",
+      "compressed": true,
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "format": 37808
+    }
+  ],
+  "renderer": {
+    "calls": 3,
+    "triangles": 6700,
+    "textures": 2,
+    "geometries": 3
+  },
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "note": "Local headless Chromium compatibility smoke only; not real-phone FPS or GPU memory measurement. Main application integration belongs to L3.",
+  "verificationPassed": true,
+  "errors": [],
+  "warnings": [
+    "[.WebGL-0x21a400422000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x21a400422000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x21a400422000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x21a400422000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+  ],
+  "failures": [],
+  "assetSha256": "51a706b18d3ed623cf5f059a962ad203202df0ddcb2d249318646f84ee343efd",
+  "browser": "156.0.8078.4"
+}

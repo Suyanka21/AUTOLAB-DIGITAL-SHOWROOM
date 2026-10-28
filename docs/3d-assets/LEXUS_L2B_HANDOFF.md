@@ -1,5 +1,7 @@
 # Lexus L2B — bounded mock-up delivery
 
+> Historical L2B handoff at `dfa77e2`. On 2026-10-28, dashboard/wheel/combined asset URLs were replaced by an unapproved L2B-R1 visual candidate. The commands below require the historical source checkout, including passenger authoring. Use [L2B-R1 handoff](LEXUS_L2B_R1_HANDOFF.md) for current reproduction, hashes, preserved seats, rollback and unresolved defects. No visual acceptance is implied.
+
 ## Authorization and baseline — 2026-10-26
 
 The owner's L2B instruction accepts the R1 driver seat as a **provisional mock-up baseline** and authorizes passenger seat, wheel, visible dashboard, combined asset, validation and push to `pre-phase-6-reconciliation`. This supersedes older L2B-lock statements. It does not certify photographic fidelity or sign legacy human gates. L3 integration remains excluded.

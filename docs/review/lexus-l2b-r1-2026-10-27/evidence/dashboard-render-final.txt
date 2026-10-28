@@ -1,0 +1,12 @@
+17:15:15 | INFO: Data are loaded, start creating Blender stuff
+17:15:15 | INFO: Blender create Mesh node GEO_Dashboard_Lexus
+17:15:15 | INFO: glTF import finished in 0.11s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:27: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l2b.py:37: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Review-only neutral');m.use_nodes=True
+01:48.921  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\lexus-l2b-r1\review\dashboard\04-dashboard.png'
+L2B_RENDER {"file": "04-dashboard.png", "location": [1.0, 0.75, 1.47], "target": [0, -0.71, 0.94], "lensMm": 52, "seconds": 100.1972227001097, "sha256": "b5b925e23e8af66957907e24209bbddc1b1b1906752528fac082e73454ba37f3"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

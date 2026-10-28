@@ -1,0 +1,126 @@
+{
+  "assets": [
+    {
+      "stage": "dashboard",
+      "asset": "public/assets/3d/lexus-rx350/dashboard-l2b.glb",
+      "sha256": "51a706b18d3ed623cf5f059a962ad203202df0ddcb2d249318646f84ee343efd",
+      "bytes": 1118168,
+      "triangles": 6700,
+      "drawCalls": 3,
+      "ktxTextureCount": 1,
+      "textureBytesEstimated": 1398102,
+      "gateExitCode": 0,
+      "browser": "156.0.8078.4",
+      "loadMs": 641.6000000238419,
+      "renderer": {
+        "calls": 3,
+        "triangles": 6700,
+        "textures": 2,
+        "geometries": 3
+      },
+      "renderSeconds": 100.1972227001097
+    },
+    {
+      "stage": "wheel",
+      "asset": "public/assets/3d/lexus-rx350/wheel-l2b.glb",
+      "sha256": "3a926bdc83bb6a2ff2557c0c4ffc8e53fe3eb58200db901d443ab2d20130a4e7",
+      "bytes": 1089844,
+      "triangles": 5024,
+      "drawCalls": 3,
+      "ktxTextureCount": 1,
+      "textureBytesEstimated": 1398102,
+      "gateExitCode": 0,
+      "browser": "156.0.8078.4",
+      "loadMs": 988.5,
+      "renderer": {
+        "calls": 3,
+        "triangles": 5024,
+        "textures": 2,
+        "geometries": 3
+      },
+      "renderSeconds": 94.22908059996553
+    },
+    {
+      "stage": "combined",
+      "asset": "public/assets/3d/lexus-rx350/interior-l2b.glb",
+      "sha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+      "bytes": 3829276,
+      "triangles": 76548,
+      "drawCalls": 12,
+      "ktxTextureCount": 6,
+      "textureBytesEstimated": 8388612,
+      "gateExitCode": 0,
+      "browser": "156.0.8078.4",
+      "loadMs": 1167,
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 7,
+        "geometries": 12
+      },
+      "renderSeconds": 208.15435940003954
+    }
+  ],
+  "sourceHashes": {
+    "blender/build_lexus_l2b.py": "e77ab4d0537d07abd8db5e3cf1233411aa0f52fffa17c6786b744e613729b669",
+    "blender/lexus_l2b_cockpit.py": "acdcff64ec7997cc164b8d0a4584e27fb126eea45a71917c5eabb501ab9f785f",
+    "blender/cockpit_surfaces.py": "328fbb163dc3b86e01078eb40cf4282be638a66da2377b3babf71aeb2962b731",
+    "blender/lexus_l2b_constants.py": "2df5f2968e16523694d44e5f4db0eb1e471630fa9db2a49c828b2343bee5ae35",
+    "blender/render_lexus_l2b.py": "955c22b63dc876c6f7651c6ce4ee773a1aaa1a80724ecbd06edd330b9476e122",
+    "scripts/finalize-lexus-l2b.mjs": "9fad278097d6dddc6eb5cfdbed4360a7a020a81dce1156edaaedc651ba02f4e8",
+    "tools/verify-lexus-l2a.mjs": "b97588e56a49381ee63612daf2402e801c7004e912b57813992ea139513d12ac",
+    "tools/package-lexus-l2b-r1-review.py": "d7f1c43af1a92ff9b276ee92936ff2478b05122170a10af88826466311523dbe"
+  },
+  "renderHashes": {
+    "04-dashboard.png": "b5b925e23e8af66957907e24209bbddc1b1b1906752528fac082e73454ba37f3",
+    "03-wheel.png": "a386a0fbe8d3d3988dd9c27380ac1168e0939291fcd751a27e3b6e0bf387b36c",
+    "05-combined.png": "aafebbe0706580d34ca19e6db0c0814098b35270722d61c5742ac91c57bcc168",
+    "06-cockpit-overview.png": "0e03e674cfc4d81bb8b87b29792758599276145d399ed12e369c6cf4454c9668"
+  },
+  "comparisonSheets": [
+    {
+      "stage": "dashboard",
+      "file": "dashboard-before-after.png",
+      "sha256": "f62388bca078192cfb29b62bf95b095d76c428e1cab886d90e216ce9e5c23bb7",
+      "before": "04-dashboard.png",
+      "beforeSha256": "5e469da55aa18856ebda63960228717e86a5a073377f9b3756bf1ed4c6f53d58",
+      "afterSha256": "b5b925e23e8af66957907e24209bbddc1b1b1906752528fac082e73454ba37f3"
+    },
+    {
+      "stage": "wheel",
+      "file": "wheel-before-after.png",
+      "sha256": "8d70a4d9f9d888215558daab0a7543fcd130c1b7bce1cc79db2c307df61118e8",
+      "before": "03-wheel.png",
+      "beforeSha256": "89a5189ca525253cf6676fc714fc0c9376c130a8417dd061837fde34aa818d2c",
+      "afterSha256": "a386a0fbe8d3d3988dd9c27380ac1168e0939291fcd751a27e3b6e0bf387b36c"
+    },
+    {
+      "stage": "combined",
+      "file": "combined-before-after.png",
+      "sha256": "d1126ec33bebc4099c649b3e55848aaa24b7d12f58cfadc8a586b302baed249c",
+      "before": "06-cockpit-overview.png",
+      "beforeSha256": "2a65fe83306015693ca76d8590eb8289d42827aef98150ed55a0729205578421",
+      "afterSha256": "0e03e674cfc4d81bb8b87b29792758599276145d399ed12e369c6cf4454c9668"
+    }
+  ],
+  "contactSheetSha256": "c3fa2022709c9185736ef65ba040aa9e70384d4d9b7ad5eb2e0ac0d813363d26",
+  "localReferenceSheetSha256": "bba38417bf4ec05ca2174de0191801f14a1855ad0d172f553c7c7db9efc5b1f5",
+  "references": [
+    {
+      "file": "05_DASHBOARD_AND_TRIM/LEXUS_RX_2020_GALLERY_35.jpg",
+      "sha256": "55fee143f8b9b0f962065347b4e9a9565a5b1db2409ffdefd9c96a147b3be5ab",
+      "render": "04-dashboard.png"
+    },
+    {
+      "file": "01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_33.jpg",
+      "sha256": "a1898622ab00f11032605f76d020c6166379131556821d0d9ca8b50fa325853f",
+      "render": "03-wheel.png"
+    },
+    {
+      "file": "01_FRONT_SEAT_COMPLETE/LEXUS_RX_2020_GALLERY_29.jpg",
+      "sha256": "a4e31d212ab04b8c0589bdad6029920b1ceb846a2220fe55ae0d1b8ba5deb9db",
+      "render": "06-cockpit-overview.png"
+    }
+  ],
+  "note": "Matched original L2B comparison cameras/lighting; no visual scores. GPU texture bytes are estimates, loader timing is local SwiftShader."
+}

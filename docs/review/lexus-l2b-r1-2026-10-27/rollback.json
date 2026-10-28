@@ -1,0 +1,31 @@
+{
+  "commit": "dfa77e2",
+  "localDirectory": "blender/out/lexus-l2b-r1/baseline",
+  "assets": [
+    {
+      "file": "dashboard-l2b.glb",
+      "sha256": "476c3878449322f5ab44158422f9fbe497de60683966fc5d411069d8968316b8",
+      "bytes": 1097348
+    },
+    {
+      "file": "driver-seat-l2a.glb",
+      "sha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+      "bytes": 3463000
+    },
+    {
+      "file": "interior-l2b.glb",
+      "sha256": "aec0e7cc46de950609de3a1595879175b48e30629eb8465dd9583b1a23a0f09f",
+      "bytes": 3820024
+    },
+    {
+      "file": "passenger-seat-l2b.glb",
+      "sha256": "54f5c69f86363ae78bada085719e30d4d0641966e7653cabb9e4f9c8fc05172c",
+      "bytes": 3461200
+    },
+    {
+      "file": "wheel-l2b.glb",
+      "sha256": "8995424464d449ed98c547fa8572ea2f5f089d40c59e778cf78a17cc9fe1a469",
+      "bytes": 1101416
+    }
+  ]
+}

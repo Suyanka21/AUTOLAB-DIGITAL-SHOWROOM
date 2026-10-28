@@ -1,0 +1,14 @@
+[
+  {
+    "stage": "dashboard",
+    "sameNodesCountsDimensionsIntegrityAndSource": true,
+    "originalSeconds": 5.043234099983238,
+    "repeatSeconds": 2.586448499932885
+  },
+  {
+    "stage": "wheel",
+    "sameNodesCountsDimensionsIntegrityAndSource": true,
+    "originalSeconds": 1.736276900046505,
+    "repeatSeconds": 2.5026824000524357
+  }
+]
