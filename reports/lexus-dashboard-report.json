@@ -2,7 +2,7 @@
   "passed": true,
   "scope": "lexus-dashboard",
   "synthetic": false,
-  "sha256": "476c3878449322f5ab44158422f9fbe497de60683966fc5d411069d8968316b8",
+  "sha256": "51a706b18d3ed623cf5f059a962ad203202df0ddcb2d249318646f84ee343efd",
   "toolVersions": {
     "gltfTransformCore": "4.5.1",
     "gltfValidator": "2.0.0-dev.3.10"
@@ -25,7 +25,7 @@
   ],
   "waivers": [],
   "trianglesByNode": {
-    "GEO_Dashboard_Lexus": 6166
+    "GEO_Dashboard_Lexus": 6700
   },
   "textures": [
     {
@@ -39,9 +39,9 @@
   ],
   "nodeCount": 1,
   "materialCount": 3,
-  "triangleCount": 6166,
+  "triangleCount": 6700,
   "drawCalls": 3,
-  "fileSizeBytes": 1097348,
+  "fileSizeBytes": 1118168,
   "gpuTextureBytesEstimated": 1398102,
   "activeDisplayDiagonalMm": null,
   "validator": {
@@ -51,13 +51,13 @@
   "boundsMetres": {
     "min": [
       -0.75,
-      0.6950000524520874,
-      0.48104894161224365
+      0.7180900573730469,
+      0.4781000018119812
     ],
     "max": [
       0.75,
-      1.0924913883209229,
-      0.9400017261505127
+      1.0882662534713745,
+      0.9646989107131958
     ]
   },
   "asset": "public\\assets\\3d\\lexus-rx350\\dashboard-l2b.glb"

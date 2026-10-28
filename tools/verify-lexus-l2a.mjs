@@ -17,7 +17,7 @@ const profiles = {
 };
 if(l2b&&!profiles[l2b])throw new Error('Unknown L2B profile');
 const profile=profiles[l2b];
-const out = resolve(root, profile ? `blender/out/lexus-l2b/browser/${l2b}` : 'blender/out/lexus-l2a-r1/browser');
+const out = resolve(root, profile ? `blender/out/lexus-l2b-r1/browser/${l2b}` : 'blender/out/lexus-l2a-r1/browser');
 await mkdir(out, { recursive: true });
 const assetPath = '/assets/3d/lexus-rx350/'+(profile?.asset??'driver-seat-l2a')+'.glb';
 const gate=profile?JSON.parse(await readFile(resolve(root,'reports',profile.report+'.json'),'utf8')):null;
