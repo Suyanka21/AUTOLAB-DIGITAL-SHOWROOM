@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\tests\test_lexus_l4_materials.py", line 6, in <module>
+    from lexus_l4_materials import material_fields, height_normal
+ModuleNotFoundError: No module named 'lexus_l4_materials'
+
+Error: script failed, file: 'tests/test_lexus_l4_materials.py', exiting.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

@@ -1,0 +1,8 @@
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  01:09:53
+   Duration  1.95s (import 67%, transform 22%, tests 8%, worker 3%)

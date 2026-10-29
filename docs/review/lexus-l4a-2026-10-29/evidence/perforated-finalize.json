@@ -1,0 +1,10 @@
+{
+  "treatment": "perforated",
+  "asset": "experiments/lexus-l4a/perforated.glb",
+  "sha256": "58711265f9206206a3952d2eb33de2f4902b9f55e20c834347cacf89b9f4e327",
+  "bytes": 2925708,
+  "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "geometryAndUvCompressedPayloadsUnchanged": true,
+  "proxySha256": "0bb5af8b2126fd255271403a3af9da0dec153503551208320f321e20d36cc71b",
+  "note": "Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."
+}

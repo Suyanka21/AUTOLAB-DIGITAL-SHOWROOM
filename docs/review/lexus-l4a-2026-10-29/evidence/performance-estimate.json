@@ -1,0 +1,44 @@
+[
+  {
+    "treatment": "classic",
+    "activeAssetBytes": 3829276,
+    "removedSeatOnlyTextureBytes": 2169174,
+    "retainedSharedCockpitImages": [
+      "lexus-bolster-normal"
+    ],
+    "newTextureBytes": 1167076,
+    "estimatedCombinedTransferBytes": 2827178,
+    "estimatedResidentTextures": 4,
+    "estimated8bppBlockCompressedMipBytes": 5592408,
+    "estimatedRgba8MipBytes": 22369616,
+    "note": "Estimate, not measured GPU memory or a complete-scene gate. Deduplicated maps; original cockpit normal retained; JSON overhead not recalculated. Load one treatment at a time."
+  },
+  {
+    "treatment": "diamond",
+    "activeAssetBytes": 3829276,
+    "removedSeatOnlyTextureBytes": 2169174,
+    "retainedSharedCockpitImages": [
+      "lexus-bolster-normal"
+    ],
+    "newTextureBytes": 2653758,
+    "estimatedCombinedTransferBytes": 4313860,
+    "estimatedResidentTextures": 7,
+    "estimated8bppBlockCompressedMipBytes": 9786714,
+    "estimatedRgba8MipBytes": 39146828,
+    "note": "Estimate, not measured GPU memory or a complete-scene gate. Deduplicated maps; original cockpit normal retained; JSON overhead not recalculated. Load one treatment at a time."
+  },
+  {
+    "treatment": "perforated",
+    "activeAssetBytes": 3829276,
+    "removedSeatOnlyTextureBytes": 2169174,
+    "retainedSharedCockpitImages": [
+      "lexus-bolster-normal"
+    ],
+    "newTextureBytes": 2674933,
+    "estimatedCombinedTransferBytes": 4335035,
+    "estimatedResidentTextures": 7,
+    "estimated8bppBlockCompressedMipBytes": 9786714,
+    "estimatedRgba8MipBytes": 39146828,
+    "note": "Estimate, not measured GPU memory or a complete-scene gate. Deduplicated maps; original cockpit normal retained; JSON overhead not recalculated. Load one treatment at a time."
+  }
+]

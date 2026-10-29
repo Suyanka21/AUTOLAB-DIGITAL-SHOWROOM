@@ -1,0 +1,21 @@
+01:11:50 | INFO: Data are loaded, start creating Blender stuff
+01:11:50 | INFO: Blender create Mesh node GEO_Seat_Front_Driver
+01:11:50 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+01:11:51 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+01:11:51 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front
+01:11:51 | INFO: Draco Decoder: Decode primitive GEO_Seat_Stitching_Front
+01:11:51 | INFO: glTF import finished in 0.46s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4a.py:45: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True;scene.world.node_tree.nodes['Background'].inputs['Color'].default_value=(.16,.17,.18,1)
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4a.py:53: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Review ground');mat.use_nodes=True;mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.10,.11,.12,1);mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.9;floor.data.materials.append(mat)
+01:28.266  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4a-2026-10-29\classic-normal.png'
+L4_RENDER {"file": "classic-normal.png", "seconds": 78.95857330004219, "sha256": "6b36aa140af97b87158f667c39a51a9808396bb9b75a486a909a0000e047c87a", "location": [-1.5, -1.9, 1.5], "target": [-0.38, 0.05, 0.84], "lensMm": 55}
+03:10.594  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4a-2026-10-29\classic-macro.png'
+L4_RENDER {"file": "classic-macro.png", "seconds": 102.27888280001935, "sha256": "e97a6069708792a4040357c7d9f99c80f0f7c0ac0a259884579607e445ff2227", "location": [-0.71, -0.65, 0.85], "target": [-0.39, -0.06, 0.51], "lensMm": 70}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoDecoder | Decoded 2707 vertices, 15336 indices
+DracoDecoder | Decoded 8705 vertices, 45252 indices
+DracoDecoder | Decoded 20360 vertices, 36648 indices
+
+Blender quit

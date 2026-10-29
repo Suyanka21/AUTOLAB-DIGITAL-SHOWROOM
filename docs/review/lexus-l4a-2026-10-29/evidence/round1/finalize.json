@@ -1,0 +1,244 @@
+{
+  "seconds": 119.50542870000001,
+  "textures": [
+    {
+      "name": "classic-base",
+      "bytes": 425448,
+      "sha256": "ba5a7a5e100a0113daedfb801bb631ee49bad883590341e125ac820112cb4e2f",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "srgb",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\classic-base.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\classic-base.png"
+      ]
+    },
+    {
+      "name": "classic-normal",
+      "bytes": 500166,
+      "sha256": "5efaf4d1f3947875255c16db060e0a2af38a01c44f19b49676095814ef14fc3e",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "linear",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\classic-normal.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\classic-normal.png"
+      ]
+    },
+    {
+      "name": "classic-orm",
+      "bytes": 242915,
+      "sha256": "3dff6c106819ff08c8a6cd83d2f4dfbfeabc1f54c865621af3342facb0596fd7",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "linear",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\classic-orm.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\classic-orm.png"
+      ]
+    },
+    {
+      "name": "diamond-base",
+      "bytes": 475938,
+      "sha256": "f27a2b3672557b88864a8c11fc7a15a789f23330b314567898154b4978df9482",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "srgb",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\diamond-base.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\diamond-base.png"
+      ]
+    },
+    {
+      "name": "diamond-normal",
+      "bytes": 709494,
+      "sha256": "5163f7566d12f91f737d1ae7a65917b9adc95224e254d50d51a1cc951a79eea3",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "linear",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\diamond-normal.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\diamond-normal.png"
+      ]
+    },
+    {
+      "name": "diamond-orm",
+      "bytes": 302488,
+      "sha256": "445c2e191cd3f047514fac17e2f8911be55c899bdd9da2dfd9fd3a1da829bb8f",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "linear",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\diamond-orm.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\diamond-orm.png"
+      ]
+    },
+    {
+      "name": "perforated-base",
+      "bytes": 533310,
+      "sha256": "34d6f98e60e5ec03d4afd687fda301c768c5cf80bd7470f0ea46fad0fba8a73f",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "srgb",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\perforated-base.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\perforated-base.png"
+      ]
+    },
+    {
+      "name": "perforated-normal",
+      "bytes": 623920,
+      "sha256": "695b895155e0fd5c8e135254e4ffaeb8a34081fbde807e66f04fd0b4347d8059",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "linear",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\perforated-normal.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\perforated-normal.png"
+      ]
+    },
+    {
+      "name": "perforated-orm",
+      "bytes": 353308,
+      "sha256": "439fbd0426420e2e9f1f685d76288ce6d8b00babce2aeb9f70849d5250fbbb43",
+      "args": [
+        "--t2",
+        "--encode",
+        "uastc",
+        "--uastc_quality",
+        "2",
+        "--uastc_rdo_l",
+        "1.1",
+        "--zcmp",
+        "9",
+        "--genmipmap",
+        "--assign_oetf",
+        "linear",
+        "--threads",
+        "4",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\perforated-orm.ktx2",
+        "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\blender\\out\\lexus-l4a\\perforated-orm.png"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "treatment": "classic",
+      "asset": "experiments/lexus-l4a/classic.glb",
+      "sha256": "d086e7b3db0517702a428e7afcb40bd460b410dbbee9bc3f093c07996bb6b419",
+      "bytes": 2587824,
+      "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+      "geometryAndUvCompressedPayloadsUnchanged": true,
+      "proxySha256": "414beb73b6a2caaff3fa35309f6209d307775b2decb36140d5753589e8fb7e28",
+      "note": "Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."
+    },
+    {
+      "treatment": "diamond",
+      "asset": "experiments/lexus-l4a/diamond.glb",
+      "sha256": "e51849f894bada9842d730d2aa56ea6d1b65e9fac1b32ad86cd105b94541af24",
+      "bytes": 2907216,
+      "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+      "geometryAndUvCompressedPayloadsUnchanged": true,
+      "proxySha256": "0f161397345dc4bca63d8f71cdbeff7170e4731ac50cc8541757c6c82fa857fa",
+      "note": "Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."
+    },
+    {
+      "treatment": "perforated",
+      "asset": "experiments/lexus-l4a/perforated.glb",
+      "sha256": "a343fc71a3df8a9a62276aed17ba8690dde37291f579b3302e83954bac05221b",
+      "bytes": 2929832,
+      "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+      "geometryAndUvCompressedPayloadsUnchanged": true,
+      "proxySha256": "451bb580e31c0dd4b5f549be8adaf979341de26c998f5f9a2ce853701639db6b",
+      "note": "Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "treatment": "classic",
+  "asset": "experiments/lexus-l4a/classic.glb",
+  "sha256": "d086e7b3db0517702a428e7afcb40bd460b410dbbee9bc3f093c07996bb6b419",
+  "bytes": 2587824,
+  "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "geometryAndUvCompressedPayloadsUnchanged": true,
+  "proxySha256": "414beb73b6a2caaff3fa35309f6209d307775b2decb36140d5753589e8fb7e28",
+  "note": "Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."
+}

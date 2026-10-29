@@ -1,0 +1,37 @@
+{
+  "status": "Stage A material prototypes; owner visual review pending; Stage B not started",
+  "recordedAt": "2026-10-29",
+  "authorization": "Owner L4 attachment: three material experiments on existing seat, local commit on existing branch, stop before Stage B",
+  "baseCommit": "eee8f80",
+  "experimentCommit": "30b16db",
+  "branch": "pre-phase-6-reconciliation",
+  "sourceAsset": "public/assets/3d/lexus-rx350/driver-seat-l2a.glb",
+  "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "geometryProvenance": "docs/3d-assets/provenance.lexus-l2a-r1.json",
+  "deliveryIndex": "docs/review/lexus-l4a-2026-10-29/delivery-index.json",
+  "sourceHashes": "deliveryIndex.sources",
+  "tools": {"blender": "5.2.2 LTS d13f752e3b9c", "python": "3.13.13 embedded", "toktx": "4.4.2", "draco3dgltf": "1.5.9", "gltfTransform": "4.5.1", "three": "0.186.1"},
+  "nodes": [
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "materials": ["MAT_Seat_Primary", "MAT_Seat_Secondary"],
+      "geometryMethod": "Original compressed mesh bytes, UV/accessor metadata and transforms retained without modification",
+      "textureMethod": "Deterministic procedural Classic grain, Diamond normal relief/thread mask, Perforated depressions; neutral base, tangent normal and ORM; 1024px KTX2 UASTC with mipmaps",
+      "spec": "docs/3d-assets/LEXUS_L4A_MATERIAL_SPEC.md",
+      "uncertainty": "Uncalibrated physical hide, estimated scale/depth/roughness, nonuniform UV scale, seam mismatch and inherited silhouette defects; not workshop offerings"
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front",
+      "materials": ["MAT_Seat_Stitching"],
+      "geometryMethod": "Original compressed stitching geometry and material unchanged",
+      "textureMethod": "No replacement stitching texture; optional isolated WebGL hook reuses this material colour for primary quilt-mask pixels",
+      "uncertainty": "Quilt pattern is an appearance prototype, not verified upholstery construction; existing seam endpoints remain provisional"
+    }
+  ],
+  "samples": [
+    {"asset": "experiments/lexus-l4a/classic.glb", "sha256": "1dd29780f53e1121f99243239108f590133cb5d5262518136f4f0179794715ba"},
+    {"asset": "experiments/lexus-l4a/diamond.glb", "sha256": "f71aa86c806c5b072a9a33b9e8bd23824ed8d9bfcd0d2b51ee97606f826f52b0"},
+    {"asset": "experiments/lexus-l4a/perforated.glb", "sha256": "58711265f9206206a3952d2eb33de2f4902b9f55e20c834347cacf89b9f4e327"}
+  ],
+  "limits": "No downloaded/generated images or third-party textures. Original reference attribution remains as recorded in geometry provenance. No new manufacturer measurements. Active assembly, passenger, application and all seven bindings unchanged. No human acceptance or gate closure."
+}

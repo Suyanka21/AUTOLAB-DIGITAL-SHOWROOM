@@ -1,0 +1,3 @@
+classic=0
+diamond=0
+perforated=0

@@ -1,0 +1,24 @@
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+ ❯ tests/lexus-l4a.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/lexus-l4a.test.ts [ tests/lexus-l4a.test.ts ]
+Error: Cannot find module '../scripts/lib/lexus-material-images.mjs' imported from C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tests/lexus-l4a.test.ts
+ ❯ tests/lexus-l4a.test.ts:3:1
+      1| import { it, expect } from 'vitest';
+      2| import { readFileSync } from 'node:fs';
+      3| import { replaceImages } from '../scripts/lib/lexus-material-images.mj…
+       | ^
+      4| import { unpackGlb } from '../scripts/lib/merge-glbs.mjs';
+      5|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:05:13
+   Duration  10.39s (worker 99%, environment 1%)

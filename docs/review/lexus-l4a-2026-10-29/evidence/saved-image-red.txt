@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_gltf_top_row_and_normal_gradient_match_procedural_uv (__main__.SavedImagesTest.test_gltf_top_row_and_normal_gradient_match_procedural_uv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\tests\test_lexus_l4_saved_images.py", line 17, in test_gltf_top_row_and_normal_gradient_match_procedural_uv
+    self.assertLess(np.abs(actual-expected).max(),.006)
+AssertionError: np.float64(0.2719838863535511) not less than 0.006
+
+----------------------------------------------------------------------
+Ran 1 test in 23.138s
+
+FAILED (failures=1)

@@ -1,0 +1,50 @@
+{
+  "blender": "5.2.2 LTS",
+  "size": 1024,
+  "nominalTileMetres": 0.16,
+  "seed": 22350,
+  "seconds": 49.375851599965245,
+  "sourceSha256": "5d54f85565ed5e88c0ce39444704253eb65dae3b57908b704c42ef230cba977e",
+  "images": [
+    {
+      "file": "classic-base.png",
+      "sha256": "95d2722a697765cd71d78ab7f7f25c23f037920699515a89926976778da44ce1"
+    },
+    {
+      "file": "classic-normal.png",
+      "sha256": "36746031b579a43b5d2747928df06b3f08a8a7cd0d9b630ec036b5d7d1962222"
+    },
+    {
+      "file": "classic-orm.png",
+      "sha256": "bced55c97448d22225df7ad2cabaac8a734c1de4d30a319bb97bef86b9f0d69b"
+    },
+    {
+      "file": "diamond-base.png",
+      "sha256": "4b186e3ae5dbc6740f9a5120b507aeeb959931e572655f18ea2af4df4aaa08d1"
+    },
+    {
+      "file": "diamond-normal.png",
+      "sha256": "b4cb54ee07778700c9dd8738cff73550952e901a9fdedcaa1e57b685a9fa5b55"
+    },
+    {
+      "file": "diamond-orm.png",
+      "sha256": "51517e4ce41e334e4fba68ad64194ed2dd177b31e73b0237210354f90358b997"
+    },
+    {
+      "file": "perforated-base.png",
+      "sha256": "ba08015c811a61489157cc304f87da641dfff9e6f7c557acb08586363edca6ba"
+    },
+    {
+      "file": "perforated-normal.png",
+      "sha256": "85567799da07eb3e10d2b14d986cc2c74217078aabf43125c575e9a53f0351a2"
+    },
+    {
+      "file": "perforated-orm.png",
+      "sha256": "559b6149cb50d73f2086ee9daccb11d24c7b746bd3cf0dcb303d2b49498b1c95"
+    }
+  ],
+  "note": "Procedural prototype maps only. No seat/UV/geometry changes. Padding height is normal-map relief, no displaced silhouette."
+}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

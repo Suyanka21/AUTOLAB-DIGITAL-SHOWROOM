@@ -1,0 +1,12 @@
+KTX_VALID classic-base 425393
+KTX_VALID classic-normal 500174
+KTX_VALID classic-orm 241509
+KTX_VALID diamond-base 475146
+KTX_VALID diamond-normal 709078
+KTX_VALID diamond-orm 302458
+KTX_VALID perforated-base 532609
+KTX_VALID perforated-normal 625654
+KTX_VALID perforated-orm 349594
+MATERIAL_ASSET {"treatment":"classic","asset":"experiments/lexus-l4a/classic.glb","sha256":"1dd29780f53e1121f99243239108f590133cb5d5262518136f4f0179794715ba","bytes":2584928,"sourceSha256":"b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52","geometryAndUvCompressedPayloadsUnchanged":true,"proxySha256":"b79288cd90e679be2550ac78f3d3afc18eb8daa7f529bf24c4f634a1f19a2158","note":"Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."}
+MATERIAL_ASSET {"treatment":"diamond","asset":"experiments/lexus-l4a/diamond.glb","sha256":"f71aa86c806c5b072a9a33b9e8bd23824ed8d9bfcd0d2b51ee97606f826f52b0","bytes":2904532,"sourceSha256":"b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52","geometryAndUvCompressedPayloadsUnchanged":true,"proxySha256":"b1f1ebd955e18536b37294e6ddb18065e4f41d628b2033817c0e660279e834bd","note":"Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."}
+MATERIAL_ASSET {"treatment":"perforated","asset":"experiments/lexus-l4a/perforated.glb","sha256":"58711265f9206206a3952d2eb33de2f4902b9f55e20c834347cacf89b9f4e327","bytes":2925708,"sourceSha256":"b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52","geometryAndUvCompressedPayloadsUnchanged":true,"proxySha256":"0bb5af8b2126fd255271403a3af9da0dec153503551208320f321e20d36cc71b","note":"Same delivered geometry; KTX2 pixels decoded for Blender. Diamond ORM alpha needs isolated thread-colour hook."}

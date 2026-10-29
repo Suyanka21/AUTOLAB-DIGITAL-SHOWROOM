@@ -1,0 +1,15 @@
+
+> autolab-digital-showroom@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+
+ Test Files  8 passed (8)
+      Tests  87 passed (87)
+   Start at  16:25:28
+   Duration  32.04s (tests 87%, import 12%, transform 1%)
+
+    Isolate  8 workers spawned · ~1.05s startup each (spawn + environment, per file)
+             at least ~1.75s faster with isolate: false — reuses workers across files instead of one per file

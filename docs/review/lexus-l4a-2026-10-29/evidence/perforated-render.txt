@@ -1,0 +1,21 @@
+15:58:05 | INFO: Data are loaded, start creating Blender stuff
+15:58:05 | INFO: Blender create Mesh node GEO_Seat_Front_Driver
+15:58:05 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+15:58:05 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+15:58:05 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front
+15:58:05 | INFO: Draco Decoder: Decode primitive GEO_Seat_Stitching_Front
+15:58:05 | INFO: glTF import finished in 0.24s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4a.py:45: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True;scene.world.node_tree.nodes['Background'].inputs['Color'].default_value=(.16,.17,.18,1)
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4a.py:53: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Review ground');mat.use_nodes=True;mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.10,.11,.12,1);mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.9;floor.data.materials.append(mat)
+01:31.422  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4a-2026-10-29\perforated-normal.png'
+L4_RENDER {"file": "perforated-normal.png", "seconds": 82.56906310003251, "sha256": "3f9a31b862ddce3639dadfdc7b96606f7cfa9e740ae17d4000d44fde5d7d6382", "location": [-1.5, -1.9, 1.5], "target": [-0.38, 0.05, 0.84], "lensMm": 55}
+03:06.203  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4a-2026-10-29\perforated-macro.png'
+L4_RENDER {"file": "perforated-macro.png", "seconds": 94.73737850005273, "sha256": "a08b24c01d7cfd24e8e606e62a9bef52ad412b02797a03be0279f31667fb7b9a", "location": [-0.71, -0.65, 0.85], "target": [-0.39, -0.06, 0.51], "lensMm": 70}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoDecoder | Decoded 2707 vertices, 15336 indices
+DracoDecoder | Decoded 8705 vertices, 45252 indices
+DracoDecoder | Decoded 20360 vertices, 36648 indices
+
+Blender quit

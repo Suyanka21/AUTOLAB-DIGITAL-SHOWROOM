@@ -1,0 +1,264 @@
+{
+  "verificationPassed": true,
+  "assets": [
+    {
+      "kind": "classic",
+      "loadMs": 1428.6000000238419,
+      "swaps": [
+        {
+          "name": "MAT_Seat_Primary",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        },
+        {
+          "name": "MAT_Seat_Secondary",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        },
+        {
+          "name": "MAT_Seat_Stitching",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        }
+      ],
+      "quiltThreadOnly": null,
+      "materials": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary",
+        "MAT_Seat_Stitching"
+      ],
+      "renderer": {
+        "calls": 3,
+        "triangles": 32412,
+        "textures": 9,
+        "geometries": 15
+      },
+      "textures": [
+        {
+          "name": "lexus-insert-base",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-insert-normal",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-insert-orm",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-base",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-normal",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-orm",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        }
+      ],
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "sha256": "1dd29780f53e1121f99243239108f590133cb5d5262518136f4f0179794715ba"
+    },
+    {
+      "kind": "perforated",
+      "loadMs": 419.89999997615814,
+      "swaps": [
+        {
+          "name": "MAT_Seat_Primary",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        },
+        {
+          "name": "MAT_Seat_Secondary",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        },
+        {
+          "name": "MAT_Seat_Stitching",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        }
+      ],
+      "quiltThreadOnly": null,
+      "materials": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary",
+        "MAT_Seat_Stitching"
+      ],
+      "renderer": {
+        "calls": 3,
+        "triangles": 32412,
+        "textures": 9,
+        "geometries": 15
+      },
+      "textures": [
+        {
+          "name": "lexus-insert-base",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-insert-normal",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-insert-orm",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-base",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-normal",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-orm",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        }
+      ],
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "sha256": "58711265f9206206a3952d2eb33de2f4902b9f55e20c834347cacf89b9f4e327"
+    },
+    {
+      "kind": "diamond",
+      "loadMs": 335.7999999523163,
+      "swaps": [
+        {
+          "name": "MAT_Seat_Primary",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        },
+        {
+          "name": "MAT_Seat_Secondary",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        },
+        {
+          "name": "MAT_Seat_Stitching",
+          "pixelsChanged": true,
+          "othersUnchanged": true,
+          "mapsRetained": true
+        }
+      ],
+      "quiltThreadOnly": true,
+      "materials": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary",
+        "MAT_Seat_Stitching"
+      ],
+      "renderer": {
+        "calls": 3,
+        "triangles": 32412,
+        "textures": 9,
+        "geometries": 15
+      },
+      "textures": [
+        {
+          "name": "lexus-insert-base",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-insert-normal",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-insert-orm",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-base",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-normal",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        },
+        {
+          "name": "lexus-bolster-orm",
+          "compressed": true,
+          "width": 1024,
+          "height": 1024,
+          "mips": 11
+        }
+      ],
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "sha256": "f71aa86c806c5b072a9a33b9e8bd23824ed8d9bfcd0d2b51ee97606f826f52b0"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "[.WebGL-0x657c00423e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x657c00423e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x657c00423e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x657c00423e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+  ],
+  "requestFailures": [],
+  "browser": "156.0.8078.4",
+  "mirror": {
+    "calls": 6,
+    "triangles": 64824
+  }
+}
