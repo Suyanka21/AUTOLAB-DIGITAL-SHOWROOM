@@ -1,0 +1,11 @@
+diamond exclusion alpha max=0.003922, mean=0.000000, pixels=38958
+perforated exclusion alpha max=0.000000, mean=0.000000, pixels=38958
+Diamond thread mean absolute error=0.000637; flipped=0.010542
+cushion linear area-scale median=0.999793, p05=0.981759, p95=1.000151, triangles=2408
+backrest linear area-scale median=0.999498, p05=0.952930, p95=1.013431, triangles=2704
+Material boundary midpoints checked: 298
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 82.247s
+
+OK

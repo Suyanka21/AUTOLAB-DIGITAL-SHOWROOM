@@ -1,0 +1,73 @@
+{
+  "status": "L4A-R1 isolated refinement; visual acceptance pending; Stage B prohibited",
+  "recordedAt": "2026-10-29",
+  "baseCommit": "6ab8525",
+  "branch": "codex/l4a-r1-material-refinement",
+  "references": [
+    {
+      "id": "L4R1-DIAMOND",
+      "file": "docs/review/lexus-l4ar1-2026-10-29/references/diamond.jfif",
+      "sha256": "371a9ce159e4614fce7a025eed0b59147ba0dfd52215beea4e739f24e2165deb",
+      "authorization": "Owner supplied visual reference, not texture input",
+      "identityAndScale": "Unknown photographer, vehicle/trim, physical dimensions and lighting calibration"
+    },
+    {
+      "id": "L4R1-PERFORATED",
+      "file": "docs/review/lexus-l4ar1-2026-10-29/references/perforated.jfif",
+      "sha256": "57adb70860a12db91149e4b4e40c8bded147ed621a7e52005e7effddd57f8a3c",
+      "authorization": "Owner supplied visual reference, not texture input",
+      "identityAndScale": "Unknown photographer, vehicle/trim, physical dimensions and lighting calibration"
+    }
+  ],
+  "geometrySource": "docs/3d-assets/provenance.lexus-l2a-r1.json",
+  "originalDriverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "activeAssemblySha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+  "nodes": [
+    {
+      "node": "GEO_Seat_Front_Driver",
+      "materials": [
+        "MAT_Seat_Primary",
+        "MAT_Seat_Secondary"
+      ],
+      "method": "Primary UV atlas and tangent-basis correction only; positions/indices/normals unchanged before Draco recompression. Primary analytic textures follow supplied references. Secondary smooth Classic maps reused.",
+      "references": [
+        "L4R1-DIAMOND",
+        "L4R1-PERFORATED"
+      ],
+      "uncertainty": "All physical microdimensions provisional. Normal-only padding and one-pixel pore width remain visibly inadequate."
+    },
+    {
+      "node": "GEO_Seat_Stitching_Front",
+      "materials": [
+        "MAT_Seat_Stitching"
+      ],
+      "method": "Original stitching retained; same slot colour feeds existing isolated quilt-thread hook",
+      "uncertainty": "Original seam endpoints and construction simplified; no thread topology refinement"
+    }
+  ],
+  "samples": [
+    {
+      "kind": "diamond",
+      "asset": "experiments/lexus-l4ar1/diamond.glb",
+      "sha256": "4fc6e8cb9bbbbe737c612cc73dac2e187ec738f352043041c620bc420a205712",
+      "bytes": 2785492,
+      "uvAssetSha256": "745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2",
+      "proxySha256": "33b5f07171da127930f667d1665a1a58bd65563dacb6826269f000c46b72ef11",
+      "note": "Experimental primary UV/tangents changed; unchanged source positions/topology before recompression. Final decoding preservation report required."
+    },
+    {
+      "kind": "perforated",
+      "asset": "experiments/lexus-l4ar1/perforated.glb",
+      "sha256": "6d0622c3051f41b81144e48a988173d4d7e2dc04f7bba1f443f7b37945b749f4",
+      "bytes": 2508036,
+      "uvAssetSha256": "745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2",
+      "proxySha256": "c1e428132460f991faf69174ab049d9c6439556ba7cbe9ee1d087118f52f6ffa",
+      "note": "Experimental primary UV/tangents changed; unchanged source positions/topology before recompression. Final decoding preservation report required."
+    }
+  ],
+  "preservationReport": "docs/review/lexus-l4ar1-2026-10-29/evidence/preservation.json",
+  "sourceHashes": "docs/review/lexus-l4ar1-2026-10-29/delivery-index.json: sources",
+  "limits": "No photo pixels baked, new catalogue offering, production modification, human score or device/GPU measurement. Geometry displacement and tiled detail layer proposed only.",
+  "experimentCommit": "6633551",
+  "finalizedAt": "2026-10-31"
+}

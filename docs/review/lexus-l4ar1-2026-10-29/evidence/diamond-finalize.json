@@ -1,0 +1,9 @@
+{
+  "kind": "diamond",
+  "asset": "experiments/lexus-l4ar1/diamond.glb",
+  "sha256": "4fc6e8cb9bbbbe737c612cc73dac2e187ec738f352043041c620bc420a205712",
+  "bytes": 2785492,
+  "uvAssetSha256": "745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2",
+  "proxySha256": "33b5f07171da127930f667d1665a1a58bd65563dacb6826269f000c46b72ef11",
+  "note": "Experimental primary UV/tangents changed; unchanged source positions/topology before recompression. Final decoding preservation report required."
+}

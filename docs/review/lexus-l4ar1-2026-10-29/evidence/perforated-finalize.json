@@ -1,0 +1,9 @@
+{
+  "kind": "perforated",
+  "asset": "experiments/lexus-l4ar1/perforated.glb",
+  "sha256": "6d0622c3051f41b81144e48a988173d4d7e2dc04f7bba1f443f7b37945b749f4",
+  "bytes": 2508036,
+  "uvAssetSha256": "745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2",
+  "proxySha256": "c1e428132460f991faf69174ab049d9c6439556ba7cbe9ee1d087118f52f6ffa",
+  "note": "Experimental primary UV/tangents changed; unchanged source positions/topology before recompression. Final decoding preservation report required."
+}

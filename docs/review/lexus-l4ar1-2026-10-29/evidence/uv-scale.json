@@ -1,0 +1,37 @@
+{
+  "panels": [
+    {
+      "panel": "cushion",
+      "originalUv": {
+        "medianMetresPerU": 0.16037031433179202,
+        "medianMetresPerV": 0.13369236063995935,
+        "p95MetresPerV": 0.14393736387587747,
+        "degenerateUv": 0
+      },
+      "uv": {
+        "medianMetresPerU": 0.800069576632521,
+        "medianMetresPerV": 0.7199438211108113,
+        "p95MetresPerV": 0.7221862923495023,
+        "degenerateUv": 0
+      }
+    },
+    {
+      "panel": "backrest",
+      "originalUv": {
+        "medianMetresPerU": 0.16080978795799475,
+        "medianMetresPerV": 0.17115041042526014,
+        "p95MetresPerV": 0.1953051681668973,
+        "degenerateUv": 0
+      },
+      "uv": {
+        "medianMetresPerU": 0.8016050468534311,
+        "medianMetresPerV": 0.7198104370455134,
+        "p95MetresPerV": 0.7517405140156327,
+        "degenerateUv": 0
+      }
+    }
+  ],
+  "backrestToCushionMedianScaleRatio": 0.9998147298978243,
+  "uniformWithin3PercentAtMedian": true,
+  "remaining": "Centreline arc is not a full conformal unwrap; lateral curvature retains local distortion."
+}

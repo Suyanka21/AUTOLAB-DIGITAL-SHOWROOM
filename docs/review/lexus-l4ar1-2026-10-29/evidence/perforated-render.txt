@@ -1,0 +1,23 @@
+22:31:43 | INFO: Data are loaded, start creating Blender stuff
+22:31:43 | INFO: Blender create Mesh node GEO_Seat_Front_Driver
+22:31:43 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+22:31:43 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+22:31:43 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front
+22:31:43 | INFO: Draco Decoder: Decode primitive GEO_Seat_Stitching_Front
+22:31:43 | INFO: glTF import finished in 0.29s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4ar1.py:45: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True;scene.world.node_tree.nodes['Background'].inputs['Color'].default_value=(.16,.17,.18,1)
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4ar1.py:53: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Review ground');mat.use_nodes=True;mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.10,.11,.12,1);mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.9;floor.data.materials.append(mat)
+02:06.515  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4ar1-2026-10-29\perforated-normal.png'
+L4_R1_RENDER {"file": "perforated-normal.png", "seconds": 115.61987779999981, "sha256": "b8c70a471e4a15d5d154139c521d8c440257a0e16930844d6830364d45e9dfef", "location": [-1.5, -1.9, 1.5], "target": [-0.38, 0.05, 0.84], "lensMm": 55, "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"}
+03:55.218  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4ar1-2026-10-29\perforated-macro.png'
+L4_R1_RENDER {"file": "perforated-macro.png", "seconds": 108.65589649999947, "sha256": "9a079d15e26a7c2d91b38d6ecb6044902be350804af6f997b5cbb66df61ef026", "location": [-0.66, -0.32, 1.05], "target": [-0.38, 0.24, 0.81], "lensMm": 85, "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"}
+05:45.296  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4ar1-2026-10-29\perforated-boundary.png'
+L4_R1_RENDER {"file": "perforated-boundary.png", "seconds": 110.02489559999958, "sha256": "54c2987d0c65e1d8d899d2dabb3a7a62f096c087dcfb08b7fd03782c3e4fdb47", "location": [-0.74, -0.41, 0.78], "target": [-0.52, -0.1, 0.51], "lensMm": 90, "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoDecoder | Decoded 2707 vertices, 15336 indices
+DracoDecoder | Decoded 8705 vertices, 45252 indices
+DracoDecoder | Decoded 20360 vertices, 36648 indices
+
+Blender quit

@@ -1,0 +1,18 @@
+test_decoded_ktx_alpha_respects_exclusion_and_survives_interior (__main__.ActualAtlasTest.test_decoded_ktx_alpha_respects_exclusion_and_survives_interior) ... ok
+test_decoded_thread_channel_matches_source_field_orientation (__main__.ActualAtlasTest.test_decoded_thread_channel_matches_source_field_orientation) ... ok
+test_metric_triangle_scale_matches_between_panels_without_uv_degeneracy (__main__.ActualAtlasTest.test_metric_triangle_scale_matches_between_panels_without_uv_degeneracy) ... ok
+test_original_backrest_arched_stitch_path_is_excluded (__main__.ActualAtlasTest.test_original_backrest_arched_stitch_path_is_excluded) ... ok
+test_original_cushion_transverse_stitch_paths_are_excluded (__main__.ActualAtlasTest.test_original_cushion_transverse_stitch_paths_are_excluded) ... ok
+test_real_material_boundary_edge_midpoints_are_excluded (__main__.ActualAtlasTest.test_real_material_boundary_edge_midpoints_are_excluded) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.084s
+
+OK
+diamond exclusion alpha max=0.000000, mean=0.000000, pixels=38958
+perforated exclusion alpha max=0.000000, mean=0.000000, pixels=38958
+Diamond thread mean absolute error=0.000591; flipped=0.009666
+cushion linear area-scale median=0.999793, p05=0.981759, p95=1.000151, triangles=2408
+backrest linear area-scale median=0.999498, p05=0.952930, p95=1.013431, triangles=2704
+Material boundary midpoints checked: 298
+Exit code: 0

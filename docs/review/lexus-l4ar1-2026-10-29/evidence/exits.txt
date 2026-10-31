@@ -1,0 +1,15 @@
+gates=0
+browser=0
+diamond-remaining-renders=0
+perforated-renders=0
+round2 diamond gate exit=0
+round2 perforated gate exit=0
+round2 preservation exit=0
+round2 browser exit=0
+round2 diamond render exit=0
+round2 perforated render exit=0
+final typecheck exit=0
+final packaging exit=0
+final lint exit=0
+final python exit=0
+final vitest exit=0

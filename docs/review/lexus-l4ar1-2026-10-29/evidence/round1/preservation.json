@@ -1,0 +1,68 @@
+{
+  "samples": [
+    {
+      "kind": "diamond",
+      "sha256": "fb95d01c35635f6fb07bad09e27cef61934b068348080d37f10e275416682907",
+      "primitives": [
+        {
+          "primitive": "GEO_Seat_Front_Driver/MAT_Seat_Primary",
+          "vertices": 2707,
+          "triangles": 5112,
+          "maxPositionDeltaMetres": 0.00003349276228133124,
+          "topologyAndWindingMatch": true,
+          "materialFactorsMatch": true
+        },
+        {
+          "primitive": "GEO_Seat_Front_Driver/MAT_Seat_Secondary",
+          "vertices": 8705,
+          "triangles": 15084,
+          "maxPositionDeltaMetres": 0.000049802355891341206,
+          "topologyAndWindingMatch": true,
+          "materialFactorsMatch": true
+        },
+        {
+          "primitive": "GEO_Seat_Stitching_Front/MAT_Seat_Stitching",
+          "vertices": 20360,
+          "triangles": 12216,
+          "maxPositionDeltaMetres": 0.000042057782404975925,
+          "topologyAndWindingMatch": true,
+          "materialFactorsMatch": true
+        }
+      ],
+      "nodeTransformsMatch": true
+    },
+    {
+      "kind": "perforated",
+      "sha256": "93fc30e604a2074aded57d88315b4174fec5a364f8a352da707e16592891b86c",
+      "primitives": [
+        {
+          "primitive": "GEO_Seat_Front_Driver/MAT_Seat_Primary",
+          "vertices": 2707,
+          "triangles": 5112,
+          "maxPositionDeltaMetres": 0.00003349276228133124,
+          "topologyAndWindingMatch": true,
+          "materialFactorsMatch": true
+        },
+        {
+          "primitive": "GEO_Seat_Front_Driver/MAT_Seat_Secondary",
+          "vertices": 8705,
+          "triangles": 15084,
+          "maxPositionDeltaMetres": 0.000049802355891341206,
+          "topologyAndWindingMatch": true,
+          "materialFactorsMatch": true
+        },
+        {
+          "primitive": "GEO_Seat_Stitching_Front/MAT_Seat_Stitching",
+          "vertices": 20360,
+          "triangles": 12216,
+          "maxPositionDeltaMetres": 0.000042057782404975925,
+          "topologyAndWindingMatch": true,
+          "materialFactorsMatch": true
+        }
+      ],
+      "nodeTransformsMatch": true
+    }
+  ],
+  "toleranceMetres": 0.0001,
+  "note": "Final decompressed surface positions/topology/winding/transforms/material factors checked. Primary UV/tangents intentionally changed; Draco serialization may alter numerical precision."
+}

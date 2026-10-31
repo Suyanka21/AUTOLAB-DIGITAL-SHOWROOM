@@ -1,0 +1,1 @@
+PASS: source/image/GLB/provenance hashes, original photo copies, 16 local links, STATE <=20 lines, production/source/dependencies unchanged.

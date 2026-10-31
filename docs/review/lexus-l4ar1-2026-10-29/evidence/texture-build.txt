@@ -1,0 +1,39 @@
+{
+  "blender": "5.2.2 LTS",
+  "seconds": 63.07132369999999,
+  "sourceSha256": "2036690f334be350030f5ce57e6f6550e307566bc180c601541ec610229673fa",
+  "images": [
+    {
+      "file": "diamond-base.png",
+      "sha256": "7a9dd6f4a2b9a24b32237aba0620f3707a8df1ecf7186d854ebc00f2929abb04"
+    },
+    {
+      "file": "diamond-normal.png",
+      "sha256": "6cbe8fc4d452625a3e88c02bb31f6a65e3da82c1a24b177068651af627f8c63c"
+    },
+    {
+      "file": "diamond-orm.png",
+      "sha256": "41139606c3ccdd21c615224663755640f3ae701cf02159a5f61cbe69a9a126d6"
+    },
+    {
+      "file": "perforated-base.png",
+      "sha256": "054d4312a73cb8f8f8900f0c1a94fc1cec294feb6edadedd5b96e95bd0400638"
+    },
+    {
+      "file": "perforated-normal.png",
+      "sha256": "a8ede962fd9183760af1e9ae6bb6395256ffcdf994f09dcb671970256fc72dac"
+    },
+    {
+      "file": "perforated-orm.png",
+      "sha256": "be1e2e4d30fd441f4397f954bfcffdf9f70447b6b5d3f6e70c202baa2739fdc9"
+    }
+  ],
+  "size": 1024,
+  "supersampling": 2,
+  "maxPaddingMetres": 0.0055,
+  "porePitchMetres": 0.0032,
+  "note": "Estimated visual parameters. Unique atlas; tangent-space normal relief only. Actual geometry unchanged."
+}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

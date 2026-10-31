@@ -1,0 +1,23 @@
+{
+  "assets": [
+    [
+      "diamond",
+      2785492
+    ],
+    [
+      "perforated",
+      2508036
+    ]
+  ],
+  "renderSeconds": 688.4571113999991,
+  "referenceHashes": [
+    [
+      "docs\\review\\lexus-l4ar1-2026-10-29\\references\\diamond.jfif",
+      "371a9ce159e4614fce7a025eed0b59147ba0dfd52215beea4e739f24e2165deb"
+    ],
+    [
+      "docs\\review\\lexus-l4ar1-2026-10-29\\references\\perforated.jfif",
+      "57adb70860a12db91149e4b4e40c8bded147ed621a7e52005e7effddd57f8a3c"
+    ]
+  ]
+}

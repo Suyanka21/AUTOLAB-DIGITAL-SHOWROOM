@@ -1,0 +1,19 @@
+22:01:19 | INFO: Data are loaded, start creating Blender stuff
+22:01:19 | INFO: Blender create Mesh node GEO_Seat_Front_Driver
+22:01:19 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+22:01:19 | INFO: Draco Decoder: Decode primitive GEO_Seat_Front_Driver
+22:01:19 | INFO: Blender create Mesh node GEO_Seat_Stitching_Front
+22:01:19 | INFO: Draco Decoder: Decode primitive GEO_Seat_Stitching_Front
+22:01:20 | INFO: glTF import finished in 1.17s
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4ar1.py:45: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True;scene.world.node_tree.nodes['Background'].inputs['Color'].default_value=(.16,.17,.18,1)
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\render_lexus_l4ar1.py:53: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Review ground');mat.use_nodes=True;mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.10,.11,.12,1);mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.9;floor.data.materials.append(mat)
+02:34.579  render           | Saved: 'C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\lexus-l4ar1-2026-10-29\diamond-macro.png'
+L4_R1_RENDER {"file": "diamond-macro.png", "seconds": 121.6546099000002, "sha256": "6e98a585a7c5fd180f651b21ac56dbc74349d55fd79cbcf94a26f920de3cbdc2", "location": [-0.66, -0.32, 1.05], "target": [-0.38, 0.24, 0.81], "lensMm": 85}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+DracoDecoder | Decoded 2707 vertices, 15336 indices
+DracoDecoder | Decoded 8705 vertices, 45252 indices
+DracoDecoder | Decoded 20360 vertices, 36648 indices
+
+Blender quit

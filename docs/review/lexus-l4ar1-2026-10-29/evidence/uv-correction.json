@@ -1,0 +1,23 @@
+{
+  "sourceSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52",
+  "uvAssetSha256": "745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2",
+  "positionsAndIndicesUnchangedBeforeEncoding": true,
+  "panels": [
+    {
+      "name": "cushion",
+      "spanMetres": 0.4532853421525662,
+      "vertices": 1276,
+      "triangles": 2408,
+      "boundaryEdges": 142
+    },
+    {
+      "name": "backrest",
+      "spanMetres": 0.5928246446836813,
+      "vertices": 1431,
+      "triangles": 2704,
+      "boundaryEdges": 156
+    }
+  ],
+  "atlasMetresPerU": 0.8,
+  "atlasMetresPerV": 0.72
+}

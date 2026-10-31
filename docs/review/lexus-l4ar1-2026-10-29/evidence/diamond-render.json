@@ -1,0 +1,106 @@
+{
+  "kind": "diamond",
+  "assetSha256": "4fc6e8cb9bbbbe737c612cc73dac2e187ec738f352043041c620bc420a205712",
+  "proxySha256": "33b5f07171da127930f667d1665a1a58bd65563dacb6826269f000c46b72ef11",
+  "blender": "5.2.2 LTS",
+  "sourceSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35",
+  "renderer": "Cycles CPU",
+  "sampleLimit": 48,
+  "tracingLimitSeconds": 90,
+  "achievedSamples": null,
+  "resolution": [
+    1100,
+    1000
+  ],
+  "lights": [
+    [
+      "Key",
+      [
+        -1.6,
+        -1.8,
+        2.5
+      ],
+      150,
+      0.85
+    ],
+    [
+      "Fill",
+      [
+        1,
+        -0.6,
+        1.7
+      ],
+      70,
+      1.5
+    ],
+    [
+      "Rim",
+      [
+        -0.6,
+        1.3,
+        2.3
+      ],
+      150,
+      1.2
+    ]
+  ],
+  "colors": {
+    "MAT_Seat_Primary": "995e3b",
+    "MAT_Seat_Secondary": "875735",
+    "MAT_Seat_Stitching": "bb916a"
+  },
+  "views": [
+    {
+      "file": "diamond-normal.png",
+      "seconds": 128.01123989999996,
+      "sha256": "c6eb2f0e22762c87b01d4e795e0df0c3ba93ad56d84b25d736b07b5f88eabd71",
+      "location": [
+        -1.5,
+        -1.9,
+        1.5
+      ],
+      "target": [
+        -0.38,
+        0.05,
+        0.84
+      ],
+      "lensMm": 55,
+      "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+    },
+    {
+      "file": "diamond-macro.png",
+      "seconds": 114.12732670000014,
+      "sha256": "e0cd83dce7b9f56d773c54d2fe74afb4c5bd8b9258e2df35f68ccecc6f373f8b",
+      "location": [
+        -0.66,
+        -0.32,
+        1.05
+      ],
+      "target": [
+        -0.38,
+        0.24,
+        0.81
+      ],
+      "lensMm": 85,
+      "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+    },
+    {
+      "file": "diamond-boundary.png",
+      "seconds": 112.01787490000015,
+      "sha256": "52d80cd008c563740df8c72093e76aeac2d4ad624983fe5f174af62f5ee3f5cb",
+      "location": [
+        -0.74,
+        -0.41,
+        0.78
+      ],
+      "target": [
+        -0.52,
+        -0.1,
+        0.51
+      ],
+      "lensMm": 90,
+      "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+    }
+  ],
+  "note": "Delivered KTX pixels, unchanged shape; experimental atlas UV. Diamond ORM-alpha colour mix matches isolated WebGL hook. Display-only colours are not catalogue changes."
+}

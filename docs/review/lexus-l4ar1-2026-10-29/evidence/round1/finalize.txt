@@ -1,0 +1,8 @@
+KTX_VALID diamond-base 483172
+KTX_VALID diamond-normal 583916
+KTX_VALID diamond-orm 303343
+KTX_VALID perforated-base 440566
+KTX_VALID perforated-normal 436307
+KTX_VALID perforated-orm 246320
+R1_ASSET {"kind":"diamond","asset":"experiments/lexus-l4ar1/diamond.glb","sha256":"fb95d01c35635f6fb07bad09e27cef61934b068348080d37f10e275416682907","bytes":2772200,"uvAssetSha256":"745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2","proxySha256":"56017bb77becd6a7d8f85b606ddd620d333c5851e490ae7aebc993954edb5cea","note":"Experimental primary UV/tangents changed; unchanged source positions/topology before recompression. Final decoding preservation report required."}
+R1_ASSET {"kind":"perforated","asset":"experiments/lexus-l4ar1/perforated.glb","sha256":"93fc30e604a2074aded57d88315b4174fec5a364f8a352da707e16592891b86c","bytes":2524964,"uvAssetSha256":"745688a5747f5143681f53a8816c32130887a7e987210ef36195984f8d6749d2","proxySha256":"4aac40b36aef3be930a0b0bb4432cdce09a1286b33024ca36ea1aa86662c87eb","note":"Experimental primary UV/tangents changed; unchanged source positions/topology before recompression. Final decoding preservation report required."}

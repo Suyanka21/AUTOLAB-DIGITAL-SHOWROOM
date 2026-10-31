@@ -1,0 +1,12 @@
+file:///C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tools/prepare-lexus-l4ar1.mjs:22
+const panels=[...components.values()].sort((a,b)=>a.reduce((s,i)=>s+pos.getY(i),0)/a.length-b.reduce((s,i)=>s+pos.getY(i),0)/b.length);
+                                                                        ^
+
+TypeError: pos.getY is not a function
+    at file:///C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tools/prepare-lexus-l4ar1.mjs:22:73
+    at Array.reduce (<anonymous>)
+    at file:///C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tools/prepare-lexus-l4ar1.mjs:22:53
+    at Array.sort (<anonymous>)
+    at file:///C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tools/prepare-lexus-l4ar1.mjs:22:39
+
+Node.js v22.23.2

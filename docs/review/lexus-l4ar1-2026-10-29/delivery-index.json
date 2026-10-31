@@ -1,0 +1,244 @@
+{
+  "assets": [
+    {
+      "kind": "diamond",
+      "asset": "experiments/lexus-l4ar1/diamond.glb",
+      "sha256": "4fc6e8cb9bbbbe737c612cc73dac2e187ec738f352043041c620bc420a205712",
+      "bytes": 2785492,
+      "views": [
+        {
+          "file": "diamond-normal.png",
+          "seconds": 128.01123989999996,
+          "sha256": "c6eb2f0e22762c87b01d4e795e0df0c3ba93ad56d84b25d736b07b5f88eabd71",
+          "location": [
+            -1.5,
+            -1.9,
+            1.5
+          ],
+          "target": [
+            -0.38,
+            0.05,
+            0.84
+          ],
+          "lensMm": 55,
+          "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+        },
+        {
+          "file": "diamond-macro.png",
+          "seconds": 114.12732670000014,
+          "sha256": "e0cd83dce7b9f56d773c54d2fe74afb4c5bd8b9258e2df35f68ccecc6f373f8b",
+          "location": [
+            -0.66,
+            -0.32,
+            1.05
+          ],
+          "target": [
+            -0.38,
+            0.24,
+            0.81
+          ],
+          "lensMm": 85,
+          "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+        },
+        {
+          "file": "diamond-boundary.png",
+          "seconds": 112.01787490000015,
+          "sha256": "52d80cd008c563740df8c72093e76aeac2d4ad624983fe5f174af62f5ee3f5cb",
+          "location": [
+            -0.74,
+            -0.41,
+            0.78
+          ],
+          "target": [
+            -0.52,
+            -0.1,
+            0.51
+          ],
+          "lensMm": 90,
+          "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+        }
+      ]
+    },
+    {
+      "kind": "perforated",
+      "asset": "experiments/lexus-l4ar1/perforated.glb",
+      "sha256": "6d0622c3051f41b81144e48a988173d4d7e2dc04f7bba1f443f7b37945b749f4",
+      "bytes": 2508036,
+      "views": [
+        {
+          "file": "perforated-normal.png",
+          "seconds": 115.61987779999981,
+          "sha256": "b8c70a471e4a15d5d154139c521d8c440257a0e16930844d6830364d45e9dfef",
+          "location": [
+            -1.5,
+            -1.9,
+            1.5
+          ],
+          "target": [
+            -0.38,
+            0.05,
+            0.84
+          ],
+          "lensMm": 55,
+          "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+        },
+        {
+          "file": "perforated-macro.png",
+          "seconds": 108.65589649999947,
+          "sha256": "9a079d15e26a7c2d91b38d6ecb6044902be350804af6f997b5cbb66df61ef026",
+          "location": [
+            -0.66,
+            -0.32,
+            1.05
+          ],
+          "target": [
+            -0.38,
+            0.24,
+            0.81
+          ],
+          "lensMm": 85,
+          "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+        },
+        {
+          "file": "perforated-boundary.png",
+          "seconds": 110.02489559999958,
+          "sha256": "54c2987d0c65e1d8d899d2dabb3a7a62f096c087dcfb08b7fd03782c3e4fdb47",
+          "location": [
+            -0.74,
+            -0.41,
+            0.78
+          ],
+          "target": [
+            -0.52,
+            -0.1,
+            0.51
+          ],
+          "lensMm": 90,
+          "renderScriptSha256": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "file": "docs\\review\\lexus-l4ar1-2026-10-29\\references\\diamond.jfif",
+      "sha256": "371a9ce159e4614fce7a025eed0b59147ba0dfd52215beea4e739f24e2165deb",
+      "size": [
+        1023,
+        682
+      ],
+      "source": "Owner supplied photograph; attribution/scale/light calibration unknown",
+      "crops": {
+        "macro": [
+          0,
+          0,
+          600,
+          650
+        ],
+        "boundary": [
+          360,
+          100,
+          820,
+          650
+        ]
+      }
+    },
+    {
+      "file": "docs\\review\\lexus-l4ar1-2026-10-29\\references\\perforated.jfif",
+      "sha256": "57adb70860a12db91149e4b4e40c8bded147ed621a7e52005e7effddd57f8a3c",
+      "size": [
+        2048,
+        1360
+      ],
+      "source": "Owner supplied photograph; attribution/scale/light calibration unknown",
+      "crops": {
+        "macro": [
+          0,
+          0,
+          1150,
+          1000
+        ],
+        "boundary": [
+          850,
+          0,
+          1700,
+          1000
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "blender": "5.2.2 LTS",
+    "sampleLimit": 48,
+    "tracingLimitSeconds": 90,
+    "resolution": [
+      1100,
+      1000
+    ],
+    "lights": [
+      [
+        "Key",
+        [
+          -1.6,
+          -1.8,
+          2.5
+        ],
+        150,
+        0.85
+      ],
+      [
+        "Fill",
+        [
+          1,
+          -0.6,
+          1.7
+        ],
+        70,
+        1.5
+      ],
+      [
+        "Rim",
+        [
+          -0.6,
+          1.3,
+          2.3
+        ],
+        150,
+        1.2
+      ]
+    ],
+    "colors": {
+      "MAT_Seat_Primary": "995e3b",
+      "MAT_Seat_Secondary": "875735",
+      "MAT_Seat_Stitching": "bb916a"
+    }
+  },
+  "sources": {
+    "blender/lexus_l4ar1_materials.py": "2036690f334be350030f5ce57e6f6550e307566bc180c601541ec610229673fa",
+    "blender/render_lexus_l4ar1.py": "e74aa3120be8aa77eda8cf8e7ce62dc2fa90f6bcf105088c4227927ddeccff35",
+    "tools/prepare-lexus-l4ar1.mjs": "5fe8d85806830ea627192e78f373e78cf1ede509215ea112c00e0536f830029f",
+    "scripts/finalize-lexus-l4ar1.mjs": "f7b896df9d0b4ca23f45146b851164c336d510041304d1aa55a7b59382d0f33c",
+    "tools/audit-lexus-l4ar1.mjs": "800aa4659f4ad0dfdba775f6a3b6817450dfb478b346ffe5b15d13a899ace038",
+    "tools/verify-lexus-l4ar1.mjs": "3445ff96a775c632a147b4fdb8fd5457ff25f2e69d85129ea30f5676132358ec",
+    "tools/package-lexus-l4ar1-review.py": "9964dfe6134d3af322cf48cfcbdb1eae63631094fdd868280765ac61e01b2630",
+    "experiments/lexus-l4a/thread-mask.mjs": "874c65adcfe0fac2af46500ebf66c49b281f97026b0ce98fc96458919a3029d9"
+  },
+  "images": {
+    "contact-sheet.png": "51c6caf574ecec89525ed3638a96ed5b66fe552d2830186176fea52f3337e33f",
+    "diamond-boundary-comparison.png": "992a87da5cc26673e5fb6e65cb56d189a8ed8460dfd1a08aec2f49b22b784de9",
+    "diamond-boundary.png": "52d80cd008c563740df8c72093e76aeac2d4ad624983fe5f174af62f5ee3f5cb",
+    "diamond-macro-comparison.png": "d70fdb41408d2914afb9707e1fe54e81854f60ded322a5bf85f9ffd5f6df88cf",
+    "diamond-macro.png": "e0cd83dce7b9f56d773c54d2fe74afb4c5bd8b9258e2df35f68ccecc6f373f8b",
+    "diamond-normal-comparison.png": "75865d7747ffeb1fe2c72ea9fdc9229e7f2d891f25b2848dce09833c3a900b7a",
+    "diamond-normal.png": "c6eb2f0e22762c87b01d4e795e0df0c3ba93ad56d84b25d736b07b5f88eabd71",
+    "perforated-boundary-comparison.png": "97a5b264937ff62766f3e92fdd50b7441382b416a79468de69aa2f3fdd81ea08",
+    "perforated-boundary.png": "54c2987d0c65e1d8d899d2dabb3a7a62f096c087dcfb08b7fd03782c3e4fdb47",
+    "perforated-macro-comparison.png": "261def2bf144f7aa584d1daaaf2b143213aec0856452db39ea793af8ce697338",
+    "perforated-macro.png": "9a079d15e26a7c2d91b38d6ecb6044902be350804af6f997b5cbb66df61ef026",
+    "perforated-normal-comparison.png": "6c83e6a9ed67fa62f2e4298134a4874eecdafc4c4e05f2d9e5b12e3737865252",
+    "perforated-normal.png": "b8c70a471e4a15d5d154139c521d8c440257a0e16930844d6830364d45e9dfef"
+  },
+  "renderSeconds": 688.4571113999991,
+  "activeAssemblySha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+  "note": "Primary UV/tangents changed in experimental copies only. Photos used for comparison, never as texture inputs. Normal-only relief and atlas microdetail remain inadequate for photographic acceptance."
+}
