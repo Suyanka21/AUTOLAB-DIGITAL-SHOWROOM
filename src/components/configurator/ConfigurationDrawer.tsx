@@ -25,6 +25,8 @@ export function ConfigurationDrawer() {
     primaryColorId,
     setPrimaryColor,
     primaryMaterialId,
+    upholsteryTreatment,
+    setUpholsteryTreatment,
     compositionTier,
     setCompositionTier,
     secondaryColorId,
@@ -154,25 +156,107 @@ export function ConfigurationDrawer() {
 
       {/* Step Content Area */}
       <div className="p-4 sm:p-6 flex-1 overflow-y-auto max-h-[500px] space-y-6">
-        {/* STEP 1: MATERIAL (LEATHER SUBSTRATE) */}
+        {/* STEP 1: MATERIAL (LEATHER SUBSTRATE & TREATMENT PATTERN) */}
         {activeStep === 1 && (
-          <div className="space-y-4">
-            <div>
-              <div className="flex items-center space-x-2">
-                <span className="text-[10px] font-mono uppercase bg-white/[0.05] text-[#38B6FF] px-2 py-0.5 rounded">
-                  Confirmed V1 Dimension 1
-                </span>
-                <span className="text-[11px] text-slate-400">Gate 2 Evaluation</span>
+          <div className="space-y-6">
+            {/* Upholstery Treatment Pattern (L4 Mock-up: Classic, Diamond, Perforated) */}
+            <div className="space-y-3">
+              <div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[10px] font-mono uppercase bg-[#38B6FF]/10 text-[#38B6FF] px-2 py-0.5 rounded border border-[#38B6FF]/20">
+                    Phase L4 Stage B
+                  </span>
+                  <span className="text-[11px] text-slate-400">Mock-up Treatments</span>
+                </div>
+                <h3 className="text-sm font-semibold text-white tracking-wide mt-1">
+                  Upholstery Treatment Pattern
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  Select the surface treatment applied across driver and passenger front seat inserts.
+                </p>
               </div>
-              <h3 className="text-sm font-semibold text-white tracking-wide mt-1">
-                Primary Leather Material Substrate
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                Select the baseline hide grain and tanning standard for all primary touchpoints.
-              </p>
+
+              <div className="space-y-2.5">
+                {[
+                  {
+                    id: "classic" as const,
+                    name: "Classic Smooth",
+                    description: "Factory-standard smooth grain with uniform bolster finish.",
+                    badge: "Provisional Mock-up",
+                  },
+                  {
+                    id: "diamond" as const,
+                    name: "Diamond Quilted",
+                    description: "Reference-guided elongated diamond quilting with live accent thread integration.",
+                    badge: "L4A-R1 Mock-up",
+                  },
+                  {
+                    id: "perforated" as const,
+                    name: "Perforated Leather",
+                    description: "Orderly 3.2 mm perforation array with subtle aperture lips and dark cavity shading.",
+                    badge: "L4A-R1 Mock-up",
+                  },
+                ].map((treatment) => {
+                  const isSelected = upholsteryTreatment === treatment.id;
+                  return (
+                    <button
+                      key={treatment.id}
+                      type="button"
+                      data-testid={`treatment-${treatment.id}`}
+                      onClick={() => setUpholsteryTreatment(treatment.id)}
+                      className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 flex items-start space-x-3.5 ${
+                        isSelected
+                          ? "bg-[#1A1D24] border-[#38B6FF] shadow-[0_0_15px_rgba(56,182,255,0.2)] ring-1 ring-[#38B6FF]"
+                          : "bg-[#18191D] border-white/[0.06] hover:border-white/[0.15] hover:bg-[#1C1D22]"
+                      }`}
+                    >
+                      <div className="shrink-0 mt-0.5">
+                        <div
+                          className={`h-5 w-5 rounded-full border flex items-center justify-center ${
+                            isSelected
+                              ? "border-[#38B6FF] bg-[#38B6FF]"
+                              : "border-slate-600 bg-transparent"
+                          }`}
+                        >
+                          {isSelected && <Check className="h-3 w-3 text-black font-bold" />}
+                        </div>
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-1">
+                          <span className="text-xs font-semibold text-white">
+                            {treatment.name}
+                          </span>
+                          <span className="text-[10px] font-mono text-cyan-400/90 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20">
+                            {treatment.badge}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-300 mt-1">{treatment.description}</p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="space-y-3">
+            {/* Primary Material Substrate */}
+            <div className="space-y-3 pt-3 border-t border-white/[0.08]">
+              <div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[10px] font-mono uppercase bg-white/[0.05] text-[#38B6FF] px-2 py-0.5 rounded">
+                    Confirmed V1 Dimension 1
+                  </span>
+                  <span className="text-[11px] text-slate-400">Gate 2 Evaluation</span>
+                </div>
+                <h3 className="text-sm font-semibold text-white tracking-wide mt-1">
+                  Primary Leather Material Substrate
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  Select the baseline hide grain and tanning standard for all primary touchpoints.
+                </p>
+              </div>
+
+              <div className="space-y-3">
               {materialSubstrates.map((mat) => {
                 const isSelected = primaryMaterialId === mat.id;
                 return (
@@ -229,6 +313,7 @@ export function ConfigurationDrawer() {
               })}
             </div>
           </div>
+        </div>
         )}
 
         {/* STEP 2: COLOUR (CANDIDATE LEATHER HUES) */}

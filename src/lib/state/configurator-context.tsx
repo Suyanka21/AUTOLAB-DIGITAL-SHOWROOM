@@ -1,19 +1,21 @@
 "use client";
 
 import React, { createContext, useContext, useState, useMemo, useEffect } from "react";
-import materialsCatalogue from "@/config/materials/catalogue.json";
-import colorsCatalogue from "@/config/materials/colors.json";
-import threadsCatalogue from "@/config/materials/accent-threads.json";
-import { buildWhatsAppHref } from "@/lib/whatsapp";
+import materialsCatalogue from "../../config/materials/catalogue.json";
+import colorsCatalogue from "../../config/materials/colors.json";
+import threadsCatalogue from "../../config/materials/accent-threads.json";
+import { buildWhatsAppHref } from "../whatsapp";
 import type { CameraViewId } from "@/config/spike-camera-presets";
 
 export type { CameraViewId } from "@/config/spike-camera-presets";
 export type CompositionTier = "bespoke_monotone" | "bespoke_duotone" | "executive_fluted";
+export type UpholsteryTreatment = "classic" | "diamond" | "perforated";
 
 export interface ConfiguratorState {
   // Selections
   primaryColorId: string;
   primaryMaterialId: string;
+  upholsteryTreatment: UpholsteryTreatment;
   compositionTier: CompositionTier;
   secondaryColorId: string;
   trimDeckId: string;
@@ -25,6 +27,7 @@ export interface ConfiguratorState {
 
   // Setters
   setPrimaryColor: (colorId: string) => void;
+  setUpholsteryTreatment: (treatment: UpholsteryTreatment) => void;
   setCompositionTier: (tier: CompositionTier) => void;
   setSecondaryColor: (colorId: string) => void;
   setTrimDeck: (trimId: string) => void;
@@ -63,6 +66,7 @@ export function isLexusRefCode(code: string): boolean {
 export function ConfiguratorProvider({ children }: { children: React.ReactNode }) {
   const [primaryColorId, setPrimaryColorId] = useState<string>("sienna-brown-502a");
   const [primaryMaterialId, setPrimaryMaterialId] = useState<string>("nappa-exclusive");
+  const [upholsteryTreatment, setUpholsteryTreatment] = useState<UpholsteryTreatment>("classic");
   const [compositionTier, setCompositionTier] = useState<CompositionTier>("bespoke_duotone");
   const [secondaryColorId, setSecondaryColorId] = useState<string>("black-nappa-501a");
   const [trimDeckId, setTrimDeckId] = useState<string>("open-pore-poplar");
@@ -118,6 +122,13 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
         ? "Bespoke Duotone Bolsters"
         : "Executive Fluted & Armrest Split";
 
+    const treatmentLabel =
+      upholsteryTreatment === "diamond"
+        ? "Diamond Quilted Mock-up"
+        : upholsteryTreatment === "perforated"
+        ? "Perforated Leather Mock-up"
+        : "Classic Smooth";
+
     const text = [
       `*AutoLab Digital Showroom — Consultation Request*`,
       `• Reference Code: ${referenceCode}`,
@@ -125,6 +136,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
       ``,
       `*Curated Specification:*`,
       `• Primary Leather: ${selectedPrimaryColor?.name || primaryColorId}`,
+      `• Upholstery Treatment: ${treatmentLabel}`,
       `• Interior Composition: ${compositionLabel}`,
       ...(compositionTier !== "bespoke_monotone" ? [`• Secondary Accent: ${selectedSecondaryColor?.name || secondaryColorId}`] : []),
       `• Trim Deck: ${selectedTrimDeck?.name || trimDeckId}`,
@@ -139,6 +151,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
     referenceCode,
     selectedPrimaryColor,
     primaryColorId,
+    upholsteryTreatment,
     compositionTier,
     selectedSecondaryColor,
     secondaryColorId,
@@ -154,6 +167,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
       value={{
         primaryColorId,
         primaryMaterialId,
+        upholsteryTreatment,
         compositionTier,
         secondaryColorId,
         trimDeckId,
@@ -163,6 +177,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
         activeCameraView,
         referenceCode,
         setPrimaryColor,
+        setUpholsteryTreatment,
         setCompositionTier,
         setSecondaryColor: setSecondaryColorId,
         setTrimDeck: setTrimDeckId,

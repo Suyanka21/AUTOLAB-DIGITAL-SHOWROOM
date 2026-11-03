@@ -1,11 +1,13 @@
 "use client";
 
-import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import React, { Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { addAfterEffect, Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Group, Mesh, MeshStandardMaterial, PMREMGenerator, PerspectiveCamera, type Texture } from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
-import { KTX2Loader } from "three-stdlib";
+import { createKtx2Runtime } from "@/lib/three/ktx2-runtime";
+import { attachThreadMask } from "@/lib/three/thread-mask";
+import type { UpholsteryTreatment } from "@/lib/state/configurator-context";
 import { SPIKE_CAMERA_PRESETS, type CameraViewId } from "@/config/spike-camera-presets";
 import { LEXUS_CAMERA_PRESETS } from "@/config/lexus-camera-presets";
 
@@ -23,6 +25,10 @@ const ALL_CAMERA_PRESETS: Record<string, {
 // https://threejs.org/docs/pages/RoomEnvironment.html,
 // https://threejs.org/docs/pages/GLTFLoader.html.
 const LEXUS_L2B_ASSET_URL = "/assets/3d/lexus-rx350/interior-l2b.glb";
+const LEXUS_L4_CLASSIC_ASSET_URL = "/assets/3d/lexus-rx350/interior-l4-classic.glb";
+const LEXUS_L4_DIAMOND_ASSET_URL = "/assets/3d/lexus-rx350/interior-l4-diamond.glb";
+const LEXUS_L4_PERFORATED_ASSET_URL = "/assets/3d/lexus-rx350/interior-l4-perforated.glb";
+
 const LEXUS_L2A_ASSET_URL = "/assets/3d/lexus-rx350/driver-seat-l2a.glb";
 const MERCEDES_SPIKE_ASSET_URL = "/assets/3d/s-class-v223/spike.glb";
 
@@ -41,7 +47,11 @@ const LEGACY_OLED_SLOT = "MAT_Screen_Central_OLED";
 
 type ViewerStatus = "loading" | "success" | "empty" | "error";
 export type RendererStats = { calls: number; triangles: number; textures: number; geometries: number };
-type MaterialState = { bindings: Record<string, string>; colors: Record<string, string> };
+type MaterialState = {
+  bindings: Record<string, string>; colors: Record<string, string>;
+  textures?: Record<string, { uuid: string; compressed: boolean; mips: number } | null>;
+  quiltThread?: boolean;
+};
 export type ViewerEvidence = {
   status: ViewerStatus;
   assetUrl: string;
@@ -49,6 +59,7 @@ export type ViewerEvidence = {
   renderer: RendererStats | null;
   error: string | null;
   cameraFov?: number;
+  treatment?: UpholsteryTreatment;
 };
 
 declare global {
@@ -61,7 +72,7 @@ function testParam(key: string) {
   return process.env.NEXT_PUBLIC_E2E === "1" && typeof window !== "undefined" && new URLSearchParams(window.location.search).has(key);
 }
 
-function getAssetUrl() {
+function getAssetUrl(treatment: UpholsteryTreatment = "classic") {
   if (testParam("missing-spike") || testParam("missing-asset")) {
     return "/assets/3d/lexus-rx350/missing-asset.glb";
   }
@@ -71,7 +82,16 @@ function getAssetUrl() {
   if (testParam("l2a-driver-seat") || testParam("driver-seat-only")) {
     return LEXUS_L2A_ASSET_URL;
   }
-  return LEXUS_L2B_ASSET_URL;
+  if (testParam("l3") || testParam("l2b-interior")) {
+    return LEXUS_L2B_ASSET_URL;
+  }
+  if (treatment === "diamond") {
+    return LEXUS_L4_DIAMOND_ASSET_URL;
+  }
+  if (treatment === "perforated") {
+    return LEXUS_L4_PERFORATED_ASSET_URL;
+  }
+  return LEXUS_L4_CLASSIC_ASSET_URL;
 }
 
 function RoomLighting() {
@@ -136,6 +156,25 @@ interface ExtractedModel {
   bindings: Record<string, string>;
 }
 
+function materialEvidence(parsed: ExtractedModel): MaterialState {
+  const colors = Object.fromEntries(Object.entries(parsed.materials).map(([name, mat]) => [name, "#" + mat.color.getHexString()]));
+  const result: MaterialState = { bindings: parsed.bindings, colors };
+  if (process.env.NEXT_PUBLIC_E2E === "1") {
+    result.textures = {};
+    for (const name of [LEXUS_SEAT_PRIMARY, LEXUS_SEAT_SECONDARY]) {
+      for (const role of ["map", "normalMap", "roughnessMap"] as const) {
+        const texture = parsed.materials[name]?.[role];
+        result.textures[name + ":" + role] = texture ? {
+          uuid: texture.uuid, compressed: "isCompressedTexture" in texture && texture.isCompressedTexture === true,
+          mips: texture.mipmaps.length,
+        } : null;
+      }
+    }
+    result.quiltThread = parsed.materials[LEXUS_SEAT_PRIMARY]?.customProgramCacheKey().includes("autolab-l4a-thread-v1") ?? false;
+  }
+  return result;
+}
+
 function modelMaterials(scene: Group): ExtractedModel | null {
   const materials: Record<string, MeshStandardMaterial> = {};
   const bindings: Record<string, string> = {};
@@ -160,6 +199,12 @@ function modelMaterials(scene: Group): ExtractedModel | null {
     if (!materials[LEXUS_SEAT_SECONDARY] || !materials[LEXUS_SEAT_STITCHING]) {
       throw new Error("Lexus asset is missing required secondary or stitching material slot");
     }
+    // GLTFLoader can swallow texture decode errors and return untextured materials.
+    for (const name of [LEXUS_SEAT_PRIMARY, LEXUS_SEAT_SECONDARY]) {
+      for (const role of ["map", "normalMap", "roughnessMap"] as const) {
+        if (!materials[name][role]) throw new Error(`Required Lexus texture failed to decode: ${name}.${role}`);
+      }
+    }
     const isComplete = Boolean(
       materials[LEXUS_STEERING_LEATHER] &&
       materials[LEXUS_DASHBOARD_TRIM] &&
@@ -182,6 +227,8 @@ function modelMaterials(scene: Group): ExtractedModel | null {
 
 function SpikeModel({
   url,
+  ktxRuntime,
+  treatment = "classic",
   primaryHex,
   secondaryHex = primaryHex,
   threadHex = "#D4AF37",
@@ -193,6 +240,8 @@ function SpikeModel({
   onStats,
 }: {
   url: string;
+  ktxRuntime: ReturnType<typeof createKtx2Runtime>;
+  treatment?: UpholsteryTreatment;
   primaryHex: string;
   secondaryHex?: string;
   threadHex?: string;
@@ -207,32 +256,33 @@ function SpikeModel({
 
   // Local Draco and KTX2 loader configuration
   const { scene } = useGLTF(url, "/draco/", false, (loader) => {
-    const ktx2Loader = new KTX2Loader();
-    ktx2Loader.setTranscoderPath("/basis/");
-    ktx2Loader.detectSupport(gl);
-    loader.setKTX2Loader(ktx2Loader);
+    ktxRuntime.trackURL(url);
+    loader.setKTX2Loader(ktxRuntime.loader);
   }) as { scene: Group };
 
   const parsed = useMemo(() => modelMaterials(scene), [scene]);
+
+  // L4A Quilt-thread mask hook for Diamond treatment
+  useEffect(() => {
+    if (!parsed || !parsed.isLexus) return;
+    const { materials } = parsed;
+    if (treatment === "diamond" && url === LEXUS_L4_DIAMOND_ASSET_URL && materials[LEXUS_SEAT_PRIMARY] && materials[LEXUS_SEAT_STITCHING]) {
+      const cleanup = attachThreadMask(materials[LEXUS_SEAT_PRIMARY], materials[LEXUS_SEAT_STITCHING]);
+      return cleanup;
+    }
+  }, [parsed, treatment, url]);
 
   useEffect(() => {
     if (!parsed) {
       onLoaded(null);
       return;
     }
-    const colorMap: Record<string, string> = {};
-    for (const [name, mat] of Object.entries(parsed.materials)) {
-      colorMap[name] = "#" + mat.color.getHexString();
-    }
-    onLoaded({
-      bindings: parsed.bindings,
-      colors: colorMap,
-    });
+    onLoaded(materialEvidence(parsed));
   }, [parsed, onLoaded]);
 
   useEffect(() => {
     if (!parsed) return;
-    const { materials, bindings, isLexus } = parsed;
+    const { materials, isLexus } = parsed;
 
     if (isLexus) {
       if (!testParam("break-seat-binding") && materials[LEXUS_SEAT_PRIMARY]) {
@@ -262,29 +312,33 @@ function SpikeModel({
       }
     }
 
-    invalidate();
-
-    const timer = window.setTimeout(() => {
-      const colorMap: Record<string, string> = {};
-      for (const [name, mat] of Object.entries(materials)) {
-        colorMap[name] = "#" + mat.color.getHexString();
-      }
-      onLoaded({
-        bindings,
-        colors: colorMap,
-      });
+    // Sample after a rendered frame, not a timer that can beat shader compilation.
+    let pending = true;
+    const unsubscribe = addAfterEffect(() => {
+      if (!pending || gl.info.render.calls === 0) return;
+      pending = false;
+      onLoaded(materialEvidence(parsed));
       onStats({
         calls: gl.info.render.calls,
         triangles: gl.info.render.triangles,
         textures: gl.info.memory.textures,
         geometries: gl.info.memory.geometries,
       });
-    }, 120);
-
-    return () => window.clearTimeout(timer);
+    });
+    invalidate();
+    return unsubscribe;
   }, [parsed, primaryHex, secondaryHex, threadHex, trimHex, steeringHex, accentHex, cockpitBlackHex, invalidate, onLoaded, onStats, gl]);
 
   return <primitive object={scene} />;
+}
+
+// Own decoder workers outside Suspense, so suspended/failed models still get cleanup.
+function ModelLoaderScope({ onLoading, ...props }: Omit<React.ComponentProps<typeof SpikeModel>, "ktxRuntime"> & { onLoading: () => void }) {
+  const { gl } = useThree();
+  const [runtime] = useState(() => createKtx2Runtime(gl, (url) => useGLTF.clear(url)));
+  useEffect(() => { runtime.acquire(); return () => runtime.release(); }, [runtime]);
+  useLayoutEffect(() => { onLoading(); }, [props.url, onLoading]);
+  return <Suspense fallback={null}><SpikeModel {...props} ktxRuntime={runtime} /></Suspense>;
 }
 
 class SceneBoundary extends React.Component<{ children: React.ReactNode; onError: (message: string) => void }, { failed: boolean }> {
@@ -296,6 +350,7 @@ class SceneBoundary extends React.Component<{ children: React.ReactNode; onError
 
 export function SpikeViewer({
   view,
+  treatment = "classic",
   primaryHex,
   secondaryHex = primaryHex,
   threadHex = "#D4AF37",
@@ -307,6 +362,7 @@ export function SpikeViewer({
   onStats,
 }: {
   view: CameraViewId;
+  treatment?: UpholsteryTreatment;
   primaryHex: string;
   secondaryHex?: string;
   threadHex?: string;
@@ -325,8 +381,12 @@ export function SpikeViewer({
   const [retryKey, setRetryKey] = useState(0);
   const contextRef = useRef<WebGLRenderingContext | WebGL2RenderingContext | null>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
-  const url = getAssetUrl();
+  const url = getAssetUrl(treatment);
   const fail = useCallback((message: string) => {
+    // Canvas disposal intentionally loses its context. Preserve the original
+    // loader error instead of treating teardown as a second runtime failure.
+    cleanupRef.current?.();
+    cleanupRef.current = null;
     setError(message);
     setStatus("error");
     onStatus("error");
@@ -339,6 +399,10 @@ export function SpikeViewer({
     onStatus("success");
   }, [onStatus]);
   const stats = useCallback((value: RendererStats) => { setRenderer(value); onStats(value); }, [onStats]);
+  const loading = useCallback(() => {
+    setError(null); setMaterialState(null); setRenderer(null);
+    setStatus("loading"); onStatus("loading"); onStats(null);
+  }, [onStatus, onStats]);
 
   useEffect(() => {
     const probeTimer = window.setTimeout(() => {
@@ -355,7 +419,7 @@ export function SpikeViewer({
     if (process.env.NEXT_PUBLIC_E2E !== "1") return;
     const currentFov = (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38;
     window.__autolab = {
-      snapshot: () => ({ status, assetUrl: url, materialState, renderer, error, cameraFov: currentFov }),
+      snapshot: () => ({ status, assetUrl: url, materialState, renderer, error, cameraFov: currentFov, treatment }),
       loseContext: () => {
         const extension = contextRef.current?.getExtension("WEBGL_lose_context");
         if (!extension) return false;
@@ -364,9 +428,10 @@ export function SpikeViewer({
       },
     };
     return () => { delete window.__autolab; };
-  }, [status, url, materialState, renderer, error, view]);
+  }, [status, url, materialState, renderer, error, view, treatment]);
 
   const retry = () => {
+    useGLTF.clear(url);
     cleanupRef.current?.();
     cleanupRef.current = null;
     setError(null); setMaterialState(null); setRenderer(null);
@@ -399,9 +464,11 @@ export function SpikeViewer({
       }}>
       <RoomLighting />
       <CameraRig view={view} />
-      <SceneBoundary onError={fail}><Suspense fallback={null}>
-        <SpikeModel
+      <SceneBoundary onError={fail}>
+        <ModelLoaderScope
           url={url}
+          treatment={treatment}
+          onLoading={loading}
           primaryHex={primaryHex}
           secondaryHex={secondaryHex}
           threadHex={threadHex}
@@ -412,7 +479,7 @@ export function SpikeViewer({
           onLoaded={loaded}
           onStats={stats}
         />
-      </Suspense></SceneBoundary>
+      </SceneBoundary>
     </Canvas>}
     {status !== "success" && <div className="absolute inset-x-3 bottom-14 z-10 rounded-lg bg-[#141416]/90 px-3 py-2 text-xs text-slate-200"
       role="status" aria-live="polite" data-testid="viewer-status">

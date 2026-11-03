@@ -17,6 +17,7 @@ import { useConfigurator } from "@/lib/state/configurator-context";
 export function SummaryBar() {
   const {
     referenceCode,
+    upholsteryTreatment,
     selectedPrimaryColor,
     selectedSecondaryColor,
     selectedTrimDeck,
@@ -38,6 +39,13 @@ export function SummaryBar() {
       // fallback
     }
   };
+
+  const treatmentLabel =
+    upholsteryTreatment === "diamond"
+      ? "Diamond Quilted"
+      : upholsteryTreatment === "perforated"
+      ? "Perforated"
+      : "Classic Smooth";
 
   const compositionLabel =
     compositionTier === "bespoke_monotone"
@@ -103,6 +111,12 @@ export function SummaryBar() {
                   <span className="text-slate-200 truncate max-w-[110px] font-medium">
                     {selectedPrimaryColor?.name.split("(")[0]}
                   </span>
+                </div>
+
+                {/* Treatment */}
+                <div className="hidden sm:flex items-center space-x-1 px-2.5 py-1.5 rounded-lg bg-[#141416] border border-white/[0.06] text-[#38B6FF]">
+                  <Sparkles className="h-3 w-3 text-[#38B6FF]" />
+                  <span>{treatmentLabel}</span>
                 </div>
 
                 {/* Composition */}
@@ -186,6 +200,10 @@ export function SummaryBar() {
               <div className="flex items-center justify-between py-2 border-b border-white/[0.04]">
                 <span className="text-slate-400">Atelier Reference:</span>
                 <span className="font-mono font-bold text-[#38B6FF]">{referenceCode}</span>
+              </div>
+              <div className="flex items-center justify-between py-2 border-b border-white/[0.04]">
+                <span className="text-slate-400">Upholstery Treatment:</span>
+                <span className="font-medium text-[#38B6FF]">{treatmentLabel}</span>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-white/[0.04]">
                 <span className="text-slate-400">Primary Leather:</span>
