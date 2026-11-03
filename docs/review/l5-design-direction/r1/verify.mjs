@@ -1,0 +1,70 @@
+import {chromium,expect} from '@playwright/test';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const root=resolve('docs/review/l5-design-direction/r1');
+const report={at:new Date().toISOString(),scope:'Isolated design prototype; no production or real-device performance claims',checks:[],errors:[]};
+await mkdir(`${root}/screenshots`,{recursive:true});
+const browser=await chromium.launch({headless:true});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ page.on('pageerror',e=>report.errors.push(e.message));
+ const url=pathToFileURL(`${root}/html/configurator.html`).href;
+ await page.goto(url);
+ await expect(page.getByRole('radio',{name:'Classic',exact:true})).toHaveAttribute('aria-checked','true');
+ await page.getByRole('radio',{name:'Classic',exact:true}).focus();
+ await page.keyboard.press('ArrowRight');
+ await expect(page.getByRole('radio',{name:'Diamond Quilted',exact:true})).toHaveAttribute('aria-checked','true');
+ await page.keyboard.press('End');
+ await expect(page.getByRole('radio',{name:'Perforated',exact:true})).toHaveAttribute('aria-checked','true');
+ await expect(page.getByRole('button',{name:'Next treatment',exact:true})).toBeDisabled();
+ await page.keyboard.press('Home');
+ await expect(page.getByRole('radio',{name:'Classic',exact:true})).toHaveAttribute('aria-checked','true');
+ report.checks.push('Keyboard arrows, Home/End, selected radio and carousel endpoints');
+ await page.getByRole('button',{name:'Stitch Detail',exact:true}).click();
+ await expect(page.locator('#stage-image')).toHaveAttribute('src',/classic-seam_macro/);
+ await page.getByRole('radio',{name:'Diamond Quilted',exact:true}).click();
+ await page.getByRole('radio',{name:'Perforated',exact:true}).click();
+ await expect(page.locator('#stage-image')).toHaveAttribute('src',/perforated-seam_macro/);
+ report.checks.push('Camera and rapid treatment changes retain latest recorded view');
+ await page.getByRole('button',{name:'Colour',exact:true}).click();
+ await expect(page.locator('#step-title')).toHaveText('A colour that feels yours.');
+ await page.getByRole('button',{name:'Accent Thread',exact:true}).click();
+ await page.getByRole('button',{name:'Composition',exact:true}).click();
+ await expect(page.getByRole('link',{name:'Reveal specification'})).toBeVisible();
+ report.checks.push('Four-step navigation and specification link');
+ await page.goto(pathToFileURL(`${root}/html/summary.html`).href);
+ await page.getByRole('button',{name:'Spec Sheet',exact:true}).click();
+ await expect(page.getByRole('dialog')).toBeVisible();
+ await page.keyboard.press('Escape');
+ await expect(page.getByRole('dialog')).not.toBeVisible();
+ await expect(page.getByRole('button',{name:'Continue on WhatsApp'})).toBeDisabled();
+ await page.getByRole('button',{name:'Copy code'}).click();
+ await expect(page.locator('#copy-status')).toHaveText(/Copied|Select/);
+ report.checks.push('Spec Sheet modal/Escape, copy feedback, unavailable WhatsApp disabled');
+ for(const [platform,width,height] of [['desktop',1440,1000],['mobile',390,844]]){
+  await page.setViewportSize({width,height});
+  for(const screen of ['welcome','configurator','summary']){
+   await page.goto(pathToFileURL(`${root}/html/${screen}.html`).href);
+   await page.waitForTimeout(800);
+   const audit=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,missing:[...document.images].some(i=>!i.complete||!i.naturalWidth),headings:document.querySelectorAll('h1').length,canvases:document.querySelectorAll('canvas').length,text:document.body.innerText}));
+   if(audit.overflow||audit.missing||audit.headings!==1||audit.canvases||/Lexus|Mercedes|Suyanka/i.test(audit.text))throw Error(`${platform}-${screen} layout, asset or branding failure: ${JSON.stringify(audit)}`);
+   await page.screenshot({path:`${root}/screenshots/${platform}-${screen}.png`,fullPage:true});
+  }
+ }
+ report.checks.push('Six desktop/mobile screens: no overflow, missing image, manufacturer copy or added canvas');
+ await page.setViewportSize({width:390,height:844});await page.goto(url);
+ const card=page.locator('#material-card');
+ await card.dispatchEvent('pointerdown',{pointerId:1,isPrimary:true,clientX:300,clientY:300});
+ await card.dispatchEvent('pointerup',{pointerId:1,isPrimary:true,clientX:100,clientY:305});
+ await expect(page.getByRole('radio',{name:'Diamond Quilted',exact:true})).toHaveAttribute('aria-checked','true');
+ await card.dispatchEvent('pointerdown',{pointerId:2,isPrimary:true,clientX:200,clientY:300});
+ await card.dispatchEvent('pointerup',{pointerId:2,isPrimary:true,clientX:180,clientY:420});
+ await expect(page.getByRole('radio',{name:'Diamond Quilted',exact:true})).toHaveAttribute('aria-checked','true');
+ report.checks.push('Synthetic pointer swipe selects next; vertical gesture does not change selection (not real phone evidence)');
+ await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:320,height:844});
+ await page.goto(pathToFileURL(`${root}/html/welcome.html`).href);
+ if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth||document.getAnimations().some(a=>a.playState==='running')))throw Error('320px or reduced-motion failure');
+ report.checks.push('320px welcome and reduced-motion suppress running entrance animations');
+}catch(e){report.errors.push(e.message);process.exitCode=1;}finally{await browser.close();await writeFile(`${root}/evidence/prototype-checks.json`,JSON.stringify(report,null,2)+'\n');}
+console.log(JSON.stringify(report,null,2));

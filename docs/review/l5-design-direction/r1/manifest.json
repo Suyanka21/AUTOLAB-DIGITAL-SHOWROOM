@@ -1,0 +1,23 @@
+{
+  "status": "Owner review; implementation unauthorized",
+  "platforms": [
+    "desktop",
+    "mobile"
+  ],
+  "style": "AutoLab editorial ivory / graphite",
+  "html": [
+    "html/welcome.html",
+    "html/configurator.html",
+    "html/summary.html"
+  ],
+  "css": [
+    "css/foundation.css",
+    "css/shared.css"
+  ],
+  "js": [
+    "js/app.js"
+  ],
+  "source": "Own existing viewer captures; faithful original PDF logo crop",
+  "fontPolicy": "Installed Windows font rendering only; no redistributed or downloaded font files",
+  "scope": "Static imagery with working carousel, camera-view selection, steps and summary actions; no production imports"
+}

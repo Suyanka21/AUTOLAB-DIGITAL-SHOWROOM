@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-03T22:26:08.117Z",
+  "scope": "Isolated design prototype; no production or real-device performance claims",
+  "checks": [
+    "Keyboard arrows, Home/End, selected radio and carousel endpoints"
+  ],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Stitch Detail', exact: true })\u001b[22m\n"
+  ]
+}

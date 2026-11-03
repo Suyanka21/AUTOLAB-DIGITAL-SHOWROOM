@@ -1,5 +1,7 @@
 # L5 implementation slices — pending owner approval
 
+**Historical plan.** The owner provisionally approved the editorial direction and requested L5-R1. Implementation remains unauthorized. Use [R1 implementation slices and rollback boundaries](r1/IMPLEMENTATION-PLAN.md); the original plan below is retained as historical context.
+
 No slice below has begun. Each is a separate local commit, reviewed before the next. Baseline is `ff9dabf`; preserve L4's technical behaviour. Rollback means reverting only the relevant L5 presentation commit, never replacing assets or resetting configuration data. No extra planning framework or architecture migration is proposed.
 
 ## 1. Approved shell around the existing stage

@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-03T22:22:30.317Z",
+  "scope": "Isolated design prototype; no production or real-device performance claims",
+  "checks": [],
+  "errors": [
+    "page.goto: net::ERR_FILE_NOT_FOUND at file:///C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/docs/review/l5-design-direction/r1/html/configurator.html\nCall log:\n\u001b[2m  - navigating to \"file:///C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/docs/review/l5-design-direction/r1/html/configurator.html\", waiting until \"load\"\u001b[22m\n"
+  ]
+}

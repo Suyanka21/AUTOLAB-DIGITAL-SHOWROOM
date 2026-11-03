@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-03T22:32:04.572Z",
+  "scope": "Isolated design prototype; no production or real-device performance claims",
+  "checks": [
+    "Keyboard arrows, Home/End, selected radio and carousel endpoints",
+    "Camera and rapid treatment changes retain latest recorded view",
+    "Four-step navigation and specification link",
+    "Spec Sheet modal/Escape, copy feedback, unavailable WhatsApp disabled",
+    "Six desktop/mobile screens: no overflow, missing image, manufacturer copy or added canvas",
+    "Synthetic pointer swipe selects next; vertical gesture does not change selection (not real phone evidence)",
+    "320px welcome and reduced-motion suppress running entrance animations"
+  ],
+  "errors": []
+}

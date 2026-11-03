@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-03T22:33:25.630Z",
+  "browser": "156.0.8078.4",
+  "scope": "Actual recording of isolated HTML prototype; image changes are not live camera or material performance",
+  "frames": [
+    {
+      "id": "01-welcome",
+      "label": "Welcome: 600ms entrance; entry always available",
+      "capturedAt": "2026-11-03T22:33:26.832Z"
+    },
+    {
+      "id": "02-classic",
+      "label": "Material: larger close-up with cabin context",
+      "capturedAt": "2026-11-03T22:33:29.141Z"
+    },
+    {
+      "id": "03-diamond",
+      "label": "Diamond: 300ms image reveal and selection feedback",
+      "capturedAt": "2026-11-03T22:33:30.307Z"
+    },
+    {
+      "id": "04-perforated",
+      "label": "Perforated: third treatment, no automatic advance",
+      "capturedAt": "2026-11-03T22:33:31.432Z"
+    },
+    {
+      "id": "05-detail",
+      "label": "Camera: detail view, original preset preserved",
+      "capturedAt": "2026-11-03T22:33:32.712Z"
+    },
+    {
+      "id": "06-colour",
+      "label": "Colour: 240ms panel entrance, unchanged captured fixture",
+      "capturedAt": "2026-11-03T22:33:33.899Z"
+    },
+    {
+      "id": "07-thread",
+      "label": "Accent Thread: existing selection, no new decorative gold",
+      "capturedAt": "2026-11-03T22:33:35.227Z"
+    },
+    {
+      "id": "08-composition",
+      "label": "Composition: final step retains prior selection",
+      "capturedAt": "2026-11-03T22:33:36.435Z"
+    },
+    {
+      "id": "09-summary",
+      "label": "Summary: treatment retained, captured reference, copy and Spec Sheet",
+      "capturedAt": "2026-11-03T22:33:37.620Z"
+    },
+    {
+      "id": "10-spec-sheet",
+      "label": "Accessible Spec Sheet dialog; WhatsApp cannot send from prototype",
+      "capturedAt": "2026-11-03T22:33:38.602Z"
+    }
+  ],
+  "errors": [],
+  "fonts": {
+    "display": true,
+    "body": true,
+    "canvasCount": 0
+  }
+}

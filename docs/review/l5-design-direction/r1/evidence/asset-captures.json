@@ -1,0 +1,141 @@
+{
+  "at": "2026-11-03T18:34:40.472Z",
+  "browser": "156.0.8078.4",
+  "method": "Read-only existing app; screenshot crop excludes bottom DOM badges. No pixel retouching, scene edits or camera-coordinate edits.",
+  "errors": [],
+  "captures": [
+    {
+      "treatment": "classic",
+      "camera": "hero_driver",
+      "label": "Driver Hero",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 397
+      }
+    },
+    {
+      "treatment": "classic",
+      "camera": "cabin_pair",
+      "label": "Cabin Pair",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 333
+      }
+    },
+    {
+      "treatment": "classic",
+      "camera": "driver_cockpit",
+      "label": "Cockpit & Dash",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 333
+      }
+    },
+    {
+      "treatment": "classic",
+      "camera": "seam_macro",
+      "label": "Stitch Detail",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 397
+      }
+    },
+    {
+      "treatment": "diamond",
+      "camera": "hero_driver",
+      "label": "Driver Hero",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 397
+      }
+    },
+    {
+      "treatment": "diamond",
+      "camera": "cabin_pair",
+      "label": "Cabin Pair",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 333
+      }
+    },
+    {
+      "treatment": "diamond",
+      "camera": "driver_cockpit",
+      "label": "Cockpit & Dash",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 333
+      }
+    },
+    {
+      "treatment": "diamond",
+      "camera": "seam_macro",
+      "label": "Stitch Detail",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 397
+      }
+    },
+    {
+      "treatment": "perforated",
+      "camera": "hero_driver",
+      "label": "Driver Hero",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 397
+      }
+    },
+    {
+      "treatment": "perforated",
+      "camera": "cabin_pair",
+      "label": "Cabin Pair",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 333
+      }
+    },
+    {
+      "treatment": "perforated",
+      "camera": "driver_cockpit",
+      "label": "Cockpit & Dash",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 333
+      }
+    },
+    {
+      "treatment": "perforated",
+      "camera": "seam_macro",
+      "label": "Stitch Detail",
+      "clip": {
+        "x": 113,
+        "y": 261.5,
+        "width": 697.328125,
+        "height": 397
+      }
+    }
+  ],
+  "referenceCode": "AL-RX-2026-PAXJ"
+}

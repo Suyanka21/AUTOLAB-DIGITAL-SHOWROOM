@@ -1,5 +1,11 @@
 # AutoLab L5 — an editorial automotive atelier
 
+## Current revision: L5-R1
+
+**Editorial direction provisionally approved; implementation NOT authorized.** The [revised branded visual board](r1/index.html) and [R1 proposal](r1/README.md) supersede the original typography, logo and static-selector treatment below. R1 adds authentic PDF branding, a working isolated carousel, motion recording/storyboard, updated summary and a customer-facing branding audit. Carlex was reviewed for material-presentation lessons without copying assets or layouts. [Current implementation slices](r1/IMPLEMENTATION-PLAN.md).
+
+The remainder of this document and the original concept files are **historical L5 evidence**, retained unchanged in substance for comparison. Their earlier approval wording and customer-facing manufacturer labels are not the R1 recommendation. No production branding replacement or presentation slice has been implemented.
+
 **Owner review checkpoint · 3 November 2026 · proposal only**
 
 The owner selected **warm ivory controls around a graphite stage** during this session. The complete visual direction and implementation are **not approved**. L4 Stage B is technically accepted by the owner. Its model and customer behaviour remain the baseline.

@@ -1,17 +1,19 @@
-# State — 2026-11-03
+# State — 2026-11-04
 
-- L4 Stage B technically accepted by owner; baseline `ff9dabf` includes runtime/assets/tests `55c0046` and evidence handoff.
-- Current phase: L5 design direction and repository feasibility ONLY; branch `codex/l5-design-direction` from `ff9dabf`.
-- Owner selected warm ivory controls with graphite stage; complete layouts, typography and implementation remain pending approval.
-- Review pack: `docs/review/l5-design-direction/README.md`; visual board: `index.html` in that directory.
-- Six static desktop/mobile concept screens plus four-step/state captures use actual unchanged Lexus viewer screenshots.
-- Four repositories inspected at pinned source revisions; source/licence/dependency findings in REPOSITORIES.md.
-- Recommendation: retain installed R3F, add no rendering dependencies; Shader Gradient core licence unresolved; liquid-logo PolyForm Shield; liquid-glass-js overhead/accessibility concerns.
-- No production UI/source, GLB/KTX2, decoder, catalogue, viewer, dependencies or handoff changes. No implementation, push or deployment.
-- Local Chromium captures passed; static asset/layout/state checks passed; software rendering is not real-phone or GPU evidence.
-- Documentation/contrast/asset-preservation checks: review pack evidence/consistency.json; no new production build/test claims.
-- Preserve seven bindings, three treatments, four camera presets, four-step journey, configuration code, Spec Sheet and WhatsApp semantics.
-- Prior L4 suite102/102, browser8/8, recovery2/2, typecheck/lint/build and four asset gates remain historical baseline evidence.
-- Human visual gates/reference gaps, model defects, catalogue signoffs, phone performance and13 development audit findings remain open.
-- NEXT: owner reviews L5 visual direction and zero-new-renderer recommendation; staged rollback plan documented but not started.
-- STOP at owner approval checkpoint. No geometry refinement, runtime implementation or new phase authorized here.
+- L4 Stage B technically accepted; baseline ff9dabf; original L5 proposal d9d1492.
+- Current phase: L5-R1 design refinement ONLY; branch codex/l5-r1-design-refinement from d9d1492.
+- Owner provisionally approved editorial ivory/graphite/cyan direction; implementation NOT authorized.
+- Current review: docs/review/l5-design-direction/r1/index.html and README.md; original L5 retained as historical evidence.
+- Authentic public/AUTOLAB LOGO .pdf preserved; faithful cropped PNG used in revised desktop/mobile concepts.
+- Three responsive proposal screens, interactive material selector, four recorded camera views, step transitions and specification dialog.
+- Actual browser recording/storyboard and local validation evidence in r1/motion and r1/evidence.
+- Carlex Dubai reviewed for material-image hierarchy; no assets/layouts/branding copied; no catalogue additions.
+- Brand audit records future text replacements and geometric steering-wheel emblem; production untouched.
+- Local prototype fonts: installed Baskerville Old Face/Bahnschrift. OFL Cormorant Garamond/DM Sans proposed, not downloaded.
+- Preserve seven bindings, three treatments, four cameras, four steps, configuration/code/copy/Spec Sheet/WhatsApp and Retry lifecycle.
+- No production UI/source, GLB/KTX2, decoder, catalogue, dependencies or handoff implementation changes; no push/deploy.
+- Checks are Chromium/image-based; no live-renderer benchmark, real-phone, GPU or full accessibility certification.
+- Four-repository assessment retained: existing R3F only; no added WebGL context, shader or glass package.
+- Human visual gates/reference gaps, model defects, catalogue signoffs, phone performance and 13 development audit findings remain open.
+- NEXT: owner reviews R1 identity, typography, motion and carousel before implementation; emblem removal is a separate decision.
+- STOP at owner approval checkpoint. No presentation slice or geometry work authorized.

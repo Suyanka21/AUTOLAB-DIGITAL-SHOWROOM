@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-03T22:30:41.163Z",
+  "scope": "Isolated design prototype; no production or real-device performance claims",
+  "checks": [
+    "Keyboard arrows, Home/End, selected radio and carousel endpoints",
+    "Camera and rapid treatment changes retain latest recorded view",
+    "Four-step navigation and specification link",
+    "Spec Sheet modal/Escape, copy feedback, unavailable WhatsApp disabled",
+    "Six desktop/mobile screens: no overflow, missing image, manufacturer copy or added canvas"
+  ],
+  "errors": [
+    "expect(locator).toHaveAttribute(expected) failed\n\nLocator:  getByRole('radio', { name: 'Diamond Quilted', exact: true })\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" getByRole('radio', { name: 'Diamond Quilted', exact: true }) with timeout 5000ms\n  - waiting for getByRole('radio', { name: 'Diamond Quilted', exact: true })\n    13 × locator resolved to <button role=\"radio\" tabindex=\"-1\" data-treatment=\"1\" aria-checked=\"false\">…</button>\n       - unexpected value \"false\"\n"
+  ]
+}
