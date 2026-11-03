@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-11-03T17:53:16.917Z",
+  "type": "Static design review; no live configurator behaviour is claimed",
+  "errors": [],
+  "pages": [
+    {
+      "platform": "desktop",
+      "screen": "welcome",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "missingImages": 0,
+      "h1": 1
+    },
+    {
+      "platform": "desktop",
+      "screen": "configurator",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "missingImages": 0,
+      "h1": 1
+    },
+    {
+      "platform": "desktop",
+      "screen": "summary",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "missingImages": 0,
+      "h1": 1
+    },
+    {
+      "platform": "mobile",
+      "screen": "welcome",
+      "width": 390,
+      "scrollWidth": 390,
+      "missingImages": 0,
+      "h1": 1
+    },
+    {
+      "platform": "mobile",
+      "screen": "configurator",
+      "width": 390,
+      "scrollWidth": 390,
+      "missingImages": 0,
+      "h1": 1
+    },
+    {
+      "platform": "mobile",
+      "screen": "summary",
+      "width": 390,
+      "scrollWidth": 390,
+      "missingImages": 0,
+      "h1": 1
+    }
+  ],
+  "assetLinks": 52,
+  "narrow": {
+    "width": 320,
+    "scrollWidth": 320
+  },
+  "keyboardFocus": "A"
+}

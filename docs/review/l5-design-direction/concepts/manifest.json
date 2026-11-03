@@ -1,0 +1,53 @@
+{
+  "app": "autolab-l5-proposal",
+  "status": "Owner palette selected; full visual direction awaiting approval",
+  "platforms": [
+    "desktop",
+    "mobile"
+  ],
+  "screens": [
+    "desktop-welcome",
+    "desktop-configurator",
+    "desktop-summary",
+    "mobile-welcome",
+    "mobile-configurator",
+    "mobile-summary"
+  ],
+  "html": [
+    "html/desktop-welcome.html",
+    "html/desktop-configurator.html",
+    "html/desktop-summary.html",
+    "html/mobile-welcome.html",
+    "html/mobile-configurator.html",
+    "html/mobile-summary.html"
+  ],
+  "css": [
+    "css/foundation.css",
+    "css/shared.css"
+  ],
+  "js": [
+    "js/app.js"
+  ],
+  "sharedCss": [
+    "foundation.css",
+    "shared.css"
+  ],
+  "sharedJs": [
+    "app.js"
+  ],
+  "assets": [
+    "../evidence/actual-driver-stage.png",
+    "../evidence/actual-detail-stage.png"
+  ],
+  "states": [
+    "success",
+    "loading",
+    "empty",
+    "error"
+  ],
+  "limitations": [
+    "Static stage capture; disabled viewer controls",
+    "Illustrative saved configuration; no live state or WhatsApp action",
+    "No repository effects or third-party code copied"
+  ]
+}

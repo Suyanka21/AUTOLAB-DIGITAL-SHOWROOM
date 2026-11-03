@@ -1,0 +1,7 @@
+:root {
+ --paper:#f4f0e8; --surface:#fffcf6; --ink:#242724; --muted:#60635e; --line:#ccc7bc;
+ --stage:#101115; --cyan:#38b6ff; --accent:#00647b; --heading:Georgia,'Times New Roman',serif;
+ --body:'Segoe UI',system-ui,sans-serif; --mono:Consolas,monospace;
+ --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px; --s16:64px;
+ --radius-shell:12px; --radius-surface:8px; --radius-control:4px; --radius-tight:2px;
+}

@@ -1,0 +1,113 @@
+{
+  "base": "ff9dabf",
+  "checkedAt": "2026-11-03T17:55:53.902Z",
+  "trackedChanges": [
+    "docs/STATE.md",
+    "docs/review/l5-design-direction/IMPLEMENTATION-PLAN.md",
+    "docs/review/l5-design-direction/README.md",
+    "docs/review/l5-design-direction/REPOSITORIES.md",
+    "docs/review/l5-design-direction/build-concepts.mjs",
+    "docs/review/l5-design-direction/capture-current.mjs",
+    "docs/review/l5-design-direction/check-consistency.mjs",
+    "docs/review/l5-design-direction/concepts/css/foundation.css",
+    "docs/review/l5-design-direction/concepts/css/shared.css",
+    "docs/review/l5-design-direction/concepts/html/desktop-configurator.html",
+    "docs/review/l5-design-direction/concepts/html/desktop-summary.html",
+    "docs/review/l5-design-direction/concepts/html/desktop-welcome.html",
+    "docs/review/l5-design-direction/concepts/html/mobile-configurator.html",
+    "docs/review/l5-design-direction/concepts/html/mobile-summary.html",
+    "docs/review/l5-design-direction/concepts/html/mobile-welcome.html",
+    "docs/review/l5-design-direction/concepts/js/app.js",
+    "docs/review/l5-design-direction/concepts/manifest.json",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-colour.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-composition.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-configurator.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-empty.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-error.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-loading.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-summary.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-thread.png",
+    "docs/review/l5-design-direction/concepts/screenshots/desktop-welcome.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-colour.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-composition.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-configurator-full.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-configurator.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-empty.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-error.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-loading.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-summary.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-thread.png",
+    "docs/review/l5-design-direction/concepts/screenshots/mobile-welcome.png",
+    "docs/review/l5-design-direction/evidence/actual-detail-stage.png",
+    "docs/review/l5-design-direction/evidence/actual-driver-stage.png",
+    "docs/review/l5-design-direction/evidence/concept-checks.json",
+    "docs/review/l5-design-direction/evidence/consistency.json",
+    "docs/review/l5-design-direction/evidence/current-capture.json",
+    "docs/review/l5-design-direction/evidence/current-desktop-viewport.png",
+    "docs/review/l5-design-direction/evidence/current-desktop.png",
+    "docs/review/l5-design-direction/evidence/current-mobile-viewport.png",
+    "docs/review/l5-design-direction/evidence/current-mobile.png",
+    "docs/review/l5-design-direction/evidence/current-welcome-desktop.png",
+    "docs/review/l5-design-direction/evidence/current-welcome-mobile.png",
+    "docs/review/l5-design-direction/evidence/installed-versions.json",
+    "docs/review/l5-design-direction/evidence/repository-revisions.json",
+    "docs/review/l5-design-direction/index.html",
+    "docs/review/l5-design-direction/verify-concepts.mjs"
+  ],
+  "unexpectedChanges": [],
+  "documentLinks": 48,
+  "assets": [
+    {
+      "path": "public/assets/3d/lexus-rx350/interior-l4-classic.glb",
+      "bytes": 3805516,
+      "sha256": "168ecc2669cdb4bc7f23a7eb04e2ec27071540f15f945949ea0a98f7a5f7a63c",
+      "unchanged": true
+    },
+    {
+      "path": "public/assets/3d/lexus-rx350/interior-l4-diamond.glb",
+      "bytes": 3643628,
+      "sha256": "db7828e1d1cdb26e4b438a3a574ccdcadd2bfef0cbf0678e3f08f036bf7c2e73",
+      "unchanged": true
+    },
+    {
+      "path": "public/assets/3d/lexus-rx350/interior-l4-perforated.glb",
+      "bytes": 3366172,
+      "sha256": "c26f5198b8da4e035ffd556949bff89e419ae5c660e99887e4ef337d10cab95b",
+      "unchanged": true
+    },
+    {
+      "path": "public/assets/3d/lexus-rx350/interior-l2b.glb",
+      "bytes": 3829276,
+      "sha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+      "unchanged": true
+    }
+  ],
+  "contrast": [
+    {
+      "foreground": "242724",
+      "background": "f4f0e8",
+      "ratio": 13.29,
+      "normalText": true
+    },
+    {
+      "foreground": "60635e",
+      "background": "f4f0e8",
+      "ratio": 5.37,
+      "normalText": true
+    },
+    {
+      "foreground": "00647b",
+      "background": "f4f0e8",
+      "ratio": 5.94,
+      "normalText": true
+    },
+    {
+      "foreground": "38b6ff",
+      "background": "101115",
+      "ratio": 8.36,
+      "normalText": true
+    }
+  ],
+  "errors": [],
+  "stateLines": 17
+}
