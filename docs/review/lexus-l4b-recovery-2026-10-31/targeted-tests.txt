@@ -1,0 +1,57 @@
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 3 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Failed to start forks worker for test files C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tests/lexus-l4b.test.ts.
+ ❯ node_modules/vitest/dist/chunks/index.1TqnEahn.js:5921:94
+ ❯ runNextTicks node:internal/process/task_queues:64:5
+ ❯ listOnTimeout node:internal/timers:547:9
+ ❯ processTimers node:internal/timers:521:7
+ ❯ Pool.schedule node_modules/vitest/dist/chunks/index.1TqnEahn.js:5921:5
+
+Caused by: Error: [vitest-pool-runner]: Timeout waiting for worker to respond
+ ❯ Timeout.<anonymous> node_modules/vitest/dist/chunks/index.1TqnEahn.js:5418:58
+ ❯ listOnTimeout node:internal/timers:585:17
+ ❯ processTimers node:internal/timers:521:7
+
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Failed to start forks worker for test files C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tests/ktx2-runtime.test.ts.
+ ❯ node_modules/vitest/dist/chunks/index.1TqnEahn.js:5921:94
+ ❯ runNextTicks node:internal/process/task_queues:64:5
+ ❯ listOnTimeout node:internal/timers:547:9
+ ❯ processTimers node:internal/timers:521:7
+ ❯ Pool.schedule node_modules/vitest/dist/chunks/index.1TqnEahn.js:5921:5
+
+Caused by: Error: [vitest-pool-runner]: Timeout waiting for worker to respond
+ ❯ Timeout.<anonymous> node_modules/vitest/dist/chunks/index.1TqnEahn.js:5418:58
+ ❯ listOnTimeout node:internal/timers:585:17
+ ❯ processTimers node:internal/timers:521:7
+
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Failed to start forks worker for test files C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM/tests/lexus-thread-lifecycle.test.ts.
+ ❯ node_modules/vitest/dist/chunks/index.1TqnEahn.js:5921:94
+ ❯ runNextTicks node:internal/process/task_queues:64:5
+ ❯ processTimers node:internal/timers:518:9
+ ❯ Pool.schedule node_modules/vitest/dist/chunks/index.1TqnEahn.js:5921:5
+
+Caused by: Error: [vitest-pool-runner]: Timeout waiting for worker to respond
+ ❯ Timeout.<anonymous> node_modules/vitest/dist/chunks/index.1TqnEahn.js:5418:58
+ ❯ listOnTimeout node:internal/timers:585:17
+ ❯ processTimers node:internal/timers:521:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  no tests
+      Tests  no tests
+     Errors  3 errors
+   Start at  16:21:49
+   Duration  214.80s
+

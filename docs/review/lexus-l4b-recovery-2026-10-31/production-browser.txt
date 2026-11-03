@@ -1,0 +1,1 @@
+PASS: normal production build renders all three treatments; local decoders 200; no JS errors; test hooks absent.

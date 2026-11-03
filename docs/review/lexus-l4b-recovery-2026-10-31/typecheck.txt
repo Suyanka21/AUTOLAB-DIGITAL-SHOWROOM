@@ -1,0 +1,3 @@
+Command: node node_modules/typescript/bin/tsc --noEmit
+Final run 2026-11-03: exit code 0; no stdout/stderr.
+Previous failed output is retained in typecheck-attempt1.txt.

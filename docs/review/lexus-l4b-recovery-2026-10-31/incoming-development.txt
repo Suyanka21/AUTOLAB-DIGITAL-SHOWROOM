@@ -1,0 +1,297 @@
+{
+  "url": "http://127.0.0.1:3100",
+  "label": "incoming-development",
+  "browser": "156.0.8078.4",
+  "errors": [],
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+        "line": 719,
+        "column": 27,
+        "lineNumber": 719,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=AFOy9-dDB7FcuGG1DKXfY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+        "line": 719,
+        "column": 27,
+        "lineNumber": 719,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'ws://127.0.0.1:3100/_next/hmr?id=GPZNYRCA56Zx1YCDs5rhZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE",
+      "location": {
+        "url": "http://127.0.0.1:3100/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+        "line": 16225,
+        "column": 0,
+        "lineNumber": 16225,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:3100/basis/basis_transcoder.js",
+      "status": 200,
+      "bytes": 57529
+    },
+    {
+      "url": "http://127.0.0.1:3100/basis/basis_transcoder.wasm",
+      "status": 200,
+      "bytes": 527333
+    },
+    {
+      "url": "http://127.0.0.1:3100/draco/draco_wasm_wrapper.js",
+      "status": 200,
+      "bytes": 58456
+    },
+    {
+      "url": "http://127.0.0.1:3100/draco/draco_decoder.wasm",
+      "status": 200,
+      "bytes": 192420
+    }
+  ],
+  "exceptions": [],
+  "waitError": "page.waitForFunction: Timeout 90000ms exceeded.",
+  "status": "Loading 2020 Lexus RX 350 interior assembly…"
+}

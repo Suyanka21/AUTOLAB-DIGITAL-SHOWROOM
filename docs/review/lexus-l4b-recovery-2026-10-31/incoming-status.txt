@@ -1,0 +1,25 @@
+ M next-env.d.ts
+ M next.config.ts
+ M src/components/configurator/ConfigurationDrawer.tsx
+ M src/components/configurator/SpikeViewer.tsx
+ M src/components/configurator/SummaryBar.tsx
+ M src/components/configurator/VisualizationStage.tsx
+ M src/lib/state/configurator-context.tsx
+?? docs/review/lexus-l4b-2026-10-31/
+?? docs/review/lexus-l4b-recovery-2026-10-31/
+?? public/assets/3d/lexus-rx350/interior-l4-classic.glb
+?? public/assets/3d/lexus-rx350/interior-l4-diamond.glb
+?? public/assets/3d/lexus-rx350/interior-l4-perforated.glb
+?? public/assets/3d/lexus-rx350/textures/
+?? reports/lexus-l4b-classic-report.json
+?? reports/lexus-l4b-diamond-report.json
+?? reports/lexus-l4b-perforated-report.json
+?? reports/lexus-l4b-summary.json
+?? reports/test-classic-report.json
+?? reports/test-diamond-report.json
+?? reports/test-perforated-report.json
+?? scripts/finalize-lexus-l4b.mjs
+?? src/lib/three/
+?? tests/lexus-l4b.test.ts
+?? tools/test-browser-load.mjs
+?? tools/verify-lexus-l4b.mjs

@@ -1,0 +1,44 @@
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+ ❯ tests/ktx2-runtime.test.ts (6 tests | 1 failed) 70ms
+   ❯ renderer-owned KTX2 lifecycle (6)
+     × retires cache entries once but waits for outstanding texture callbacks before disposal 23ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/ktx2-runtime.test.ts > renderer-owned KTX2 lifecycle > retires cache entries once but waits for outstanding texture callbacks before disposal
+AssertionError: expected "vi.fn()" to be called once with arguments: [ 'classic.glb' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+    "classic.glb",
++   "classic.glb",
++   Set {},
+  ]
+
+
+Number of calls: 1
+
+ ❯ tests/ktx2-runtime.test.ts:72:22
+     70|     runtime.loader.load("blob:base", vi.fn()); runtime.loader.load("bl…
+     71|     runtime.release(); vi.runAllTimers();
+     72|     expect(clearURL).toHaveBeenCalledExactlyOnceWith("classic.glb");
+       |                      ^
+     73|     expect(loader.disposed).toBe(0);
+     74|     loader.pending[0].resolve(); expect(loader.disposed).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 10 passed (11)
+      Tests  1 failed | 101 passed (102)
+   Start at  14:58:32
+   Duration  44.89s (tests 82%, import 16%, transform 1%)
+
+    Isolate  11 workers spawned · ~445ms startup each (spawn + environment, per file)
+             at least ~4.45s faster with isolate: false — reuses workers across files instead of one per file
+

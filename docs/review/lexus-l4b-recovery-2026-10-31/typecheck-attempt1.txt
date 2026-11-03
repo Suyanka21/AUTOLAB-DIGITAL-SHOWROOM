@@ -1,0 +1,24 @@
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(4,32): error TS2307: Cannot find module '../../config/materials/catalogue.json' or its corresponding type declarations.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(5,29): error TS2307: Cannot find module '../../config/materials/colors.json' or its corresponding type declarations.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(6,30): error TS2307: Cannot find module '../../config/materials/accent-threads.json' or its corresponding type declarations.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(7,35): error TS2307: Cannot find module '../whatsapp' or its corresponding type declarations.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(86,34): error TS7006: Parameter 'c' implicitly has an 'any' type.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(90,37): error TS7006: Parameter 'm' implicitly has an 'any' type.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(94,34): error TS7006: Parameter 'c' implicitly has an 'any' type.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(98,37): error TS7006: Parameter 'm' implicitly has an 'any' type.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(102,35): error TS7006: Parameter 't' implicitly has an 'any' type.
+blender/out/l4b-recovery-input/src/lib/state/configurator-context.tsx(107,41): error TS7006: Parameter 'c' implicitly has an 'any' type.
+e2e/lexus-runtime.spec.ts(14,63): error TS2339: Property 'textures' does not exist on type 'MaterialState'.
+e2e/lexus-runtime.spec.ts(15,21): error TS2339: Property 'compressed' does not exist on type '{}'.
+e2e/lexus-runtime.spec.ts(16,21): error TS2339: Property 'mips' does not exist on type '{}'.
+e2e/lexus-runtime.spec.ts(26,72): error TS2339: Property 'quiltThread' does not exist on type 'MaterialState'.
+e2e/lexus-runtime.spec.ts(69,74): error TS2339: Property 'quiltThread' does not exist on type 'MaterialState'.
+e2e/lexus-runtime.spec.ts(83,18): error TS2339: Property 'textures' does not exist on type 'MaterialState'.
+e2e/lexus-runtime.spec.ts(83,44): error TS2339: Property 'textures' does not exist on type 'MaterialState'.
+e2e/lexus-runtime.spec.ts(96,17): error TS2339: Property 'textures' does not exist on type 'MaterialState'.
+e2e/lexus-runtime.spec.ts(96,43): error TS2339: Property 'textures' does not exist on type 'MaterialState'.
+src/components/configurator/SpikeViewer.tsx(67,5): error TS2717: Subsequent property declarations must have the same type.  Property '__autolab' must be of type '{ snapshot: () => ViewerEvidence; loseContext: () => boolean; } | undefined', but here has type '{ snapshot: () => ViewerEvidence; loseContext: () => boolean; } | undefined'.
+tests/lexus-thread-lifecycle.test.ts(37,31): error TS2345: Argument of type '{ fragmentShader: string; vertexShader: string; uniforms: Record<string, { value: unknown; }>; }' is not assignable to parameter of type 'WebGLProgramParametersWithUniforms'.
+  Type '{ fragmentShader: string; vertexShader: string; uniforms: Record<string, { value: unknown; }>; }' is missing the following properties from type 'WebGLProgramParametersWithUniforms': shaderID, shaderType, shaderName, defines, and 131 more.
+tests/lexus-thread-lifecycle.test.ts(51,31): error TS2345: Argument of type '{ fragmentShader: string; vertexShader: string; uniforms: Record<string, { value: unknown; }>; }' is not assignable to parameter of type 'WebGLProgramParametersWithUniforms'.
+  Type '{ fragmentShader: string; vertexShader: string; uniforms: Record<string, { value: unknown; }>; }' is missing the following properties from type 'WebGLProgramParametersWithUniforms': shaderID, shaderType, shaderName, defines, and 131 more.

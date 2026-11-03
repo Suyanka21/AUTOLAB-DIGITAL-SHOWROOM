@@ -1,0 +1,62 @@
+[
+  {
+    "path": "public/assets/3d/lexus-rx350/interior-l4-classic.glb",
+    "sha256": "168ecc2669cdb4bc7f23a7eb04e2ec27071540f15f945949ea0a98f7a5f7a63c",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/interior-l4-diamond.glb",
+    "sha256": "db7828e1d1cdb26e4b438a3a574ccdcadd2bfef0cbf0678e3f08f036bf7c2e73",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/interior-l4-perforated.glb",
+    "sha256": "c26f5198b8da4e035ffd556949bff89e419ae5c660e99887e4ef337d10cab95b",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/classic-insert-base.ktx2",
+    "sha256": "d4d47fc1139a3f8acf24b3fafd41689d260ce45a3e5e00ea40af1b13eab2c9bf",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/classic-insert-normal.ktx2",
+    "sha256": "189f177e5653e9006adf9e107f9b5073831168e912188dbb527a978bab6b9850",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/classic-insert-orm.ktx2",
+    "sha256": "9acebd5de265d26c0e7ebf3cb264480ad5b4ca52fab472e7e1eb2726205f2973",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/diamond-insert-base.ktx2",
+    "sha256": "c9109ae85538a2bb0da2d26bcc7fada354cf15d47da0f7378a342a082282d475",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/diamond-insert-normal.ktx2",
+    "sha256": "db4c30d40f1fdc11c60e094e0abab8e4bbca9fdd4b07d070cbfa0dd6254a74b3",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/diamond-insert-orm.ktx2",
+    "sha256": "2501164c8e591859d719c5aaf05b08503a7537c80398ae7bd2b664b1d1d847fc",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/perforated-insert-base.ktx2",
+    "sha256": "a443c0e4a4957ff88377afdf8b92918f9387bea884dc5d7951602dc5ba1cbeec",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/perforated-insert-normal.ktx2",
+    "sha256": "87d68431da9e18803f48152163766df3bb5a402eb480d51317dbd0c0dae5073c",
+    "unchanged": true
+  },
+  {
+    "path": "public/assets/3d/lexus-rx350/textures/perforated-insert-orm.ktx2",
+    "sha256": "43a34dd5de7e02820dc3b24ab29ff8198d01297114823de22c7f06a8d52112e5",
+    "unchanged": true
+  }
+]

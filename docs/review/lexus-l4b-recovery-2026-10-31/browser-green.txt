@@ -1,0 +1,17 @@
+
+Running 8 tests using 1 worker
+
+(node:7748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [chromium] › e2e\lexus-runtime.spec.ts:21:5 › Diamond enables its actual primary-material thread hook (48.5s)
+  ok 2 [chromium] › e2e\lexus-runtime.spec.ts:29:5 › Retry recovers a rejected GLB request without reloading the page (34.7s)
+  ok 3 [chromium] › e2e\lexus-runtime.spec.ts:45:5 › cold KTX2 and Draco load retains decoded maps and local decoder resources (35.6s)
+  ok 4 [chromium] › e2e\lexus-runtime.spec.ts:60:5 › all treatments, four cameras, independent colours and repeated switching retain the assembly (4.5m)
+  ok 5 [chromium] › e2e\lexus-runtime.spec.ts:126:5 › L3 rollback still decodes and context-loss Retry restores rendering (1.7m)
+  ok 6 [chromium] › e2e\lexus-runtime.spec.ts:142:5 › failed Basis decode is an error, and Retry reloads textures (55.7s)
+  ok 7 [chromium] › e2e\lexus-runtime.spec.ts:155:5 › WebGL unavailable and missing asset retain the fallback (38.6s)
+  ok 8 [chromium] › e2e\lexus-runtime.spec.ts:170:5 › consultation handoff reflects the selected treatment without sending a message (48.0s)
+
+  Slow test file: [chromium] › e2e\lexus-runtime.spec.ts (10.5m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  8 passed (10.8m)

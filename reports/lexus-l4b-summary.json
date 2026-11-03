@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-31T12:54:41.451Z",
+  "assemblies": [
+    {
+      "name": "classic",
+      "passed": true,
+      "sha256": "168ecc2669cdb4bc7f23a7eb04e2ec27071540f15f945949ea0a98f7a5f7a63c",
+      "bytes": 3805516,
+      "report": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\reports\\lexus-l4b-classic-report.json"
+    },
+    {
+      "name": "diamond",
+      "passed": true,
+      "sha256": "db7828e1d1cdb26e4b438a3a574ccdcadd2bfef0cbf0678e3f08f036bf7c2e73",
+      "bytes": 3643628,
+      "report": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\reports\\lexus-l4b-diamond-report.json"
+    },
+    {
+      "name": "perforated",
+      "passed": true,
+      "sha256": "c26f5198b8da4e035ffd556949bff89e419ae5c660e99887e4ef337d10cab95b",
+      "bytes": 3366172,
+      "report": "C:\\Users\\user\\OneDrive\\Desktop\\AUTOLAB-DIGITAL-SHOWROOM\\reports\\lexus-l4b-perforated-report.json"
+    }
+  ],
+  "baselineL3Sha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+  "baselineL2ADriverSha256": "b3dc6a11a2387ceb0b97d01b15e6519f410aeebc5c1662b0a26c8f6b7090ec52"
+}

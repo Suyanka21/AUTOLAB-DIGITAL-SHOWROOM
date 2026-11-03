@@ -1,0 +1,167 @@
+{
+  "url": "http://localhost:3100",
+  "label": "incoming-development-localhost",
+  "browser": "156.0.8078.4",
+  "errors": [],
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3100/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+        "line": 719,
+        "column": 27,
+        "lineNumber": 719,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3100/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+        "line": 719,
+        "column": 27,
+        "lineNumber": 719,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "location": {
+        "url": "http://localhost:3100/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+        "line": 719,
+        "column": 27,
+        "lineNumber": 719,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x174c001cac00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "location": {
+        "url": "http://localhost:3100/_next/static/chunks/node_modules_107pfwqjb6w65._.js",
+        "line": 3104,
+        "column": 0,
+        "lineNumber": 3104,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x174c001cac00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "location": {
+        "url": "http://localhost:3100/",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x174c001cac00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "location": {
+        "url": "http://localhost:3100/_next/static/chunks/node_modules_107pfwqjb6w65._.js",
+        "line": 3084,
+        "column": 0,
+        "lineNumber": 3084,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x174c001cac00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+      "location": {
+        "url": "http://localhost:3100/",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://localhost:3100/assets/3d/lexus-rx350/interior-l4-classic.glb",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3100/draco/draco_wasm_wrapper.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3100/draco/draco_decoder.wasm",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3100/basis/basis_transcoder.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3100/basis/basis_transcoder.wasm",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3100/basis/basis_transcoder.js",
+      "status": 200,
+      "bytes": 57529
+    },
+    {
+      "url": "http://localhost:3100/basis/basis_transcoder.wasm",
+      "status": 200,
+      "bytes": 527333
+    },
+    {
+      "url": "http://localhost:3100/draco/draco_wasm_wrapper.js",
+      "status": 200,
+      "bytes": 58456
+    },
+    {
+      "url": "http://localhost:3100/draco/draco_decoder.wasm",
+      "status": 200,
+      "bytes": 192420
+    }
+  ],
+  "exceptions": [],
+  "snapshot": {
+    "status": "success",
+    "assetUrl": "/assets/3d/lexus-rx350/interior-l4-classic.glb",
+    "materialState": {
+      "bindings": {
+        "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+        "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+        "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+        "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+        "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+        "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+        "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+        "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+      },
+      "colors": {
+        "MAT_Seat_Primary": "#75452b",
+        "MAT_Seat_Secondary": "#151618",
+        "MAT_Seat_Stitching": "#d4af37",
+        "MAT_Steering_Leather": "#151618",
+        "MAT_Cockpit_Accent": "#787d82",
+        "MAT_Cockpit_Black": "#121316",
+        "MAT_Dashboard_Trim": "#2a2b2e"
+      }
+    },
+    "renderer": {
+      "calls": 12,
+      "triangles": 76548,
+      "textures": 9,
+      "geometries": 24
+    },
+    "error": null,
+    "cameraFov": 38,
+    "treatment": "classic"
+  },
+  "status": null
+}

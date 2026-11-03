@@ -1,16 +1,16 @@
-# State — 2026-10-31
+# State — 2026-11-03
 
-- L4A-R1 isolated refinement on `codex/l4a-r1-material-refinement`, base `6ab8525`; source/assets/tests commit `6633551`, review evidence committed separately.
-- STOP for owner review. No production integration, Stage B, L5, push, PR or deployment.
-- Review: `docs/review/lexus-l4ar1-2026-10-29/README.md`; six reference/render comparisons, contact sheet, unsigned `review.md`, actual evidence and hashes.
-- Owner photos guide procedural maps only; no photo pixels baked. Photo source/trim/physical scale/lighting unknown; all microdimensions provisional.
-- Experimental primary UV/tangents corrected: separate cushion/backrest islands, median V-scale ratio 1.2802 -> 0.999815; patterns excluded at existing seams and edges.
-- Positions/topology unchanged before encoding; final Draco drift <0.05 mm, counts/winding/transforms/material factors checked. Secondary UV defects remain.
-- Diamond 2,785,492 B; Perforated 2,508,036 B; each 32,412 triangles / 3 calls; both below 3.5 MB hard limit, above 2.5 MB target.
-- Actual KTX2/Draco gates and Chromium156/SwiftShader tint/thread probes PASS; six matched Cycles CPU renders tied to final hashes.
-- 13/13 new Python tests and 87/87 Vitest PASS; typecheck PASS; lint 0 errors / 41 existing warnings. No new production build: app/dependencies unchanged.
-- Requested photographic appearance remains unmet: angular quilt highlights, broad seam bands, soft pore rims/weak grain, inherited abrupt stitch endpoints.
-- Smallest proposed follow-up: local insert relief fading to seams plus separately tiled microdetail, tested within current budgets. Proposed only; needs owner direction.
-- Production assembly SHA `c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2`; all seven bindings and customization unchanged.
-- Two visual rounds per treatment; failures/actual timing recorded in `docs/spike/cost-log.md`. Interrupted Oct29, final checks resumed Oct31.
-- No phone FPS/GPU-byte measurements. Prior 13 development audit findings unresolved. Existing human gates and reference gaps remain open.
+- L4 Stage B runtime recovery completed on `pre-phase-6-reconciliation`, base `0fff05c`; source/assets/tests commit `55c0046`, review evidence committed separately.
+- Owner explicitly authorizes push of this correction. STOP for owner review; no deployment or L5.
+- Review/evidence: `docs/review/lexus-l4b-recovery-2026-10-31/README.md`; exact phase file list in CHANGED_FILES.txt.
+- Historical missing-KTX2 exception not reproduced in clean incoming app; original cause unconfirmed. Injected identical failure is detected by regression probe.
+- Fixed Diamond prop/thread hook, rejected cache Retry, KTX2 worker ownership, required-map failure handling, loopback HMR and original-error preservation during teardown.
+- Renderer statistics now sample after rendering. Local Basis/Draco resources retained; no dependencies changed.
+- Full suite102/102 PASS; typecheck PASS; full lint0 errors/44 warnings (2 local-backup duplicates), final touched-file lint clean; production build PASS.
+- Actual app browser8/8 PASS; final recovery2/2 PASS; actual HMR and injected missing-KTX2/restoration PASS; normal production smoke PASS for all three treatments.
+- Seven slots, colours, Diamond thread, four cameras, repeated switching, L3 rollback, fallbacks and consultation URL checked; no message sent.
+- All12 incoming GLB/KTX2 files unchanged. L3 SHA `c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2` unchanged.
+- Four SHA-linked asset gates PASS; 76,548 triangles/12 calls. Transfer targets exceeded, hard limits unchanged; validator warnings retained.
+- Cold renderer9 textures/24 geometries; three cached assemblies21/48. No phone FPS/GPU-byte measurement; test hooks absent from normal production build.
+- Prior R1 visual defects, all human gates/reference gaps and13 development audit findings remain open. Technical PASS is not visual approval.
+- Initial failures, environment limitations, corrective attempts and timings retained in review pack/cost-log; stalled decoder worker without callback remains a limitation.

@@ -1,0 +1,57 @@
+
+Running 2 tests using 1 worker
+
+(node:19984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [chromium] › e2e\lexus-runtime.spec.ts:21:5 › Diamond enables its actual primary-material thread hook (54.4s)
+(node:17448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 [chromium] › e2e\lexus-runtime.spec.ts:29:5 › Retry recovers a rejected GLB request without reloading the page (1.3m)
+
+
+  1) [chromium] › e2e\lexus-runtime.spec.ts:21:5 › Diamond enables its actual primary-material thread hook 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      24 |   await page.getByTestId("treatment-diamond").click();
+      25 |   await ready(page, "diamond");
+    > 26 |   await expect.poll(async () => (await snapshot(page))?.materialState?.quiltThread).toBe(true);
+         |                                                                                     ^
+      27 | });
+      28 |
+      29 | test("Retry recovers a rejected GLB request without reloading the page", async ({ page }) => {
+        at C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\lexus-runtime.spec.ts:26:85
+
+    Error Context: test-results\lexus-runtime-Diamond-enab-0e752-rimary-material-thread-hook-chromium\error-context.md
+
+  2) [chromium] › e2e\lexus-runtime.spec.ts:29:5 › Retry recovers a rejected GLB request without reloading the page 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "success"
+    Received: "error"
+
+    Call Log:
+    - Timeout 60000ms exceeded while waiting on the predicate
+
+       6 | const snapshot = (page: Page) => page.evaluate(() => window.__autolab?.snapshot());
+       7 | async function ready(page: Page, kind = "classic") {
+    >  8 |   await expect.poll(async () => (await snapshot(page))?.status, { timeout: 60_000 }).toBe("success");
+         |                                                                                      ^
+       9 |   await expect.poll(async () => (await snapshot(page))?.assetUrl).toContain(`interior-l4-${kind}.glb`);
+      10 |   await expect.poll(async () => (await snapshot(page))?.renderer?.triangles).toBe(76548);
+      11 |   const current = await snapshot(page);
+        at ready (C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\lexus-runtime.spec.ts:8:86)
+        at C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\lexus-runtime.spec.ts:38:9
+
+    Error Context: test-results\lexus-runtime-Retry-recove-15745--without-reloading-the-page-chromium\error-context.md
+
+  2 failed
+    [chromium] › e2e\lexus-runtime.spec.ts:21:5 › Diamond enables its actual primary-material thread hook 
+    [chromium] › e2e\lexus-runtime.spec.ts:29:5 › Retry recovers a rejected GLB request without reloading the page 
