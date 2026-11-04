@@ -11,6 +11,26 @@ test("approved welcome provides immediate direct studio entry without a second r
   expect(await page.evaluate(() => document.getAnimations().filter(a => a.playState === 'running').length)).toBe(0);
 });
 
+test("specification reveal preserves the live canvas, reference, copy and accessible Spec Sheet", async ({page})=>{
+  await page.goto('/');
+  await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().status),{timeout:60000}).toBe('success');
+  const canvas=await page.locator('canvas').elementHandle();
+  await page.getByRole('button',{name:'Your specification',exact:true}).click();
+  await expect(page.getByRole('heading',{level:1})).toHaveText('A signature, considered in detail.');
+  const code=await page.getByTestId('reference-code').innerText();
+  expect(code).toMatch(/^AL-RX-2026-[A-Z2-9]{4}$/);
+  await page.getByRole('button',{name:'Copy Code',exact:true}).click();
+  await expect(page.getByTestId('copy-status')).toContainText(/Copied|Select/);
+  await page.getByRole('button',{name:'Spec Sheet',exact:true}).click();
+  await expect(page.getByRole('dialog')).toContainText(code);
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await page.getByRole('button',{name:'Return to your selections',exact:true}).click();
+  await page.getByRole('button',{name:'Your specification',exact:true}).click();
+  await expect(page.getByTestId('reference-code')).toHaveText(code);
+  expect(await canvas!.evaluate(el=>el.isConnected)).toBe(true);
+});
+
 test("treatment carousel and four steps control live materials without replacing the canvas", async ({ page }) => {
   await page.goto('/');
   await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().status),{timeout:60000}).toBe('success');
