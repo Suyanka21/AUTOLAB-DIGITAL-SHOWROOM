@@ -440,7 +440,7 @@ export function SpikeViewer({
   };
 
   return <div className="absolute inset-0 z-10" style={{ backgroundColor: status === "success" ? "#0F1014" : "transparent" }}
-    data-testid="spike-viewer" aria-label="2020 Lexus RX 350 interactive 3D interior viewer">
+    data-testid="spike-viewer" aria-label="AutoLab interactive 3D interior viewer">
     {supported && status !== "error" && status !== "empty" && <Canvas key={retryKey} frameloop="demand" dpr={[1, 1.5]}
       camera={{
         fov: (ALL_CAMERA_PRESETS[view] ?? SPIKE_CAMERA_PRESETS.overview).fov ?? 38,
@@ -483,7 +483,7 @@ export function SpikeViewer({
     </Canvas>}
     {status !== "success" && <div className="absolute inset-x-3 bottom-14 z-10 rounded-lg bg-[#141416]/90 px-3 py-2 text-xs text-slate-200"
       role="status" aria-live="polite" data-testid="viewer-status">
-      {status === "loading" ? "Loading 2020 Lexus RX 350 interior assembly…" : status === "empty" ? "3D model contains no geometry. Showing studio preview." : "3D preview unavailable (" + (error ?? "unknown error") + "). Showing studio preview."}
+      {status === "loading" ? "Loading your interior…" : status === "empty" ? "3D model contains no geometry. Showing studio preview." : "3D preview unavailable (" + (error ?? "unknown error") + "). Showing studio preview."}
       {status !== "loading" && <button type="button" onClick={retry} className="ml-3 underline underline-offset-2">Retry 3D</button>}
     </div>}
   </div>;

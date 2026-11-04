@@ -1,93 +1,17 @@
 "use client";
-
-import React from "react";
 import { ConfiguratorProvider } from "@/lib/state/configurator-context";
 import { AtelierHeader } from "@/components/layout/AtelierHeader";
 import { VisualizationStage } from "@/components/configurator/VisualizationStage";
 import { ConfigurationDrawer } from "@/components/configurator/ConfigurationDrawer";
 import { SummaryBar } from "@/components/configurator/SummaryBar";
-import { ShieldCheck, Compass, Sparkles, SlidersHorizontal, Award } from "lucide-react";
-
+import { StudioFooter } from "@/components/studio/StudioBrand";
+import styles from "@/components/studio/studio.module.css";
 export default function AtelierShowroomPage() {
-  return (
-    <ConfiguratorProvider>
-      <div className="flex min-h-screen flex-col bg-[#0B0B0B] text-white selection:bg-[#38B6FF] selection:text-black">
-        {/* Atelier Luxury Header */}
-        <AtelierHeader />
-
-        {/* Main Atelier Configurator Grid */}
-        <main className="flex-1 pb-28 pt-4 sm:pt-6">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Atelier Sub-banner */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-white/[0.06]">
-              <div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#38B6FF]">
-                    Tailoring Atelier Program
-                  </span>
-                  <span className="text-slate-600">•</span>
-                  <span className="text-xs text-slate-400">2020 Lexus RX 350 AWD</span>
-                </div>
-                <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-0.5">
-                  Bespoke Interior Configurator
-                </h1>
-              </div>
-
-              {/* Provenance Indicators */}
-              <div className="flex items-center space-x-3 text-xs text-slate-400">
-                <div className="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#141416] border border-white/[0.06]">
-                  <Award className="h-3.5 w-3.5 text-[#38B6FF]" />
-                  <span>Handcrafted Hides</span>
-                </div>
-                <div className="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#141416] border border-white/[0.06]">
-                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-                  <span>Nairobi Atelier</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Configurator 2-Column Split Workspace */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-              {/* Left Column: Visual Stage (7 cols on lg) */}
-              <div className="lg:col-span-7 flex flex-col space-y-4">
-                <VisualizationStage />
-
-              {/* Technical Footnote / Production Context */}
-              <div className="rounded-xl bg-[#141416]/80 border border-amber-500/20 p-4 flex items-start space-x-3">
-                <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0 mt-0.5">
-                  <SlidersHorizontal className="h-4 w-4" />
-                </div>
-                <div className="text-xs space-y-1">
-                  <div className="flex items-center space-x-2">
-                    <p className="font-semibold text-white">
-                      Bespoke Atelier Demonstration • 2020 Lexus RX 350 AWD
-                    </p>
-                    <span className="text-[10px] font-mono text-[#38B6FF] bg-[#38B6FF]/10 px-1.5 py-0.5 rounded border border-[#38B6FF]/20">
-                      Demonstration Studio
-                    </span>
-                  </div>
-                  <p className="text-slate-400 leading-relaxed">
-                    This interactive studio demonstrates the 4-step interior tailoring sequence:{" "}
-                    <span className="text-[#38B6FF] font-medium">
-                      Material → Colour → Accent Thread → Interior Composition
-                    </span>
-                    . Explore handpicked hides, contrasting seat bolsters, custom stitch patterns, and timber veneers for the 2020 Lexus RX 350.
-                  </p>
-                </div>
-              </div>
-              </div>
-
-              {/* Right Column: 4-Step Configuration Drawer (5 cols on lg) */}
-              <div className="lg:col-span-5 flex flex-col">
-                <ConfigurationDrawer />
-              </div>
-            </div>
-          </div>
-        </main>
-
-        {/* Sticky Summary Bar & WhatsApp Booking CTA */}
-        <SummaryBar />
-      </div>
-    </ConfiguratorProvider>
-  );
+  return <ConfiguratorProvider><div className={styles.root}>
+    <a className={styles.skip} href="#main">Skip to content</a><AtelierHeader/>
+    <main id="main" className={styles.workbench}><div className={styles.heading}><p className={styles.eyebrow}>THE INTERIOR STUDIO</p><h1>Make it <em>personal.</em></h1><p>Consider the whole. Then the smallest detail.</p></div>
+      <div className={styles.atelierGrid}><VisualizationStage/><ConfigurationDrawer/></div>
+      <div id="specification"><SummaryBar/></div>
+    </main><StudioFooter/>
+  </div></ConfiguratorProvider>;
 }
