@@ -1,0 +1,53 @@
+/* Approved L5-R1 tokens. Scoped to the showroom; no legacy-route reset. */
+.root {
+  --ivory:#f3f0e9; --paper:#faf8f3; --ink:#252425; --muted:#65615b;
+  --line:#d2cec5; --graphite:#101114; --cyan:#72c4e1; --cyan-ink:#17596d;
+  --display:'Baskerville Old Face','Palatino Linotype',Georgia,serif;
+  --body:Bahnschrift,'Segoe UI',sans-serif; --ease:cubic-bezier(.22,.7,.24,1);
+  background:var(--ivory);color:var(--ink);font:16px/1.5 var(--body);min-height:100dvh;
+}
+.root button,.root input {font:inherit}
+.root h1,.root h2,.root h3 {font-family:var(--display);font-weight:400;line-height:1.04}
+.root h1 {font-size:clamp(46px,5vw,76px);letter-spacing:-.025em}
+.root h2 {font-size:32px}.root h3 {font-size:28px}
+.root a:focus-visible,.root button:focus-visible,.root summary:focus-visible {outline:3px solid var(--cyan-ink);outline-offset:4px}
+.root button:disabled {opacity:.45;cursor:default}
+.root [hidden] {display:none!important}
+.skip {position:absolute;top:-100px;left:20px;background:var(--paper);padding:12px;z-index:80}.skip:focus {top:12px}
+.header {height:100px;margin:0 3.3%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:24px}
+.brand {display:flex;align-items:center;gap:16px;font:22px/1.1 var(--display)}
+.brand b {display:block;font:11px var(--body);letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
+.logo {width:75px;height:auto;background:#231f20}
+.headerNote {font-size:13px;color:var(--muted)}.headerAction {font-size:13px;min-height:44px;display:flex;align-items:center;gap:24px}
+.headerAction svg {color:var(--cyan-ink);width:16px}
+.footer {margin:0 3.3%;padding:28px 0 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
+.eyebrow {font:11px/1.4 var(--body);letter-spacing:.18em;text-transform:uppercase}
+.primary,.secondary {display:flex;align-items:center;justify-content:space-between;min-height:52px;padding:15px 20px;border-radius:2px;gap:20px;font-size:14px}
+.primary {background:var(--ink);color:var(--paper);transition:background 160ms,transform 160ms}
+.primary:hover:not(:disabled) {background:#3c3d3c}.primary:active:not(:disabled) {transform:translateY(1px)}
+.primary svg {color:var(--cyan);width:18px;flex-shrink:0}
+.secondary {border:1px solid var(--line);background:transparent}.secondary:hover {background:#e9e5dd}
+.welcome {display:grid;grid-template-columns:43% 57%;padding:40px 3.3% 52px;min-height:740px}
+.welcomeCopy {padding:30px 10% 0 1%}
+.welcomeCopy h1 {font-size:clamp(65px,6.6vw,100px);margin:26px 0;line-height:.98}
+.welcomeCopy em {color:var(--cyan-ink)}
+.intro {max-width:335px;color:var(--muted);font-size:17px;line-height:1.65}
+.welcomeCopy .primary {max-width:320px;margin-top:30px}
+.welcomeFoot {font-size:12px;color:var(--muted);line-height:1.7;margin-top:30px}
+.welcomeStage {background:var(--graphite);color:var(--ivory);display:flex;flex-direction:column;min-height:620px;overflow:hidden}
+.brandSignature {display:flex;align-items:center;justify-content:space-between;padding:28px 32px;gap:20px}
+.brandSignature .logo {width:100px}.brandSignature span {font-size:10px;letter-spacing:.2em;color:#b5b5b8}
+.hero {width:100%;height:auto;margin:auto 0;object-fit:contain}
+.welcomeCaption {margin:0 32px 28px;border-top:1px solid #424347;padding-top:22px;display:grid;grid-template-columns:1fr auto;gap:10px}
+.welcomeCaption>span {font-size:10px;letter-spacing:.15em;color:var(--cyan);grid-column:1/-1}
+.welcomeCaption p {font:28px var(--display)}.welcomeCaption a {font-size:13px;align-self:center;min-height:44px;display:flex;align-items:center}
+.entrance {animation:enter 600ms var(--ease) both}.welcomeCopy h1 {animation-delay:70ms}.intro {animation-delay:120ms}.welcomeCopy .primary {animation-delay:160ms}.hero {animation:picture 600ms var(--ease) 90ms both}
+@keyframes enter {from {opacity:.3;transform:translateY(12px)}to {opacity:1;transform:none}}
+@keyframes picture {from {opacity:.4;transform:scale(1.012)}to {opacity:1;transform:none}}
+@media(max-width:1000px) {.headerNote{display:none}.welcomeCopy{padding-right:7%}.welcomeCaption{display:block}.welcomeCaption p{margin:12px 0}}
+@media(max-width:700px) {
+  .header{height:87px;margin:0 20px;gap:10px}.brand{gap:10px;font-size:20px}.brand b{font-size:9px}.logo{width:58px}.headerAction{font-size:12px;max-width:95px;gap:8px}.footer{margin:0 20px;flex-wrap:wrap}
+  .welcome{display:flex;flex-direction:column;padding:28px 20px 32px;min-height:0}.welcomeCopy{padding:0}.welcomeCopy h1{font-size:70px;margin:18px 0}.intro{font-size:16px;max-width:300px}.welcomeCopy .primary{max-width:none;margin-top:24px}.welcomeFoot{margin:18px 0 28px}
+  .welcomeStage{min-height:390px}.brandSignature{padding:18px 20px}.brandSignature .logo{width:72px}.brandSignature span{font-size:9px}.welcomeCaption{margin:0 20px 20px;padding-top:16px}.welcomeCaption p{font-size:25px;margin:6px 0}
+}
+@media(prefers-reduced-motion:reduce){.root *,.root *::before,.root *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

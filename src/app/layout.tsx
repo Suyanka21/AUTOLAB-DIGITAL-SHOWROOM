@@ -3,9 +3,9 @@ import { AuthProvider } from "@/lib/auth/auth-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AutoLab Digital Showroom | 2020 Lexus RX 350 AWD Atelier",
+  title: "AutoLab Interior Studio | AutoLab Digital Showroom",
   description:
-    "Interactive 3D Bespoke Interior Configurator for the 2020 Lexus RX 350 AWD. Curate handcrafted hides, contrast tailoring, and bespoke compositions at the AutoLab Atelier.",
+    "Explore leather, colour and the details of your interior in the AutoLab Digital Showroom. Create a personal specification for your Nairobi atelier consultation.",
 };
 
 export default function RootLayout({
