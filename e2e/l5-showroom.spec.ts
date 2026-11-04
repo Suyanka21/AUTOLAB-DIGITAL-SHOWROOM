@@ -11,6 +11,27 @@ test("approved welcome provides immediate direct studio entry without a second r
   expect(await page.evaluate(() => document.getAnimations().filter(a => a.playState === 'running').length)).toBe(0);
 });
 
+test("treatment carousel and four steps control live materials without replacing the canvas", async ({ page }) => {
+  await page.goto('/');
+  await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().status),{timeout:60000}).toBe('success');
+  const canvas=await page.locator('canvas').elementHandle();
+  await page.getByRole('radio',{name:'Classic',exact:true}).focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(page.getByRole('radio',{name:'Diamond Quilted',exact:true})).toHaveAttribute('aria-checked','true');
+  await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().materialState?.quiltThread),{timeout:60000}).toBe(true);
+  await page.getByTestId('step-2').click();
+  await page.getByRole('button',{name:/Macchiato Beige/}).click();
+  await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().materialState?.colors.MAT_Seat_Primary)).toBe('#d8cab8');
+  await page.getByTestId('step-3').click();
+  await page.getByRole('button',{name:/Silver Shadow Tech Stitch/}).click();
+  await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().materialState?.colors.MAT_Seat_Stitching)).toBe('#c0c4cc');
+  await page.getByTestId('step-4').click();
+  await page.getByRole('button',{name:'Bespoke Monotone',exact:true}).click();
+  await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().materialState?.colors.MAT_Seat_Secondary)).toBe('#d8cab8');
+  expect(await canvas!.evaluate(el=>el.isConnected)).toBe(true);
+  await expect(page.locator('canvas')).toHaveCount(1);
+});
+
 test("editorial workbench retains one live viewer and all four camera presets", async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Make it personal.');
