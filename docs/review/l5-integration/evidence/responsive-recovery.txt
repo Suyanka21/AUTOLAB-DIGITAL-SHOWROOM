@@ -1,0 +1,44 @@
+
+Running 4 tests using 1 worker
+
+
+
+(node:4968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/4] [chromium] › e2e\l5-responsive.spec.ts:5:5 › mobile touch, narrow layouts, reduced motion and clipboard denial remain usable
+[2/4] [chromium] › e2e\l5-responsive.spec.ts:47:5 › delayed loading and injected failure expose accessible feedback before Retry
+  1) [chromium] › e2e\l5-responsive.spec.ts:47:5 › delayed loading and injected failure expose accessible feedback before Retry 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Retry 3D', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Retry 3D', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Retry 3D', exact: true })
+
+
+      59 |   await page.screenshot({path:`${evidence}/loading-state.png`});
+      60 |   release();
+    > 61 |   await expect(page.getByRole('button',{name:'Retry 3D',exact:true})).toBeVisible();
+         |                                                                       ^
+      62 |   await page.screenshot({path:`${evidence}/error-state.png`});
+      63 |   await page.getByRole('button',{name:'Retry 3D',exact:true}).click();
+      64 |   await expect.poll(()=>page.evaluate(()=>window.__autolab?.snapshot().status),{timeout:60000}).toBe('success');
+        at C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\l5-responsive.spec.ts:61:71
+
+    Error Context: test-results\l5-responsive-delayed-load-50a8c-sible-feedback-before-Retry-chromium\error-context.md
+
+
+
+(node:1408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[3/4] [chromium] › e2e\quality.spec.ts:3:5 › unconfigured WhatsApp booking is disabled with a clear message
+[4/4] [chromium] › e2e\quality.spec.ts:11:5 › 3D asset responses carry the immutable cache header
+  1 failed
+    [chromium] › e2e\l5-responsive.spec.ts:47:5 › delayed loading and injected failure expose accessible feedback before Retry 
+  3 passed (57.7s)

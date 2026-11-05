@@ -1,0 +1,81 @@
+{
+  "snapshot": {
+    "status": "success",
+    "assetUrl": "/assets/3d/lexus-rx350/interior-l4-classic.glb",
+    "materialState": {
+      "bindings": {
+        "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+        "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+        "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+        "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+        "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+        "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+        "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+        "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+        "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+        "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+      },
+      "colors": {
+        "MAT_Seat_Primary": "#75452b",
+        "MAT_Seat_Secondary": "#151618",
+        "MAT_Seat_Stitching": "#d4af37",
+        "MAT_Steering_Leather": "#151618",
+        "MAT_Cockpit_Accent": "#787d82",
+        "MAT_Cockpit_Black": "#121316",
+        "MAT_Dashboard_Trim": "#2a2b2e"
+      },
+      "textures": {
+        "MAT_Seat_Primary:map": {
+          "uuid": "d689e90f-679f-4b39-ad57-6e4acaf4bfc4",
+          "compressed": true,
+          "mips": 11
+        },
+        "MAT_Seat_Primary:normalMap": {
+          "uuid": "7dca4cf8-ddc1-4a79-bfd8-b04142f937d8",
+          "compressed": true,
+          "mips": 11
+        },
+        "MAT_Seat_Primary:roughnessMap": {
+          "uuid": "eb57d27a-7355-40f7-90fe-ca76dbd14cc6",
+          "compressed": true,
+          "mips": 11
+        },
+        "MAT_Seat_Secondary:map": {
+          "uuid": "b9f12971-92b5-4e18-ac3f-7fcb5dfecc7b",
+          "compressed": true,
+          "mips": 11
+        },
+        "MAT_Seat_Secondary:normalMap": {
+          "uuid": "1b1b7e9d-bd4f-439d-9d2d-4f8d1a884d2d",
+          "compressed": true,
+          "mips": 11
+        },
+        "MAT_Seat_Secondary:roughnessMap": {
+          "uuid": "d1636dad-1e26-4b21-9ebd-385f6eac22ec",
+          "compressed": true,
+          "mips": 11
+        }
+      },
+      "quiltThread": false
+    },
+    "renderer": {
+      "calls": 12,
+      "triangles": 76548,
+      "textures": 9,
+      "geometries": 24
+    },
+    "error": null,
+    "cameraFov": 38,
+    "treatment": "classic"
+  },
+  "errors": [],
+  "requests": [
+    "200 http://localhost:3100/assets/3d/lexus-rx350/interior-l4-classic.glb",
+    "200 http://localhost:3100/draco/draco_wasm_wrapper.js",
+    "200 http://localhost:3100/draco/draco_decoder.wasm",
+    "200 http://localhost:3100/basis/basis_transcoder.js",
+    "200 http://localhost:3100/basis/basis_transcoder.wasm"
+  ]
+}

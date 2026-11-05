@@ -1,0 +1,19 @@
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\app\auth\page.tsx
+  11:10  warning  'Badge' is defined but never used         @typescript-eslint/no-unused-vars
+  12:10  warning  'Lock' is defined but never used          @typescript-eslint/no-unused-vars
+  12:16  warning  'Mail' is defined but never used          @typescript-eslint/no-unused-vars
+  12:30  warning  'UserIcon' is defined but never used      @typescript-eslint/no-unused-vars
+  12:40  warning  'ArrowRight' is defined but never used    @typescript-eslint/no-unused-vars
+  12:57  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\app\dashboard\page.tsx
+  19:3   warning  'ExternalLink' is defined but never used           @typescript-eslint/no-unused-vars
+  20:3   warning  'Cpu' is defined but never used                    @typescript-eslint/no-unused-vars
+  21:3   warning  'Layers' is defined but never used                 @typescript-eslint/no-unused-vars
+  22:3   warning  'CheckCircle2' is defined but never used           @typescript-eslint/no-unused-vars
+  24:3   warning  'AlertTriangle' is defined but never used          @typescript-eslint/no-unused-vars
+  42:21  warning  'setActiveTab' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 12 problems (0 errors, 12 warnings)
+

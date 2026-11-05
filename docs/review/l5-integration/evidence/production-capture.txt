@@ -1,0 +1,80 @@
+[
+  {
+    "viewport": "desktop",
+    "localReadyMs": 12674,
+    "renderer": "Calls 12 · Triangles 76548 · Textures 21 · Geometries 48",
+    "resources": [
+      {
+        "url": "http://127.0.0.1:3101/assets/3d/lexus-rx350/interior-l4-classic.glb",
+        "durationMs": 5443.799999999988,
+        "transferBytes": 3748036
+      },
+      {
+        "url": "http://127.0.0.1:3101/draco/draco_wasm_wrapper.js",
+        "durationMs": 184.5,
+        "transferBytes": 12048
+      },
+      {
+        "url": "http://127.0.0.1:3101/draco/draco_decoder.wasm",
+        "durationMs": 261.4000000000233,
+        "transferBytes": 63758
+      },
+      {
+        "url": "http://127.0.0.1:3101/basis/basis_transcoder.js",
+        "durationMs": 152.59999999997672,
+        "transferBytes": 15469
+      },
+      {
+        "url": "http://127.0.0.1:3101/basis/basis_transcoder.wasm",
+        "durationMs": 1143,
+        "transferBytes": 247919
+      },
+      {
+        "url": "http://127.0.0.1:3101/assets/3d/lexus-rx350/interior-l4-diamond.glb",
+        "durationMs": 3463.100000000035,
+        "transferBytes": 3587313
+      },
+      {
+        "url": "http://127.0.0.1:3101/assets/3d/lexus-rx350/interior-l4-perforated.glb",
+        "durationMs": 4759.700000000012,
+        "transferBytes": 3309322
+      }
+    ],
+    "errors": [],
+    "context": "Production build, local server, Chromium SwiftShader, no throttling. Mobile viewport emulation, not a physical phone. No GPU memory measurement."
+  },
+  {
+    "viewport": "mobile",
+    "localReadyMs": 7434,
+    "renderer": "Calls 12 · Triangles 76548 · Textures 9 · Geometries 24",
+    "resources": [
+      {
+        "url": "http://127.0.0.1:3101/assets/3d/lexus-rx350/interior-l4-classic.glb",
+        "durationMs": 5463.29999999993,
+        "transferBytes": 3748036
+      },
+      {
+        "url": "http://127.0.0.1:3101/draco/draco_wasm_wrapper.js",
+        "durationMs": 27.29999999993015,
+        "transferBytes": 12048
+      },
+      {
+        "url": "http://127.0.0.1:3101/draco/draco_decoder.wasm",
+        "durationMs": 44.5,
+        "transferBytes": 63758
+      },
+      {
+        "url": "http://127.0.0.1:3101/basis/basis_transcoder.js",
+        "durationMs": 14.800000000046566,
+        "transferBytes": 15469
+      },
+      {
+        "url": "http://127.0.0.1:3101/basis/basis_transcoder.wasm",
+        "durationMs": 56.59999999997672,
+        "transferBytes": 247919
+      }
+    ],
+    "errors": [],
+    "context": "Production build, local server, Chromium SwiftShader, no throttling. Mobile viewport emulation, not a physical phone. No GPU memory measurement."
+  }
+]

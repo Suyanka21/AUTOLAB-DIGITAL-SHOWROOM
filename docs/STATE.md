@@ -1,19 +1,19 @@
-# State — 2026-11-04
+# State — 2026-11-05
 
-- L4 Stage B technically accepted; baseline ff9dabf; original L5 proposal d9d1492.
-- Current phase: L5-R1 design refinement ONLY; branch codex/l5-r1-design-refinement from d9d1492.
-- Owner provisionally approved editorial ivory/graphite/cyan direction; implementation NOT authorized.
-- Current review: docs/review/l5-design-direction/r1/index.html and README.md; original L5 retained as historical evidence.
-- Authentic public/AUTOLAB LOGO .pdf preserved; faithful cropped PNG used in revised desktop/mobile concepts.
-- Three responsive proposal screens, interactive material selector, four recorded camera views, step transitions and specification dialog.
-- Actual browser recording/storyboard and local validation evidence in r1/motion and r1/evidence.
-- Carlex Dubai reviewed for material-image hierarchy; no assets/layouts/branding copied; no catalogue additions.
-- Brand audit records future text replacements and geometric steering-wheel emblem; production untouched.
-- Local prototype fonts: installed Baskerville Old Face/Bahnschrift. OFL Cormorant Garamond/DM Sans proposed, not downloaded.
-- Preserve seven bindings, three treatments, four cameras, four steps, configuration/code/copy/Spec Sheet/WhatsApp and Retry lifecycle.
-- No production UI/source, GLB/KTX2, decoder, catalogue, dependencies or handoff implementation changes; no push/deploy.
-- Checks are Chromium/image-based; no live-renderer benchmark, real-phone, GPU or full accessibility certification.
-- Four-repository assessment retained: existing R3F only; no added WebGL context, shader or glass package.
-- Human visual gates/reference gaps, model defects, catalogue signoffs, phone performance and 13 development audit findings remain open.
-- NEXT: owner reviews R1 identity, typography, motion and carousel before implementation; emblem removal is a separate decision.
-- STOP at owner approval checkpoint. No presentation slice or geometry work authorized.
+- L5 production UI integration complete locally; owner approved R1 implementation for the initial commercial mock-up.
+- Branch codex/l5-r1-design-refinement retained; integration baseline 8fd1693; no push/deploy.
+- Review pack: docs/review/l5-integration/index.html and README.md; actual production captures and 64s recording.
+- Commits: 6f1b024 welcome/brand; aa33b99 shell; 241a93d controls; 203332d specification; 022521f legacy branding.
+- Authentic logo PDF preserved; faithful PNG, approved ivory/graphite/cyan and system-font typography integrated.
+- Three-treatment keyboard/touch carousel, four steps, four original cameras and one stable viewer through summary.
+- Seven bindings, KTX2/Draco recovery, diamond thread shader, GLBs, Sienna default, lighting and geometry unchanged.
+- Context/code/WhatsApp payload unchanged; manufacturer line retained per newest preservation instruction.
+- Real-number booking disabled until configured; three-treatment fixture payload checks passed without sending.
+- Validation: 102 unit tests; 16 distinct active browser tests across runs; typecheck/lint/build and four GLB gates passed.
+- Original sandbox/unit and browser-selector/timing failures retained with successful corrected reruns.
+- Actual production desktop/mobile capture: no console errors; 12 calls/76,548 triangles; protected hashes match baseline.
+- SwiftShader/emulated mobile only; real phones, hardware FPS/GPU bytes, Safari/Firefox and full accessibility NOT TESTED.
+- Existing warnings, 13 development audit findings, catalogue approvals, model defects/reference gaps/human gates remain open.
+- Existing colour-based leather-family resolution retained; static material cards remain labelled Sienna studies.
+- No new dependencies/fonts/effects, permanent WebGL context or 3D work. R1 proposal retained as historical evidence.
+- NEXT: owner review of the complete live L5 showroom; separate future 3D refinement remains deferred. STOP.

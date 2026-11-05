@@ -1,0 +1,610 @@
+{
+  "states": [
+    {
+      "status": "success",
+      "assetUrl": "/assets/3d/lexus-rx350/interior-l4-classic.glb",
+      "materialState": {
+        "bindings": {
+          "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+          "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+          "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+          "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+          "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+          "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+        },
+        "colors": {
+          "MAT_Seat_Primary": "#75452b",
+          "MAT_Seat_Secondary": "#151618",
+          "MAT_Seat_Stitching": "#d4af37",
+          "MAT_Steering_Leather": "#151618",
+          "MAT_Cockpit_Accent": "#787d82",
+          "MAT_Cockpit_Black": "#121316",
+          "MAT_Dashboard_Trim": "#2a2b2e"
+        },
+        "textures": {
+          "MAT_Seat_Primary:map": {
+            "uuid": "393f1f74-edd2-44bd-94fe-77aa0c46ef65",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:normalMap": {
+            "uuid": "1f3b85bf-8919-44bd-8171-7d6e25f56cf0",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:roughnessMap": {
+            "uuid": "49e9c1b2-5820-493e-88a3-0f67090f7b29",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:map": {
+            "uuid": "9ba91150-404e-4d26-9a42-3fa8ea9d2ba1",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:normalMap": {
+            "uuid": "1f188f52-945a-454c-920a-2aead63573e7",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:roughnessMap": {
+            "uuid": "b633dda8-5f37-4b75-b7fc-b0ed6caaf9e7",
+            "compressed": true,
+            "mips": 11
+          }
+        },
+        "quiltThread": false
+      },
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 9,
+        "geometries": 24
+      },
+      "error": null,
+      "cameraFov": 38,
+      "treatment": "classic"
+    },
+    {
+      "status": "success",
+      "assetUrl": "/assets/3d/lexus-rx350/interior-l4-diamond.glb",
+      "materialState": {
+        "bindings": {
+          "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+          "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+          "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+          "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+          "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+          "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+        },
+        "colors": {
+          "MAT_Seat_Primary": "#75452b",
+          "MAT_Seat_Secondary": "#151618",
+          "MAT_Seat_Stitching": "#d4af37",
+          "MAT_Steering_Leather": "#151618",
+          "MAT_Cockpit_Accent": "#787d82",
+          "MAT_Cockpit_Black": "#121316",
+          "MAT_Dashboard_Trim": "#2a2b2e"
+        },
+        "textures": {
+          "MAT_Seat_Primary:map": {
+            "uuid": "e50f65d6-e761-4de5-8009-6fe04b615ac5",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:normalMap": {
+            "uuid": "c9866617-3077-42b8-bf28-e744b1249763",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:roughnessMap": {
+            "uuid": "efffb6a3-b61a-469e-b645-1602d7d99508",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:map": {
+            "uuid": "7f18a95a-7516-4b9b-a7e2-49ff3bfea929",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:normalMap": {
+            "uuid": "f7fc43bb-08f4-4a6a-8d9d-48839755941e",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:roughnessMap": {
+            "uuid": "bb3b892c-b79e-4a10-9a2e-2746cf6ed191",
+            "compressed": true,
+            "mips": 11
+          }
+        },
+        "quiltThread": true
+      },
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 15,
+        "geometries": 36
+      },
+      "error": null,
+      "cameraFov": 45,
+      "treatment": "diamond"
+    },
+    {
+      "status": "success",
+      "assetUrl": "/assets/3d/lexus-rx350/interior-l4-perforated.glb",
+      "materialState": {
+        "bindings": {
+          "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+          "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+          "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+          "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+          "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+          "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+        },
+        "colors": {
+          "MAT_Seat_Primary": "#75452b",
+          "MAT_Seat_Secondary": "#151618",
+          "MAT_Seat_Stitching": "#d4af37",
+          "MAT_Steering_Leather": "#151618",
+          "MAT_Cockpit_Accent": "#787d82",
+          "MAT_Cockpit_Black": "#121316",
+          "MAT_Dashboard_Trim": "#2a2b2e"
+        },
+        "textures": {
+          "MAT_Seat_Primary:map": {
+            "uuid": "f90e21e0-3d2b-4d51-a61c-70f6a6e60442",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:normalMap": {
+            "uuid": "1a5a17f3-f1aa-40e8-a9a5-dfc69932b157",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:roughnessMap": {
+            "uuid": "573b2b03-3b50-4431-9fa3-75612d635a55",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:map": {
+            "uuid": "ca1f221e-04a8-4252-a53b-092a7024b2c0",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:normalMap": {
+            "uuid": "455a6708-deb6-42ee-b901-10cb628c436d",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:roughnessMap": {
+            "uuid": "358afb51-fd8e-47d8-a4c4-8dd9be54ab81",
+            "compressed": true,
+            "mips": 11
+          }
+        },
+        "quiltThread": false
+      },
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 21,
+        "geometries": 48
+      },
+      "error": null,
+      "cameraFov": 45,
+      "treatment": "perforated"
+    },
+    {
+      "status": "success",
+      "assetUrl": "/assets/3d/lexus-rx350/interior-l4-classic.glb",
+      "materialState": {
+        "bindings": {
+          "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+          "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+          "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+          "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+          "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+          "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+        },
+        "colors": {
+          "MAT_Seat_Primary": "#75452b",
+          "MAT_Seat_Secondary": "#151618",
+          "MAT_Seat_Stitching": "#d4af37",
+          "MAT_Steering_Leather": "#151618",
+          "MAT_Cockpit_Accent": "#787d82",
+          "MAT_Cockpit_Black": "#121316",
+          "MAT_Dashboard_Trim": "#2a2b2e"
+        },
+        "textures": {
+          "MAT_Seat_Primary:map": {
+            "uuid": "393f1f74-edd2-44bd-94fe-77aa0c46ef65",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:normalMap": {
+            "uuid": "1f3b85bf-8919-44bd-8171-7d6e25f56cf0",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:roughnessMap": {
+            "uuid": "49e9c1b2-5820-493e-88a3-0f67090f7b29",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:map": {
+            "uuid": "9ba91150-404e-4d26-9a42-3fa8ea9d2ba1",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:normalMap": {
+            "uuid": "1f188f52-945a-454c-920a-2aead63573e7",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:roughnessMap": {
+            "uuid": "b633dda8-5f37-4b75-b7fc-b0ed6caaf9e7",
+            "compressed": true,
+            "mips": 11
+          }
+        },
+        "quiltThread": false
+      },
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 21,
+        "geometries": 48
+      },
+      "error": null,
+      "cameraFov": 45,
+      "treatment": "classic"
+    },
+    {
+      "status": "success",
+      "assetUrl": "/assets/3d/lexus-rx350/interior-l4-diamond.glb",
+      "materialState": {
+        "bindings": {
+          "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+          "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+          "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+          "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+          "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+          "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+        },
+        "colors": {
+          "MAT_Seat_Primary": "#75452b",
+          "MAT_Seat_Secondary": "#151618",
+          "MAT_Seat_Stitching": "#d4af37",
+          "MAT_Steering_Leather": "#151618",
+          "MAT_Cockpit_Accent": "#787d82",
+          "MAT_Cockpit_Black": "#121316",
+          "MAT_Dashboard_Trim": "#2a2b2e"
+        },
+        "textures": {
+          "MAT_Seat_Primary:map": {
+            "uuid": "e50f65d6-e761-4de5-8009-6fe04b615ac5",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:normalMap": {
+            "uuid": "c9866617-3077-42b8-bf28-e744b1249763",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:roughnessMap": {
+            "uuid": "efffb6a3-b61a-469e-b645-1602d7d99508",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:map": {
+            "uuid": "7f18a95a-7516-4b9b-a7e2-49ff3bfea929",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:normalMap": {
+            "uuid": "f7fc43bb-08f4-4a6a-8d9d-48839755941e",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:roughnessMap": {
+            "uuid": "bb3b892c-b79e-4a10-9a2e-2746cf6ed191",
+            "compressed": true,
+            "mips": 11
+          }
+        },
+        "quiltThread": true
+      },
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 21,
+        "geometries": 48
+      },
+      "error": null,
+      "cameraFov": 45,
+      "treatment": "diamond"
+    },
+    {
+      "status": "success",
+      "assetUrl": "/assets/3d/lexus-rx350/interior-l4-perforated.glb",
+      "materialState": {
+        "bindings": {
+          "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+          "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+          "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+          "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+          "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+          "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+          "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+          "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+          "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+        },
+        "colors": {
+          "MAT_Seat_Primary": "#75452b",
+          "MAT_Seat_Secondary": "#151618",
+          "MAT_Seat_Stitching": "#d4af37",
+          "MAT_Steering_Leather": "#151618",
+          "MAT_Cockpit_Accent": "#787d82",
+          "MAT_Cockpit_Black": "#121316",
+          "MAT_Dashboard_Trim": "#2a2b2e"
+        },
+        "textures": {
+          "MAT_Seat_Primary:map": {
+            "uuid": "f90e21e0-3d2b-4d51-a61c-70f6a6e60442",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:normalMap": {
+            "uuid": "1a5a17f3-f1aa-40e8-a9a5-dfc69932b157",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Primary:roughnessMap": {
+            "uuid": "573b2b03-3b50-4431-9fa3-75612d635a55",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:map": {
+            "uuid": "ca1f221e-04a8-4252-a53b-092a7024b2c0",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:normalMap": {
+            "uuid": "455a6708-deb6-42ee-b901-10cb628c436d",
+            "compressed": true,
+            "mips": 11
+          },
+          "MAT_Seat_Secondary:roughnessMap": {
+            "uuid": "358afb51-fd8e-47d8-a4c4-8dd9be54ab81",
+            "compressed": true,
+            "mips": 11
+          }
+        },
+        "quiltThread": false
+      },
+      "renderer": {
+        "calls": 12,
+        "triangles": 76548,
+        "textures": 21,
+        "geometries": 48
+      },
+      "error": null,
+      "cameraFov": 45,
+      "treatment": "perforated"
+    }
+  ],
+  "initial": {
+    "bindings": {
+      "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+      "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+      "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+      "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+      "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+      "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+      "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+      "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+      "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+      "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+      "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+      "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+    },
+    "colors": {
+      "MAT_Seat_Primary": "#75452b",
+      "MAT_Seat_Secondary": "#151618",
+      "MAT_Seat_Stitching": "#d4af37",
+      "MAT_Steering_Leather": "#151618",
+      "MAT_Cockpit_Accent": "#787d82",
+      "MAT_Cockpit_Black": "#121316",
+      "MAT_Dashboard_Trim": "#2a2b2e"
+    },
+    "textures": {
+      "MAT_Seat_Primary:map": {
+        "uuid": "e50f65d6-e761-4de5-8009-6fe04b615ac5",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Primary:normalMap": {
+        "uuid": "c9866617-3077-42b8-bf28-e744b1249763",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Primary:roughnessMap": {
+        "uuid": "efffb6a3-b61a-469e-b645-1602d7d99508",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:map": {
+        "uuid": "7f18a95a-7516-4b9b-a7e2-49ff3bfea929",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:normalMap": {
+        "uuid": "f7fc43bb-08f4-4a6a-8d9d-48839755941e",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:roughnessMap": {
+        "uuid": "bb3b892c-b79e-4a10-9a2e-2746cf6ed191",
+        "compressed": true,
+        "mips": 11
+      }
+    },
+    "quiltThread": true
+  },
+  "primary": {
+    "bindings": {
+      "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+      "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+      "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+      "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+      "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+      "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+      "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+      "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+      "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+      "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+      "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+      "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+    },
+    "colors": {
+      "MAT_Seat_Primary": "#d8cab8",
+      "MAT_Seat_Secondary": "#151618",
+      "MAT_Seat_Stitching": "#d4af37",
+      "MAT_Steering_Leather": "#151618",
+      "MAT_Cockpit_Accent": "#787d82",
+      "MAT_Cockpit_Black": "#121316",
+      "MAT_Dashboard_Trim": "#2a2b2e"
+    },
+    "textures": {
+      "MAT_Seat_Primary:map": {
+        "uuid": "e50f65d6-e761-4de5-8009-6fe04b615ac5",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Primary:normalMap": {
+        "uuid": "c9866617-3077-42b8-bf28-e744b1249763",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Primary:roughnessMap": {
+        "uuid": "efffb6a3-b61a-469e-b645-1602d7d99508",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:map": {
+        "uuid": "7f18a95a-7516-4b9b-a7e2-49ff3bfea929",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:normalMap": {
+        "uuid": "f7fc43bb-08f4-4a6a-8d9d-48839755941e",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:roughnessMap": {
+        "uuid": "bb3b892c-b79e-4a10-9a2e-2746cf6ed191",
+        "compressed": true,
+        "mips": 11
+      }
+    },
+    "quiltThread": true
+  },
+  "thread": {
+    "bindings": {
+      "GEO_Seat_Front_Driver_1": "MAT_Seat_Primary",
+      "GEO_Seat_Front_Driver_2": "MAT_Seat_Secondary",
+      "GEO_Seat_Stitching_Front": "MAT_Seat_Stitching",
+      "GEO_Seat_Front_Passenger_1": "MAT_Seat_Primary",
+      "GEO_Seat_Front_Passenger_2": "MAT_Seat_Secondary",
+      "GEO_Seat_Stitching_Front_Passenger": "MAT_Seat_Stitching",
+      "GEO_SteeringWheel_Lexus_1": "MAT_Steering_Leather",
+      "GEO_SteeringWheel_Lexus_2": "MAT_Cockpit_Accent",
+      "GEO_SteeringWheel_Lexus_3": "MAT_Cockpit_Black",
+      "GEO_Dashboard_Lexus_1": "MAT_Dashboard_Trim",
+      "GEO_Dashboard_Lexus_2": "MAT_Cockpit_Black",
+      "GEO_Dashboard_Lexus_3": "MAT_Cockpit_Accent"
+    },
+    "colors": {
+      "MAT_Seat_Primary": "#d8cab8",
+      "MAT_Seat_Secondary": "#d8cab8",
+      "MAT_Seat_Stitching": "#c0c4cc",
+      "MAT_Steering_Leather": "#d8cab8",
+      "MAT_Cockpit_Accent": "#787d82",
+      "MAT_Cockpit_Black": "#121316",
+      "MAT_Dashboard_Trim": "#2a2b2e"
+    },
+    "textures": {
+      "MAT_Seat_Primary:map": {
+        "uuid": "e50f65d6-e761-4de5-8009-6fe04b615ac5",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Primary:normalMap": {
+        "uuid": "c9866617-3077-42b8-bf28-e744b1249763",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Primary:roughnessMap": {
+        "uuid": "efffb6a3-b61a-469e-b645-1602d7d99508",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:map": {
+        "uuid": "7f18a95a-7516-4b9b-a7e2-49ff3bfea929",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:normalMap": {
+        "uuid": "f7fc43bb-08f4-4a6a-8d9d-48839755941e",
+        "compressed": true,
+        "mips": 11
+      },
+      "MAT_Seat_Secondary:roughnessMap": {
+        "uuid": "bb3b892c-b79e-4a10-9a2e-2746cf6ed191",
+        "compressed": true,
+        "mips": 11
+      }
+    },
+    "quiltThread": true
+  },
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "context": "Chromium SwiftShader; no physical-phone or GPU-byte measurement"
+}

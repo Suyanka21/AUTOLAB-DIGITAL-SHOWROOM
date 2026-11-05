@@ -2,9 +2,10 @@ import { expect, test } from "@playwright/test";
 
 test("unconfigured WhatsApp booking is disabled with a clear message", async ({ page }) => {
   await page.goto("/");
-  const booking = page.getByRole("button", { name: /Book Bespoke Consultation/ });
+  await page.getByRole("button", { name: "Your specification", exact: true }).click();
+  const booking = page.getByRole("button", { name: /Continue on WhatsApp/ });
   await expect(booking).toBeDisabled();
-  await expect(page.getByText("WhatsApp booking is unavailable until AutoLab configures its number.")).toBeVisible();
+  await expect(page.getByRole('status').filter({hasText:"WhatsApp booking is unavailable until AutoLab configures its number."})).toBeVisible();
 });
 
 test("3D asset responses carry the immutable cache header", async ({ request }) => {

@@ -1,0 +1,42 @@
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\blender\out\l4b-recovery-input\tools\test-browser-load.mjs
+  2:20  warning  'writeFile' is defined but never used   @typescript-eslint/no-unused-vars
+  4:10  warning  'createHash' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\l5-design-direction\r1\check-consistency.mjs
+  3:25  warning  'relative' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\docs\review\l5-design-direction\r1\verify.mjs
+  2:9  warning  'readFile' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\app\auth\page.tsx
+  11:10  warning  'Badge' is defined but never used         @typescript-eslint/no-unused-vars
+  12:10  warning  'Lock' is defined but never used          @typescript-eslint/no-unused-vars
+  12:16  warning  'Mail' is defined but never used          @typescript-eslint/no-unused-vars
+  12:30  warning  'UserIcon' is defined but never used      @typescript-eslint/no-unused-vars
+  12:40  warning  'ArrowRight' is defined but never used    @typescript-eslint/no-unused-vars
+  12:57  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\app\dashboard\page.tsx
+  19:3   warning  'ExternalLink' is defined but never used           @typescript-eslint/no-unused-vars
+  20:3   warning  'Cpu' is defined but never used                    @typescript-eslint/no-unused-vars
+  21:3   warning  'Layers' is defined but never used                 @typescript-eslint/no-unused-vars
+  22:3   warning  'CheckCircle2' is defined but never used           @typescript-eslint/no-unused-vars
+  24:3   warning  'AlertTriangle' is defined but never used          @typescript-eslint/no-unused-vars
+  42:21  warning  'setActiveTab' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\components\layout\navbar.tsx
+  8:19  warning  'Sparkles' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\components\ui\card.tsx
+  42:42  warning  'children' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\src\components\ui\tabs.tsx
+  3:17  warning  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\tools\test-browser-load.mjs
+  2:20  warning  'writeFile' is defined but never used   @typescript-eslint/no-unused-vars
+  4:10  warning  'createHash' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 21 problems (0 errors, 21 warnings)
+

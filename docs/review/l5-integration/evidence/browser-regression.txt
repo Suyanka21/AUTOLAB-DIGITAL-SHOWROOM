@@ -1,0 +1,54 @@
+
+Running 13 tests using 1 worker
+
+
+
+(node:14316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/13] [chromium] › e2e\l5-showroom.spec.ts:3:5 › approved welcome provides immediate direct studio entry without a second renderer
+[2/13] [chromium] › e2e\l5-showroom.spec.ts:14:5 › specification reveal preserves the live canvas, reference, copy and accessible Spec Sheet
+[3/13] [chromium] › e2e\l5-showroom.spec.ts:34:5 › treatment carousel and four steps control live materials without replacing the canvas
+[4/13] [chromium] › e2e\l5-showroom.spec.ts:55:5 › editorial workbench retains one live viewer and all four camera presets
+[5/13] [chromium] › e2e\lexus-runtime.spec.ts:22:5 › Diamond enables its actual primary-material thread hook
+[6/13] [chromium] › e2e\lexus-runtime.spec.ts:30:5 › Retry recovers a rejected GLB request without reloading the page
+[7/13] [chromium] › e2e\lexus-runtime.spec.ts:49:5 › cold KTX2 and Draco load retains decoded maps and local decoder resources
+[8/13] [chromium] › e2e\lexus-runtime.spec.ts:64:5 › all treatments, four cameras, independent colours and repeated switching retain the assembly
+[9/13] [chromium] › e2e\lexus-runtime.spec.ts:130:5 › L3 rollback still decodes and context-loss Retry restores rendering
+[10/13] [chromium] › e2e\lexus-runtime.spec.ts:146:5 › failed Basis decode is an error, and Retry reloads textures
+[11/13] [chromium] › e2e\lexus-runtime.spec.ts:159:5 › WebGL unavailable and missing asset retain the fallback
+[12/13] [chromium] › e2e\quality.spec.ts:3:5 › unconfigured WhatsApp booking is disabled with a clear message
+  1) [chromium] › e2e\quality.spec.ts:3:5 › unconfigured WhatsApp booking is disabled with a clear message 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('WhatsApp booking is unavailable until AutoLab configures its number.')
+    Expected: visible
+    Error: strict mode violation: getByText('WhatsApp booking is unavailable until AutoLab configures its number.') resolved to 2 elements:
+        1) <p role="status" class="studio-module__G7fT1a__note">WhatsApp booking is unavailable until AutoLab con…</p> aka getByRole('status').filter({ hasText: 'WhatsApp booking is' })
+        2) <p class="studio-module__G7fT1a__note">WhatsApp booking is unavailable until AutoLab con…</p> aka locator('dialog').getByText('WhatsApp booking is')
+
+    Call log:
+      - Expect "toBeVisible" getByText('WhatsApp booking is unavailable until AutoLab configures its number.') with timeout 5000ms
+      - waiting for getByText('WhatsApp booking is unavailable until AutoLab configures its number.')
+
+
+       6 |   const booking = page.getByRole("button", { name: /Continue on WhatsApp/ });
+       7 |   await expect(booking).toBeDisabled();
+    >  8 |   await expect(page.getByText("WhatsApp booking is unavailable until AutoLab configures its number.")).toBeVisible();
+         |                                                                                                        ^
+       9 | });
+      10 |
+      11 | test("3D asset responses carry the immutable cache header", async ({ request }) => {
+        at C:\Users\user\OneDrive\Desktop\AUTOLAB-DIGITAL-SHOWROOM\e2e\quality.spec.ts:8:104
+
+    Error Context: test-results\quality-unconfigured-Whats-38e14-sabled-with-a-clear-message-chromium\error-context.md
+
+
+(node:13552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[13/13] [chromium] › e2e\quality.spec.ts:11:5 › 3D asset responses carry the immutable cache header
+  1 failed
+    [chromium] › e2e\quality.spec.ts:3:5 › unconfigured WhatsApp booking is disabled with a clear message 
+  12 passed (5.0m)

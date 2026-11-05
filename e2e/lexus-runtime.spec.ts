@@ -2,7 +2,8 @@ import { expect, test, type Page } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 
 const base = process.env.RUNTIME_URL ?? "http://localhost:3100";
-const evidence = "docs/review/lexus-l4b-recovery-2026-10-31";
+const evidence = process.env.L5_EVIDENCE_DIR ?? "docs/review/l5-integration/evidence";
+test.beforeAll(async () => { await mkdir(evidence, { recursive: true }); });
 const snapshot = (page: Page) => page.evaluate(() => window.__autolab?.snapshot());
 async function ready(page: Page, kind = "classic") {
   await expect.poll(async () => (await snapshot(page))?.status, { timeout: 60_000 }).toBe("success");
@@ -88,13 +89,13 @@ test("all treatments, four cameras, independent colours and repeated switching r
   const primary = (await snapshot(page))!.materialState!;
   expect(primary.colors.MAT_Seat_Secondary).toBe(initial.colors.MAT_Seat_Secondary);
   expect(primary.textures).toEqual(initial.textures);
-  await page.getByRole("button", { name: "4. Compose", exact: true }).click();
-  await page.getByRole("button", { name: "Macchiato", exact: true }).click();
+  await page.getByRole("button", { name: "4. Composition", exact: true }).click();
+  await page.getByRole("button", { name: /Macchiato Beige/ }).click();
   await expect.poll(async () => (await snapshot(page))?.materialState?.colors.MAT_Seat_Secondary).toBe("#d8cab8");
   await page.getByRole("button", { name: "Stitch Detail", exact: true }).click();
   await page.waitForTimeout(250);
   await page.screenshot({ path: `${evidence}/diamond-thread-gold.png` });
-  await page.getByRole("button", { name: "3. Thread", exact: true }).click();
+  await page.getByRole("button", { name: "3. Accent Thread", exact: true }).click();
   await page.getByRole("button", { name: /Silver Shadow Tech Stitch/ }).click();
   await expect.poll(async () => (await snapshot(page))?.materialState?.colors.MAT_Seat_Stitching).toBe("#c0c4cc");
   const thread = (await snapshot(page))!.materialState!;
@@ -173,14 +174,16 @@ test("WebGL unavailable and missing asset retain the fallback", async ({ page })
 test("consultation handoff reflects the selected treatment without sending a message", async ({ page }) => {
   await page.goto(base);
   await ready(page);
-  const booking = page.getByRole("link", { name: /Book Bespoke Consultation/ });
+  const booking = page.getByRole("link", { name: /Continue on WhatsApp/ });
   for (const [kind, label] of [["classic", "Classic Smooth"], ["diamond", "Diamond Quilted Mock-up"], ["perforated", "Perforated Leather Mock-up"]]) {
     await page.getByTestId(`treatment-${kind}`).click();
     await ready(page, kind);
+    await page.getByRole("button", { name: "Your specification", exact: true }).click();
     const href = new URL((await booking.getAttribute("href"))!);
     expect(href.origin).toBe("https://wa.me");
     expect(href.pathname).toBe("/254700000000"); // Local test fixture; never navigated or sent.
     expect(href.searchParams.get("text")).toContain(`Upholstery Treatment: ${label}`);
     expect(href.searchParams.get("text")).toContain("2020 Lexus RX 350");
+    await page.getByRole("button", { name: "Return to your selections", exact: true }).click();
   }
 });

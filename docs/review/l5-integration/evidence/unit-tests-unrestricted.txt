@@ -1,0 +1,12 @@
+
+ RUN  v5.0.5 C:/Users/user/OneDrive/Desktop/AUTOLAB-DIGITAL-SHOWROOM
+
+
+ Test Files  11 passed (11)
+      Tests  102 passed (102)
+   Start at  17:46:59
+   Duration  37.19s (tests 82%, import 16%, transform 1%, worker 1%)
+
+    Isolate  11 workers spawned · ~1.85s startup each (spawn + environment, per file)
+             at least ~4.93s faster with isolate: false — reuses workers across files instead of one per file
+

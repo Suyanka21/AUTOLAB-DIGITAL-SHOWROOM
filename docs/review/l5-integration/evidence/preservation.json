@@ -1,0 +1,52 @@
+{
+  "baseline": "8fd1693",
+  "passed": true,
+  "protectedPaths": [
+    "package.json",
+    "package-lock.json",
+    "src/lib/state/configurator-context.tsx",
+    "src/config",
+    "src/lib/three",
+    "public/basis",
+    "public/draco",
+    "public/assets/3d"
+  ],
+  "protectedDiff": "",
+  "hashes": [
+    {
+      "file": "public/AUTOLAB LOGO .pdf",
+      "bytes": 380740,
+      "sha256": "859a9be18dc3cac79f5311791b9db008478871d854c639806f2bb13da728dd76",
+      "baselineSha256": "859a9be18dc3cac79f5311791b9db008478871d854c639806f2bb13da728dd76",
+      "unchanged": true
+    },
+    {
+      "file": "public/assets/3d/lexus-rx350/interior-l4-classic.glb",
+      "bytes": 3805516,
+      "sha256": "168ecc2669cdb4bc7f23a7eb04e2ec27071540f15f945949ea0a98f7a5f7a63c",
+      "baselineSha256": "168ecc2669cdb4bc7f23a7eb04e2ec27071540f15f945949ea0a98f7a5f7a63c",
+      "unchanged": true
+    },
+    {
+      "file": "public/assets/3d/lexus-rx350/interior-l4-diamond.glb",
+      "bytes": 3643628,
+      "sha256": "db7828e1d1cdb26e4b438a3a574ccdcadd2bfef0cbf0678e3f08f036bf7c2e73",
+      "baselineSha256": "db7828e1d1cdb26e4b438a3a574ccdcadd2bfef0cbf0678e3f08f036bf7c2e73",
+      "unchanged": true
+    },
+    {
+      "file": "public/assets/3d/lexus-rx350/interior-l4-perforated.glb",
+      "bytes": 3366172,
+      "sha256": "c26f5198b8da4e035ffd556949bff89e419ae5c660e99887e4ef337d10cab95b",
+      "baselineSha256": "c26f5198b8da4e035ffd556949bff89e419ae5c660e99887e4ef337d10cab95b",
+      "unchanged": true
+    },
+    {
+      "file": "public/assets/3d/lexus-rx350/interior-l2b.glb",
+      "bytes": 3829276,
+      "sha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+      "baselineSha256": "c51e4db56faec8307eb6d6d25d88489cf212a935bafff0c2212c27abbcbc19d2",
+      "unchanged": true
+    }
+  ]
+}
