@@ -92,6 +92,7 @@ The master file contains: the Global Reasoning Layer (Section 0), CodeRabbit DNA
 | gltf-asset-gate | `.agents/skills/gltf-asset-gate/SKILL.md` | Automated GLB validation against the manifest and budgets |
 | webgl-viewer-engineering | `.agents/skills/webgl-viewer-engineering/SKILL.md` | Three.js / R3F viewer, material swapping, performance, fallbacks |
 | visual-fidelity-review | `.agents/skills/visual-fidelity-review/SKILL.md` | Human visual acceptance; the agent never self-certifies |
+| realistic-3d-craft | `.agents/skills/realistic-3d-craft/SKILL.md` | Method for realistic 3D: six realism layers, material lab, review loop |
 
 ### SPECIAL SKILLS
 
