@@ -100,12 +100,9 @@ export default function DashboardPage() {
         <div className="space-y-6">
           {/* Brand header */}
           <Link href="/" className="flex items-center space-x-2.5 px-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-sky text-black font-bold text-sm">
-              S
-            </div>
             <div>
-              <p className="font-semibold text-sm text-white">Suyanka App</p>
-              <p className="text-[10px] text-slate-400 font-mono">Agent Foundation</p>
+              <p className="font-semibold text-sm text-white">AutoLab Interior Studio</p>
+              <p className="text-[10px] text-slate-400 font-mono">Workspace</p>
             </div>
           </Link>
 

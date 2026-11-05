@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth/auth-context";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Menu, X, Sparkles, LogOut, LayoutDashboard } from "lucide-react";
+import { Menu, X, LogOut, LayoutDashboard } from "lucide-react";
 
 export function Navbar() {
   const { user, signOut } = useAuth();
@@ -16,13 +15,9 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <Link href="/" className="flex items-center space-x-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-sky to-sky-600 text-black font-bold text-base shadow-sm">
-            S
-          </div>
           <div className="flex flex-col">
             <div className="flex items-center space-x-2">
-              <span className="font-semibold tracking-tight text-white">Suyanka</span>
-              <Badge variant="default" className="text-[10px] py-0 px-1.5">Template</Badge>
+              <span className="font-semibold tracking-tight text-white">AutoLab Interior Studio</span>
             </div>
           </div>
         </Link>

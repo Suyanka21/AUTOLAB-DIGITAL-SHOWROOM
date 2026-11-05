@@ -99,10 +99,7 @@ function AuthContent() {
       {/* Brand logo header */}
       <div className="mb-6 text-center z-10">
         <Link href="/" className="inline-flex items-center space-x-2.5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-sky text-black font-extrabold text-lg shadow-sm">
-            S
-          </div>
-          <span className="text-xl font-bold tracking-tight text-white">Suyanka App</span>
+          <span className="text-xl font-bold tracking-tight text-white">AutoLab Interior Studio</span>
         </Link>
         <p className="mt-1 text-xs text-slate-400">Authentication & Access Portal</p>
       </div>
