@@ -203,12 +203,13 @@ Order for any 3D task:
 1. spec-driven-development    -> confirm the slice and acceptance criteria exist (docs/spike/plan.md or the prompt)
 2. gltf-asset-gate            -> build or extend the validator FIRST (test-driven)
 3. blender-asset-pipeline     -> author and export through the single build script
+   └── realistic-3d-craft     -> REQUIRED for realism-focused modelling, materials, lighting and surface refinement ($realistic-3d-craft: six realism layers, material lab first, review loop)
 4. gltf-asset-gate            -> run it; paste the real output
 5. webgl-viewer-engineering   -> load in the viewer; material-swap test
 6. visual-fidelity-review     -> produce the review pack, then STOP for human scoring
 ```
 
-Supporting skills: source-driven-development (verify Blender and three.js docs), debugging-and-error-recovery, performance-optimization. anti-ai-design is NOT used for 3D asset work.
+Supporting skills: source-driven-development (verify Blender and three.js docs), debugging-and-error-recovery, performance-optimization. anti-ai-design is NOT used for 3D asset work. For any task touching geometry, materials, lighting or look-dev realism, $realistic-3d-craft is mandatory within step 3.
 
 ## SKILL ACTIVATION DECISION TREE
 

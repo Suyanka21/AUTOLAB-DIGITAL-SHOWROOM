@@ -21,6 +21,8 @@ out/
 .turbo/
 *.tsbuildinfo
 blender/__pycache__/
+__pycache__/
+*.pyc
 
 # Testing & Coverage
 coverage/

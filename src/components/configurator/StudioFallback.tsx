@@ -149,7 +149,7 @@ return <div hidden={hidden} data-testid="svg-fallback" aria-label="Illustrated i
             />
             <line x1="400" y1="370" x2="400" y2="440" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
 
-            {/* 12.3" Lexus Center Display */}
+            {/* 12.3" Center Display */}
             <rect
               x="345"
               y="255"
@@ -175,7 +175,7 @@ return <div hidden={hidden} data-testid="svg-fallback" aria-label="Illustrated i
             <circle cx="210" cy="240" r="16" fill="#17181D" stroke={threadHex} strokeWidth="1" />
             <line x1="165" y1="240" x2="255" y2="240" stroke="#2A2C34" strokeWidth="5" />
 
-            {/* Burmester 4D Speaker Grille Silhouette (Left & Right) */}
+            {/* Speaker Grille Silhouette (Left & Right) */}
             <circle cx="90" cy="310" r="18" fill="#1C1E23" stroke="#D4AF37" strokeWidth="0.8" strokeOpacity="0.5" strokeDasharray="2 2" />
             <circle cx="710" cy="310" r="18" fill="#1C1E23" stroke="#D4AF37" strokeWidth="0.8" strokeOpacity="0.5" strokeDasharray="2 2" />
 

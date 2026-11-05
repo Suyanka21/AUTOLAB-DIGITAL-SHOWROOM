@@ -132,7 +132,7 @@ export function ConfiguratorProvider({ children }: { children: React.ReactNode }
     const text = [
       `*AutoLab Digital Showroom — Consultation Request*`,
       `• Reference Code: ${referenceCode}`,
-      `• Vehicle: ${referenceCode.startsWith("AL-SC-") ? "Mercedes-Benz S-Class (V223 LWB)" : "2020 Lexus RX 350 AWD"}`,
+      `• Vehicle: AutoLab Atelier Bespoke Interior`,
       ``,
       `*Curated Specification:*`,
       `• Primary Leather: ${selectedPrimaryColor?.name || primaryColorId}`,

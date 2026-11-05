@@ -50,22 +50,35 @@ def compare(render, reference, size=(512, 512)):
     r, f = load(render, size), load(reference, size)
     lr, lf = luminance(r), luminance(f)
     er, ef = sobel(lr), sobel(lf)
-    thr = lambda e: e > np.percentile(e, 90)
     mr, mf = foreground(r), foreground(f)
+
+    # Use a defensible shared edge threshold anchored to salient edges in the reference
+    ref_edges = ef[mf] if mf.any() else ef
+    shared_thr = max(float(np.percentile(ref_edges, 85)), 1e-4)
+
+    # Edge masks using shared reference threshold
+    er_edges = er > shared_thr
+    ef_edges = ef > shared_thr
+
+    # Foreground-aware edge density comparison (advisory signal)
+    r_density = float((er[mr] > shared_thr).mean()) if mr.any() else float(er_edges.mean())
+    f_density = float((ef[mf] > shared_thr).mean()) if mf.any() else float(ef_edges.mean())
+
     out = {
         "silhouette_iou": round(iou(mr, mf), 3),
-        "edge_overlap_iou": round(iou(thr(er), thr(ef)), 3),
+        "edge_overlap_iou": round(iou(er_edges, ef_edges), 3),
         "luminance_hist_overlap": round(hist_overlap(lr[mr] if mr.any() else lr, lf[mf] if mf.any() else lf), 3),
         "mean_colour_delta_rgb": [round(float(x), 3) for x in (r[mr].mean(0) - f[mf].mean(0))] if mr.any() and mf.any() else None,
-        "edge_density_render_vs_ref": round(float(thr(er).mean() / max(thr(ef).mean(), 1e-9)), 3),
+        "edge_density_render_vs_ref": round(float(r_density / max(f_density, 1e-9)), 3),
         "highlight_fraction_render": round(float((lr[mr] > 0.85).mean()) if mr.any() else 0.0, 4),
         "highlight_fraction_ref": round(float((lf[mf] > 0.85).mean()) if mf.any() else 0.0, 4),
     }
     out["notes"] = [
         "silhouette_iou: 1.0 = identical outline. Low means proportions or camera are off.",
-        "edge_overlap_iou: where the strong edges fall. Low means panel lines or forms are in the wrong places.",
+        "edge_overlap_iou: where the strong edges fall using shared reference threshold. Low means panel lines or forms are in the wrong places.",
         "luminance_hist_overlap: tonal range match. Low means flat or blown-out lighting.",
         "mean_colour_delta_rgb: render minus reference; large values mean wrong colour or exposure.",
+        "edge_density_render_vs_ref: advisory ratio of edge pixels above shared reference threshold (<1 under-detailed, >1 noisy/over-bumped).",
         "highlight_fraction near 0 on a render means no specular life (a classic CG tell).",
     ]
     return out
